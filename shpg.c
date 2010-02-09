@@ -117,7 +117,7 @@ static doublereal c_b71 = 1.;
 /*            = 7  error in the specification of lwork */
 
 /* Subroutine */ int shpgi_(integer *nlat, integer *nlon, integer *isym, 
-	integer *mtrunc, real *wshp, integer *lwshp, integer *iwshp, integer *
+	integer *mtrunc, doublereal *wshp, integer *lwshp, integer *iwshp, integer *
 	liwshp, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
@@ -131,11 +131,11 @@ static doublereal c_b71 = 1.;
 	     kw4, kw5, kw6, kw7, kw8, kw9, kw10, kw11, nte, mmax, mlwk, ktot, 
 	    nloc1, nloc2, log2n;
     extern /* Subroutine */ int shpgi1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, real *, real *, real *, real *, 
+	    integer *, integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, 
 	    integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *), hrffti_(integer *, real *);
+	    doublereal *, doublereal *), hrffti_(integer *, doublereal *);
 
 
     /* Parameter adjustments */
@@ -165,7 +165,7 @@ static doublereal c_b71 = 1.;
 /* Computing 2nd power */
     i__1 = *nlat + 1;
     lw1 = i__1 * i__1 << 1;
-    log2n = log((real) (*nlon)) / log(2.f);
+    log2n = log((doublereal) (*nlon)) / log(2.f);
     if (*lwshp < lw1 + *nlon + log2n) {
 	return 0;
     }
@@ -217,8 +217,8 @@ static doublereal c_b71 = 1.;
 } /* shpgi_ */
 
 /* Subroutine */ int shpgi1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *mtrunc, integer *idp, integer *ierror, real *pe, real *po, 
-	real *ze, real *zo, integer *ipse, integer *jzse, integer *ipso, 
+	integer *mtrunc, integer *idp, integer *ierror, doublereal *pe, doublereal *po, 
+	doublereal *ze, doublereal *zo, integer *ipse, integer *jzse, integer *ipso, 
 	integer *jzso, doublereal *cp, doublereal *wx, doublereal *thet, 
 	doublereal *gwts, doublereal *xx, doublereal *z__, doublereal *a, 
 	doublereal *b, doublereal *ped, doublereal *pod, doublereal *u)
@@ -232,7 +232,7 @@ static doublereal c_b71 = 1.;
 	    po_offset, ze_dim1, ze_dim2, ze_offset, zo_dim1, zo_dim2, 
 	    zo_offset, ipse_dim1, ipse_offset, jzse_dim1, jzse_offset, 
 	    ipso_dim1, ipso_offset, jzso_dim1, jzso_offset, i__1, i__2, i__3;
-    real r__1, r__2, r__3;
+    doublereal r__1, r__2, r__3;
 
     /* Builtin functions */
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
@@ -245,20 +245,20 @@ static doublereal c_b71 = 1.;
     extern /* Subroutine */ int gs_(integer *, doublereal *, doublereal *, 
 	    doublereal *);
     static integer it, js, mp1, ms2, ns2, nec;
-    static real dfn;
+    static doublereal dfn;
     static integer nem, noc, nte;
-    static real toe;
+    static doublereal toe;
     static integer nom, nto, nmx;
     static doublereal sum;
-    static real sum1;
+    static doublereal sum1;
     extern doublereal rand_(integer *);
     static integer lock;
-    static real dmax__;
+    static doublereal dmax__;
     static integer nshe[2], modn, ierr, nsho[2];
     static doublereal work;
-    static real tusl;
+    static doublereal tusl;
     static integer mxtr;
-    static real zort[8192]	/* was [64][64][2] */;
+    static doublereal zort[8192]	/* was [64][64][2] */;
     extern /* Subroutine */ int dlfkg_(integer *, integer *, doublereal *), 
 	    gaqdp_(integer *, doublereal *, doublereal *, doublereal *, 
 	    integer *, integer *), dlftg_(integer *, integer *, doublereal *, 
@@ -350,12 +350,12 @@ static doublereal c_b71 = 1.;
 
     i__1 = *nlat + *nlat - 2;
     for (n = 1; n <= i__1; ++n) {
-	dfn = (real) n;
+	dfn = (doublereal) n;
 	a[n] = sqrt(dfn * (dfn + 1.));
     }
     i__1 = *nlat - 1;
     for (n = 1; n <= i__1; ++n) {
-	dfn = (real) n;
+	dfn = (doublereal) n;
 	b[n] = sqrt((dfn + dfn + 3.) / (dfn + dfn - 1.));
     }
 
@@ -895,8 +895,8 @@ L300:
 /*            = 7  error in the specification of lwork */
 
 /* Subroutine */ int shpg_(integer *nlat, integer *nlon, integer *isym, 
-	integer *mtrunc, real *x, real *y, integer *idxy, real *wshp, integer 
-	*lwshp, integer *iwshp, integer *liwshp, real *work, integer *lwork, 
+	integer *mtrunc, doublereal *x, doublereal *y, integer *idxy, doublereal *wshp, integer 
+	*lwshp, integer *iwshp, integer *liwshp, doublereal *work, integer *lwork, 
 	integer *ierror)
 {
     /* System generated locals */
@@ -907,15 +907,15 @@ L300:
 
     /* Local variables */
     static integer i__, j;
-    static real sn;
+    static doublereal sn;
     static integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, nte, mmax, 
 	    mwrk, nloc1, nloc2, log2n;
     extern /* Subroutine */ int shpg1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, integer *, real *
-	    , real *, real *, real *, integer *, integer *, integer *, 
-	    integer *, real *, real *, real *, real *), hrfftb_(integer *, 
-	    integer *, real *, integer *, real *, real *), hrfftf_(integer *, 
-	    integer *, real *, integer *, real *, real *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, integer *, doublereal *
+	    , doublereal *, doublereal *, doublereal *, integer *, integer *, integer *, 
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *), hrfftb_(integer *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *), hrfftf_(integer *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *);
 
 
 
@@ -949,7 +949,7 @@ L300:
 	return 0;
     }
     *ierror = 5;
-    log2n = log((real) (*nlon)) / log(2.f);
+    log2n = log((doublereal) (*nlon)) / log(2.f);
 /* Computing 2nd power */
     i__1 = *nlat + 1;
     lw1 = i__1 * i__1 << 1;
@@ -1009,10 +1009,10 @@ L300:
 } /* shpg_ */
 
 /* Subroutine */ int shpg1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *mtrunc, real *sx, real *sy, integer *idxy, integer *ierror, 
-	integer *idp, real *pe, real *po, real *ze, real *zo, integer *ipse, 
-	integer *jzse, integer *ipso, integer *jzso, real *xe, real *xo, real 
-	*ye, real *yo)
+	integer *mtrunc, doublereal *sx, doublereal *sy, integer *idxy, integer *ierror, 
+	integer *idp, doublereal *pe, doublereal *po, doublereal *ze, doublereal *zo, integer *ipse, 
+	integer *jzse, integer *ipso, integer *jzso, doublereal *xe, doublereal *xo, doublereal 
+	*ye, doublereal *yo)
 {
     /* System generated locals */
     integer sx_dim1, sx_offset, sy_dim1, sy_offset, pe_dim1, pe_dim2, 
@@ -1026,7 +1026,7 @@ L300:
     static integer i__, j, m, ip, js, mp1, ms2, ns2, lag, nec, nem, noc, nte, 
 	    mpm, nom, nto, nmx, nshe[2], modn, nsho[2], mxtr;
     extern /* Subroutine */ int tmxmx_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, integer *, real *, real *, real *, 
+	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
 	    integer *, integer *);
 
 
@@ -1282,8 +1282,8 @@ L100:
     return 0;
 } /* mxm_ */
 
-/* Subroutine */ int smxm_(integer *lr, integer *lc, integer *ld, real *a, 
-	integer *mc, integer *md, real *b, integer *nd, real *c__)
+/* Subroutine */ int smxm_(integer *lr, integer *lc, integer *ld, doublereal *a, 
+	integer *mc, integer *md, doublereal *b, integer *nd, doublereal *c__)
 {
     /* System generated locals */
     integer a_dim1, a_offset, b_dim1, b_offset, c_dim1, c_offset, i__1, i__2, 
@@ -1319,8 +1319,8 @@ L100:
     return 0;
 } /* smxm_ */
 
-/* Subroutine */ int mxmx_(integer *lr, integer *lc, integer *ld, real *a, 
-	integer *mc, integer *md, real *b, real *x, real *y)
+/* Subroutine */ int mxmx_(integer *lr, integer *lc, integer *ld, doublereal *a, 
+	integer *mc, integer *md, doublereal *b, doublereal *x, doublereal *y)
 {
     /* System generated locals */
     integer a_dim1, a_offset, b_dim1, b_offset, x_dim1, x_offset, y_dim1, 
@@ -1328,7 +1328,7 @@ L100:
 
     /* Local variables */
     static integer i__, j, k;
-    static real sum1, sum2;
+    static doublereal sum1, sum2;
 
     /* Parameter adjustments */
     y_dim1 = *ld;
@@ -1427,7 +1427,7 @@ L100:
 } /* dmxmx_ */
 
 /* Subroutine */ int tmxmx_(integer *lag, integer *lr, integer *lc, integer *
-	ld, real *a, integer *mc, integer *md, real *b, real *x, real *y, 
+	ld, doublereal *a, integer *mc, integer *md, doublereal *b, doublereal *x, doublereal *y, 
 	integer *is, integer *js)
 {
     /* System generated locals */
@@ -1436,7 +1436,7 @@ L100:
 
     /* Local variables */
     static integer i__, j, k, kmx;
-    static real sum1, sum2;
+    static doublereal sum1, sum2;
 
 
     /* Parameter adjustments */
@@ -2022,10 +2022,10 @@ L14:
     static integer it, ns2;
     static doublereal dpb;
     static integer idx;
-    static real eps;
+    static doublereal eps;
     static integer nix;
     static doublereal sum, pis2, dcor, cmax;
-    static real sgnd;
+    static doublereal sgnd;
     static doublereal zero;
     extern /* Subroutine */ int cpdp1_(integer *, doublereal *, doublereal *, 
 	    doublereal *), tpdp1_(integer *, doublereal *, doublereal *, 
@@ -2348,7 +2348,7 @@ L30:
 doublereal dzepp_(doublereal *x)
 {
     /* System generated locals */
-    real ret_val;
+    doublereal ret_val;
     doublereal d__1;
 
     /* Local variables */

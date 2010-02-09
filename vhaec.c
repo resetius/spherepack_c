@@ -321,9 +321,9 @@ static integer c__2 = 2;
 
 /* ********************************************************************** */
 /* Subroutine */ int vhaec_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, real *v, real *w, integer *idvw, integer *jdvw, real *br,
-	 real *bi, real *cr, real *ci, integer *mdab, integer *ndab, real *
-	wvhaec, integer *lvhaec, real *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
+	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
+	wvhaec, integer *lvhaec, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -334,10 +334,10 @@ static integer c__2 = 2;
     static integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, idv, lnl, ist, lzz1, 
 	    labc, imid, mmax;
     extern /* Subroutine */ int vhaec1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, real *, real *, 
-	    integer *, integer *, real *, real *, real *, real *, integer *, 
-	    real *, real *, real *, real *, real *, real *, real *, real *, 
-	    real *);
+	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
     static integer lwzvin;
 
     /* Parameter adjustments */
@@ -452,10 +452,10 @@ static integer c__2 = 2;
 } /* vhaec_ */
 
 /* Subroutine */ int vhaec1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, real *v, 
-	real *w, integer *mdab, integer *ndab, real *br, real *bi, real *cr, 
-	real *ci, integer *idv, real *ve, real *vo, real *we, real *wo, real *
-	zv, real *zw, real *wzvin, real *wzwin, real *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *v, 
+	doublereal *w, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
+	doublereal *ci, integer *idv, doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, doublereal *
+	zv, doublereal *zw, doublereal *wzvin, doublereal *wzwin, doublereal *wrfft)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -467,14 +467,14 @@ static integer c__2 = 2;
 
     /* Local variables */
     static integer i__, j, k, m, iv, iw, mp1, np1, mp2;
-    static real fsn, tsn;
+    static doublereal fsn, tsn;
     static integer ndo1, ndo2, imm1, nlp1, mlat, mmax, mlon;
     extern /* Subroutine */ int zvin_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, real *), zwin_(integer *, integer *,
-	     integer *, integer *, real *, integer *, real *);
+	    integer *, doublereal *, integer *, doublereal *), zwin_(integer *, integer *,
+	     integer *, integer *, doublereal *, integer *, doublereal *);
     static integer itypp;
-    extern /* Subroutine */ int hrfftf_(integer *, integer *, real *, integer 
-	    *, real *, real *);
+    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, integer 
+	    *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     zw_dim1 = *imid;
@@ -1684,7 +1684,7 @@ L820:
     return 0;
 } /* vhaec1_ */
 
-/* Subroutine */ int vhaeci_(integer *nlat, integer *nlon, real *wvhaec, 
+/* Subroutine */ int vhaeci_(integer *nlat, integer *nlon, doublereal *wvhaec, 
 	integer *lvhaec, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -1692,9 +1692,9 @@ L820:
 
     /* Local variables */
     static integer iw1, iw2, lzz1, labc, imid, mmax;
-    extern /* Subroutine */ int hrffti_(integer *, real *), zvinit_(integer *,
-	     integer *, real *, doublereal *), zwinit_(integer *, integer *, 
-	    real *, doublereal *);
+    extern /* Subroutine */ int hrffti_(integer *, doublereal *), zvinit_(integer *,
+	     integer *, doublereal *, doublereal *), zwinit_(integer *, integer *, 
+	    doublereal *, doublereal *);
     static integer lwzvin;
 
     /* Parameter adjustments */

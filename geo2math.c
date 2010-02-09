@@ -176,7 +176,7 @@
 /*     sg(j,i) or ug(j,i),vg(j,i) are values at (phi(j),lat(ib)) if ig = 1 */
 /*     sm(i,j) or vm(i,j),wm(i,j) are values at (colat(i),phi(j)) */
 
-/* ... work is an unsaved real work space of length at least nlon*nlat */
+/* ... work is an unsaved doublereal work space of length at least nlon*nlat */
 /*     in the routine calling (1),(2),(3), or (4).  It is used to simplify */
 /*     a nonsquare array transposition in case it is required. */
 
@@ -225,7 +225,7 @@
 
 
 /* Subroutine */ int geo2maths_(integer *ig, integer *nlon, integer *nlat, 
-	real *sg, real *sm, real *work)
+	doublereal *sg, doublereal *sm, doublereal *work)
 {
     /* System generated locals */
     integer sg_dim1, sg_offset, sm_dim1, sm_offset, i__1, i__2;
@@ -278,7 +278,7 @@
 } /* geo2maths_ */
 
 /* Subroutine */ int math2geos_(integer *ig, integer *nlat, integer *nlon, 
-	real *sm, real *sg, real *work)
+	doublereal *sm, doublereal *sg, doublereal *work)
 {
     /* System generated locals */
     integer sm_dim1, sm_offset, sg_dim1, sg_offset, i__1, i__2;
@@ -331,7 +331,7 @@
 } /* math2geos_ */
 
 /* Subroutine */ int geo2mathv_(integer *ig, integer *nlon, integer *nlat, 
-	real *ug, real *vg, real *vm, real *wm, real *work)
+	doublereal *ug, doublereal *vg, doublereal *vm, doublereal *wm, doublereal *work)
 {
     /* System generated locals */
     integer ug_dim1, ug_offset, vg_dim1, vg_offset, vm_dim1, vm_offset, 
@@ -430,7 +430,7 @@
 } /* geo2mathv_ */
 
 /* Subroutine */ int math2geov_(integer *ig, integer *nlat, integer *nlon, 
-	real *vm, real *wm, real *ug, real *vg, real *work)
+	doublereal *vm, doublereal *wm, doublereal *ug, doublereal *vg, doublereal *work)
 {
     /* System generated locals */
     integer vm_dim1, vm_offset, wm_dim1, wm_offset, ug_dim1, ug_offset, 

@@ -15,7 +15,7 @@
 /* Common Block Declarations */
 
 struct {
-    real tfft;
+    doublereal tfft;
 } hrf_;
 
 #define hrf_1 hrf_
@@ -67,9 +67,9 @@ struct {
 
 /*     subroutine hrfftf(m,n,r,mdimr,wsave,work) */
 
-/*     subroutine hrfftf computes the fourier coefficients of m real */
+/*     subroutine hrfftf computes the fourier coefficients of m doublereal */
 /*     perodic sequences (fourier analysis); i.e. hrfftf computes the */
-/*     real fft of m sequences each with length n. the transform is */
+/*     doublereal fft of m sequences each with length n. the transform is */
 /*     defined below at output parameter r. */
 
 /*     input parameters */
@@ -80,7 +80,7 @@ struct {
 /*             efficient when n is a product of small primes. n may */
 /*             change as long as different work arrays are provided */
 
-/*     r       r(m,n) is a two dimensional real array that contains m */
+/*     r       r(m,n) is a two dimensional doublereal array that contains m */
 /*             sequences each with length n. */
 
 /*     mdimr   the first dimension of the r array as it appears */
@@ -97,7 +97,7 @@ struct {
 /*             transforms can be obtained faster than the first. */
 /*             the same wsave array can be used by hrfftf and hrfftb. */
 
-/*     work    a real work array with m*n locations. */
+/*     work    a doublereal work array with m*n locations. */
 
 
 /*     output parameters */
@@ -132,14 +132,14 @@ struct {
 /*     wsave   contains results which must not be destroyed between */
 /*             calls of hrfftf or hrfftb. */
 
-/*     work    a real work array with m*n locations that does */
+/*     work    a doublereal work array with m*n locations that does */
 /*             not have to be saved. */
 
 /* ********************************************************************** */
 
 /*     subroutine hrfftb(m,n,r,mdimr,wsave,work) */
 
-/*     subroutine hrfftb computes the real perodic sequence of m */
+/*     subroutine hrfftb computes the doublereal perodic sequence of m */
 /*     sequences from their fourier coefficients (fourier synthesis). */
 /*     the transform is defined below at output parameter r. */
 
@@ -151,7 +151,7 @@ struct {
 /*             efficient when n is a product of small primes. n may */
 /*             change as long as different work arrays are provided */
 
-/*     r       r(m,n) is a two dimensional real array that contains */
+/*     r       r(m,n) is a two dimensional doublereal array that contains */
 /*             the fourier coefficients of m sequences each with */
 /*             length n. */
 
@@ -168,7 +168,7 @@ struct {
 /*             transforms can be obtained faster than the first. */
 /*             the same wsave array can be used by hrfftf and hrfftb. */
 
-/*     work    a real work array with m*n locations. */
+/*     work    a doublereal work array with m*n locations. */
 
 
 /*     output parameters */
@@ -201,16 +201,16 @@ struct {
 /*     wsave   contains results which must not be destroyed between */
 /*             calls of hrfftb or hrfftf. */
 
-/*     work    a real work array with m*n locations that does not */
+/*     work    a doublereal work array with m*n locations that does not */
 /*             have to be saved */
 
 /* ********************************************************************** */
 
 
 
-/* Subroutine */ int hrffti_(integer *n, real *wsave)
+/* Subroutine */ int hrffti_(integer *n, doublereal *wsave)
 {
-    extern /* Subroutine */ int hrfti1_(integer *, real *, real *);
+    extern /* Subroutine */ int hrfti1_(integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wsave;
@@ -224,7 +224,7 @@ struct {
     return 0;
 } /* hrffti_ */
 
-/* Subroutine */ int hrfti1_(integer *n, real *wa, real *fac)
+/* Subroutine */ int hrfti1_(integer *n, doublereal *wa, doublereal *fac)
 {
     /* Initialized data */
 
@@ -238,7 +238,7 @@ struct {
 
     /* Local variables */
     static integer i__, j, k1, l1, l2, ib;
-    static real fi;
+    static doublereal fi;
     static integer ld, ii, nf, ip, nl, is, nq, nr;
     static doublereal arg;
     static integer ido, ipm;
@@ -281,7 +281,7 @@ L104:
     }
 L105:
     ++nf;
-    fac[nf + 2] = (real) ntry;
+    fac[nf + 2] = (doublereal) ntry;
     nl = nq;
     if (ntry != 2) {
 	goto L107;
@@ -300,10 +300,10 @@ L107:
     if (nl != 1) {
 	goto L104;
     }
-    fac[1] = (real) (*n);
-    fac[2] = (real) nf;
+    fac[1] = (doublereal) (*n);
+    fac[2] = (doublereal) nf;
     tpi = atan(1.) * 8.;
-    argh = tpi / (real) (*n);
+    argh = tpi / (doublereal) (*n);
     is = 0;
     nfm1 = nf - 1;
     l1 = 1;
@@ -321,7 +321,7 @@ L107:
 	for (j = 1; j <= i__2; ++j) {
 	    ld += l1;
 	    i__ = is;
-	    argld = (real) ld * argh;
+	    argld = (doublereal) ld * argh;
 	    fi = 0.f;
 	    i__3 = ido;
 	    for (ii = 3; ii <= i__3; ii += 2) {
@@ -341,15 +341,15 @@ L107:
     return 0;
 } /* hrfti1_ */
 
-/* Subroutine */ int hrfftf_(integer *m, integer *n, real *r__, integer *
-	mdimr, real *whrfft, real *work)
+/* Subroutine */ int hrfftf_(integer *m, integer *n, doublereal *r__, integer *
+	mdimr, doublereal *whrfft, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset;
 
     /* Local variables */
-    extern /* Subroutine */ int hrftf1_(integer *, integer *, real *, integer 
-	    *, real *, real *, real *);
+    extern /* Subroutine */ int hrftf1_(integer *, integer *, doublereal *, integer 
+	    *, doublereal *, doublereal *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -372,8 +372,8 @@ L107:
     return 0;
 } /* hrfftf_ */
 
-/* Subroutine */ int hrftf1_(integer *m, integer *n, real *c__, integer *
-	mdimc, real *ch, real *wa, real *fac)
+/* Subroutine */ int hrftf1_(integer *m, integer *n, doublereal *c__, integer *
+	mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
 {
     /* System generated locals */
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
@@ -381,15 +381,15 @@ L107:
     /* Local variables */
     static integer i__, j, k1, l1, l2, na, kh, nf, ip, iw, ix2, ix3, ix4, ido,
 	     idl1;
-    extern /* Subroutine */ int hradf2_(integer *, integer *, integer *, real 
-	    *, integer *, real *, integer *, real *), hradf3_(integer *, 
-	    integer *, integer *, real *, integer *, real *, integer *, real *
-	    , real *), hradf4_(integer *, integer *, integer *, real *, 
-	    integer *, real *, integer *, real *, real *, real *), hradf5_(
-	    integer *, integer *, integer *, real *, integer *, real *, 
-	    integer *, real *, real *, real *, real *), hradfg_(integer *, 
-	    integer *, integer *, integer *, integer *, real *, real *, real *
-	    , integer *, real *, real *, integer *, real *);
+    extern /* Subroutine */ int hradf2_(integer *, integer *, integer *, doublereal 
+	    *, integer *, doublereal *, integer *, doublereal *), hradf3_(integer *, 
+	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
+	    , doublereal *), hradf4_(integer *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *, doublereal *), hradf5_(
+	    integer *, integer *, integer *, doublereal *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *), hradfg_(integer *, 
+	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, doublereal *
+	    , integer *, doublereal *, doublereal *, integer *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -514,9 +514,9 @@ L110:
     return 0;
 } /* hrftf1_ */
 
-/* Subroutine */ int hradf4_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2, 
-	real *wa3)
+/* Subroutine */ int hradf4_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
+	doublereal *wa3)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_dim3, cc_offset, ch_dim1, ch_dim2, ch_offset,
@@ -527,7 +527,7 @@ L110:
 
     /* Local variables */
     static integer i__, k, m, ic, idp2;
-    static real hsqt2;
+    static doublereal hsqt2;
 
 
 /*     a multiple fft package for spherepack */
@@ -714,8 +714,8 @@ L107:
     return 0;
 } /* hradf4_ */
 
-/* Subroutine */ int hradf2_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1)
+/* Subroutine */ int hradf2_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_offset, cc_dim1, cc_dim2, cc_dim3, cc_offset,
@@ -816,8 +816,8 @@ L107:
     return 0;
 } /* hradf2_ */
 
-/* Subroutine */ int hradf3_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2)
+/* Subroutine */ int hradf3_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_offset, cc_dim1, cc_dim2, cc_dim3, cc_offset,
@@ -828,9 +828,9 @@ L107:
 
     /* Local variables */
     static integer i__, k, m, ic;
-    static real arg;
+    static doublereal arg;
     static integer idp2;
-    static real taui, taur;
+    static doublereal taui, taur;
     extern doublereal pimach_(void);
 
 
@@ -964,9 +964,9 @@ L107:
     return 0;
 } /* hradf3_ */
 
-/* Subroutine */ int hradf5_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2, 
-	real *wa3, real *wa4)
+/* Subroutine */ int hradf5_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
+	doublereal *wa3, doublereal *wa4)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_dim3, cc_offset, ch_dim1, ch_dim2, ch_offset,
@@ -977,7 +977,7 @@ L107:
 
     /* Local variables */
     static integer i__, k, m, ic;
-    static real arg, ti11, ti12, tr11, tr12;
+    static doublereal arg, ti11, ti12, tr11, tr12;
     static integer idp2;
     extern doublereal pimach_(void);
 
@@ -1298,8 +1298,8 @@ L107:
 } /* hradf5_ */
 
 /* Subroutine */ int hradfg_(integer *mp, integer *ido, integer *ip, integer *
-	l1, integer *idl1, real *cc, real *c1, real *c2, integer *mdimcc, 
-	real *ch, real *ch2, integer *mdimch, real *wa)
+	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, integer *mdimcc, 
+	doublereal *ch, doublereal *ch2, integer *mdimch, doublereal *wa)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_dim3, ch_offset, cc_dim1, cc_dim2, cc_dim3, 
@@ -1312,9 +1312,9 @@ L107:
 
     /* Local variables */
     static integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
-    static real dc2, ai1, ai2, ar1, ar2, ds2;
+    static doublereal dc2, ai1, ai2, ar1, ar2, ds2;
     static integer nbd;
-    static real dcp, arg, dsp, tpi, ar1h, ar2h;
+    static doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
     static integer idp2, ipp2, idij, ipph;
     extern doublereal pimach_(void);
 
@@ -1349,7 +1349,7 @@ L107:
 
     /* Function Body */
     tpi = pimach_() * 2.f;
-    arg = tpi / (real) (*ip);
+    arg = tpi / (doublereal) (*ip);
     dcp = cos(arg);
     dsp = sin(arg);
     ipph = (*ip + 1) / 2;
@@ -1747,21 +1747,21 @@ L141:
 doublereal pimach_(void)
 {
     /* System generated locals */
-    real ret_val;
+    doublereal ret_val;
 
     ret_val = 3.14159265358979f;
     return ret_val;
 } /* pimach_ */
 
-/* Subroutine */ int hrfftb_(integer *m, integer *n, real *r__, integer *
-	mdimr, real *whrfft, real *work)
+/* Subroutine */ int hrfftb_(integer *m, integer *n, doublereal *r__, integer *
+	mdimr, doublereal *whrfft, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset;
 
     /* Local variables */
-    extern /* Subroutine */ int hrftb1_(integer *, integer *, real *, integer 
-	    *, real *, real *, real *);
+    extern /* Subroutine */ int hrftb1_(integer *, integer *, doublereal *, integer 
+	    *, doublereal *, doublereal *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -1784,8 +1784,8 @@ doublereal pimach_(void)
     return 0;
 } /* hrfftb_ */
 
-/* Subroutine */ int hrftb1_(integer *m, integer *n, real *c__, integer *
-	mdimc, real *ch, real *wa, real *fac)
+/* Subroutine */ int hrftb1_(integer *m, integer *n, doublereal *c__, integer *
+	mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
 {
     /* System generated locals */
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
@@ -1793,15 +1793,15 @@ doublereal pimach_(void)
     /* Local variables */
     static integer i__, j, k1, l1, l2, na, nf, ip, iw, ix2, ix3, ix4, ido, 
 	    idl1;
-    extern /* Subroutine */ int hradb2_(integer *, integer *, integer *, real 
-	    *, integer *, real *, integer *, real *), hradb3_(integer *, 
-	    integer *, integer *, real *, integer *, real *, integer *, real *
-	    , real *), hradb4_(integer *, integer *, integer *, real *, 
-	    integer *, real *, integer *, real *, real *, real *), hradb5_(
-	    integer *, integer *, integer *, real *, integer *, real *, 
-	    integer *, real *, real *, real *, real *), hradbg_(integer *, 
-	    integer *, integer *, integer *, integer *, real *, real *, real *
-	    , integer *, real *, real *, integer *, real *);
+    extern /* Subroutine */ int hradb2_(integer *, integer *, integer *, doublereal 
+	    *, integer *, doublereal *, integer *, doublereal *), hradb3_(integer *, 
+	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
+	    , doublereal *), hradb4_(integer *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *, doublereal *), hradb5_(
+	    integer *, integer *, integer *, doublereal *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *), hradbg_(integer *, 
+	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, doublereal *
+	    , integer *, doublereal *, doublereal *, integer *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -1932,8 +1932,8 @@ L115:
 } /* hrftb1_ */
 
 /* Subroutine */ int hradbg_(integer *mp, integer *ido, integer *ip, integer *
-	l1, integer *idl1, real *cc, real *c1, real *c2, integer *mdimcc, 
-	real *ch, real *ch2, integer *mdimch, real *wa)
+	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, integer *mdimcc, 
+	doublereal *ch, doublereal *ch2, integer *mdimch, doublereal *wa)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_dim3, ch_offset, cc_dim1, cc_dim2, cc_dim3, 
@@ -1946,9 +1946,9 @@ L115:
 
     /* Local variables */
     static integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
-    static real dc2, ai1, ai2, ar1, ar2, ds2;
+    static doublereal dc2, ai1, ai2, ar1, ar2, ds2;
     static integer nbd;
-    static real dcp, arg, dsp, tpi, ar1h, ar2h;
+    static doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
     static integer idp2, ipp2, idij, ipph;
     extern doublereal pimach_(void);
 
@@ -1983,7 +1983,7 @@ L115:
 
     /* Function Body */
     tpi = pimach_() * 2.f;
-    arg = tpi / (real) (*ip);
+    arg = tpi / (doublereal) (*ip);
     dcp = cos(arg);
     dsp = sin(arg);
     idp2 = *ido + 2;
@@ -2370,9 +2370,9 @@ L143:
     return 0;
 } /* hradbg_ */
 
-/* Subroutine */ int hradb4_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2, 
-	real *wa3)
+/* Subroutine */ int hradb4_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
+	doublereal *wa3)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2383,7 +2383,7 @@ L143:
 
     /* Local variables */
     static integer i__, k, m, ic, idp2;
-    static real sqrt2;
+    static doublereal sqrt2;
 
 
 /*     a multiple fft package for spherepack */
@@ -2562,8 +2562,8 @@ L107:
     return 0;
 } /* hradb4_ */
 
-/* Subroutine */ int hradb2_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1)
+/* Subroutine */ int hradb2_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2664,8 +2664,8 @@ L107:
     return 0;
 } /* hradb2_ */
 
-/* Subroutine */ int hradb3_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2)
+/* Subroutine */ int hradb3_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2676,9 +2676,9 @@ L107:
 
     /* Local variables */
     static integer i__, k, m, ic;
-    static real arg;
+    static doublereal arg;
     static integer idp2;
-    static real taui, taur;
+    static doublereal taui, taur;
     extern doublereal pimach_(void);
 
 
@@ -2800,9 +2800,9 @@ L107:
     return 0;
 } /* hradb3_ */
 
-/* Subroutine */ int hradb5_(integer *mp, integer *ido, integer *l1, real *cc,
-	 integer *mdimcc, real *ch, integer *mdimch, real *wa1, real *wa2, 
-	real *wa3, real *wa4)
+/* Subroutine */ int hradb5_(integer *mp, integer *ido, integer *l1, doublereal *cc,
+	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
+	doublereal *wa3, doublereal *wa4)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2813,7 +2813,7 @@ L107:
 
     /* Local variables */
     static integer i__, k, m, ic;
-    static real arg, ti11, ti12, tr11, tr12;
+    static doublereal arg, ti11, ti12, tr11, tr12;
     static integer idp2;
     extern doublereal pimach_(void);
 

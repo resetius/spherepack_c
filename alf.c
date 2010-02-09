@@ -14,7 +14,7 @@
 
 /* Table of constant values */
 
-static real c_b10 = 2.f;
+static doublereal c_b10 = 2.f;
 static integer c__0 = 0;
 static integer c__1 = 1;
 
@@ -39,7 +39,7 @@ static integer c__1 = 1;
 
 /* subroutine alfk (n,m,cp) */
 
-/* dimension of           real cp(n/2 + 1) */
+/* dimension of           doublereal cp(n/2 + 1) */
 /* arguments */
 
 /* purpose                routine alfk computes single precision fourier */
@@ -118,23 +118,23 @@ static integer c__1 = 1;
 /*                        places was obtained for n=10 and to 13 */
 /*                        places for n=100. */
 
-/* Subroutine */ int alfk_(integer *n, integer *m, real *cp)
+/* Subroutine */ int alfk_(integer *n, integer *m, doublereal *cp)
 {
     /* System generated locals */
     integer i__1;
 
     /* Builtin functions */
-    double sqrt(doublereal), pow_ri(real *, integer *);
+    double sqrt(doublereal), pow_di(doublereal *, integer *);
 
     /* Local variables */
     static integer i__, l;
-    static real a1, b1, c1, t1, t2;
+    static doublereal a1, b1, c1, t1, t2;
     static integer ma;
-    static real fk, cp2, pm1;
+    static doublereal fk, cp2, pm1;
     static integer nex;
-    static real fden, fnmh, fnum, fnnp1;
+    static doublereal fden, fnmh, fnum, fnnp1;
     static integer nmms2;
-    static real fnmsq;
+    static doublereal fnmsq;
 
 
     /* Parameter adjustments */
@@ -173,14 +173,14 @@ L5:
 	goto L10;
     }
     nmms2 = (*n - ma) / 2;
-    fnum = (real) (*n + ma + 1);
-    fnmh = (real) (*n - ma + 1);
+    fnum = (doublereal) (*n + ma + 1);
+    fnmh = (doublereal) (*n - ma + 1);
     pm1 = 1.f;
     goto L15;
 L10:
     nmms2 = (*n - ma - 1) / 2;
-    fnum = (real) (*n + ma + 2);
-    fnmh = (real) (*n - ma + 2);
+    fnum = (doublereal) (*n + ma + 2);
+    fnmh = (doublereal) (*n - ma + 2);
     pm1 = -1.f;
 L15:
     t1 = 9.5367431640625e-7f;
@@ -202,7 +202,7 @@ L15:
     }
 L20:
     i__1 = *n - 1 - nex;
-    t1 /= pow_ri(&c_b10, &i__1);
+    t1 /= pow_di(&c_b10, &i__1);
     if (ma / 2 % 2 != 0) {
 	t1 = -t1;
     }
@@ -218,7 +218,7 @@ L20:
     }
 L26:
     cp2 = t1 * sqrt((*n + .5f) * t2);
-    fnnp1 = (real) (*n * (*n + 1));
+    fnnp1 = (doublereal) (*n * (*n + 1));
     fnmsq = fnnp1 - ma * 2.f * ma;
     l = (*n + 1) / 2;
     if (*n % 2 == 0 && ma % 2 == 0) {
@@ -235,7 +235,7 @@ L29:
     if (l <= 1) {
 	return 0;
     }
-    fk = (real) (*n);
+    fk = (doublereal) (*n);
     a1 = (fk - 2.f) * (fk - 1.f) - fnnp1;
     b1 = (fk * fk - fnmsq) * 2.f;
     cp[l - 1] = b1 * cp[l] / a1;
@@ -344,13 +344,13 @@ L30:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfim_(integer *init, real *theta, integer *l, integer *n,
-	 integer *nm, real *pb, integer *id, real *wlfim)
+/* Subroutine */ int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
+	 integer *nm, doublereal *pb, integer *id, doublereal *wlfim)
 {
     static integer iw1, iw2, iw3, lnx;
-    extern /* Subroutine */ int lfim1_(integer *, real *, integer *, integer *
-	    , integer *, integer *, real *, real *, real *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int lfim1_(integer *, doublereal *, integer *, integer *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     total length of wlfim is 4*l*(nm+1) */
@@ -369,9 +369,9 @@ L30:
     return 0;
 } /* lfim_ */
 
-/* Subroutine */ int lfim1_(integer *init, real *theta, integer *l, integer *
-	n, integer *nm, integer *id, real *p3, real *phz, real *ph1, real *p1,
-	 real *p2, real *cp)
+/* Subroutine */ int lfim1_(integer *init, doublereal *theta, integer *l, integer *
+	n, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
+	 doublereal *p2, doublereal *cp)
 {
     /* System generated locals */
     integer p1_dim1, p1_offset, p2_dim1, p2_offset, p3_dim1, p3_offset, 
@@ -382,15 +382,15 @@ L30:
 
     /* Local variables */
     static integer i__, m;
-    static real cc, dd, ee, cn, fn, fm;
+    static doublereal cc, dd, ee, cn, fn, fm;
     static integer nh;
-    static real tn;
+    static doublereal tn;
     static integer nm1, mp1, np1, nmp1;
-    extern /* Subroutine */ int alfk_(integer *, integer *, real *);
-    static real fnmm, fnpm;
-    extern /* Subroutine */ int lfpt_(integer *, integer *, real *, real *, 
-	    real *);
-    static real temp, sq1s6, sq5s6, ssqrt2;
+    extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
+    static doublereal fnmm, fnpm;
+    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
+    static doublereal temp, sq1s6, sq5s6, ssqrt2;
 
     /* Parameter adjustments */
     --theta;
@@ -488,7 +488,7 @@ L35:
 L60:
     nm1 = *n - 1;
     np1 = *n + 1;
-    fn = (real) (*n);
+    fn = (doublereal) (*n);
     tn = fn + fn;
     cn = (tn + 1.f) / (tn - 3.f);
     i__1 = *l;
@@ -503,7 +503,7 @@ L60:
     i__1 = nm1;
     for (mp1 = 3; mp1 <= i__1; ++mp1) {
 	m = mp1 - 1;
-	fm = (real) m;
+	fm = (doublereal) m;
 	fnpm = fn + fm;
 	fnmm = fn - fm;
 	temp = fnpm * (fnpm - 1.f);
@@ -642,13 +642,13 @@ L71:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfin_(integer *init, real *theta, integer *l, integer *m,
-	 integer *nm, real *pb, integer *id, real *wlfin)
+/* Subroutine */ int lfin_(integer *init, doublereal *theta, integer *l, integer *m,
+	 integer *nm, doublereal *pb, integer *id, doublereal *wlfin)
 {
     static integer iw1, iw2, iw3, lnx;
-    extern /* Subroutine */ int lfin1_(integer *, real *, integer *, integer *
-	    , integer *, integer *, real *, real *, real *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int lfin1_(integer *, doublereal *, integer *, integer *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     total length of wlfin is 4*l*(nm+1) */
@@ -667,9 +667,9 @@ L71:
     return 0;
 } /* lfin_ */
 
-/* Subroutine */ int lfin1_(integer *init, real *theta, integer *l, integer *
-	m, integer *nm, integer *id, real *p3, real *phz, real *ph1, real *p1,
-	 real *p2, real *cp)
+/* Subroutine */ int lfin1_(integer *init, doublereal *theta, integer *l, integer *
+	m, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
+	 doublereal *p2, doublereal *cp)
 {
     /* System generated locals */
     integer p1_dim1, p1_offset, p2_dim1, p2_offset, p3_dim1, p3_offset, 
@@ -680,15 +680,15 @@ L71:
 
     /* Local variables */
     static integer i__, n;
-    static real cc, dd, ee, cn, fm, fn;
+    static doublereal cc, dd, ee, cn, fm, fn;
     static integer nh;
-    static real tm, tn;
+    static doublereal tm, tn;
     static integer mp1, np1, mp3, nmp1;
-    extern /* Subroutine */ int alfk_(integer *, integer *, real *);
-    static real fnmm, fnpm;
-    extern /* Subroutine */ int lfpt_(integer *, integer *, real *, real *, 
-	    real *);
-    static real temp, ssqrt2;
+    extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
+    static doublereal fnmm, fnpm;
+    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
+    static doublereal temp, ssqrt2;
 
     /* Parameter adjustments */
     --theta;
@@ -742,7 +742,7 @@ L71:
     return 0;
 L5:
     mp1 = *m + 1;
-    fm = (real) (*m);
+    fm = (doublereal) (*m);
     tm = fm + fm;
     if ((i__1 = *m - 1) < 0) {
 	goto L25;
@@ -802,7 +802,7 @@ L35:
     i__1 = nmp1;
     for (np1 = mp3; np1 <= i__1; ++np1) {
 	n = np1 - 1;
-	fn = (real) n;
+	fn = (doublereal) n;
 	tn = fn + fn;
 	cn = (tn + 1.f) / (tn - 3.f);
 	fnpm = fn + fm;
@@ -900,8 +900,8 @@ L80:
 /* timing                 time per call to routine lfpt is dependent on */
 /*                        the input parameter n. */
 
-/* Subroutine */ int lfpt_(integer *n, integer *m, real *theta, real *cp, 
-	real *pb)
+/* Subroutine */ int lfpt_(integer *n, integer *m, doublereal *theta, doublereal *cp, 
+	doublereal *pb)
 {
     /* System generated locals */
     integer i__1;
@@ -911,11 +911,11 @@ L80:
 
     /* Local variables */
     static integer k, ma;
-    static real ct, st;
+    static doublereal ct, st;
     static integer kp1, np1;
-    static real cdt;
+    static doublereal cdt;
     static integer kdo;
-    static real cth, sdt, sum;
+    static doublereal cth, sdt, sum;
     static integer mmod, nmod;
 
 

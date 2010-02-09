@@ -14,8 +14,8 @@
 
 /* Table of constant values */
 
-static real c_b2 = 1.f;
-static real c_b8 = 0.f;
+static doublereal c_b2 = 1.f;
+static doublereal c_b8 = 0.f;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -32,25 +32,25 @@ static real c_b8 = 0.f;
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
 
 
-/* Subroutine */ int ihgeod_(integer *m, integer *idp, integer *jdp, real *x, 
-	real *y, real *z__)
+/* Subroutine */ int ihgeod_(integer *m, integer *idp, integer *jdp, doublereal *x, 
+	doublereal *y, doublereal *z__)
 {
     /* System generated locals */
     integer x_dim1, x_dim2, x_offset, y_dim1, y_dim2, y_offset, z_dim1, 
 	    z_dim2, z_offset, i__1, i__2;
-    real r__1;
+    doublereal r__1;
 
     /* Builtin functions */
     double atan(doublereal), cos(doublereal), acos(doublereal);
 
     /* Local variables */
     static integer i__, j, k;
-    static real x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, 
+    static doublereal x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, 
 	    x6, y6, z6, pi, xs, ys, zs, rad, phi, dxi, dyi, dzi, dxj, dyj, 
 	    dzj, beta, dphi;
-    extern /* Subroutine */ int stoc_(real *, real *, real *, real *, real *, 
-	    real *), ctos_(real *, real *, real *, real *, real *, real *);
-    static real hdphi, theta, tdphi, theta1, theta2;
+    extern /* Subroutine */ int stoc_(doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *), ctos_(doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
+    static doublereal hdphi, theta, tdphi, theta1, theta2;
 
 
 /*     m         is the number of points on the edge of a */
@@ -206,14 +206,14 @@ static real c_b8 = 0.f;
     return 0;
 } /* ihgeod_ */
 
-/* Subroutine */ int ctos_(real *x, real *y, real *z__, real *r__, real *
-	theta, real *phi)
+/* Subroutine */ int ctos_(doublereal *x, doublereal *y, doublereal *z__, doublereal *r__, doublereal *
+	theta, doublereal *phi)
 {
     /* Builtin functions */
     double atan(doublereal), sqrt(doublereal), atan2(doublereal, doublereal);
 
     /* Local variables */
-    static real r1;
+    static doublereal r1;
 
     r1 = *x * *x + *y * *y;
     if (r1 != 0.f) {
@@ -233,14 +233,14 @@ L10:
     return 0;
 } /* ctos_ */
 
-/* Subroutine */ int stoc_(real *r__, real *theta, real *phi, real *x, real *
-	y, real *z__)
+/* Subroutine */ int stoc_(doublereal *r__, doublereal *theta, doublereal *phi, doublereal *x, doublereal *
+	y, doublereal *z__)
 {
     /* Builtin functions */
     double sin(doublereal), cos(doublereal);
 
     /* Local variables */
-    static real st;
+    static doublereal st;
 
     st = sin(*theta);
     *x = *r__ * st * cos(*phi);

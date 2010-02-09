@@ -223,8 +223,8 @@
 
 
 /* Subroutine */ int dives_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *dv, integer *idv, integer *jdv, real *br, real *bi,
-	 integer *mdb, integer *ndb, real *wshses, integer *lshses, real *
+	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *br, doublereal *bi,
+	 integer *mdb, integer *ndb, doublereal *wshses, integer *lshses, doublereal *
 	work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
@@ -234,9 +234,9 @@
     /* Local variables */
     static integer ia, ib, mn, is, ls, mab, nln, iwk, lwk, imid, mmax, lpimn;
     extern /* Subroutine */ int dives1_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, integer *, real *, real *, integer *
-	    , integer *, real *, real *, integer *, real *, real *, integer *,
-	     real *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
+	    , integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, integer *,
+	     doublereal *, integer *, integer *);
 
 
 /*     check input parameters */
@@ -340,9 +340,9 @@
 } /* dives_ */
 
 /* Subroutine */ int dives1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *dv, integer *idv, integer *jdv, real *br, real *bi,
-	 integer *mdb, integer *ndb, real *a, real *b, integer *mab, real *
-	sqnn, real *wshses, integer *lshses, real *wk, integer *lwk, integer *
+	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *br, doublereal *bi,
+	 integer *mdb, integer *ndb, doublereal *a, doublereal *b, integer *mab, doublereal *
+	sqnn, doublereal *wshses, integer *lshses, doublereal *wk, integer *lwk, integer *
 	ierror)
 {
     /* System generated locals */
@@ -355,11 +355,11 @@
 
     /* Local variables */
     static integer k, m, n;
-    static real fn;
+    static doublereal fn;
     static integer mmax;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, integer *, real *, real *, integer *
-	    , integer *, real *, integer *, real *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
+	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */
@@ -392,7 +392,7 @@
     /* Function Body */
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
-	fn = (real) (n - 1);
+	fn = (doublereal) (n - 1);
 	sqnn[n] = sqrt(fn * (fn + 1.f));
 /* L1: */
     }

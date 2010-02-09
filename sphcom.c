@@ -418,12 +418,12 @@ L14:
 } /* dnlftd_ */
 
 /* Subroutine */ int legin_(integer *mode, integer *l, integer *nlat, integer 
-	*m, real *w, real *pmn, integer *km)
+	*m, doublereal *w, doublereal *pmn, integer *km)
 {
     static integer i1, i2, i3, i4, i5, late;
     extern /* Subroutine */ int legin1_(integer *, integer *, integer *, 
-	    integer *, integer *, real *, real *, real *, real *, real *, 
-	    real *, integer *);
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, integer *);
 
 /*     this subroutine computes legendre polynomials for n=m,...,l-1 */
 /*     and  i=1,...,late (late=((nlat+mod(nlat,2))/2)gaussian grid */
@@ -451,8 +451,8 @@ L14:
 } /* legin_ */
 
 /* Subroutine */ int legin1_(integer *mode, integer *l, integer *nlat, 
-	integer *late, integer *m, real *p0n, real *p1n, real *abel, real *
-	bbel, real *cbel, real *pmn, integer *km)
+	integer *late, integer *m, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
+	bbel, doublereal *cbel, doublereal *pmn, integer *km)
 {
     /* Initialized data */
 
@@ -553,15 +553,15 @@ L14:
 } /* legin1_ */
 
 /* Subroutine */ int zfin_(integer *isym, integer *nlat, integer *nlon, 
-	integer *m, real *z__, integer *i3, real *wzfin)
+	integer *m, doublereal *z__, integer *i3, doublereal *wzfin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int zfin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int zfin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wzfin;
@@ -586,9 +586,9 @@ L14:
     return 0;
 } /* zfin_ */
 
-/* Subroutine */ int zfin1_(integer *isym, integer *nlat, integer *m, real *
-	z__, integer *imid, integer *i3, real *zz, real *z1, real *a, real *b,
-	 real *c__)
+/* Subroutine */ int zfin1_(integer *isym, integer *nlat, integer *m, doublereal *
+	z__, integer *imid, integer *i3, doublereal *zz, doublereal *z1, doublereal *a, doublereal *b,
+	 doublereal *c__)
 {
     /* System generated locals */
     integer z_dim1, z_dim2, z_offset, zz_dim1, zz_offset, z1_dim1, z1_offset, 
@@ -705,12 +705,12 @@ L80:
     return 0;
 } /* zfin1_ */
 
-/* Subroutine */ int zfinit_(integer *nlat, integer *nlon, real *wzfin, 
+/* Subroutine */ int zfinit_(integer *nlat, integer *nlon, doublereal *wzfin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int zfini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int zfini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -729,7 +729,7 @@ L80:
 } /* zfinit_ */
 
 /* Subroutine */ int zfini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *z__, real *abc, doublereal *cz, doublereal *work)
+	doublereal *z__, doublereal *abc, doublereal *cz, doublereal *work)
 {
     /* System generated locals */
     integer z_dim1, z_dim2, z_offset, i__1, i__2;
@@ -741,7 +741,7 @@ L80:
     static integer i__, m, n;
     static doublereal dt, pi, th, zh;
     static integer mp1, np1;
-    extern /* Subroutine */ int rabcp_(integer *, integer *, real *), dnzfk_(
+    extern /* Subroutine */ int rabcp_(integer *, integer *, doublereal *), dnzfk_(
 	    integer *, integer *, integer *, doublereal *, doublereal *), 
 	    dnzft_(integer *, integer *, integer *, doublereal *, doublereal *
 	    , doublereal *);
@@ -814,7 +814,7 @@ L80:
 
     /* Function Body */
     lc = (*nlat + 1) / 2;
-    sc1 = 2. / (real) (*nlat - 1);
+    sc1 = 2. / (doublereal) (*nlat - 1);
     dnlfk_(m, n, &work[1]);
     nmod = *n % 2;
     mmod = *m % 2;
@@ -1146,15 +1146,15 @@ L110:
 } /* dnzft_ */
 
 /* Subroutine */ int alin_(integer *isym, integer *nlat, integer *nlon, 
-	integer *m, real *p, integer *i3, real *walin)
+	integer *m, doublereal *p, integer *i3, doublereal *walin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int alin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int alin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --walin;
@@ -1179,9 +1179,9 @@ L110:
     return 0;
 } /* alin_ */
 
-/* Subroutine */ int alin1_(integer *isym, integer *nlat, integer *m, real *p,
-	 integer *imid, integer *i3, real *pz, real *p1, real *a, real *b, 
-	real *c__)
+/* Subroutine */ int alin1_(integer *isym, integer *nlat, integer *m, doublereal *p,
+	 integer *imid, integer *i3, doublereal *pz, doublereal *p1, doublereal *a, doublereal *b, 
+	doublereal *c__)
 {
     /* System generated locals */
     integer p_dim1, p_dim2, p_offset, pz_dim1, pz_offset, p1_dim1, p1_offset, 
@@ -1296,12 +1296,12 @@ L80:
     return 0;
 } /* alin1_ */
 
-/* Subroutine */ int alinit_(integer *nlat, integer *nlon, real *walin, 
+/* Subroutine */ int alinit_(integer *nlat, integer *nlon, doublereal *walin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int alini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *);
+    extern /* Subroutine */ int alini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -1319,7 +1319,7 @@ L80:
 } /* alinit_ */
 
 /* Subroutine */ int alini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *p, real *abc, doublereal *cp)
+	doublereal *p, doublereal *abc, doublereal *cp)
 {
     /* System generated locals */
     integer p_dim1, p_dim2, p_offset, i__1, i__2;
@@ -1331,7 +1331,7 @@ L80:
     static integer i__, m, n;
     static doublereal dt, pi, ph, th;
     static integer mp1, np1;
-    extern /* Subroutine */ int rabcp_(integer *, integer *, real *), dnlfk_(
+    extern /* Subroutine */ int rabcp_(integer *, integer *, doublereal *), dnlfk_(
 	    integer *, integer *, doublereal *), dnlft_(integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *);
 
@@ -1365,15 +1365,15 @@ L80:
     return 0;
 } /* alini1_ */
 
-/* Subroutine */ int rabcp_(integer *nlat, integer *nlon, real *abc)
+/* Subroutine */ int rabcp_(integer *nlat, integer *nlon, doublereal *abc)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, labc, mmax;
-    extern /* Subroutine */ int rabcp1_(integer *, integer *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int rabcp1_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     subroutine rabcp computes the coefficients in the recurrence */
@@ -1394,8 +1394,8 @@ L80:
     return 0;
 } /* rabcp_ */
 
-/* Subroutine */ int rabcp1_(integer *nlat, integer *nlon, real *a, real *b, 
-	real *c__)
+/* Subroutine */ int rabcp1_(integer *nlat, integer *nlon, doublereal *a, doublereal *b, 
+	doublereal *c__)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -1405,13 +1405,13 @@ L80:
 
     /* Local variables */
     static integer m, n;
-    static real cn, fm, fn;
+    static doublereal cn, fm, fn;
     static integer ns;
-    static real tm, tn;
+    static doublereal tm, tn;
     static integer mp1, np1, mp3;
-    static real fnmm, fnpm;
+    static doublereal fnmm, fnpm;
     static integer mmax;
-    static real temp;
+    static doublereal temp;
 
 
 /*     coefficients a, b, and c for computing pbar(m,n,theta) are */
@@ -1430,7 +1430,7 @@ L80:
     for (mp1 = 3; mp1 <= i__1; ++mp1) {
 	m = mp1 - 1;
 	ns = (m - 2) * (*nlat + *nlat - m - 1) / 2 + 1;
-	fm = (real) m;
+	fm = (doublereal) m;
 	tm = fm + fm;
 	temp = tm * (tm - 1.f);
 	a[ns] = sqrt((tm + 1.f) * (tm - 2.f) / temp);
@@ -1450,7 +1450,7 @@ L80:
 	for (np1 = mp3; np1 <= i__2; ++np1) {
 	    n = np1 - 1;
 	    ++ns;
-	    fn = (real) n;
+	    fn = (doublereal) n;
 	    tn = fn + fn;
 	    cn = (tn + 1.f) / (tn - 3.f);
 	    fnpm = fn + fm;
@@ -1467,8 +1467,8 @@ L215:
     return 0;
 } /* rabcp1_ */
 
-/* Subroutine */ int sea1_(integer *nlat, integer *nlon, integer *imid, real *
-	z__, integer *idz, real *zin, real *wzfin, doublereal *dwork)
+/* Subroutine */ int sea1_(integer *nlat, integer *nlon, integer *imid, doublereal *
+	z__, integer *idz, doublereal *zin, doublereal *wzfin, doublereal *dwork)
 {
     /* System generated locals */
     integer z_dim1, z_offset, zin_dim1, zin_dim2, zin_offset, i__1, i__2, 
@@ -1477,8 +1477,8 @@ L215:
     /* Local variables */
     static integer i__, m, i3, mn, mp1, np1, mmax;
     extern /* Subroutine */ int zfin_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, real *), zfinit_(integer *, integer 
-	    *, real *, doublereal *);
+	    integer *, doublereal *, integer *, doublereal *), zfinit_(integer *, integer 
+	    *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     zin_dim1 = *imid;
@@ -1514,8 +1514,8 @@ L215:
     return 0;
 } /* sea1_ */
 
-/* Subroutine */ int ses1_(integer *nlat, integer *nlon, integer *imid, real *
-	p, real *pin, real *walin, doublereal *dwork)
+/* Subroutine */ int ses1_(integer *nlat, integer *nlon, integer *imid, doublereal *
+	p, doublereal *pin, doublereal *walin, doublereal *dwork)
 {
     /* System generated locals */
     integer p_dim1, p_offset, pin_dim1, pin_dim2, pin_offset, i__1, i__2, 
@@ -1524,9 +1524,9 @@ L215:
     /* Local variables */
     static integer i__, m, i3, mn, mp1, np1;
     extern /* Subroutine */ int alin_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, real *);
+	    integer *, doublereal *, integer *, doublereal *);
     static integer mmax;
-    extern /* Subroutine */ int alinit_(integer *, integer *, real *, 
+    extern /* Subroutine */ int alinit_(integer *, integer *, doublereal *, 
 	    doublereal *);
 
     /* Parameter adjustments */
@@ -1563,12 +1563,12 @@ L215:
     return 0;
 } /* ses1_ */
 
-/* Subroutine */ int zvinit_(integer *nlat, integer *nlon, real *wzvin, 
+/* Subroutine */ int zvinit_(integer *nlat, integer *nlon, doublereal *wzvin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int zvini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int zvini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -1588,7 +1588,7 @@ L215:
 } /* zvinit_ */
 
 /* Subroutine */ int zvini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *zv, real *abc, doublereal *czv, doublereal *work)
+	doublereal *zv, doublereal *abc, doublereal *czv, doublereal *work)
 {
     /* System generated locals */
     integer zv_dim1, zv_dim2, zv_offset, i__1, i__2, i__3;
@@ -1604,7 +1604,7 @@ L215:
     extern /* Subroutine */ int dzvk_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *), dzvt_(integer *, integer *, integer *
 	    , doublereal *, doublereal *, doublereal *), rabcv_(integer *, 
-	    integer *, real *);
+	    integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -1648,12 +1648,12 @@ L215:
     return 0;
 } /* zvini1_ */
 
-/* Subroutine */ int zwinit_(integer *nlat, integer *nlon, real *wzwin, 
+/* Subroutine */ int zwinit_(integer *nlat, integer *nlon, doublereal *wzwin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int zwini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int zwini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -1672,7 +1672,7 @@ L215:
 } /* zwinit_ */
 
 /* Subroutine */ int zwini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *zw, real *abc, doublereal *czw, doublereal *work)
+	doublereal *zw, doublereal *abc, doublereal *czw, doublereal *work)
 {
     /* System generated locals */
     integer zw_dim1, zw_dim2, zw_offset, i__1, i__2, i__3;
@@ -1688,7 +1688,7 @@ L215:
     extern /* Subroutine */ int dzwk_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *), dzwt_(integer *, integer *, integer *
 	    , doublereal *, doublereal *, doublereal *), rabcw_(integer *, 
-	    integer *, real *);
+	    integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -1736,15 +1736,15 @@ L215:
 } /* zwini1_ */
 
 /* Subroutine */ int zvin_(integer *ityp, integer *nlat, integer *nlon, 
-	integer *m, real *zv, integer *i3, real *wzvin)
+	integer *m, doublereal *zv, integer *i3, doublereal *wzvin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int zvin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int zvin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wzvin;
@@ -1771,9 +1771,9 @@ L215:
     return 0;
 } /* zvin_ */
 
-/* Subroutine */ int zvin1_(integer *ityp, integer *nlat, integer *m, real *
-	zv, integer *imid, integer *i3, real *zvz, real *zv1, real *a, real *
-	b, real *c__)
+/* Subroutine */ int zvin1_(integer *ityp, integer *nlat, integer *m, doublereal *
+	zv, integer *imid, integer *i3, doublereal *zvz, doublereal *zv1, doublereal *a, doublereal *
+	b, doublereal *c__)
 {
     /* System generated locals */
     integer zv_dim1, zv_dim2, zv_offset, zvz_dim1, zvz_offset, zv1_dim1, 
@@ -1891,15 +1891,15 @@ L80:
 } /* zvin1_ */
 
 /* Subroutine */ int zwin_(integer *ityp, integer *nlat, integer *nlon, 
-	integer *m, real *zw, integer *i3, real *wzwin)
+	integer *m, doublereal *zw, integer *i3, doublereal *wzwin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int zwin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int zwin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wzwin;
@@ -1926,9 +1926,9 @@ L80:
     return 0;
 } /* zwin_ */
 
-/* Subroutine */ int zwin1_(integer *ityp, integer *nlat, integer *m, real *
-	zw, integer *imid, integer *i3, real *zw1, real *zw2, real *a, real *
-	b, real *c__)
+/* Subroutine */ int zwin1_(integer *ityp, integer *nlat, integer *m, doublereal *
+	zw, integer *imid, integer *i3, doublereal *zw1, doublereal *zw2, doublereal *a, doublereal *
+	b, doublereal *c__)
 {
     /* System generated locals */
     integer zw_dim1, zw_dim2, zw_offset, zw1_dim1, zw1_offset, zw2_dim1, 
@@ -2045,12 +2045,12 @@ L80:
     return 0;
 } /* zwin1_ */
 
-/* Subroutine */ int vbinit_(integer *nlat, integer *nlon, real *wvbin, 
+/* Subroutine */ int vbinit_(integer *nlat, integer *nlon, doublereal *wvbin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int vbini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int vbini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -2069,7 +2069,7 @@ L80:
 } /* vbinit_ */
 
 /* Subroutine */ int vbini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *vb, real *abc, doublereal *cvb, doublereal *work)
+	doublereal *vb, doublereal *abc, doublereal *cvb, doublereal *work)
 {
     /* System generated locals */
     integer vb_dim1, vb_dim2, vb_offset, i__1, i__2, i__3;
@@ -2085,7 +2085,7 @@ L80:
     static integer mdo;
     extern /* Subroutine */ int dvbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvbt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcv_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcv_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -2128,12 +2128,12 @@ L80:
     return 0;
 } /* vbini1_ */
 
-/* Subroutine */ int wbinit_(integer *nlat, integer *nlon, real *wwbin, 
+/* Subroutine */ int wbinit_(integer *nlat, integer *nlon, doublereal *wwbin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int wbini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int wbini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -2152,7 +2152,7 @@ L80:
 } /* wbinit_ */
 
 /* Subroutine */ int wbini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *wb, real *abc, doublereal *cwb, doublereal *work)
+	doublereal *wb, doublereal *abc, doublereal *cwb, doublereal *work)
 {
     /* System generated locals */
     integer wb_dim1, wb_dim2, wb_offset, i__1, i__2, i__3;
@@ -2167,7 +2167,7 @@ L80:
     static doublereal wbh;
     extern /* Subroutine */ int dwbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwbt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcw_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcw_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -2214,15 +2214,15 @@ L80:
 } /* wbini1_ */
 
 /* Subroutine */ int vbin_(integer *ityp, integer *nlat, integer *nlon, 
-	integer *m, real *vb, integer *i3, real *wvbin)
+	integer *m, doublereal *vb, integer *i3, doublereal *wvbin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int vbin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int vbin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wvbin;
@@ -2249,9 +2249,9 @@ L80:
     return 0;
 } /* vbin_ */
 
-/* Subroutine */ int vbin1_(integer *ityp, integer *nlat, integer *m, real *
-	vb, integer *imid, integer *i3, real *vbz, real *vb1, real *a, real *
-	b, real *c__)
+/* Subroutine */ int vbin1_(integer *ityp, integer *nlat, integer *m, doublereal *
+	vb, integer *imid, integer *i3, doublereal *vbz, doublereal *vb1, doublereal *a, doublereal *
+	b, doublereal *c__)
 {
     /* System generated locals */
     integer vb_dim1, vb_dim2, vb_offset, vbz_dim1, vbz_offset, vb1_dim1, 
@@ -2369,15 +2369,15 @@ L80:
 } /* vbin1_ */
 
 /* Subroutine */ int wbin_(integer *ityp, integer *nlat, integer *nlon, 
-	integer *m, real *wb, integer *i3, real *wwbin)
+	integer *m, doublereal *wb, integer *i3, doublereal *wwbin)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
-    extern /* Subroutine */ int wbin1_(integer *, integer *, integer *, real *
-	    , integer *, integer *, real *, real *, real *, real *, real *);
+    extern /* Subroutine */ int wbin1_(integer *, integer *, integer *, doublereal *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --wwbin;
@@ -2404,9 +2404,9 @@ L80:
     return 0;
 } /* wbin_ */
 
-/* Subroutine */ int wbin1_(integer *ityp, integer *nlat, integer *m, real *
-	wb, integer *imid, integer *i3, real *wb1, real *wb2, real *a, real *
-	b, real *c__)
+/* Subroutine */ int wbin1_(integer *ityp, integer *nlat, integer *m, doublereal *
+	wb, integer *imid, integer *i3, doublereal *wb1, doublereal *wb2, doublereal *a, doublereal *
+	b, doublereal *c__)
 {
     /* System generated locals */
     integer wb_dim1, wb_dim2, wb_offset, wb1_dim1, wb1_offset, wb2_dim1, 
@@ -2567,7 +2567,7 @@ L80:
 	return 0;
     }
     lc = (*nlat + 1) / 2;
-    sc1 = 2. / (real) (*nlat - 1);
+    sc1 = 2. / (doublereal) (*nlat - 1);
     dvbk_(m, n, &work[1], &czv[1]);
     nmod = *n % 2;
     mmod = *m % 2;
@@ -2906,7 +2906,7 @@ L53:
 	return 0;
     }
     lc = (*nlat + 1) / 2;
-    sc1 = 2. / (real) (*nlat - 1);
+    sc1 = 2. / (doublereal) (*nlat - 1);
     dwbk_(m, n, &work[1], &czw[1]);
     nmod = *n % 2;
     mmod = *m % 2;
@@ -3220,7 +3220,7 @@ L53:
     static integer l;
     static doublereal cf, fk, fn;
     static integer ncv, modm, modn;
-    static real srnp1;
+    static doublereal srnp1;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
     /* Parameter adjustments */
@@ -3599,15 +3599,15 @@ L3:
     return 0;
 } /* dwbt_ */
 
-/* Subroutine */ int rabcv_(integer *nlat, integer *nlon, real *abc)
+/* Subroutine */ int rabcv_(integer *nlat, integer *nlon, doublereal *abc)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, labc, mmax;
-    extern /* Subroutine */ int rabcv1_(integer *, integer *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int rabcv1_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     subroutine rabcp computes the coefficients in the recurrence */
@@ -3630,8 +3630,8 @@ L3:
     return 0;
 } /* rabcv_ */
 
-/* Subroutine */ int rabcv1_(integer *nlat, integer *nlon, real *a, real *b, 
-	real *c__)
+/* Subroutine */ int rabcv1_(integer *nlat, integer *nlon, doublereal *a, doublereal *b, 
+	doublereal *c__)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -3641,13 +3641,13 @@ L3:
 
     /* Local variables */
     static integer m, n;
-    static real cn, fm, fn;
+    static doublereal cn, fm, fn;
     static integer ns;
-    static real tm, tn;
+    static doublereal tm, tn;
     static integer mp1, np1, mp3;
-    static real tpn, fnmm, fnpm;
+    static doublereal tpn, fnmm, fnpm;
     static integer mmax;
-    static real temp;
+    static doublereal temp;
 
 
 /*     coefficients a, b, and c for computing vbar(m,n,theta) are */
@@ -3669,7 +3669,7 @@ L3:
     for (mp1 = 3; mp1 <= i__1; ++mp1) {
 	m = mp1 - 1;
 	ns = (m - 2) * (*nlat + *nlat - m - 1) / 2 + 1;
-	fm = (real) m;
+	fm = (doublereal) m;
 	tm = fm + fm;
 	temp = tm * (tm - 1.f);
 	tpn = (fm - 2.f) * (fm - 1.f) / (fm * (fm + 1.f));
@@ -3691,7 +3691,7 @@ L3:
 	for (np1 = mp3; np1 <= i__2; ++np1) {
 	    n = np1 - 1;
 	    ++ns;
-	    fn = (real) n;
+	    fn = (doublereal) n;
 	    tn = fn + fn;
 	    cn = (tn + 1.f) / (tn - 3.f);
 	    tpn = (fn - 2.f) * (fn - 1.f) / (fn * (fn + 1.f));
@@ -3709,15 +3709,15 @@ L215:
     return 0;
 } /* rabcv1_ */
 
-/* Subroutine */ int rabcw_(integer *nlat, integer *nlon, real *abc)
+/* Subroutine */ int rabcw_(integer *nlat, integer *nlon, doublereal *abc)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, iw2, labc, mmax;
-    extern /* Subroutine */ int rabcw1_(integer *, integer *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int rabcw1_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     subroutine rabcw computes the coefficients in the recurrence */
@@ -3740,8 +3740,8 @@ L215:
     return 0;
 } /* rabcw_ */
 
-/* Subroutine */ int rabcw1_(integer *nlat, integer *nlon, real *a, real *b, 
-	real *c__)
+/* Subroutine */ int rabcw1_(integer *nlat, integer *nlon, doublereal *a, doublereal *b, 
+	doublereal *c__)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -3751,13 +3751,13 @@ L215:
 
     /* Local variables */
     static integer m, n;
-    static real cn, fm, fn;
+    static doublereal cn, fm, fn;
     static integer ns;
-    static real tm, tn;
+    static doublereal tm, tn;
     static integer mp1, np1, mp3;
-    static real tph, tpn, fnmm, fnpm;
+    static doublereal tph, tpn, fnmm, fnpm;
     static integer mmax;
-    static real temp;
+    static doublereal temp;
 
 
 /*     coefficients a, b, and c for computing wbar(m,n,theta) are */
@@ -3779,7 +3779,7 @@ L215:
     for (mp1 = 4; mp1 <= i__1; ++mp1) {
 	m = mp1 - 1;
 	ns = (m - 2) * (*nlat + *nlat - m - 1) / 2 + 1;
-	fm = (real) m;
+	fm = (doublereal) m;
 	tm = fm + fm;
 	temp = tm * (tm - 1.f);
 	tpn = (fm - 2.f) * (fm - 1.f) / (fm * (fm + 1.f));
@@ -3803,7 +3803,7 @@ L215:
 	for (np1 = mp3; np1 <= i__2; ++np1) {
 	    n = np1 - 1;
 	    ++ns;
-	    fn = (real) n;
+	    fn = (doublereal) n;
 	    tn = fn + fn;
 	    cn = (tn + 1.f) / (tn - 3.f);
 	    fnpm = fn + fm;
@@ -3822,12 +3822,12 @@ L215:
     return 0;
 } /* rabcw1_ */
 
-/* Subroutine */ int vtinit_(integer *nlat, integer *nlon, real *wvbin, 
+/* Subroutine */ int vtinit_(integer *nlat, integer *nlon, doublereal *wvbin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int vtini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int vtini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -3846,7 +3846,7 @@ L215:
 } /* vtinit_ */
 
 /* Subroutine */ int vtini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *vb, real *abc, doublereal *cvb, doublereal *work)
+	doublereal *vb, doublereal *abc, doublereal *cvb, doublereal *work)
 {
     /* System generated locals */
     integer vb_dim1, vb_dim2, vb_offset, i__1, i__2, i__3;
@@ -3862,7 +3862,7 @@ L215:
     static integer mdo;
     extern /* Subroutine */ int dvtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvtt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcv_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcv_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -3905,12 +3905,12 @@ L215:
     return 0;
 } /* vtini1_ */
 
-/* Subroutine */ int wtinit_(integer *nlat, integer *nlon, real *wwbin, 
+/* Subroutine */ int wtinit_(integer *nlat, integer *nlon, doublereal *wwbin, 
 	doublereal *dwork)
 {
     static integer iw1, imid;
-    extern /* Subroutine */ int wtini1_(integer *, integer *, integer *, real 
-	    *, real *, doublereal *, doublereal *);
+    extern /* Subroutine */ int wtini1_(integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --dwork;
@@ -3929,7 +3929,7 @@ L215:
 } /* wtinit_ */
 
 /* Subroutine */ int wtini1_(integer *nlat, integer *nlon, integer *imid, 
-	real *wb, real *abc, doublereal *cwb, doublereal *work)
+	doublereal *wb, doublereal *abc, doublereal *cwb, doublereal *work)
 {
     /* System generated locals */
     integer wb_dim1, wb_dim2, wb_offset, i__1, i__2, i__3;
@@ -3944,7 +3944,7 @@ L215:
     static doublereal wbh;
     extern /* Subroutine */ int dwtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwtt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcw_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcw_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -3991,11 +3991,11 @@ L215:
 } /* wtini1_ */
 
 /* Subroutine */ int vtgint_(integer *nlat, integer *nlon, doublereal *theta, 
-	real *wvbin, doublereal *work)
+	doublereal *wvbin, doublereal *work)
 {
     static integer iw1, imid;
     extern /* Subroutine */ int vtgit1_(integer *, integer *, integer *, 
-	    doublereal *, real *, real *, doublereal *, doublereal *);
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --work;
@@ -4017,7 +4017,7 @@ L215:
 } /* vtgint_ */
 
 /* Subroutine */ int vtgit1_(integer *nlat, integer *nlon, integer *imid, 
-	doublereal *theta, real *vb, real *abc, doublereal *cvb, doublereal *
+	doublereal *theta, doublereal *vb, doublereal *abc, doublereal *cvb, doublereal *
 	work)
 {
     /* System generated locals */
@@ -4029,7 +4029,7 @@ L215:
     static integer mdo;
     extern /* Subroutine */ int dvtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvtt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcv_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcv_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -4071,11 +4071,11 @@ L215:
 } /* vtgit1_ */
 
 /* Subroutine */ int wtgint_(integer *nlat, integer *nlon, doublereal *theta, 
-	real *wwbin, doublereal *work)
+	doublereal *wwbin, doublereal *work)
 {
     static integer iw1, imid;
     extern /* Subroutine */ int wtgit1_(integer *, integer *, integer *, 
-	    doublereal *, real *, real *, doublereal *, doublereal *);
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --work;
@@ -4097,7 +4097,7 @@ L215:
 } /* wtgint_ */
 
 /* Subroutine */ int wtgit1_(integer *nlat, integer *nlon, integer *imid, 
-	doublereal *theta, real *wb, real *abc, doublereal *cwb, doublereal *
+	doublereal *theta, doublereal *wb, doublereal *abc, doublereal *cwb, doublereal *
 	work)
 {
     /* System generated locals */
@@ -4108,7 +4108,7 @@ L215:
     static doublereal wbh;
     extern /* Subroutine */ int dwtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwtt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcw_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcw_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*((nlat-3)*nlat+2)/2 locations */
@@ -4566,11 +4566,11 @@ L3:
 } /* dwtt_ */
 
 /* Subroutine */ int vbgint_(integer *nlat, integer *nlon, doublereal *theta, 
-	real *wvbin, doublereal *work)
+	doublereal *wvbin, doublereal *work)
 {
     static integer iw1, imid;
     extern /* Subroutine */ int vbgit1_(integer *, integer *, integer *, 
-	    doublereal *, real *, real *, doublereal *, doublereal *);
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --work;
@@ -4592,7 +4592,7 @@ L3:
 } /* vbgint_ */
 
 /* Subroutine */ int vbgit1_(integer *nlat, integer *nlon, integer *imid, 
-	doublereal *theta, real *vb, real *abc, doublereal *cvb, doublereal *
+	doublereal *theta, doublereal *vb, doublereal *abc, doublereal *cvb, doublereal *
 	work)
 {
     /* System generated locals */
@@ -4604,7 +4604,7 @@ L3:
     static integer mdo;
     extern /* Subroutine */ int dvbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvbt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcv_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcv_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*(max0(mmax-2,0)*(nlat+nlat-mmax-1))/2 */
@@ -4646,11 +4646,11 @@ L3:
 } /* vbgit1_ */
 
 /* Subroutine */ int wbgint_(integer *nlat, integer *nlon, doublereal *theta, 
-	real *wwbin, doublereal *work)
+	doublereal *wwbin, doublereal *work)
 {
     static integer iw1, imid;
     extern /* Subroutine */ int wbgit1_(integer *, integer *, integer *, 
-	    doublereal *, real *, real *, doublereal *, doublereal *);
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     --work;
@@ -4672,7 +4672,7 @@ L3:
 } /* wbgint_ */
 
 /* Subroutine */ int wbgit1_(integer *nlat, integer *nlon, integer *imid, 
-	doublereal *theta, real *wb, real *abc, doublereal *cwb, doublereal *
+	doublereal *theta, doublereal *wb, doublereal *abc, doublereal *cwb, doublereal *
 	work)
 {
     /* System generated locals */
@@ -4683,7 +4683,7 @@ L3:
     static doublereal wbh;
     extern /* Subroutine */ int dwbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwbt_(integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *), rabcw_(integer *, integer *, real *);
+	    doublereal *, doublereal *), rabcw_(integer *, integer *, doublereal *);
 
 
 /*     abc must have 3*((nlat-3)*nlat+2)/2 locations */

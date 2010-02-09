@@ -514,9 +514,9 @@
 /* ***************************************************** */
 
 /* Subroutine */ int trvsph_(integer *intl, integer *igrida, integer *nlona, 
-	integer *nlata, integer *iveca, real *ua, real *va, integer *igridb, 
-	integer *nlonb, integer *nlatb, integer *ivecb, real *ub, real *vb, 
-	real *wsave, integer *lsave, integer *lsvmin, real *work, integer *
+	integer *nlata, integer *iveca, doublereal *ua, doublereal *va, integer *igridb, 
+	integer *nlonb, integer *nlatb, integer *ivecb, doublereal *ub, doublereal *vb, 
+	doublereal *wsave, integer *lsave, integer *lsvmin, doublereal *work, integer *
 	lwork, integer *lwkmin, doublereal *dwork, integer *ldwork, integer *
 	ier)
 {
@@ -526,29 +526,29 @@
     /* Local variables */
     static integer jb, ig, iw, nt, lw, la1, la2, lb1, lb2, lwa, lwb, lwk1, 
 	    lwk2, iabi, iaci, ibbi, ibci, iabr, iacr, ibbr, ibcr, nlat;
-    extern /* Subroutine */ int negv_(integer *, integer *, real *);
+    extern /* Subroutine */ int negv_(integer *, integer *, doublereal *);
     static integer ityp, igrda, igrdb;
     extern /* Subroutine */ int vhagc_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *), vhaec_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *), vhsec_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *), vhsgc_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
-	    integer *, integer *), trvab_(integer *, integer *, real *, real *
-	    , real *, real *, integer *, integer *, real *, real *, real *, 
-	    real *), vhaeci_(integer *, integer *, real *, integer *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *), trvab_(integer *, integer *, doublereal *, doublereal *
+	    , doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *), vhaeci_(integer *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *), vhagci_(integer *, integer *,
-	     real *, integer *, doublereal *, integer *, integer *), vhseci_(
-	    integer *, integer *, real *, integer *, doublereal *, integer *, 
-	    integer *), vhsgci_(integer *, integer *, real *, integer *, 
+	     doublereal *, integer *, doublereal *, integer *, integer *), vhseci_(
+	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *), vhsgci_(integer *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *), covlat_(integer *, integer *,
-	     real *), trvplat_(integer *, integer *, real *, real *);
+	     doublereal *), trvplat_(integer *, integer *, doublereal *, doublereal *);
 
 
 /*     include a save statement to ensure local variables in trvsph, set during */
@@ -814,7 +814,7 @@
     return 0;
 } /* trvsph_ */
 
-/* Subroutine */ int negv_(integer *nlat, integer *nlon, real *v)
+/* Subroutine */ int negv_(integer *nlat, integer *nlon, doublereal *v)
 {
     /* System generated locals */
     integer v_dim1, v_offset, i__1, i__2;
@@ -841,9 +841,9 @@
     return 0;
 } /* negv_ */
 
-/* Subroutine */ int trvab_(integer *ma, integer *na, real *abr, real *abi, 
-	real *acr, real *aci, integer *mb, integer *nb, real *bbr, real *bbi, 
-	real *bcr, real *bci)
+/* Subroutine */ int trvab_(integer *ma, integer *na, doublereal *abr, doublereal *abi, 
+	doublereal *acr, doublereal *aci, integer *mb, integer *nb, doublereal *bbr, doublereal *bbi, 
+	doublereal *bcr, doublereal *bci)
 {
     /* System generated locals */
     integer abr_dim1, abr_offset, abi_dim1, abi_offset, acr_dim1, acr_offset, 
@@ -921,7 +921,7 @@
     return 0;
 } /* trvab_ */
 
-/* Subroutine */ int trvplat_(integer *n, integer *m, real *data, real *work)
+/* Subroutine */ int trvplat_(integer *n, integer *m, doublereal *data, doublereal *work)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -958,14 +958,14 @@
     return 0;
 } /* trvplat_ */
 
-/* Subroutine */ int covlat_(integer *nlat, integer *nlon, real *data)
+/* Subroutine */ int covlat_(integer *nlat, integer *nlon, doublereal *data)
 {
     /* System generated locals */
     integer data_dim1, data_offset, i__1, i__2;
 
     /* Local variables */
     static integer i__, j, ib;
-    static real temp;
+    static doublereal temp;
     static integer nlat2;
 
 

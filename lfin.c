@@ -108,13 +108,13 @@ static integer c__1 = 1;
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfin_(integer *init, real *theta, integer *l, integer *m,
-	 integer *nm, real *pb, integer *id, real *wlfin)
+/* Subroutine */ int lfin_(integer *init, doublereal *theta, integer *l, integer *m,
+	 integer *nm, doublereal *pb, integer *id, doublereal *wlfin)
 {
     static integer iw1, iw2, iw3, lnx;
-    extern /* Subroutine */ int lfin1_(integer *, real *, integer *, integer *
-	    , integer *, integer *, real *, real *, real *, real *, real *, 
-	    real *);
+    extern /* Subroutine */ int lfin1_(integer *, doublereal *, integer *, integer *
+	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
 
 
 /*     total length of wlfin is 4*l*(nm+1) */
@@ -133,9 +133,9 @@ static integer c__1 = 1;
     return 0;
 } /* lfin_ */
 
-/* Subroutine */ int lfin1_(integer *init, real *theta, integer *l, integer *
-	m, integer *nm, integer *id, real *p3, real *phz, real *ph1, real *p1,
-	 real *p2, real *cp)
+/* Subroutine */ int lfin1_(integer *init, doublereal *theta, integer *l, integer *
+	m, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
+	 doublereal *p2, doublereal *cp)
 {
     /* System generated locals */
     integer p1_dim1, p1_offset, p2_dim1, p2_offset, p3_dim1, p3_offset, 
@@ -146,15 +146,15 @@ static integer c__1 = 1;
 
     /* Local variables */
     static integer i__, n;
-    static real cc, dd, ee, cn, fm, fn;
+    static doublereal cc, dd, ee, cn, fm, fn;
     static integer nh;
-    static real tm, tn;
+    static doublereal tm, tn;
     static integer mp1, np1, mp3, nmp1;
-    extern /* Subroutine */ int alfk_(integer *, integer *, real *);
-    static real fnmm, fnpm;
-    extern /* Subroutine */ int lfpt_(integer *, integer *, real *, real *, 
-	    real *);
-    static real temp, ssqrt2;
+    extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
+    static doublereal fnmm, fnpm;
+    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
+    static doublereal temp, ssqrt2;
 
     /* Parameter adjustments */
     --theta;
@@ -208,7 +208,7 @@ static integer c__1 = 1;
     return 0;
 L5:
     mp1 = *m + 1;
-    fm = (real) (*m);
+    fm = (doublereal) (*m);
     tm = fm + fm;
     if ((i__1 = *m - 1) < 0) {
 	goto L25;
@@ -268,7 +268,7 @@ L35:
     i__1 = nmp1;
     for (np1 = mp3; np1 <= i__1; ++np1) {
 	n = np1 - 1;
-	fn = (real) n;
+	fn = (doublereal) n;
 	tn = fn + fn;
 	cn = (tn + 1.f) / (tn - 3.f);
 	fnpm = fn + fm;

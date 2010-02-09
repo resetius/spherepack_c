@@ -301,8 +301,8 @@
 
 /* **************************************************************** */
 /* Subroutine */ int shagc_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *g, integer *idg, integer *jdg, real *a, real *b, 
-	integer *mdab, integer *ndab, real *wshagc, integer *lshagc, real *
+	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a, doublereal *b, 
+	integer *mdab, integer *ndab, doublereal *wshagc, integer *lshagc, doublereal *
 	work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
@@ -312,9 +312,9 @@
     /* Local variables */
     static integer l, l1, l2, lat, late, ifft, ipmn, iwts;
     extern /* Subroutine */ int shagc1_(integer *, integer *, integer *, 
-	    integer *, integer *, real *, integer *, integer *, integer *, 
-	    real *, real *, integer *, integer *, real *, real *, real *, 
-	    integer *, real *, real *);
+	    integer *, integer *, doublereal *, integer *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
 /*     subroutine shagc performs the spherical harmonic analysis on */
 /*     a gaussian grid on the array(s) in g and returns the coefficients */
@@ -420,9 +420,9 @@
 } /* shagc_ */
 
 /* Subroutine */ int shagc1_(integer *nlat, integer *nlon, integer *l, 
-	integer *lat, integer *mode, real *gs, integer *idg, integer *jdg, 
-	integer *nt, real *a, real *b, integer *mdab, integer *ndab, real *w, 
-	real *wts, real *wfft, integer *late, real *pmn, real *g)
+	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *jdg, 
+	integer *nt, doublereal *a, doublereal *b, integer *mdab, integer *ndab, doublereal *w, 
+	doublereal *wts, doublereal *wfft, integer *late, doublereal *pmn, doublereal *g)
 {
     /* System generated locals */
     integer gs_dim1, gs_dim2, gs_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -431,12 +431,12 @@
 
     /* Local variables */
     static integer i__, j, k, m;
-    static real t1, t2;
+    static doublereal t1, t2;
     static integer km, is, ms, ns, lm1, nl2, lp1, mp1, np1, mp2;
-    static real sfn;
+    static doublereal sfn;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *), hrfftf_(integer *, integer 
-	    *, real *, integer *, real *, real *);
+	    integer *, doublereal *, doublereal *, integer *), hrfftf_(integer *, integer 
+	    *, doublereal *, integer *, doublereal *, doublereal *);
 
 /*     set gs array internally in shagc1 */
     /* Parameter adjustments */
@@ -485,7 +485,7 @@
 /* L101: */
     }
 /*     scale result */
-    sfn = 2.f / (real) (*nlon);
+    sfn = 2.f / (doublereal) (*nlon);
     i__3 = *nt;
     for (k = 1; k <= i__3; ++k) {
 	i__2 = *nlon;
@@ -747,7 +747,7 @@
     return 0;
 } /* shagc1_ */
 
-/* Subroutine */ int shagci_(integer *nlat, integer *nlon, real *wshagc, 
+/* Subroutine */ int shagci_(integer *nlat, integer *nlon, doublereal *wshagc, 
 	integer *lshagc, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -757,7 +757,7 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shagci1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, real *, real *, real *, real *, real *,
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, integer *);
 
 /*     this subroutine must be called before calling shagc with */
@@ -818,8 +818,8 @@
 } /* shagci_ */
 
 /* Subroutine */ int shagci1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, real *wts, real *p0n, real *p1n, real *abel, real *
-	bbel, real *cbel, real *wfft, doublereal *dtheta, doublereal *dwts, 
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
+	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
 	doublereal *work, integer *ier)
 {
     /* System generated locals */
@@ -837,7 +837,7 @@
     static integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *), hrffti_(integer *, real *);
+	    doublereal *), hrffti_(integer *, doublereal *);
 
 /*     compute the nlat  gaussian points and weights, the */
 /*     m=0,1 legendre polys for gaussian points and all n, */
@@ -938,11 +938,11 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((real) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((real) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((real) ((n - m + 1) * (n - m + 2)) / (real) ((n 
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
+		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
+		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
 		    + m - 1) * (n + m)));
 /* L107: */
 	}

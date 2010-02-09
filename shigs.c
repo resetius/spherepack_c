@@ -93,7 +93,7 @@
 
 /*            nlat*(3*(l1+l2)-2)+(l1-1)*(l2*(2*nlat-l1)-3*l1)/2+nlon+15 */
 
-/*     work   a real work space which need not be saved */
+/*     work   a doublereal work space which need not be saved */
 
 /*     lwork  the dimension of the array work as it appears in the */
 /*            program that calls shigs. lwork must be at least */
@@ -123,8 +123,8 @@
 
 /* **************************************************************** */
 
-/* Subroutine */ int shigs_(integer *nlat, integer *nlon, real *wshigs, 
-	integer *lshigs, real *work, integer *lwork, doublereal *dwork, 
+/* Subroutine */ int shigs_(integer *nlat, integer *nlon, doublereal *wshigs, 
+	integer *lshigs, doublereal *work, integer *lwork, doublereal *dwork, 
 	integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -132,9 +132,9 @@
 
     /* Local variables */
     static integer l, l1, l2, lp, late, ipmnf;
-    extern /* Subroutine */ int shigsp_(integer *, integer *, real *, integer 
+    extern /* Subroutine */ int shigsp_(integer *, integer *, doublereal *, integer 
 	    *, doublereal *, integer *, integer *), shigss1_(integer *, 
-	    integer *, integer *, real *, real *, real *);
+	    integer *, integer *, doublereal *, doublereal *, doublereal *);
 
 
 /*     this subroutine must be called before calling shags or shsgs with */
@@ -195,8 +195,8 @@
     return 0;
 } /* shigs_ */
 
-/* Subroutine */ int shigss1_(integer *nlat, integer *l, integer *late, real *
-	w, real *pmn, real *pmnf)
+/* Subroutine */ int shigss1_(integer *nlat, integer *l, integer *late, doublereal *
+	w, doublereal *pmn, doublereal *pmnf)
 {
     /* System generated locals */
     integer pmn_dim1, pmn_dim2, pmn_offset, pmnf_dim1, pmnf_offset, i__1, 
@@ -205,7 +205,7 @@
     /* Local variables */
     static integer i__, j, k, m, km, mn, mp1, np1, mml1, mode;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *);
+	    integer *, doublereal *, doublereal *, integer *);
 
 /*     compute and store legendre polys for i=1,...,late,m=0,...,l-1 */
 /*     and n=m,...,l-1 */
@@ -253,7 +253,7 @@
     return 0;
 } /* shigss1_ */
 
-/* Subroutine */ int shigsp_(integer *nlat, integer *nlon, real *wshigs, 
+/* Subroutine */ int shigsp_(integer *nlat, integer *nlon, doublereal *wshigs, 
 	integer *lshigs, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -263,7 +263,7 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shigsp1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, real *, real *, real *, real *, real *,
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, integer *);
 
     /* Parameter adjustments */
@@ -323,8 +323,8 @@
 } /* shigsp_ */
 
 /* Subroutine */ int shigsp1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, real *wts, real *p0n, real *p1n, real *abel, real *
-	bbel, real *cbel, real *wfft, doublereal *dtheta, doublereal *dwts, 
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
+	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
 	doublereal *work, integer *ier)
 {
     /* System generated locals */
@@ -342,7 +342,7 @@
     static integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *), hrffti_(integer *, real *);
+	    doublereal *), hrffti_(integer *, doublereal *);
 
     /* Parameter adjustments */
     --dwts;
@@ -432,11 +432,11 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((real) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((real) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((real) ((n - m + 1) * (n - m + 2)) / (real) ((n 
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
+		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
+		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
 		    + m - 1) * (n + m)));
 /* L107: */
 	}

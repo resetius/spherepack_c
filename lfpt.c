@@ -80,8 +80,8 @@
 /* timing                 time per call to routine lfpt is dependent on */
 /*                        the input parameter n. */
 
-/* Subroutine */ int lfpt_(integer *n, integer *m, real *theta, real *cp, 
-	real *pb)
+/* Subroutine */ int lfpt_(integer *n, integer *m, doublereal *theta, doublereal *cp, 
+	doublereal *pb)
 {
     /* System generated locals */
     integer i__1;
@@ -91,11 +91,11 @@
 
     /* Local variables */
     static integer k, ma;
-    static real ct, st;
+    static doublereal ct, st;
     static integer kp1, np1;
-    static real cdt;
+    static doublereal cdt;
     static integer kdo;
-    static real cth, sdt, sum;
+    static doublereal cth, sdt, sum;
     static integer mmod, nmod;
 
 

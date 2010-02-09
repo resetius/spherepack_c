@@ -245,9 +245,9 @@
 
 
 /* Subroutine */ int ivrtec_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *v, real *w, integer *idvw, integer *jdvw, real *a, 
-	real *b, integer *mdab, integer *ndab, real *wvhsec, integer *lvhsec, 
-	real *work, integer *lwork, real *pertrb, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *a, 
+	doublereal *b, integer *mdab, integer *ndab, doublereal *wvhsec, integer *lvhsec, 
+	doublereal *work, integer *lwork, doublereal *pertrb, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, a_dim1, 
@@ -256,9 +256,9 @@
     /* Local variables */
     static integer mn, is, ici, icr, iwk, lzz1, labc, imid, mmax, liwk;
     extern /* Subroutine */ int ivtec1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    integer *, real *, integer *, integer *, real *, real *, real *, 
-	    integer *, real *, integer *, real *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, doublereal *, integer *, doublereal *, integer *);
 
 
 /*     check input parameters */
@@ -365,10 +365,10 @@
 } /* ivrtec_ */
 
 /* Subroutine */ int ivtec1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *v, real *w, integer *idvw, integer *jdvw, real *cr,
-	 real *ci, integer *mmax, real *sqnn, integer *mdab, integer *ndab, 
-	real *a, real *b, real *wsav, integer *lwsav, real *wk, integer *lwk, 
-	real *pertrb, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *cr,
+	 doublereal *ci, integer *mmax, doublereal *sqnn, integer *mdab, integer *ndab, 
+	doublereal *a, doublereal *b, doublereal *wsav, integer *lwsav, doublereal *wk, integer *lwk, 
+	doublereal *pertrb, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, cr_dim1, 
@@ -380,11 +380,11 @@
 
     /* Local variables */
     static integer k, m, n;
-    static real bi, fn, br;
+    static doublereal bi, fn, br;
     static integer ityp;
     extern /* Subroutine */ int vhsec_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *);
 
 
@@ -423,7 +423,7 @@
     /* Function Body */
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
-	fn = (real) (n - 1);
+	fn = (doublereal) (n - 1);
 	sqnn[n] = sqrt(fn * (fn + 1.f));
 /* L1: */
     }

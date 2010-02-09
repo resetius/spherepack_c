@@ -62,13 +62,13 @@ static doublereal c_b2 = 1.;
     static integer it, ns2;
     static doublereal dpb;
     static integer idx;
-    static real eps;
+    static doublereal eps;
     static integer nix;
     static doublereal sum, pis2;
     extern /* Subroutine */ int cpdp_(integer *, doublereal *, doublereal *, 
 	    doublereal *);
     static doublereal dcor, cmax;
-    static real sgnd;
+    static doublereal sgnd;
     extern /* Subroutine */ int tpdp_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
     static doublereal zero;
@@ -391,7 +391,7 @@ L30:
 doublereal dzeps_(doublereal *x)
 {
     /* System generated locals */
-    real ret_val;
+    doublereal ret_val;
     doublereal d__1;
 
     /* Local variables */

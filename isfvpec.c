@@ -232,9 +232,9 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int isfvpec_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *v, real *w, integer *idv, integer *jdv, real *as, 
-	real *bs, real *av, real *bv, integer *mdb, integer *ndb, real *
-	wvhsec, integer *lvhsec, real *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv, doublereal *as, 
+	doublereal *bs, doublereal *av, doublereal *bv, integer *mdb, integer *ndb, doublereal *
+	wvhsec, integer *lvhsec, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, as_dim1, 
@@ -245,9 +245,9 @@
     static integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lzz1, labc, 
 	    mmax, lwmin;
     extern /* Subroutine */ int isfvpec1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, real *, real *, 
-	    real *, integer *, real *, real *, integer *, real *, integer *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, integer *, doublereal *, doublereal *, integer *, doublereal *, integer *, 
 	    integer *);
 
 
@@ -369,10 +369,10 @@
 } /* isfvpec_ */
 
 /* Subroutine */ int isfvpec1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, real *v, real *w, integer *idv, integer *jdv, real *as, 
-	real *bs, real *av, real *bv, integer *mdb, integer *ndb, real *br, 
-	real *bi, real *cr, real *ci, integer *mab, real *fnn, real *wvhsec, 
-	integer *lvhsec, real *wk, integer *lwk, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv, doublereal *as, 
+	doublereal *bs, doublereal *av, doublereal *bv, integer *mdb, integer *ndb, doublereal *br, 
+	doublereal *bi, doublereal *cr, doublereal *ci, integer *mab, doublereal *fnn, doublereal *wvhsec, 
+	integer *lvhsec, doublereal *wk, integer *lwk, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, as_dim1, 
@@ -387,8 +387,8 @@
     /* Local variables */
     static integer k, m, n, mmax, ityp;
     extern /* Subroutine */ int vhsec_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *);
 
 
@@ -442,7 +442,7 @@
     /* Function Body */
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
-	fnn[n] = -sqrt((real) (n * (n - 1)));
+	fnn[n] = -sqrt((doublereal) (n * (n - 1)));
     }
 /* Computing MIN */
     i__1 = *nlat, i__2 = (*nlon + 1) / 2;

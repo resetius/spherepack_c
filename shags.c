@@ -140,7 +140,7 @@
 
 /*            nlat*(3*(l1+l2)-2)+(l1-1)*(l2*(2*nlat-l1)-3*l1)/2+nlon+15 */
 
-/*     work   a real work space which need not be saved */
+/*     work   a doublereal work space which need not be saved */
 
 
 /*     lwork  the dimension of the array work as it appears in the */
@@ -273,7 +273,7 @@
 
 /*            nlat*(3*(l1+l2)-2)+(l1-1)*(l2*(2*nlat-l1)-3*l1)/2+nlon+15 */
 
-/*     work   a real work space which need not be saved */
+/*     work   a doublereal work space which need not be saved */
 
 /*     lwork  the dimension of the array work as it appears in the */
 /*            program that calls shagsi. lwork must be at least */
@@ -303,8 +303,8 @@
 
 /* **************************************************************** */
 /* Subroutine */ int shags_(integer *nlat, integer *nlon, integer *mode, 
-	integer *nt, real *g, integer *idg, integer *jdg, real *a, real *b, 
-	integer *mdab, integer *ndab, real *wshags, integer *lshags, real *
+	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a, doublereal *b, 
+	integer *mdab, integer *ndab, doublereal *wshags, integer *lshags, doublereal *
 	work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
@@ -314,9 +314,9 @@
     /* Local variables */
     static integer l, l1, l2, lp, iw, lat, late, ifft, ipmn, iwts;
     extern /* Subroutine */ int shags1_(integer *, integer *, integer *, 
-	    integer *, integer *, real *, integer *, integer *, integer *, 
-	    real *, real *, integer *, integer *, real *, real *, real *, 
-	    integer *, real *, real *);
+	    integer *, integer *, doublereal *, integer *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
 /*     subroutine shags performs the spherical harmonic analysis on */
 /*     a gaussian grid on the array(s) in g and returns the coefficients */
@@ -418,9 +418,9 @@
 } /* shags_ */
 
 /* Subroutine */ int shags1_(integer *nlat, integer *nlon, integer *l, 
-	integer *lat, integer *mode, real *gs, integer *idg, integer *jdg, 
-	integer *nt, real *a, real *b, integer *mdab, integer *ndab, real *
-	wts, real *wfft, real *pmn, integer *late, real *g, real *work)
+	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *jdg, 
+	integer *nt, doublereal *a, doublereal *b, integer *mdab, integer *ndab, doublereal *
+	wts, doublereal *wfft, doublereal *pmn, integer *late, doublereal *g, doublereal *work)
 {
     /* System generated locals */
     integer gs_dim1, gs_dim2, gs_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -429,12 +429,12 @@
 
     /* Local variables */
     static integer i__, j, k, m;
-    static real t1, t2;
+    static doublereal t1, t2;
     static integer mn, is, ms, ns, lm1, nl2, lp1, mp1, np1, mp2;
-    static real sfn;
+    static doublereal sfn;
     static integer mml1;
-    extern /* Subroutine */ int hrfftf_(integer *, integer *, real *, integer 
-	    *, real *, real *);
+    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, integer 
+	    *, doublereal *, doublereal *);
 
 /*     set gs array internally in shags1 */
     /* Parameter adjustments */
@@ -482,7 +482,7 @@
 /* L101: */
     }
 /*     scale result */
-    sfn = 2.f / (real) (*nlon);
+    sfn = 2.f / (doublereal) (*nlon);
     i__3 = *nt;
     for (k = 1; k <= i__3; ++k) {
 	i__2 = *nlon;
@@ -749,8 +749,8 @@
     return 0;
 } /* shags1_ */
 
-/* Subroutine */ int shagsi_(integer *nlat, integer *nlon, real *wshags, 
-	integer *lshags, real *work, integer *lwork, doublereal *dwork, 
+/* Subroutine */ int shagsi_(integer *nlat, integer *nlon, doublereal *wshags, 
+	integer *lshags, doublereal *work, integer *lwork, doublereal *dwork, 
 	integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -758,9 +758,9 @@
 
     /* Local variables */
     static integer l, l1, l2, lp, ldw, late, ipmnf;
-    extern /* Subroutine */ int shagsp_(integer *, integer *, real *, integer 
+    extern /* Subroutine */ int shagsp_(integer *, integer *, doublereal *, integer 
 	    *, doublereal *, integer *, integer *), shagss1_(integer *, 
-	    integer *, integer *, real *, real *, real *);
+	    integer *, integer *, doublereal *, doublereal *, doublereal *);
 
 
 /*     this subroutine must be called before calling shags or shsgs with */
@@ -825,8 +825,8 @@
     return 0;
 } /* shagsi_ */
 
-/* Subroutine */ int shagss1_(integer *nlat, integer *l, integer *late, real *
-	w, real *pmn, real *pmnf)
+/* Subroutine */ int shagss1_(integer *nlat, integer *l, integer *late, doublereal *
+	w, doublereal *pmn, doublereal *pmnf)
 {
     /* System generated locals */
     integer pmn_dim1, pmn_dim2, pmn_offset, pmnf_dim1, pmnf_offset, i__1, 
@@ -835,7 +835,7 @@
     /* Local variables */
     static integer i__, j, k, m, km, mn, mp1, np1, mml1, mode;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *);
+	    integer *, doublereal *, doublereal *, integer *);
 
 /*     compute and store legendre polys for i=1,...,late,m=0,...,l-1 */
 /*     and n=m,...,l-1 */
@@ -883,7 +883,7 @@
     return 0;
 } /* shagss1_ */
 
-/* Subroutine */ int shagsp_(integer *nlat, integer *nlon, real *wshags, 
+/* Subroutine */ int shagsp_(integer *nlat, integer *nlon, doublereal *wshags, 
 	integer *lshags, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -893,7 +893,7 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shagsp1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, real *, real *, real *, real *, real *,
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, integer *);
 
     /* Parameter adjustments */
@@ -953,8 +953,8 @@
 } /* shagsp_ */
 
 /* Subroutine */ int shagsp1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, real *wts, real *p0n, real *p1n, real *abel, real *
-	bbel, real *cbel, real *wfft, doublereal *dtheta, doublereal *dwts, 
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
+	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
 	doublereal *work, integer *ier)
 {
     /* System generated locals */
@@ -972,7 +972,7 @@
     static integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *), hrffti_(integer *, real *);
+	    doublereal *), hrffti_(integer *, doublereal *);
 
     /* Parameter adjustments */
     --dwts;
@@ -1062,11 +1062,11 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((real) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((real) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((real) ((n - m + 1) * (n - m + 2)) / (real) ((n 
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
+		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
+		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
 		    + m - 1) * (n + m)));
 /* L107: */
 	}

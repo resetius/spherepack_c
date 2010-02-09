@@ -304,9 +304,9 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int vlapgc_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, real *vlap, real *wlap, integer *idvw, integer *jdvw, 
-	real *br, real *bi, real *cr, real *ci, integer *mdbc, integer *ndbc, 
-	real *wvhsgc, integer *lvhsgc, real *work, integer *lwork, integer *
+	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, integer *jdvw, 
+	doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, integer *mdbc, integer *ndbc, 
+	doublereal *wvhsgc, integer *lvhsgc, doublereal *work, integer *lwork, integer *
 	ierror)
 {
     /* System generated locals */
@@ -319,9 +319,9 @@
     static integer l1, l2, mn, ibi, ici, ibr, icr, ifn, idz, iwk, imid, mmax, 
 	    liwk, lwmin, lzimn, lwkmin;
     extern /* Subroutine */ int vlapgc1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, real *, integer *, integer *, real *, 
-	    real *, real *, real *, real *, integer *, real *, integer *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, integer *, 
 	    integer *);
 
     /* Parameter adjustments */
@@ -475,10 +475,10 @@
 } /* vlapgc_ */
 
 /* Subroutine */ int vlapgc1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, real *vlap, real *wlap, integer *idvw, integer *jdvw, 
-	real *brlap, real *bilap, real *crlap, real *cilap, integer *mmax, 
-	real *fnn, integer *mdb, integer *ndb, real *br, real *bi, real *cr, 
-	real *ci, real *wsave, integer *lwsav, real *wk, integer *lwk, 
+	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, integer *jdvw, 
+	doublereal *brlap, doublereal *bilap, doublereal *crlap, doublereal *cilap, integer *mmax, 
+	doublereal *fnn, integer *mdb, integer *ndb, doublereal *br, doublereal *bi, doublereal *cr, 
+	doublereal *ci, doublereal *wsave, integer *lwsav, doublereal *wk, integer *lwk, 
 	integer *ierror)
 {
     /* System generated locals */
@@ -491,10 +491,10 @@
 
     /* Local variables */
     static integer k, m, n;
-    static real fn;
+    static doublereal fn;
     extern /* Subroutine */ int vhsgc_(integer *, integer *, integer *, 
-	    integer *, real *, real *, integer *, integer *, real *, real *, 
-	    real *, real *, integer *, integer *, real *, integer *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *);
 
 
@@ -548,7 +548,7 @@
     /* Function Body */
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
-	fn = (real) (n - 1);
+	fn = (doublereal) (n - 1);
 	fnn[n] = -fn * (fn + 1.f);
 /* L1: */
     }

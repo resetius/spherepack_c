@@ -113,7 +113,7 @@
 
 
 /* **************************************************************** */
-/* Subroutine */ int shigc_(integer *nlat, integer *nlon, real *wshigc, 
+/* Subroutine */ int shigc_(integer *nlat, integer *nlon, doublereal *wshigc, 
 	integer *lshigc, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -123,7 +123,7 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shigc1_(integer *, integer *, integer *, 
-	    integer *, real *, real *, real *, real *, real *, real *, real *,
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, integer *);
 
 /*     this subroutine must be called before calling shsgc/shagc with */
@@ -187,8 +187,8 @@
 } /* shigc_ */
 
 /* Subroutine */ int shigc1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, real *wts, real *p0n, real *p1n, real *abel, real *
-	bbel, real *cbel, real *wfft, doublereal *dtheta, doublereal *dwts, 
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
+	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
 	doublereal *work, integer *ier)
 {
     /* System generated locals */
@@ -206,7 +206,7 @@
     static integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *), hrffti_(integer *, real *);
+	    doublereal *), hrffti_(integer *, doublereal *);
 
 /*     compute the nlat  gaussian points and weights, the */
 /*     m=0,1 legendre polys for gaussian points and all n, */
@@ -307,11 +307,11 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((real) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((real) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (real) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((real) ((n - m + 1) * (n - m + 2)) / (real) ((n 
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
+		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
+		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
 		    + m - 1) * (n + m)));
 /* L107: */
 	}

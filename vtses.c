@@ -225,7 +225,7 @@ static integer c__0 = 0;
 
 /*   ************************************************************* */
 
-/*   in terms of real variables this expansion takes the form */
+/*   in terms of doublereal variables this expansion takes the form */
 
 /*             for i=1,...,nlat and  j=1,...,nlon */
 
@@ -234,7 +234,7 @@ static integer c__0 = 0;
 /*               .5*br(1,n+1)*vtbar(0,n,theta(i)) */
 
 /*     plus the sum from m=1 to m=mmax-1 of the sum from n=m to */
-/*     n=nlat-1 of the real part of */
+/*     n=nlat-1 of the doublereal part of */
 
 /*       (br(m+1,n+1)*vtbar(m,n,theta(i)) */
 /*                   -ci(m+1,n+1)*wtbar(m,n,theta(i)))*cos(m*phi(j)) */
@@ -248,7 +248,7 @@ static integer c__0 = 0;
 /*              -.5*cr(1,n+1)*vtbar(0,n,theta(i)) */
 
 /*     plus the sum from m=1 to m=mmax-1 of the sum from n=m to */
-/*     n=nlat-1 of the real part of */
+/*     n=nlat-1 of the doublereal part of */
 
 /*      -(cr(m+1,n+1)*vtbar(m,n,theta(i)) */
 /*                   +bi(m+1,n+1)*wtbar(m,n,theta(i)))*cos(m*phi(j)) */
@@ -347,9 +347,9 @@ static integer c__0 = 0;
 /* ******************************************************************** */
 
 /* Subroutine */ int vtses_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, real *vt, real *wt, integer *idvw, integer *jdvw, real *
-	br, real *bi, real *cr, real *ci, integer *mdab, integer *ndab, real *
-	wvts, integer *lwvts, real *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *vt, doublereal *wt, integer *idvw, integer *jdvw, doublereal *
+	br, doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
+	wvts, integer *lwvts, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer vt_dim1, vt_dim2, vt_offset, wt_dim1, wt_dim2, wt_offset, br_dim1,
@@ -360,10 +360,10 @@ static integer c__0 = 0;
     static integer iw1, iw2, iw3, iw4, jw1, jw2, idv, lnl, idz, ist, imid, 
 	    mmax, lzimn;
     extern /* Subroutine */ int vtses1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, real *, real *, 
-	    integer *, integer *, real *, real *, real *, real *, integer *, 
-	    real *, real *, real *, real *, real *, integer *, real *, real *,
-	     real *);
+	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *);
 
 
     /* Parameter adjustments */
@@ -465,10 +465,10 @@ static integer c__0 = 0;
 } /* vtses_ */
 
 /* Subroutine */ int vtses1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, real *vt, 
-	real *wt, integer *mdab, integer *ndab, real *br, real *bi, real *cr, 
-	real *ci, integer *idv, real *vte, real *vto, real *wte, real *wto, 
-	real *work, integer *idz, real *vb, real *wb, real *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *vt, 
+	doublereal *wt, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
+	doublereal *ci, integer *idv, doublereal *vte, doublereal *vto, doublereal *wte, doublereal *wto, 
+	doublereal *work, integer *idz, doublereal *vb, doublereal *wb, doublereal *wrfft)
 {
     /* System generated locals */
     integer vt_dim1, vt_dim2, vt_offset, wt_dim1, wt_dim2, wt_offset, br_dim1,
@@ -481,8 +481,8 @@ static integer c__0 = 0;
     /* Local variables */
     static integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, 
 	    nlp1, mlat, mmax, mlon, itypp;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, real *, integer 
-	    *, real *, real *);
+    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, integer 
+	    *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     wb_dim1 = *imid;
@@ -1579,8 +1579,8 @@ L13:
     return 0;
 } /* vtses1_ */
 
-/* Subroutine */ int vtsesi_(integer *nlat, integer *nlon, real *wvts, 
-	integer *lwvts, real *work, integer *lwork, doublereal *dwork, 
+/* Subroutine */ int vtsesi_(integer *nlat, integer *nlon, doublereal *wvts, 
+	integer *lwvts, doublereal *work, integer *lwork, doublereal *dwork, 
 	integer *ldwork, integer *ierror)
 {
     /* System generated locals */
@@ -1588,10 +1588,10 @@ L13:
 
     /* Local variables */
     static integer iw1, idz;
-    extern /* Subroutine */ int vet1_(integer *, integer *, integer *, real *,
-	     real *, integer *, real *, real *, doublereal *);
+    extern /* Subroutine */ int vet1_(integer *, integer *, integer *, doublereal *,
+	     doublereal *, integer *, doublereal *, doublereal *, doublereal *);
     static integer labc, imid, mmax, lzimn;
-    extern /* Subroutine */ int hrffti_(integer *, real *);
+    extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
 
     /* Parameter adjustments */
@@ -1637,8 +1637,8 @@ L13:
     return 0;
 } /* vtsesi_ */
 
-/* Subroutine */ int vet1_(integer *nlat, integer *nlon, integer *imid, real *
-	vb, real *wb, integer *idz, real *vin, real *wzvin, doublereal *dwork)
+/* Subroutine */ int vet1_(integer *nlat, integer *nlon, integer *imid, doublereal *
+	vb, doublereal *wb, integer *idz, doublereal *vin, doublereal *wzvin, doublereal *dwork)
 {
     /* System generated locals */
     integer vb_dim1, vb_offset, wb_dim1, wb_offset, vin_dim1, vin_dim2, 
@@ -1647,11 +1647,11 @@ L13:
     /* Local variables */
     static integer i__, m, i3, mn, mp1, np1;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
-	    integer *, real *, integer *, real *), wbin_(integer *, integer *,
-	     integer *, integer *, real *, integer *, real *);
+	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *, integer *,
+	     integer *, integer *, doublereal *, integer *, doublereal *);
     static integer mmax;
-    extern /* Subroutine */ int vtinit_(integer *, integer *, real *, 
-	    doublereal *), wtinit_(integer *, integer *, real *, doublereal *)
+    extern /* Subroutine */ int vtinit_(integer *, integer *, doublereal *, 
+	    doublereal *), wtinit_(integer *, integer *, doublereal *, doublereal *)
 	    ;
 
     /* Parameter adjustments */
