@@ -12,3 +12,6 @@ add_library(spherepack
        )
 
 
+add_executable(helmsph helmsph.c)
+target_link_libraries(helmsph spherepack m f2c)
+
