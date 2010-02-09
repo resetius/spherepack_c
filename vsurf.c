@@ -27,7 +27,7 @@
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
 
 
-/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
+/* Subroutine */ static int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
 	 doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3,
 	 doublereal *y3, doublereal *z3, integer *itype, doublereal *work, integer *iwork)
 {

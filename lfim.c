@@ -109,7 +109,7 @@ static integer c__1 = 1;
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
+/* Subroutine */ static int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
 	 integer *nm, doublereal *pb, integer *id, doublereal *wlfim)
 {
     static integer iw1, iw2, iw3, lnx;
@@ -134,7 +134,7 @@ static integer c__1 = 1;
     return 0;
 } /* lfim_ */
 
-/* Subroutine */ int lfim1_(integer *init, doublereal *theta, integer *l, integer *
+/* Subroutine */ static int lfim1_(integer *init, doublereal *theta, integer *l, integer *
 	n, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
 	 doublereal *p2, doublereal *cp)
 {
