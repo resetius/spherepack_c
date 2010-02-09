@@ -15,7 +15,7 @@ print "
 #define SPHEREPACK_H
 
 #ifdef __cplusplus
-extern \"C\";
+extern \"C\" {
 #endif
 ";
 
