@@ -110,7 +110,7 @@ static integer c__0 = 0;
     static integer isym;
     static doublereal work[3249];
     extern /* Subroutine */ int shaec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, real *, integer *
+	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
 	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
     static doublereal theta;
     static doublereal dwork[20];
@@ -125,7 +125,7 @@ static integer c__0 = 0;
     static doublereal wshsec[1451], pertrb;
     static integer ierror, ldwork;
     extern /* Subroutine */ int islapec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, real *, integer *, integer *, doublereal *, real *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
 	    , integer *);
 
