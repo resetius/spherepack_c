@@ -8,7 +8,7 @@ add_library(spherepack
 	      gradec.c    idivgs.c  igradgs.c  islapgc.c  ivrtgc.c   sfvpes.c  shigs.c  slapes.c  vhaes.c    visgau.c  vrtgc.c
 	      grades.c    idvtec.c  ihgeod.c   islapgs.c  ivrtgs.c   sfvpgc.c  shpe.c   slapgc.c  vhagc.c    visgeo.c  vrtgs.c
 	divec.c              gradgc.c    idvtes.c  isfvpec.c  ivlapec.c  lfim.c     sfvpgs.c  shpg.c   slapgs.c  vhags.c    vlapec.c  vshifte.c
-	dives.c              gradgs.c    idvtgc.c  isfvpes.c  ivlapes.c  lfin.c     shaec.c   shsec.c  sphcom.c  vhsec.c    vlapes.c  vsurf.c
+	dives.c              gradgs.c    idvtgc.c  isfvpes.c  ivlapes.c  lfin.c     shaec.c   shsec.c  sphcom.c  vhsec.c    vlapes.c  vsurf.c pow_di.c
        )
 
 

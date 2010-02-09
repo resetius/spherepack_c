@@ -14,7 +14,7 @@ print "
 #ifndef SPHEREPACK_H
 #define SPHEREPACK_H
 
-#include <f2c.h>
+#include \"f2c.h\"
 
 #ifdef __cplusplus
 extern \"C\" {
