@@ -360,7 +360,7 @@
 
     i__1 = *nt;
     for (k = 1; k <= i__1; ++k) {
-	if (xlmbda[k] < 0.f) {
+	if (xlmbda[k] < 0.) {
 	    *ierror = -1;
 	}
     }
@@ -431,13 +431,13 @@
     i__1 = *nlat;
     for (n = 1; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	fnn[n] = fn * (fn + 1.f);
+	fnn[n] = fn * (fn + 1.);
 	i__2 = *mmax;
 	for (m = 1; m <= i__2; ++m) {
 	    i__3 = *nt;
 	    for (k = 1; k <= i__3; ++k) {
-		as[m + (n + k * as_dim2) * as_dim1] = 0.f;
-		bs[m + (n + k * bs_dim2) * bs_dim1] = 0.f;
+		as[m + (n + k * as_dim2) * as_dim1] = 0.;
+		bs[m + (n + k * bs_dim2) * bs_dim1] = 0.;
 	    }
 	}
     }
@@ -446,7 +446,7 @@
 
 /*     compute synthesis coefficients for xlmbda zero or nonzero */
 
-	if (xlmbda[k] == 0.f) {
+	if (xlmbda[k] == 0.) {
 	    i__2 = *nlat;
 	    for (n = 2; n <= i__2; ++n) {
 		as[(n + k * as_dim2) * as_dim1 + 1] = -a[(n + k * a_dim2) * 
@@ -469,7 +469,7 @@
 /*     xlmbda nonzero so operator invertible unless */
 /*     -n*(n-1) = xlmbda(k) < 0.0  for some n */
 
-	    pertrb[k] = 0.f;
+	    pertrb[k] = 0.;
 	    i__2 = *nlat;
 	    for (n = 1; n <= i__2; ++n) {
 		as[(n + k * as_dim2) * as_dim1 + 1] = -a[(n + k * a_dim2) * 

@@ -257,8 +257,8 @@
     for (np1 = 1; np1 <= i__1; ++np1) {
 	i__2 = *late;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    p0n[np1 + i__ * p0n_dim1] = 0.f;
-	    p1n[np1 + i__ * p1n_dim1] = 0.f;
+	    p0n[np1 + i__ * p0n_dim1] = 0.;
+	    p1n[np1 + i__ * p1n_dim1] = 0.;
 /* L101: */
 	}
     }

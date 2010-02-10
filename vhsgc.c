@@ -662,8 +662,8 @@ static integer c__2 = 2;
 	for (j = 1; j <= i__2; ++j) {
 	    i__3 = *idv;
 	    for (i__ = 1; i__ <= i__3; ++i__) {
-		ve[i__ + (j + k * ve_dim2) * ve_dim1] = 0.f;
-		we[i__ + (j + k * we_dim2) * we_dim1] = 0.f;
+		ve[i__ + (j + k * ve_dim2) * ve_dim1] = 0.;
+		we[i__ + (j + k * we_dim2) * we_dim1] = 0.;
 /* L10: */
 	    }
 	}
@@ -1671,16 +1671,16 @@ L950:
 	    for (i__ = 1; i__ <= i__1; ++i__) {
 		v[i__ + (j + k * v_dim2) * v_dim1] = (ve[i__ + (j + k * 
 			ve_dim2) * ve_dim1] + vo[i__ + (j + k * vo_dim2) * 
-			vo_dim1]) * .5f;
+			vo_dim1]) * .5;
 		w[i__ + (j + k * w_dim2) * w_dim1] = (we[i__ + (j + k * 
 			we_dim2) * we_dim1] + wo[i__ + (j + k * wo_dim2) * 
-			wo_dim1]) * .5f;
+			wo_dim1]) * .5;
 		v[nlp1 - i__ + (j + k * v_dim2) * v_dim1] = (ve[i__ + (j + k *
 			 ve_dim2) * ve_dim1] - vo[i__ + (j + k * vo_dim2) * 
-			vo_dim1]) * .5f;
+			vo_dim1]) * .5;
 		w[nlp1 - i__ + (j + k * w_dim2) * w_dim1] = (we[i__ + (j + k *
 			 we_dim2) * we_dim1] - wo[i__ + (j + k * wo_dim2) * 
-			wo_dim1]) * .5f;
+			wo_dim1]) * .5;
 /* L60: */
 	    }
 	}
@@ -1694,9 +1694,9 @@ L12:
 	    i__3 = imm1;
 	    for (i__ = 1; i__ <= i__3; ++i__) {
 		v[i__ + (j + k * v_dim2) * v_dim1] = ve[i__ + (j + k * 
-			ve_dim2) * ve_dim1] * .5f;
+			ve_dim2) * ve_dim1] * .5;
 		w[i__ + (j + k * w_dim2) * w_dim1] = we[i__ + (j + k * 
-			we_dim2) * we_dim1] * .5f;
+			we_dim2) * we_dim1] * .5;
 /* L11: */
 	    }
 	}
@@ -1710,9 +1710,9 @@ L13:
 	i__2 = *nlon;
 	for (j = 1; j <= i__2; ++j) {
 	    v[*imid + (j + k * v_dim2) * v_dim1] = ve[*imid + (j + k * 
-		    ve_dim2) * ve_dim1] * .5f;
+		    ve_dim2) * ve_dim1] * .5;
 	    w[*imid + (j + k * w_dim2) * w_dim1] = we[*imid + (j + k * 
-		    we_dim2) * we_dim1] * .5f;
+		    we_dim2) * we_dim1] * .5;
 /* L65: */
 	}
     }

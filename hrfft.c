@@ -216,7 +216,7 @@ struct {
     --wsave;
 
     /* Function Body */
-    hrf_1.tfft = 0.f;
+    hrf_1.tfft = 0.;
     if (*n == 1) {
 	return 0;
     }
@@ -295,7 +295,7 @@ L105:
 	fac[ib + 2] = fac[ib + 1];
 /* L106: */
     }
-    fac[3] = 2.f;
+    fac[3] = 2.;
 L107:
     if (nl != 1) {
 	goto L104;
@@ -322,11 +322,11 @@ L107:
 	    ld += l1;
 	    i__ = is;
 	    argld = (doublereal) ld * argh;
-	    fi = 0.f;
+	    fi = 0.;
 	    i__3 = ido;
 	    for (ii = 3; ii <= i__3; ii += 2) {
 		i__ += 2;
-		fi += 1.f;
+		fi += 1.;
 		arg = fi * argld;
 		wa[i__ - 1] = cos(arg);
 		wa[i__] = sin(arg);
@@ -547,7 +547,7 @@ L110:
     ch -= ch_offset;
 
     /* Function Body */
-    hsqt2 = sqrt(2.f) / 2.f;
+    hsqt2 = sqrt(2.) / 2.;
     i__1 = *l1;
     for (k = 1; k <= i__1; ++k) {
 	i__2 = *mp;
@@ -850,7 +850,7 @@ L107:
     ch -= ch_offset;
 
     /* Function Body */
-    arg = pimach_() * 2.f / 3.f;
+    arg = pimach_() * 2. / 3.;
     taur = cos(arg);
     taui = sin(arg);
     i__1 = *l1;
@@ -1000,11 +1000,11 @@ L107:
     ch -= ch_offset;
 
     /* Function Body */
-    arg = pimach_() * 2.f / 5.f;
+    arg = pimach_() * 2. / 5.;
     tr11 = cos(arg);
     ti11 = sin(arg);
-    tr12 = cos(arg * 2.f);
-    ti12 = sin(arg * 2.f);
+    tr12 = cos(arg * 2.);
+    ti12 = sin(arg * 2.);
     i__1 = *l1;
     for (k = 1; k <= i__1; ++k) {
 	i__2 = *mp;
@@ -1348,7 +1348,7 @@ L107:
     ch -= ch_offset;
 
     /* Function Body */
-    tpi = pimach_() * 2.f;
+    tpi = pimach_() * 2.;
     arg = tpi / (doublereal) (*ip);
     dcp = cos(arg);
     dsp = sin(arg);
@@ -1549,8 +1549,8 @@ L121:
 /* L123: */
     }
 
-    ar1 = 1.f;
-    ai1 = 0.f;
+    ar1 = 1.;
+    ai1 = 0.;
     i__1 = ipph;
     for (l = 2; l <= i__1; ++l) {
 	lc = ipp2 - l;
@@ -1749,7 +1749,7 @@ doublereal pimach_(void)
     /* System generated locals */
     doublereal ret_val;
 
-    ret_val = 3.14159265358979f;
+    ret_val = 3.14159265358979;
     return ret_val;
 } /* pimach_ */
 
@@ -1982,7 +1982,7 @@ L115:
     ch -= ch_offset;
 
     /* Function Body */
-    tpi = pimach_() * 2.f;
+    tpi = pimach_() * 2.;
     arg = tpi / (doublereal) (*ip);
     dcp = cos(arg);
     dsp = sin(arg);
@@ -2123,8 +2123,8 @@ L112:
 /* L115: */
     }
 L116:
-    ar1 = 1.f;
-    ai1 = 0.f;
+    ar1 = 1.;
+    ai1 = 0.;
     i__1 = ipph;
     for (l = 2; l <= i__1; ++l) {
 	lc = ipp2 - l;
@@ -2403,7 +2403,7 @@ L143:
     ch -= ch_offset;
 
     /* Function Body */
-    sqrt2 = sqrt(2.f);
+    sqrt2 = sqrt(2.);
     i__1 = *l1;
     for (k = 1; k <= i__1; ++k) {
 	i__2 = *mp;
@@ -2698,7 +2698,7 @@ L107:
     ch -= ch_offset;
 
     /* Function Body */
-    arg = pimach_() * 2.f / 3.f;
+    arg = pimach_() * 2. / 3.;
     taur = cos(arg);
     taui = sin(arg);
     i__1 = *l1;
@@ -2707,14 +2707,14 @@ L107:
 	for (m = 1; m <= i__2; ++m) {
 	    ch[m + ((k + ch_dim3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k * 3 
 		    + 1) * cc_dim2 + 1) * cc_dim1] + cc[m + (*ido + (k * 3 + 
-		    2) * cc_dim2) * cc_dim1] * 2.f;
+		    2) * cc_dim2) * cc_dim1] * 2.;
 	    ch[m + ((k + (ch_dim3 << 1)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2.f * cc[m 
-		    + (*ido + (k * 3 + 2) * cc_dim2) * cc_dim1] - taui * 2.f *
+		    k * 3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2. * cc[m 
+		    + (*ido + (k * 3 + 2) * cc_dim2) * cc_dim1] - taui * 2. *
 		     cc[m + ((k * 3 + 3) * cc_dim2 + 1) * cc_dim1];
 	    ch[m + ((k + ch_dim3 * 3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
-		     3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2.f * cc[m + (*
-		    ido + (k * 3 + 2) * cc_dim2) * cc_dim1] + taui * 2.f * cc[
+		     3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2. * cc[m + (*
+		    ido + (k * 3 + 2) * cc_dim2) * cc_dim1] + taui * 2. * cc[
 		    m + ((k * 3 + 3) * cc_dim2 + 1) * cc_dim1];
 /* L1001: */
 	}
@@ -2836,46 +2836,46 @@ L107:
     ch -= ch_offset;
 
     /* Function Body */
-    arg = pimach_() * 2.f / 5.f;
+    arg = pimach_() * 2. / 5.;
     tr11 = cos(arg);
     ti11 = sin(arg);
-    tr12 = cos(arg * 2.f);
-    ti12 = sin(arg * 2.f);
+    tr12 = cos(arg * 2.);
+    ti12 = sin(arg * 2.);
     i__1 = *l1;
     for (k = 1; k <= i__1; ++k) {
 	i__2 = *mp;
 	for (m = 1; m <= i__2; ++m) {
 	    ch[m + ((k + ch_dim3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k * 5 
 		    + 1) * cc_dim2 + 1) * cc_dim1] + cc[m + (*ido + (k * 5 + 
-		    2) * cc_dim2) * cc_dim1] * 2.f + cc[m + (*ido + (k * 5 + 
-		    4) * cc_dim2) * cc_dim1] * 2.f;
+		    2) * cc_dim2) * cc_dim1] * 2. + cc[m + (*ido + (k * 5 + 
+		    4) * cc_dim2) * cc_dim1] * 2.;
 	    ch[m + ((k + (ch_dim3 << 1)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2.f * cc[m 
-		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2.f *
+		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2. * cc[m 
+		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2. *
 		     cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] - (ti11 
-		    * 2.f * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
-		    ti12 * 2.f * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
+		    * 2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
+		    ti12 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
 		    );
 	    ch[m + ((k + ch_dim3 * 3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
-		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2.f * cc[m + (*
-		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2.f * cc[
+		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2. * cc[m + (*
+		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2. * cc[
 		    m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] - (ti12 * 
-		    2.f * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
-		    ti11 * 2.f * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
+		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
+		    ti11 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
 		    );
 	    ch[m + ((k + (ch_dim3 << 2)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2.f * cc[m 
-		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2.f *
+		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2. * cc[m 
+		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2. *
 		     cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] + (ti12 
-		    * 2.f * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
-		    ti11 * 2.f * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
+		    * 2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
+		    ti11 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
 		    );
 	    ch[m + ((k + ch_dim3 * 5) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
-		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2.f * cc[m + (*
-		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2.f * cc[
+		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2. * cc[m + (*
+		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2. * cc[
 		    m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] + (ti11 * 
-		    2.f * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
-		    ti12 * 2.f * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
+		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
+		    ti12 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
 		    );
 /* L1001: */
 	}

@@ -529,8 +529,8 @@ static integer c__1 = 1;
 
     /* Function Body */
     nlp1 = *nlat + 1;
-    tsn = 2.f / *nlon;
-    fsn = 4.f / *nlon;
+    tsn = 2. / *nlon;
+    fsn = 4. / *nlon;
     mlat = *nlat % 2;
     mlon = *nlon % 2;
 /* Computing MIN */
@@ -626,8 +626,8 @@ L7:
 	for (mp1 = 1; mp1 <= i__1; ++mp1) {
 	    i__3 = *nlat;
 	    for (np1 = mp1; np1 <= i__3; ++np1) {
-		br[mp1 + (np1 + k * br_dim2) * br_dim1] = 0.f;
-		bi[mp1 + (np1 + k * bi_dim2) * bi_dim1] = 0.f;
+		br[mp1 + (np1 + k * br_dim2) * br_dim1] = 0.;
+		bi[mp1 + (np1 + k * bi_dim2) * bi_dim1] = 0.;
 /* L10: */
 	    }
 	}
@@ -642,8 +642,8 @@ L11:
 	for (mp1 = 1; mp1 <= i__1; ++mp1) {
 	    i__2 = *nlat;
 	    for (np1 = mp1; np1 <= i__2; ++np1) {
-		cr[mp1 + (np1 + k * cr_dim2) * cr_dim1] = 0.f;
-		ci[mp1 + (np1 + k * ci_dim2) * ci_dim1] = 0.f;
+		cr[mp1 + (np1 + k * cr_dim2) * cr_dim1] = 0.;
+		ci[mp1 + (np1 + k * ci_dim2) * ci_dim1] = 0.;
 /* L12: */
 	    }
 	}
@@ -1705,12 +1705,12 @@ L820:
 
 /*     compute m=n=0 legendre polynomials for all theta(i) */
 
-    ssqr2 = 1.f / sqrt(2.);
+    ssqr2 = 1. / sqrt(2.);
     i__1 = *imid;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	dpbar[i__ + (dpbar_dim2 + 1) * dpbar_dim1] = ssqr2;
-	vb[i__ + vb_dim1] = 0.f;
-	wb[i__ + wb_dim1] = 0.f;
+	vb[i__ + vb_dim1] = 0.;
+	wb[i__ + wb_dim1] = 0.;
 /* L90: */
     }
 
@@ -1829,7 +1829,7 @@ L131:
 	ix = indx_(&c__0, &n, nlat);
 	i__3 = *imid;
 	for (i__ = 1; i__ <= i__3; ++i__) {
-	    wb[i__ + ix * wb_dim1] = 0.f;
+	    wb[i__ + ix * wb_dim1] = 0.;
 /* L220: */
 	}
 

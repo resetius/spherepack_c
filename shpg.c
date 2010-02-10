@@ -165,7 +165,7 @@ static doublereal c_b71 = 1.;
 /* Computing 2nd power */
     i__1 = *nlat + 1;
     lw1 = i__1 * i__1 << 1;
-    log2n = log((doublereal) (*nlon)) / log(2.f);
+    log2n = log((doublereal) (*nlon)) / log(2.);
     if (*lwshp < lw1 + *nlon + log2n) {
 	return 0;
     }
@@ -176,7 +176,7 @@ static doublereal c_b71 = 1.;
     *ierror = 7;
 /* Computing 2nd power */
     i__1 = *nlat + 1;
-    mlwk = i__1 * i__1 * 1.25f + *nlat * 7 + 8;
+    mlwk = i__1 * i__1 * 1.25 + *nlat * 7 + 8;
     if (*lwork < mlwk) {
 	return 0;
     }
@@ -329,8 +329,8 @@ static doublereal c_b71 = 1.;
     modn = *nlat - ns2 - ns2;
     nte = (*nlat + 1) / 2;
     nto = *nlat - nte;
-    tusl = 0.f;
-    toe = 0.f;
+    tusl = 0.;
+    toe = 0.;
 
 /*     compute gauss grid distribution */
 
@@ -541,12 +541,12 @@ L200:
 /*     check orthogonality of pe(i,j,mp1)  mp1=1,2 */
 
     for (ip = 1; ip <= 2; ++ip) {
-	dmax__ = 0.f;
+	dmax__ = 0.;
 	i__1 = nte;
 	for (i__ = 1; i__ <= i__1; ++i__) {
 	    i__2 = nte;
 	    for (j = 1; j <= i__2; ++j) {
-		sum1 = 0.f;
+		sum1 = 0.;
 		i__3 = nte;
 		for (k = 1; k <= i__3; ++k) {
 		    sum1 += ze[k + (i__ + ip * ze_dim2) * ze_dim1] * pe[k + (
@@ -559,7 +559,7 @@ L200:
 		    dmax__ = dmax(r__1,r__2);
 		} else {
 /* Computing MAX */
-		    r__2 = dmax__, r__3 = (r__1 = sum1 - 1.f, dabs(r__1));
+		    r__2 = dmax__, r__3 = (r__1 = sum1 - 1., dabs(r__1));
 		    dmax__ = dmax(r__2,r__3);
 		}
 	    }
@@ -658,7 +658,7 @@ L304:
 L306:
 	i__2 = nte;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    z__[i__] = 0.f;
+	    z__[i__] = 0.;
 	    wx[i__] = gwts[i__] * xx[i__];
 	}
 	i__2 = nto;
@@ -753,12 +753,12 @@ L300:
 /*     check orthogonality of po(i,j,mp1)  mp1=1,2 */
 
     for (ip = 1; ip <= 2; ++ip) {
-	dmax__ = 0.f;
+	dmax__ = 0.;
 	i__1 = nto;
 	for (i__ = 1; i__ <= i__1; ++i__) {
 	    i__2 = nto;
 	    for (j = 1; j <= i__2; ++j) {
-		sum1 = 0.f;
+		sum1 = 0.;
 		i__3 = nto;
 		for (k = 1; k <= i__3; ++k) {
 		    sum1 += zo[k + (i__ + ip * zo_dim2) * zo_dim1] * po[k + (
@@ -771,7 +771,7 @@ L300:
 		    dmax__ = dmax(r__1,r__2);
 		} else {
 /* Computing MAX */
-		    r__2 = dmax__, r__3 = (r__1 = sum1 - 1.f, dabs(r__1));
+		    r__2 = dmax__, r__3 = (r__1 = sum1 - 1., dabs(r__1));
 		    dmax__ = dmax(r__2,r__3);
 		}
 	    }
@@ -949,7 +949,7 @@ L300:
 	return 0;
     }
     *ierror = 5;
-    log2n = log((doublereal) (*nlon)) / log(2.f);
+    log2n = log((doublereal) (*nlon)) / log(2.);
 /* Computing 2nd power */
     i__1 = *nlat + 1;
     lw1 = i__1 * i__1 << 1;
@@ -997,7 +997,7 @@ L300:
 
     hrfftb_(nlat, nlon, &y[y_offset], idxy, &wshp[lw1 + 1], &work[1]);
 
-    sn = 1.f / *nlon;
+    sn = 1. / *nlon;
     i__1 = *nlon;
     for (j = 1; j <= i__1; ++j) {
 	i__2 = *nlat;
@@ -1139,9 +1139,9 @@ L300:
 	i__2 = nte;
 	for (i__ = 1; i__ <= i__2; ++i__) {
 	    xe[i__ + xe_dim1] = (sx[i__ + mpm * sx_dim1] + sx[*nlat + 1 - i__ 
-		    + mpm * sx_dim1]) * .5f;
+		    + mpm * sx_dim1]) * .5;
 	    xo[i__ + xo_dim1] = (sx[i__ + mpm * sx_dim1] - sx[*nlat + 1 - i__ 
-		    + mpm * sx_dim1]) * .5f;
+		    + mpm * sx_dim1]) * .5;
 	}
 /*      if(modn.eq.1) then */
 /*      xe(nte,1) = sx(nte,mpm) */
@@ -1151,9 +1151,9 @@ L300:
 	    i__2 = nte;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
 		xe[i__ + (xe_dim1 << 1)] = (sx[i__ + (mpm + 1) * sx_dim1] + 
-			sx[*nlat + 1 - i__ + (mpm + 1) * sx_dim1]) * .5f;
+			sx[*nlat + 1 - i__ + (mpm + 1) * sx_dim1]) * .5;
 		xo[i__ + (xo_dim1 << 1)] = (sx[i__ + (mpm + 1) * sx_dim1] - 
-			sx[*nlat + 1 - i__ + (mpm + 1) * sx_dim1]) * .5f;
+			sx[*nlat + 1 - i__ + (mpm + 1) * sx_dim1]) * .5;
 	    }
 /*      if(modn.eq.1) then */
 /*      xe(nte,2) = sx(nte,mpm+1) */
@@ -1238,7 +1238,7 @@ L100:
     for (j = js; j <= i__1; ++j) {
 	i__2 = *nlat;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    sy[i__ + j * sy_dim1] = 0.f;
+	    sy[i__ + j * sy_dim1] = 0.;
 	}
     }
     return 0;
@@ -1271,7 +1271,7 @@ L100:
     for (i__ = 1; i__ <= i__1; ++i__) {
 	i__2 = *mc;
 	for (j = 1; j <= i__2; ++j) {
-	    c__[i__ + j * c_dim1] = 0.f;
+	    c__[i__ + j * c_dim1] = 0.;
 	    i__3 = *lc;
 	    for (k = 1; k <= i__3; ++k) {
 		c__[i__ + j * c_dim1] += a[i__ + k * a_dim1] * b[k + j * 
@@ -1308,7 +1308,7 @@ L100:
     for (i__ = 1; i__ <= i__1; ++i__) {
 	i__2 = *mc;
 	for (j = 1; j <= i__2; ++j) {
-	    c__[i__ + j * c_dim1] = 0.f;
+	    c__[i__ + j * c_dim1] = 0.;
 	    i__3 = *lc;
 	    for (k = 1; k <= i__3; ++k) {
 		c__[i__ + j * c_dim1] += a[i__ + k * a_dim1] * b[k + j * 
@@ -1347,8 +1347,8 @@ L100:
     /* Function Body */
     i__1 = *lr;
     for (k = 1; k <= i__1; ++k) {
-	y[k + y_dim1] = 0.f;
-	y[k + (y_dim1 << 1)] = 0.f;
+	y[k + y_dim1] = 0.;
+	y[k + (y_dim1 << 1)] = 0.;
     }
 
     if (*lc <= 0) {
@@ -1356,8 +1356,8 @@ L100:
     }
     i__1 = *lc;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	sum1 = 0.f;
-	sum2 = 0.f;
+	sum1 = 0.;
+	sum2 = 0.;
 	i__2 = *mc;
 	for (j = 1; j <= i__2; ++j) {
 	    sum1 += b[i__ + j * b_dim1] * x[j + x_dim1];
@@ -1401,8 +1401,8 @@ L100:
     /* Function Body */
     i__1 = *lr;
     for (k = 1; k <= i__1; ++k) {
-	y[k + y_dim1] = 0.f;
-	y[k + (y_dim1 << 1)] = 0.f;
+	y[k + y_dim1] = 0.;
+	y[k + (y_dim1 << 1)] = 0.;
     }
 
     if (*lc <= 0) {
@@ -1410,8 +1410,8 @@ L100:
     }
     i__1 = *lc;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	sum1 = 0.f;
-	sum2 = 0.f;
+	sum1 = 0.;
+	sum2 = 0.;
 	i__2 = *mc;
 	for (j = 1; j <= i__2; ++j) {
 	    sum1 += b[i__ + j * b_dim1] * x[j + x_dim1];
@@ -1462,7 +1462,7 @@ L100:
     if (*lag == 1) {
 	i__1 = kmx;
 	for (k = 1; k <= i__1; ++k) {
-	    y[k + y_dim1] = 0.f;
+	    y[k + y_dim1] = 0.;
 	}
 /*      if(lc.eq.0) then */
 /*      do k=1,lr */
@@ -1475,7 +1475,7 @@ L100:
 	}
 	i__1 = *lc;
 	for (i__ = 1; i__ <= i__1; ++i__) {
-	    sum1 = 0.f;
+	    sum1 = 0.;
 	    i__2 = *mc;
 	    for (j = js[i__]; j <= i__2; ++j) {
 		sum1 += b[j + i__ * b_dim1] * x[j + x_dim1];
@@ -1489,8 +1489,8 @@ L100:
     }
     i__1 = kmx;
     for (k = 1; k <= i__1; ++k) {
-	y[k + y_dim1] = 0.f;
-	y[k + (y_dim1 << 1)] = 0.f;
+	y[k + y_dim1] = 0.;
+	y[k + (y_dim1 << 1)] = 0.;
     }
     if (*lc <= 0) {
 	return 0;
@@ -1498,8 +1498,8 @@ L100:
 
     i__1 = *lc;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	sum1 = 0.f;
-	sum2 = 0.f;
+	sum1 = 0.;
+	sum2 = 0.;
 	i__2 = *mc;
 	for (j = js[i__]; j <= i__2; ++j) {
 	    sum1 += b[j + i__ * b_dim1] * x[j + x_dim1];
@@ -1585,7 +1585,7 @@ L50:
     --x;
 
     /* Function Body */
-    sum = 0.f;
+    sum = 0.;
     i__1 = *n;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	sum += x[i__] * y[i__];
@@ -1626,7 +1626,7 @@ L50:
     --x;
 
     /* Function Body */
-    sqs = 0.f;
+    sqs = 0.;
     i__1 = *n;
     for (i__ = 1; i__ <= i__1; ++i__) {
 /*      sum = 0. */
@@ -1667,7 +1667,7 @@ L4:
 
     /* Function Body */
     nh = (*n + 1) / 2;
-    *dmax__ = 0.f;
+    *dmax__ = 0.;
     if (*moe != 0) {
 	goto L1;
     }
@@ -1676,7 +1676,7 @@ L4:
 /* Computing MAX */
 	d__2 = *dmax__, d__3 = (d__1 = x[i__] - x[*n - i__ + 1], abs(d__1));
 	*dmax__ = max(d__2,d__3);
-	x[i__] = (x[i__] + x[*n - i__ + 1]) * .5f;
+	x[i__] = (x[i__] + x[*n - i__ + 1]) * .5;
 	x[*n - i__ + 1] = x[i__];
     }
     return 0;
@@ -1686,11 +1686,11 @@ L1:
 /* Computing MAX */
 	d__2 = *dmax__, d__3 = (d__1 = x[i__] + x[*n - i__ + 1], abs(d__1));
 	*dmax__ = max(d__2,d__3);
-	x[i__] = (x[i__] - x[*n - i__ + 1]) * .5f;
+	x[i__] = (x[i__] - x[*n - i__ + 1]) * .5;
 	x[*n - i__ + 1] = -x[i__];
     }
     if (*n % 2 != 0) {
-	x[nh] = 0.f;
+	x[nh] = 0.;
     }
     return 0;
 } /* coe_ */
@@ -1775,7 +1775,7 @@ L1:
     --cp;
 
     /* Function Body */
-    cp[1] = 0.f;
+    cp[1] = 0.;
     ma = abs(*m);
     if (ma > *n) {
 	return 0;
@@ -1830,8 +1830,8 @@ L15:
 	    t1 /= 1099511627776.;
 	    nex += 40;
 	}
-	fnum += 2.f;
-	fden += 2.f;
+	fnum += 2.;
+	fden += 2.;
 /* L18: */
     }
 L20:
@@ -1840,14 +1840,14 @@ L20:
     if (ma / 2 % 2 != 0) {
 	t1 = -t1;
     }
-    t2 = 1.f;
+    t2 = 1.;
     if (ma == 0) {
 	goto L26;
     }
     i__1 = ma;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	t2 = fnmh * t2 / (fnmh + pm1);
-	fnmh += 2.f;
+	fnmh += 2.;
 /* L25: */
     }
 L26:
@@ -1870,18 +1870,18 @@ L29:
 	return 0;
     }
     fk = (doublereal) (*n);
-    a1 = (fk - 2.f) * (fk - 1.f) - fnnp1;
-    b1 = (fk * fk - fnmsq) * 2.f;
+    a1 = (fk - 2.) * (fk - 1.) - fnnp1;
+    b1 = (fk * fk - fnmsq) * 2.;
     cp[l - 1] = b1 * cp[l] / a1;
 L30:
     --l;
     if (l <= 1) {
 	return 0;
     }
-    fk += -2.f;
-    a1 = (fk - 2.f) * (fk - 1.f) - fnnp1;
-    b1 = (fk * fk - fnmsq) * -2.f;
-    c1 = (fk + 1.f) * (fk + 2.f) - fnnp1;
+    fk += -2.;
+    a1 = (fk - 2.) * (fk - 1.) - fnnp1;
+    b1 = (fk * fk - fnmsq) * -2.;
+    c1 = (fk + 1.) * (fk + 2.) - fnnp1;
     cp[l - 1] = -(b1 * cp[l] + c1 * cp[l + 1]) / a1;
     goto L30;
 } /* dlfkg_ */
@@ -1926,7 +1926,7 @@ L1:
 
 L3:
     kdo = *n / 2;
-    *pb = cp[1] * .5f;
+    *pb = cp[1] * .5;
     if (*n == 0) {
 	return 0;
     }
@@ -1947,7 +1947,7 @@ L3:
 
 L4:
     kdo = *n / 2;
-    *pb = 0.f;
+    *pb = 0.;
     cth = cdt;
     sth = sdt;
     i__1 = kdo;
@@ -1971,7 +1971,7 @@ L2:
 
 L13:
     kdo = (*n + 1) / 2;
-    *pb = 0.f;
+    *pb = 0.;
     cth = cos(*theta);
     sth = sin(*theta);
     i__1 = kdo;
@@ -1989,7 +1989,7 @@ L13:
 
 L14:
     kdo = (*n + 1) / 2;
-    *pb = 0.f;
+    *pb = 0.;
     cth = cos(*theta);
     sth = sin(*theta);
     i__1 = kdo;
@@ -2148,7 +2148,7 @@ L10:
 
     tpdp1_(nlat, &zero, &cz, &theta[ns2 + 1], &wts[ns2 + 1], &pb, &dpb);
     dcor = pb / dpb;
-    sgnd = 1.f;
+    sgnd = 1.;
     if (dcor != 0.) {
 	sgnd = dcor / abs(dcor);
     }
@@ -2173,7 +2173,7 @@ L10:
 	goto L30;
     }
     if (nix == nhalf - 1) {
-	zero = zero * 3.f - pi;
+	zero = zero * 3. - pi;
     }
     if (nix < nhalf - 1) {
 	zero = zero + zero - zprev;

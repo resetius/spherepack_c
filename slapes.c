@@ -409,7 +409,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	fnn[n] = fn * (fn + 1.f);
+	fnn[n] = fn * (fn + 1.);
 /* L1: */
     }
 
@@ -421,8 +421,8 @@
 	for (n = 1; n <= i__2; ++n) {
 	    i__3 = *mmax;
 	    for (m = 1; m <= i__3; ++m) {
-		alap[m + (n + k * alap_dim2) * alap_dim1] = 0.f;
-		blap[m + (n + k * blap_dim2) * blap_dim1] = 0.f;
+		alap[m + (n + k * alap_dim2) * alap_dim1] = 0.;
+		blap[m + (n + k * blap_dim2) * blap_dim1] = 0.;
 /* L4: */
 	    }
 /* L3: */

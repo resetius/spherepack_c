@@ -536,7 +536,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	fnn[n] = -1.f / (fn * (fn + 1.f));
+	fnn[n] = -1. / (fn * (fn + 1.));
 /* L1: */
     }
 
@@ -552,10 +552,10 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    brvw[m + (n + k * brvw_dim2) * brvw_dim1] = 0.f;
-		    bivw[m + (n + k * bivw_dim2) * bivw_dim1] = 0.f;
-		    crvw[m + (n + k * crvw_dim2) * crvw_dim1] = 0.f;
-		    civw[m + (n + k * civw_dim2) * civw_dim1] = 0.f;
+		    brvw[m + (n + k * brvw_dim2) * brvw_dim1] = 0.;
+		    bivw[m + (n + k * bivw_dim2) * bivw_dim1] = 0.;
+		    crvw[m + (n + k * crvw_dim2) * crvw_dim1] = 0.;
+		    civw[m + (n + k * civw_dim2) * civw_dim1] = 0.;
 /* L4: */
 		}
 /* L3: */
@@ -600,8 +600,8 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    brvw[m + (n + k * brvw_dim2) * brvw_dim1] = 0.f;
-		    bivw[m + (n + k * bivw_dim2) * bivw_dim1] = 0.f;
+		    brvw[m + (n + k * brvw_dim2) * brvw_dim1] = 0.;
+		    bivw[m + (n + k * bivw_dim2) * bivw_dim1] = 0.;
 /* L14: */
 		}
 /* L13: */
@@ -638,8 +638,8 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    crvw[m + (n + k * crvw_dim2) * crvw_dim1] = 0.f;
-		    civw[m + (n + k * civw_dim2) * civw_dim1] = 0.f;
+		    crvw[m + (n + k * crvw_dim2) * crvw_dim1] = 0.;
+		    civw[m + (n + k * civw_dim2) * civw_dim1] = 0.;
 /* L24: */
 		}
 /* L23: */

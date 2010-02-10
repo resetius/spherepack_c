@@ -18,8 +18,8 @@ static integer c__16 = 16;
 static integer c__0 = 0;
 static integer c__2 = 2;
 static integer c__1 = 1;
-static doublereal c_b73 = 0.f;
-static doublereal c_b74 = 1.f;
+static doublereal c_b73 = 0.;
+static doublereal c_b74 = 1.;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -219,8 +219,8 @@ static doublereal c_b74 = 1.f;
     sptcg_(&wk[nz1], &m, &n, &theta[1], &wk[nclat], &wk[nslat], &wk[nx], &wk[
 	    ny], &wk[nz]);
 /*     ****     transform eye position to cartesian coordinates */
-    pi = atan(1.f) * 4.f;
-    dtr = pi / 180.f;
+    pi = atan(1.f) * 4.;
+    dtr = pi / 180.;
     xeye = *eyer * sin(dtr * *eyelat);
     yeye = xeye * sin(dtr * *eyelon);
     xeye *= cos(dtr * *eyelon);
@@ -270,8 +270,8 @@ static doublereal c_b74 = 1.f;
 /* L10: */
 	}
     }
-    sumn = 0.f;
-    sums = 0.f;
+    sumn = 0.;
+    sums = 0.;
     i__2 = *nlon;
     for (j = 1; j <= i__2; ++j) {
 	sumn += h__[j * h_dim1 + 1];
@@ -299,7 +299,7 @@ static doublereal c_b74 = 1.f;
 {
     /* Initialized data */
 
-    static doublereal sten[16]	/* was [4][4] */ = { .015625f,-.078125f,
+    static doublereal sten[16]	/* was [4][4] */ = { .015625,-.078125f,
 	    -.078125f,.015625f,-.078125f,.390625f,.390625f,-.078125f,
 	    -.078125f,.390625f,.390625f,-.078125f,.015625f,-.078125f,
 	    -.078125f,.015625f };
@@ -354,7 +354,7 @@ static doublereal c_b74 = 1.f;
     for (i__ = 1; i__ <= i__2; ++i__) {
 	i__1 = *n;
 	for (j = 1; j <= i__1; ++j) {
-	    w1[j + i__ * w1_dim1] = 0.f;
+	    w1[j + i__ * w1_dim1] = 0.;
 /* L7: */
 	}
     }
@@ -380,9 +380,9 @@ static doublereal c_b74 = 1.f;
 	i__1 = *n - 2;
 	for (j = 2; j <= i__1; ++j) {
 	    r__3 = (r__1 = (w2[j + (i__ + 1) * w2_dim1] + w2[j + 1 + (i__ + 2)
-		     * w2_dim1]) * .5f - w1[j + i__ * w1_dim1], dabs(r__1)) - 
+		     * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], dabs(r__1)) - 
 		    (r__2 = (w2[j + (i__ + 2) * w2_dim1] + w2[j + 1 + (i__ + 
-		    1) * w2_dim1]) * .5f - w1[j + i__ * w1_dim1], dabs(r__2));
+		    1) * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], dabs(r__2));
 	    iflag[j + i__ * iflag_dim1] = icvmg_(&c__16, &c__0, &r__3);
 /* L9: */
 	}
@@ -423,10 +423,10 @@ static doublereal c_b74 = 1.f;
     --theta;
 
     /* Function Body */
-    pi = atan(1.f) * 4.f;
+    pi = atan(1.f) * 4.;
     dp = (pi + pi) / (*m - 1);
-    clat[1] = 1.f;
-    slat[1] = 0.f;
+    clat[1] = 1.;
+    slat[1] = 0.;
     i__1 = *n - 1;
     for (j = 2; j <= i__1; ++j) {
 	thet = theta[j - 1];
@@ -435,7 +435,7 @@ static doublereal c_b74 = 1.f;
 /* L10: */
     }
     clat[*n] = -1.f;
-    slat[*n] = 0.f;
+    slat[*n] = 0.;
     i__1 = *m - 1;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	clon = cos((i__ - 1) * dp);
@@ -510,7 +510,7 @@ static doublereal c_b74 = 1.f;
 	    if ((xp[i__3 + i__4 * xp_dim1] - xp[i__5 + i__ * xp_dim1]) * (yp[
 		    j + i__ * yp_dim1] - yp[i__5 + i__ * yp_dim1]) - (xp[j + 
 		    i__ * xp_dim1] - xp[i__5 + i__ * xp_dim1]) * (yp[i__3 + 
-		    i__4 * yp_dim1] - yp[i__5 + i__ * yp_dim1]) <= 0.f) {
+		    i__4 * yp_dim1] - yp[i__5 + i__ * yp_dim1]) <= 0.) {
 		goto L10;
 	    }
 /*     west and south are visible */
@@ -522,7 +522,7 @@ L10:
 	    if ((xp[j + i__ * xp_dim1] - xp[j + i__3 * xp_dim1]) * (yp[i__4 + 
 		    i__5 * yp_dim1] - yp[j + i__3 * yp_dim1]) - (xp[i__4 + 
 		    i__5 * xp_dim1] - xp[j + i__3 * xp_dim1]) * (yp[j + i__ * 
-		    yp_dim1] - yp[j + i__3 * yp_dim1]) <= 0.f) {
+		    yp_dim1] - yp[j + i__3 * yp_dim1]) <= 0.) {
 		goto L100;
 	    }
 /*     east and north are visible */
@@ -534,7 +534,7 @@ L20:
 	    if ((xp[i__3 + i__ * xp_dim1] - xp[j + i__ * xp_dim1]) * (yp[j + 
 		    i__4 * yp_dim1] - yp[j + i__ * yp_dim1]) - (xp[j + i__4 * 
 		    xp_dim1] - xp[j + i__ * xp_dim1]) * (yp[i__3 + i__ * 
-		    yp_dim1] - yp[j + i__ * yp_dim1]) <= 0.f) {
+		    yp_dim1] - yp[j + i__ * yp_dim1]) <= 0.) {
 		goto L30;
 	    }
 /*     west and north are visible */
@@ -547,7 +547,7 @@ L30:
 	    if ((xp[j + i__3 * xp_dim1] - xp[i__4 + i__5 * xp_dim1]) * (yp[
 		    i__6 + i__ * yp_dim1] - yp[i__4 + i__5 * yp_dim1]) - (xp[
 		    i__6 + i__ * xp_dim1] - xp[i__4 + i__5 * xp_dim1]) * (yp[
-		    j + i__3 * yp_dim1] - yp[i__4 + i__5 * yp_dim1]) <= 0.f) {
+		    j + i__3 * yp_dim1] - yp[i__4 + i__5 * yp_dim1]) <= 0.) {
 		goto L100;
 	    }
 /*     east and south are visible */
@@ -566,7 +566,7 @@ L100:
 	if ((xp[c__2 + i__1 * xp_dim1] - xp[c__2 + i__ * xp_dim1]) * (yp[c__1 
 		+ i__ * yp_dim1] - yp[c__2 + i__ * yp_dim1]) - (xp[c__1 + i__ 
 		* xp_dim1] - xp[c__2 + i__ * xp_dim1]) * (yp[c__2 + i__1 * 
-		yp_dim1] - yp[c__2 + i__ * yp_dim1]) > 0.f) {
+		yp_dim1] - yp[c__2 + i__ * yp_dim1]) > 0.) {
 	    iflag[i__ * iflag_dim1 + 1] = 15;
 	}
 	iflag[*n - 1 + i__ * iflag_dim1] = 0;
@@ -576,7 +576,7 @@ L100:
 	if ((xp[*n + i__ * xp_dim1] - xp[i__1 + i__ * xp_dim1]) * (yp[i__3 + 
 		i__4 * yp_dim1] - yp[i__1 + i__ * yp_dim1]) - (xp[i__3 + i__4 
 		* xp_dim1] - xp[i__1 + i__ * xp_dim1]) * (yp[*n + i__ * 
-		yp_dim1] - yp[i__1 + i__ * yp_dim1]) > 0.f) {
+		yp_dim1] - yp[i__1 + i__ * yp_dim1]) > 0.) {
 	    iflag[*n - 1 + i__ * iflag_dim1] = 31;
 	}
 /* L200: */
@@ -659,11 +659,11 @@ L105:
     --nf;
     mfac[nf] = 4;
 L106:
-    tphi = .707f / (doublereal) (*m - 1);
+    tphi = .707 / (doublereal) (*m - 1);
     ns2 = *n / 2;
     mf1 = mfac[nf];
     mst[1] = (*m - 1) / mf1;
-    pi = atan(1.f) * 4.f;
+    pi = atan(1.f) * 4.;
     dt = pi / (doublereal) (*n - 1);
     jf = nf - 1;
     i__1 = ns2;
@@ -1085,7 +1085,7 @@ L200:
     le2 = .6931471805599453094172321;
     l2e = 1. / le2;
     fntri = (doublereal) (*ntri);
-    irmax = l2e * .5f * log(fntri);
+    irmax = l2e * .5 * log(fntri);
     irmax = min(irmax,10);
     irmp1 = irmax + 1;
     for (icv = 1; icv <= 11; ++icv) {
@@ -1146,7 +1146,7 @@ L200:
 /*      if(cprod.eq.0.) write(6,79) k,px1(k),px2(k),px3(k), */
 /*     -                              py1(k),py2(k),py3(k) */
 /* L79: */
-	if (cprod >= 0.f) {
+	if (cprod >= 0.) {
 	    goto L70;
 	}
 	px1h = px1[k];
@@ -1201,8 +1201,8 @@ L70:
 	pmax = dmax(r__1,r__2);
 /* L87: */
     }
-    pmin *= 1.1f;
-    pmax *= 1.1f;
+    pmin *= 1.1;
+    pmax *= 1.1;
     set_(&c_b73, &c_b74, &c_b73, &c_b74, &pmin, &pmax, &pmin, &pmax, &c__1);
 /* Computing MIN */
     r__1 = min(px1[1],px2[1]);
@@ -1243,16 +1243,16 @@ L70:
     }
     c__ = ymin;
     d__ = ymax;
-    xmid = (xmin + xmax) * .5f;
-    hdy = dmy * .5f;
+    xmid = (xmin + xmax) * .5;
+    hdy = dmy * .5;
     a = xmid - hdy;
     b = xmid + hdy;
     goto L3;
 L2:
     a = xmin;
     b = xmax;
-    ymid = (ymin + ymax) * .5f;
-    hdx = dmx * .5f;
+    ymid = (ymin + ymax) * .5;
+    hdx = dmx * .5;
     c__ = ymid - hdx;
     d__ = ymid + hdx;
 L3:
@@ -1281,7 +1281,7 @@ L3:
 /* Computing MAX */
 	r__1 = xmax - xmin, r__2 = ymax - ymin;
 	dxt = dmax(r__1,r__2);
-	if (dxt > 0.f) {
+	if (dxt > 0.) {
 	    goto L10;
 	}
 	ir = irmax;
@@ -1293,10 +1293,10 @@ L20:
 	irp1 = ir + 1;
 	++nct[irp1 - 1];
 	hr = hgr / ip2[irp1 - 1];
-	xmid = (xmin + xmax) * .5f;
-	id = (xmid - a) / hr + 1.5f;
-	ymid = (ymin + ymax) * .5f;
-	jd = (ymid - c__) / hr + 1.5f;
+	xmid = (xmin + xmax) * .5;
+	id = (xmid - a) / hr + 1.5;
+	ymid = (ymin + ymax) * .5;
+	jd = (ymid - c__) / hr + 1.5;
 	ijd = ip2[irp1 - 1] + 1;
 	isx = id + (jd - 1) * ijd + ird[irp1 - 1];
 	ifx = ifinal[isx];
@@ -1351,8 +1351,8 @@ L30:
 	vy3[k] = py1[k] - py3[k];
 /* L90: */
     }
-    tl1 = 0.f;
-    tl2 = 0.f;
+    tl1 = 0.;
+    tl2 = 0.;
     maxs = 0;
     i__1 = irmp1;
     for (ir2 = 1; ir2 <= i__1; ++ir2) {
@@ -1549,9 +1549,9 @@ L105:
 				    py2[k]);
 			    c36 = vy3[k] * (px4 - px3[k]) - vx3[k] * (py4 - 
 				    py3[k]);
-			    tmin = 0.f;
-			    tmax = 1.f;
-			    if (c17 < 0.f) {
+			    tmin = 0.;
+			    tmax = 1.;
+			    if (c17 < 0.) {
 				goto L151;
 			    } else if (c17 == 0) {
 				goto L152;
@@ -1564,7 +1564,7 @@ L151:
 			    tmax = dmin(r__1,tmax);
 			    goto L154;
 L152:
-			    if (c14 >= 0.f) {
+			    if (c14 >= 0.) {
 				goto L440;
 			    } else {
 				goto L154;
@@ -1574,7 +1574,7 @@ L153:
 			    r__1 = c14 / c17;
 			    tmin = dmax(r__1,tmin);
 L154:
-			    if (c27 < 0.f) {
+			    if (c27 < 0.) {
 				goto L155;
 			    } else if (c27 == 0) {
 				goto L156;
@@ -1587,7 +1587,7 @@ L155:
 			    tmax = dmin(r__1,tmax);
 			    goto L158;
 L156:
-			    if (c25 >= 0.f) {
+			    if (c25 >= 0.) {
 				goto L440;
 			    } else {
 				goto L158;
@@ -1597,7 +1597,7 @@ L157:
 			    r__1 = c25 / c27;
 			    tmin = dmax(r__1,tmin);
 L158:
-			    if (c37 < 0.f) {
+			    if (c37 < 0.) {
 				goto L159;
 			    } else if (c37 == 0) {
 				goto L160;
@@ -1610,7 +1610,7 @@ L159:
 			    tmax = dmin(r__1,tmax);
 			    goto L162;
 L160:
-			    if (c36 >= 0.f) {
+			    if (c36 >= 0.) {
 				goto L440;
 			    } else {
 				goto L162;
@@ -1647,8 +1647,8 @@ L162:
 			    vy3t = ypl - *yeye;
 			    vz3t = zpl - *zeye;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    til = 0.f;
-			    if (den == 0.f) {
+			    til = 0.;
+			    if (den == 0.) {
 				goto L410;
 			    }
 			    til = (dpl - apl * *xeye - bpl * *yeye - cpl * *
@@ -1658,32 +1658,32 @@ L410:
 			    vy3t = ypr - *yeye;
 			    vz3t = zpr - *zeye;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    tir = 0.f;
-			    if (den == 0.f) {
+			    tir = 0.;
+			    if (den == 0.) {
 				goto L412;
 			    }
 			    tir = (dpl - apl * *xeye - bpl * *yeye - cpl * *
 				    zeye) / den;
 L412:
-			    if (til >= .99999f && tir >= .99999f) {
+			    if (til >= .99999 && tir >= .99999) {
 				goto L440;
 			    }
-			    if (til < 1.f && tir < 1.f) {
+			    if (til < 1. && tir < 1.) {
 				goto L164;
 			    }
 			    vx3t = xpr - xpl;
 			    vy3t = ypr - ypl;
 			    vz3t = zpr - zpl;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    tim = 0.f;
-			    if (den == 0.f) {
+			    tim = 0.;
+			    if (den == 0.) {
 				goto L414;
 			    }
 			    tim = (dpl - apl * xpl - bpl * ypl - cpl * zpl) / 
 				    den;
 L414:
 			    thold = tmin + tim * (tmax - tmin);
-			    if (til >= 1.f) {
+			    if (til >= 1.) {
 				goto L163;
 			    }
 			    tmax = thold;
@@ -1764,8 +1764,8 @@ L180:
 			    tr[kb] = tl[kb];
 /* L181: */
 			}
-			tl[1] = 0.f;
-			tr[nseg + 1] = 1.f;
+			tl[1] = 0.;
+			tr[nseg + 1] = 1.;
 			nsegp = nseg + 1;
 			i__6 = nsegp;
 			for (k = 1; k <= i__6; ++k) {
@@ -1908,7 +1908,7 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
 /*     returns i1 if i3.ge.0 and returns i2 if i3.lt.0 . */
 
     ret_val = *i1;
-    if (*r__ < 0.f) {
+    if (*r__ < 0.) {
 	ret_val = *i2;
     }
     return ret_val;

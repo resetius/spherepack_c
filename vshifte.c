@@ -684,7 +684,7 @@
 	return 0;
     }
     *ier = 0;
-    pi = atan(1.f) * 4.f;
+    pi = atan(1.) * 4.;
 
 /*     set lat,long increments */
 
@@ -694,9 +694,9 @@
 /*     set left or right latitude shifts */
 
     if (*ioff == 0) {
-	dp = dlat * -.5f;
+	dp = dlat * -.5;
     } else {
-	dp = dlat * .5f;
+	dp = dlat * .5;
     }
     nlat2 = *nlat + *nlat;
     vhifthi_(&nlat2, &dp, &wsav[1]);
@@ -704,9 +704,9 @@
 /*     set left or right longitude shifts */
 
     if (*ioff == 0) {
-	dp = dlon * -.5f;
+	dp = dlon * -.5;
     } else {
-	dp = dlon * .5f;
+	dp = dlon * .5;
     }
     isav = (*nlat << 2) + 17;
     vhifthi_(nlon, &dp, &wsav[isav]);

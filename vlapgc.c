@@ -549,7 +549,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	fnn[n] = -fn * (fn + 1.f);
+	fnn[n] = -fn * (fn + 1.);
 /* L1: */
     }
 
@@ -565,10 +565,10 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    brlap[m + (n + k * brlap_dim2) * brlap_dim1] = 0.f;
-		    bilap[m + (n + k * bilap_dim2) * bilap_dim1] = 0.f;
-		    crlap[m + (n + k * crlap_dim2) * crlap_dim1] = 0.f;
-		    cilap[m + (n + k * cilap_dim2) * cilap_dim1] = 0.f;
+		    brlap[m + (n + k * brlap_dim2) * brlap_dim1] = 0.;
+		    bilap[m + (n + k * bilap_dim2) * bilap_dim1] = 0.;
+		    crlap[m + (n + k * crlap_dim2) * crlap_dim1] = 0.;
+		    cilap[m + (n + k * cilap_dim2) * cilap_dim1] = 0.;
 /* L4: */
 		}
 /* L3: */
@@ -613,8 +613,8 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    brlap[m + (n + k * brlap_dim2) * brlap_dim1] = 0.f;
-		    bilap[m + (n + k * bilap_dim2) * bilap_dim1] = 0.f;
+		    brlap[m + (n + k * brlap_dim2) * brlap_dim1] = 0.;
+		    bilap[m + (n + k * bilap_dim2) * bilap_dim1] = 0.;
 /* L14: */
 		}
 /* L13: */
@@ -651,8 +651,8 @@
 	    for (n = 1; n <= i__2; ++n) {
 		i__3 = *mmax;
 		for (m = 1; m <= i__3; ++m) {
-		    crlap[m + (n + k * crlap_dim2) * crlap_dim1] = 0.f;
-		    cilap[m + (n + k * cilap_dim2) * cilap_dim1] = 0.f;
+		    crlap[m + (n + k * crlap_dim2) * crlap_dim1] = 0.;
+		    cilap[m + (n + k * cilap_dim2) * cilap_dim1] = 0.;
 /* L24: */
 		}
 /* L23: */

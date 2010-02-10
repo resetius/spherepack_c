@@ -151,11 +151,11 @@ static integer c__0 = 0;
 
 /*     dimension arrays */
 
-    pi = atan(1.f) * 4.f;
+    pi = atan(1.) * 4.;
 
 /*     set helmholtz constant */
 
-    xlmbda = 1.f;
+    xlmbda = 1.;
 
 /*     set work space length arguments */
 
@@ -175,7 +175,7 @@ static integer c__0 = 0;
     dlon = (pi + pi) / nlon;
     i__1 = nlat;
     for (i__ = 1; i__ <= i__1; ++i__) {
-	theta = pi * -.5f + (i__ - 1) * dlat;
+	theta = pi * -.5 + (i__ - 1) * dlat;
 	sint[i__ - 1] = sin(theta);
 	cost[i__ - 1] = cos(theta);
     }
@@ -196,8 +196,8 @@ static integer c__0 = 0;
 	    x = cost[i__ - 1] * cosp[j - 1];
 	    y = cost[i__ - 1] * sinp[j - 1];
 	    z__ = sint[i__ - 1];
-	    r__[i__ + j * 19 - 20] = -(x * y * (z__ * z__ + (z__ + 1.f) * 6.f)
-		     + z__ * (z__ + 2.f)) * exp(z__);
+	    r__[i__ + j * 19 - 20] = -(x * y * (z__ * z__ + (z__ + 1.) * 6.)
+		     + z__ * (z__ + 2.)) * exp(z__);
 	}
     }
 
@@ -254,7 +254,7 @@ static integer c__0 = 0;
 
 /*     compute and print maximum error in u */
 
-    errm = 0.f;
+    errm = 0.;
     i__1 = nlon;
     for (j = 1; j <= i__1; ++j) {
 	i__2 = nlat;
@@ -263,7 +263,7 @@ static integer c__0 = 0;
 	    y = cost[i__ - 1] * sinp[j - 1];
 	    z__ = sint[i__ - 1];
 	    ez = exp(z__);
-	    ue = (x * y + 1.f) * ez;
+	    ue = (x * y + 1.) * ez;
 /* Computing MAX */
 	    r__2 = errm, r__3 = (r__1 = u[i__ + j * 19 - 20] - ue, dabs(r__1))
 		    ;

@@ -902,20 +902,20 @@
     for (i__ = m + 1; i__ <= i__1; ++i__) {
 	i__2 = *nb;
 	for (j = 1; j <= i__2; ++j) {
-	    bbr[i__ + j * bbr_dim1] = 0.f;
-	    bbi[i__ + j * bbi_dim1] = 0.f;
-	    bcr[i__ + j * bcr_dim1] = 0.f;
-	    bci[i__ + j * bci_dim1] = 0.f;
+	    bbr[i__ + j * bbr_dim1] = 0.;
+	    bbi[i__ + j * bbi_dim1] = 0.;
+	    bcr[i__ + j * bcr_dim1] = 0.;
+	    bci[i__ + j * bci_dim1] = 0.;
 	}
     }
     i__1 = *nb;
     for (j = n + 1; j <= i__1; ++j) {
 	i__2 = *mb;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    bbr[i__ + j * bbr_dim1] = 0.f;
-	    bbi[i__ + j * bbi_dim1] = 0.f;
-	    bcr[i__ + j * bcr_dim1] = 0.f;
-	    bci[i__ + j * bci_dim1] = 0.f;
+	    bbr[i__ + j * bbr_dim1] = 0.;
+	    bbi[i__ + j * bbi_dim1] = 0.;
+	    bcr[i__ + j * bcr_dim1] = 0.;
+	    bci[i__ + j * bci_dim1] = 0.;
 	}
     }
     return 0;

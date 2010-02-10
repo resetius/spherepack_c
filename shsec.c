@@ -449,7 +449,7 @@ static integer c__1 = 1;
 	for (j = 1; j <= i__2; ++j) {
 	    i__3 = ls;
 	    for (i__ = 1; i__ <= i__3; ++i__) {
-		ge[i__ + (j + k * ge_dim2) * ge_dim1] = 0.f;
+		ge[i__ + (j + k * ge_dim2) * ge_dim1] = 0.;
 /* L80: */
 	    }
 	}
@@ -584,7 +584,7 @@ L155:
 	}
 	i__2 = ls;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    ge[i__ + (nlon + k * ge_dim2) * ge_dim1] *= 2.f;
+	    ge[i__ + (nlon + k * ge_dim2) * ge_dim1] *= 2.;
 /* L156: */
 	}
 L157:
@@ -603,17 +603,17 @@ L157:
 	    for (i__ = 1; i__ <= i__1; ++i__) {
 		g[i__ + (j + k * g_dim2) * g_dim1] = (ge[i__ + (j + k * 
 			ge_dim2) * ge_dim1] + go[i__ + (j + k * go_dim2) * 
-			go_dim1]) * .5f;
+			go_dim1]) * .5;
 		g[nlp1 - i__ + (j + k * g_dim2) * g_dim1] = (ge[i__ + (j + k *
 			 ge_dim2) * ge_dim1] - go[i__ + (j + k * go_dim2) * 
-			go_dim1]) * .5f;
+			go_dim1]) * .5;
 /* L175: */
 	    }
 	    if (modl == 0) {
 		goto L170;
 	    }
 	    g[*imid + (j + k * g_dim2) * g_dim1] = ge[*imid + (j + k * 
-		    ge_dim2) * ge_dim1] * .5f;
+		    ge_dim2) * ge_dim1] * .5;
 L170:
 	    ;
 	}
@@ -627,7 +627,7 @@ L180:
 	    i__1 = nlon;
 	    for (j = 1; j <= i__1; ++j) {
 		g[i__ + (j + k * g_dim2) * g_dim1] = ge[i__ + (j + k * 
-			ge_dim2) * ge_dim1] * .5f;
+			ge_dim2) * ge_dim1] * .5;
 /* L185: */
 	    }
 	}

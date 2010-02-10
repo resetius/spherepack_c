@@ -485,7 +485,7 @@
 /* L101: */
     }
 /*     scale result */
-    sfn = 2.f / (doublereal) (*nlon);
+    sfn = 2. / (doublereal) (*nlon);
     i__3 = *nt;
     for (k = 1; k <= i__3; ++k) {
 	i__2 = *nlon;
@@ -516,8 +516,8 @@
 	for (np1 = 1; np1 <= i__2; ++np1) {
 	    i__3 = *l;
 	    for (mp1 = 1; mp1 <= i__3; ++mp1) {
-		a[mp1 + (np1 + k * a_dim2) * a_dim1] = 0.f;
-		b[mp1 + (np1 + k * b_dim2) * b_dim1] = 0.f;
+		a[mp1 + (np1 + k * a_dim2) * a_dim1] = 0.;
+		b[mp1 + (np1 + k * b_dim2) * b_dim1] = 0.;
 /* L103: */
 	    }
 	}
@@ -633,7 +633,7 @@
 		    i__1 = *nlat;
 		    for (np1 = *l; np1 <= i__1; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[i__ + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5f * pmn[np1 + (
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
 				i__ + km * pmn_dim2) * pmn_dim1];
 /* L124: */
 		    }
@@ -642,7 +642,7 @@
 		    i__1 = *nlat;
 		    for (np1 = lp1; np1 <= i__1; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[is + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5f * pmn[np1 + (
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
 				i__ + km * pmn_dim2) * pmn_dim1];
 /* L125: */
 		    }
@@ -736,7 +736,7 @@
 		    i__3 = *nlat;
 		    for (np1 = ns; np1 <= i__3; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[i__ + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5f * pmn[np1 + (
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
 				i__ + km * pmn_dim2) * pmn_dim1];
 /* L120: */
 		    }
@@ -888,8 +888,8 @@
     for (np1 = 1; np1 <= i__1; ++np1) {
 	i__2 = *late;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    p0n[np1 + i__ * p0n_dim1] = 0.f;
-	    p1n[np1 + i__ * p1n_dim1] = 0.f;
+	    p0n[np1 + i__ * p0n_dim1] = 0.;
+	    p1n[np1 + i__ * p1n_dim1] = 0.;
 /* L101: */
 	}
     }

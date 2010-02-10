@@ -17,8 +17,8 @@
 static integer c__2 = 2;
 static integer c__0 = 0;
 static integer c__1 = 1;
-static doublereal c_b32 = 0.f;
-static doublereal c_b33 = 1.f;
+static doublereal c_b32 = 0.;
+static doublereal c_b33 = 1.;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -177,7 +177,7 @@ static doublereal c_b33 = 1.f;
 	for (j = 1; j <= i__1; ++j) {
 	    i__2 = *m + *m - 1;
 	    for (i__ = 1; i__ <= i__2; ++i__) {
-		if (h__[i__ + (j + k * h_dim2) * h_dim1] >= 0.f) {
+		if (h__[i__ + (j + k * h_dim2) * h_dim1] >= 0.) {
 		    goto L15;
 		}
 		*ierror = 1;
@@ -349,8 +349,8 @@ L10:
 /*     1             x3(l2),y3(l2),z3(l2),l2=1,ntri) */
 /* 23   format(9f10.7) */
 
-    pi = atan(1.f) * 4.f;
-    dtr = pi / 180.f;
+    pi = atan(1.f) * 4.;
+    dtr = pi / 180.;
     xeye = *eyer * sin(dtr * *eyelat);
     yeye = xeye * sin(dtr * *eyelon);
     xeye *= cos(dtr * *eyelon);
@@ -370,13 +370,13 @@ L10:
     static doublereal r1;
 
     r1 = *x * *x + *y * *y;
-    if (r1 != 0.f) {
+    if (r1 != 0.) {
 	goto L10;
     }
-    *phi = 0.f;
-    *theta = 0.f;
-    if (*z__ < 0.f) {
-	*theta = atan(1.f) * 4.f;
+    *phi = 0.;
+    *theta = 0.;
+    if (*z__ < 0.) {
+	*theta = atan(1.f) * 4.;
     }
     return 0;
 L10:
@@ -582,7 +582,7 @@ L10:
     le2 = .6931471805599453094172321;
     l2e = 1. / le2;
     fntri = (doublereal) (*ntri);
-    irmax = l2e * .5f * log(fntri);
+    irmax = l2e * .5 * log(fntri);
     irmax = min(irmax,10);
     irmp1 = irmax + 1;
     for (icv = 1; icv <= 11; ++icv) {
@@ -643,7 +643,7 @@ L10:
 /*      if(cprod.eq.0.) write(6,79) k,px1(k),px2(k),px3(k), */
 /*     -                              py1(k),py2(k),py3(k) */
 /* L79: */
-	if (cprod >= 0.f) {
+	if (cprod >= 0.) {
 	    goto L70;
 	}
 	px1h = px1[k];
@@ -698,8 +698,8 @@ L70:
 	pmax = dmax(r__1,r__2);
 /* L87: */
     }
-    pmin *= 1.1f;
-    pmax *= 1.1f;
+    pmin *= 1.1;
+    pmax *= 1.1;
     set_(&c_b32, &c_b33, &c_b32, &c_b33, &pmin, &pmax, &pmin, &pmax, &c__1);
 /* Computing MIN */
     r__1 = min(px1[1],px2[1]);
@@ -740,16 +740,16 @@ L70:
     }
     c__ = ymin;
     d__ = ymax;
-    xmid = (xmin + xmax) * .5f;
-    hdy = dmy * .5f;
+    xmid = (xmin + xmax) * .5;
+    hdy = dmy * .5;
     a = xmid - hdy;
     b = xmid + hdy;
     goto L3;
 L2:
     a = xmin;
     b = xmax;
-    ymid = (ymin + ymax) * .5f;
-    hdx = dmx * .5f;
+    ymid = (ymin + ymax) * .5;
+    hdx = dmx * .5;
     c__ = ymid - hdx;
     d__ = ymid + hdx;
 L3:
@@ -778,7 +778,7 @@ L3:
 /* Computing MAX */
 	r__1 = xmax - xmin, r__2 = ymax - ymin;
 	dxt = dmax(r__1,r__2);
-	if (dxt > 0.f) {
+	if (dxt > 0.) {
 	    goto L10;
 	}
 	ir = irmax;
@@ -790,10 +790,10 @@ L20:
 	irp1 = ir + 1;
 	++nct[irp1 - 1];
 	hr = hgr / ip2[irp1 - 1];
-	xmid = (xmin + xmax) * .5f;
-	id = (xmid - a) / hr + 1.5f;
-	ymid = (ymin + ymax) * .5f;
-	jd = (ymid - c__) / hr + 1.5f;
+	xmid = (xmin + xmax) * .5;
+	id = (xmid - a) / hr + 1.5;
+	ymid = (ymin + ymax) * .5;
+	jd = (ymid - c__) / hr + 1.5;
 	ijd = ip2[irp1 - 1] + 1;
 	isx = id + (jd - 1) * ijd + ird[irp1 - 1];
 	ifx = ifinal[isx];
@@ -848,8 +848,8 @@ L30:
 	vy3[k] = py1[k] - py3[k];
 /* L90: */
     }
-    tl1 = 0.f;
-    tl2 = 0.f;
+    tl1 = 0.;
+    tl2 = 0.;
     maxs = 0;
     i__1 = irmp1;
     for (ir2 = 1; ir2 <= i__1; ++ir2) {
@@ -1046,9 +1046,9 @@ L105:
 				    py2[k]);
 			    c36 = vy3[k] * (px4 - px3[k]) - vx3[k] * (py4 - 
 				    py3[k]);
-			    tmin = 0.f;
-			    tmax = 1.f;
-			    if (c17 < 0.f) {
+			    tmin = 0.;
+			    tmax = 1.;
+			    if (c17 < 0.) {
 				goto L151;
 			    } else if (c17 == 0) {
 				goto L152;
@@ -1061,7 +1061,7 @@ L151:
 			    tmax = dmin(r__1,tmax);
 			    goto L154;
 L152:
-			    if (c14 >= 0.f) {
+			    if (c14 >= 0.) {
 				goto L440;
 			    } else {
 				goto L154;
@@ -1071,7 +1071,7 @@ L153:
 			    r__1 = c14 / c17;
 			    tmin = dmax(r__1,tmin);
 L154:
-			    if (c27 < 0.f) {
+			    if (c27 < 0.) {
 				goto L155;
 			    } else if (c27 == 0) {
 				goto L156;
@@ -1084,7 +1084,7 @@ L155:
 			    tmax = dmin(r__1,tmax);
 			    goto L158;
 L156:
-			    if (c25 >= 0.f) {
+			    if (c25 >= 0.) {
 				goto L440;
 			    } else {
 				goto L158;
@@ -1094,7 +1094,7 @@ L157:
 			    r__1 = c25 / c27;
 			    tmin = dmax(r__1,tmin);
 L158:
-			    if (c37 < 0.f) {
+			    if (c37 < 0.) {
 				goto L159;
 			    } else if (c37 == 0) {
 				goto L160;
@@ -1107,7 +1107,7 @@ L159:
 			    tmax = dmin(r__1,tmax);
 			    goto L162;
 L160:
-			    if (c36 >= 0.f) {
+			    if (c36 >= 0.) {
 				goto L440;
 			    } else {
 				goto L162;
@@ -1144,8 +1144,8 @@ L162:
 			    vy3t = ypl - *yeye;
 			    vz3t = zpl - *zeye;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    til = 0.f;
-			    if (den == 0.f) {
+			    til = 0.;
+			    if (den == 0.) {
 				goto L410;
 			    }
 			    til = (dpl - apl * *xeye - bpl * *yeye - cpl * *
@@ -1155,32 +1155,32 @@ L410:
 			    vy3t = ypr - *yeye;
 			    vz3t = zpr - *zeye;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    tir = 0.f;
-			    if (den == 0.f) {
+			    tir = 0.;
+			    if (den == 0.) {
 				goto L412;
 			    }
 			    tir = (dpl - apl * *xeye - bpl * *yeye - cpl * *
 				    zeye) / den;
 L412:
-			    if (til >= .99999f && tir >= .99999f) {
+			    if (til >= .99999 && tir >= .99999) {
 				goto L440;
 			    }
-			    if (til < 1.f && tir < 1.f) {
+			    if (til < 1. && tir < 1.) {
 				goto L164;
 			    }
 			    vx3t = xpr - xpl;
 			    vy3t = ypr - ypl;
 			    vz3t = zpr - zpl;
 			    den = apl * vx3t + bpl * vy3t + cpl * vz3t;
-			    tim = 0.f;
-			    if (den == 0.f) {
+			    tim = 0.;
+			    if (den == 0.) {
 				goto L414;
 			    }
 			    tim = (dpl - apl * xpl - bpl * ypl - cpl * zpl) / 
 				    den;
 L414:
 			    thold = tmin + tim * (tmax - tmin);
-			    if (til >= 1.f) {
+			    if (til >= 1.) {
 				goto L163;
 			    }
 			    tmax = thold;
@@ -1261,8 +1261,8 @@ L180:
 			    tr[kb] = tl[kb];
 /* L181: */
 			}
-			tl[1] = 0.f;
-			tr[nseg + 1] = 1.f;
+			tl[1] = 0.;
+			tr[nseg + 1] = 1.;
 			nsegp = nseg + 1;
 			i__6 = nsegp;
 			for (k = 1; k <= i__6; ++k) {
@@ -1335,17 +1335,17 @@ L500:
     rads2 = rads1 + r__1 * r__1;
     d1 = sqrt(rads1);
     d2 = sqrt(rads2);
-    if (d1 != 0.f) {
+    if (d1 != 0.) {
 	goto L2;
     }
-    cx1 = 1.f;
-    cy1 = 0.f;
-    cx2 = 0.f;
-    cy2 = 1.f;
-    cz2 = 0.f;
-    cx3 = 0.f;
-    cy3 = 0.f;
-    cz3 = 1.f;
+    cx1 = 1.;
+    cy1 = 0.;
+    cx2 = 0.;
+    cy2 = 1.;
+    cz2 = 0.;
+    cx3 = 0.;
+    cy3 = 0.;
+    cz3 = 1.;
     return 0;
 L2:
     cx1 = -(*yeye) / d1;

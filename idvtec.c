@@ -485,7 +485,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	sqnn[n] = sqrt(fn * (fn + 1.f));
+	sqnn[n] = sqrt(fn * (fn + 1.));
 /* L1: */
     }
 
@@ -496,8 +496,8 @@
 
 /*     set divergence,vorticity perturbation constants */
 
-	pertbd[k] = ad[(k * ad_dim2 + 1) * ad_dim1 + 1] / (sqrt(2.f) * 2.f);
-	pertbv[k] = av[(k * av_dim2 + 1) * av_dim1 + 1] / (sqrt(2.f) * 2.f);
+	pertbd[k] = ad[(k * ad_dim2 + 1) * ad_dim1 + 1] / (sqrt(2.) * 2.);
+	pertbv[k] = av[(k * av_dim2 + 1) * av_dim1 + 1] / (sqrt(2.) * 2.);
 
 /*     preset br,bi,cr,ci to 0.0 */
 
@@ -505,10 +505,10 @@
 	for (n = 1; n <= i__2; ++n) {
 	    i__3 = *mmax;
 	    for (m = 1; m <= i__3; ++m) {
-		br[m + (n + k * br_dim2) * br_dim1] = 0.f;
-		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.f;
-		cr[m + (n + k * cr_dim2) * cr_dim1] = 0.f;
-		ci[m + (n + k * ci_dim2) * ci_dim1] = 0.f;
+		br[m + (n + k * br_dim2) * br_dim1] = 0.;
+		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.;
+		cr[m + (n + k * cr_dim2) * cr_dim1] = 0.;
+		ci[m + (n + k * ci_dim2) * ci_dim1] = 0.;
 /* L4: */
 	    }
 /* L3: */

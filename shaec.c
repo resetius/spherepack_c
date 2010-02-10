@@ -462,8 +462,8 @@ static integer c__1 = 1;
 	mdo = mmax - 1;
     }
     nlp1 = *nlat + 1;
-    tsn = 2.f / nlon;
-    fsn = 4.f / nlon;
+    tsn = 2. / nlon;
+    fsn = 4. / nlon;
     modl = *nlat % 2;
     imm1 = *imid;
     if (modl != 0) {
@@ -528,7 +528,7 @@ L27:
 	}
 	i__1 = ls;
 	for (i__ = 1; i__ <= i__1; ++i__) {
-	    ge[i__ + (nlon + k * ge_dim2) * ge_dim1] *= .5f;
+	    ge[i__ + (nlon + k * ge_dim2) * ge_dim1] *= .5;
 /* L36: */
 	}
 L35:
@@ -540,8 +540,8 @@ L35:
 	for (mp1 = 1; mp1 <= i__1; ++mp1) {
 	    i__3 = *nlat;
 	    for (np1 = mp1; np1 <= i__3; ++np1) {
-		a[mp1 + (np1 + k * a_dim2) * a_dim1] = 0.f;
-		b[mp1 + (np1 + k * b_dim2) * b_dim1] = 0.f;
+		a[mp1 + (np1 + k * a_dim2) * a_dim1] = 0.;
+		b[mp1 + (np1 + k * b_dim2) * b_dim1] = 0.;
 /* L40: */
 	    }
 	}

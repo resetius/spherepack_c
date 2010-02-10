@@ -14,8 +14,8 @@
 
 /* Table of constant values */
 
-static doublereal c_b2 = 1.f;
-static doublereal c_b8 = 0.f;
+static doublereal c_b2 = 1.;
+static doublereal c_b8 = 0.;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -93,13 +93,13 @@ static doublereal c_b8 = 0.f;
     x -= x_offset;
 
     /* Function Body */
-    pi = atan(1.f) * 4.f;
-    dphi = pi * .4f;
+    pi = atan(1.) * 4.;
+    dphi = pi * .4;
     beta = cos(dphi);
-    theta1 = acos(beta / (1.f - beta));
+    theta1 = acos(beta / (1. - beta));
     theta2 = pi - theta1;
-    hdphi = dphi / 2.f;
-    tdphi = hdphi * 3.f;
+    hdphi = dphi / 2.;
+    tdphi = hdphi * 3.;
     for (k = 1; k <= 5; ++k) {
 	phi = (k - 1) * dphi;
 	stoc_(&c_b2, &theta2, &phi, &x1, &y1, &z1);
@@ -216,13 +216,13 @@ static doublereal c_b8 = 0.f;
     static doublereal r1;
 
     r1 = *x * *x + *y * *y;
-    if (r1 != 0.f) {
+    if (r1 != 0.) {
 	goto L10;
     }
-    *phi = 0.f;
-    *theta = 0.f;
-    if (*z__ < 0.f) {
-	*theta = atan(1.f) * 4.f;
+    *phi = 0.;
+    *theta = 0.;
+    if (*z__ < 0.) {
+	*theta = atan(1.) * 4.;
     }
     return 0;
 L10:

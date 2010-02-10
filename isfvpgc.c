@@ -438,10 +438,10 @@
 	for (n = 1; n <= i__2; ++n) {
 	    i__3 = *mab;
 	    for (m = 1; m <= i__3; ++m) {
-		br[m + (n + k * br_dim2) * br_dim1] = 0.f;
-		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.f;
-		cr[m + (n + k * cr_dim2) * cr_dim1] = 0.f;
-		ci[m + (n + k * ci_dim2) * ci_dim1] = 0.f;
+		br[m + (n + k * br_dim2) * br_dim1] = 0.;
+		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.;
+		cr[m + (n + k * cr_dim2) * cr_dim1] = 0.;
+		ci[m + (n + k * ci_dim2) * ci_dim1] = 0.;
 	    }
 	}
 

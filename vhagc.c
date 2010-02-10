@@ -534,8 +534,8 @@ static integer c__2 = 2;
 
     /* Function Body */
     nlp1 = *nlat + 1;
-    tsn = 2.f / *nlon;
-    fsn = 4.f / *nlon;
+    tsn = 2. / *nlon;
+    fsn = 4. / *nlon;
     mlat = *nlat % 2;
     mlon = *nlon % 2;
 /* Computing MIN */
@@ -631,8 +631,8 @@ L7:
 	for (mp1 = 1; mp1 <= i__1; ++mp1) {
 	    i__3 = *nlat;
 	    for (np1 = mp1; np1 <= i__3; ++np1) {
-		br[mp1 + (np1 + k * br_dim2) * br_dim1] = 0.f;
-		bi[mp1 + (np1 + k * bi_dim2) * bi_dim1] = 0.f;
+		br[mp1 + (np1 + k * br_dim2) * br_dim1] = 0.;
+		bi[mp1 + (np1 + k * bi_dim2) * bi_dim1] = 0.;
 /* L10: */
 	    }
 	}
@@ -647,8 +647,8 @@ L11:
 	for (mp1 = 1; mp1 <= i__1; ++mp1) {
 	    i__2 = *nlat;
 	    for (np1 = mp1; np1 <= i__2; ++np1) {
-		cr[mp1 + (np1 + k * cr_dim2) * cr_dim1] = 0.f;
-		ci[mp1 + (np1 + k * ci_dim2) * ci_dim1] = 0.f;
+		cr[mp1 + (np1 + k * cr_dim2) * cr_dim1] = 0.;
+		ci[mp1 + (np1 + k * ci_dim2) * ci_dim1] = 0.;
 /* L12: */
 	    }
 	}

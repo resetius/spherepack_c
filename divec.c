@@ -413,7 +413,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	sqnn[n] = sqrt(fn * (fn + 1.f));
+	sqnn[n] = sqrt(fn * (fn + 1.));
 /* L1: */
     }
 
@@ -425,8 +425,8 @@
 	for (n = 1; n <= i__2; ++n) {
 	    i__3 = *mab;
 	    for (m = 1; m <= i__3; ++m) {
-		a[m + (n + k * a_dim2) * a_dim1] = 0.f;
-		b[m + (n + k * b_dim2) * b_dim1] = 0.f;
+		a[m + (n + k * a_dim2) * a_dim1] = 0.;
+		b[m + (n + k * b_dim2) * b_dim1] = 0.;
 /* L4: */
 	    }
 /* L3: */

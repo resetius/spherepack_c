@@ -368,8 +368,8 @@
 
 /*       set nonpole values in greg and average for poles */
 
-	gnorth = 0.f;
-	gsouth = 0.f;
+	gnorth = 0.;
+	gsouth = 0.;
 	i__1 = *nlon;
 	for (j = 1; j <= i__1; ++j) {
 	    gnorth += rlat[j + rlat_dim1];
@@ -403,8 +403,8 @@
 
 /*       set nonpole values in greg and average poles */
 
-	gnorth = 0.f;
-	gsouth = 0.f;
+	gnorth = 0.;
+	gsouth = 0.;
 	i__1 = n2;
 	for (j = 1; j <= i__1; ++j) {
 	    js = n2 + j;
@@ -637,7 +637,7 @@
 	return 0;
     }
     *ier = 0;
-    pi = atan(1.f) * 4.f;
+    pi = atan(1.) * 4.;
 
 /*     set lat,long increments */
 
@@ -647,9 +647,9 @@
 /*     initialize wsav for left or right latitude shifts */
 
     if (*ioff == 0) {
-	dp = dlat * -.5f;
+	dp = dlat * -.5;
     } else {
-	dp = dlat * .5f;
+	dp = dlat * .5;
     }
     nlat2 = *nlat + *nlat;
     shifthi_(&nlat2, &dp, &wsav[1]);
@@ -657,9 +657,9 @@
 /*     initialize wsav for left or right longitude shifts */
 
     if (*ioff == 0) {
-	dp = dlon * -.5f;
+	dp = dlon * -.5;
     } else {
-	dp = dlon * .5f;
+	dp = dlon * .5;
     }
     isav = (*nlat << 2) + 17;
     shifthi_(nlon, &dp, &wsav[isav]);

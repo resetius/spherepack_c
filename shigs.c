@@ -225,7 +225,7 @@
 	i__2 = *late;
 	for (j = 1; j <= i__2; ++j) {
 	    for (k = 1; k <= 3; ++k) {
-		pmn[i__ + (j + k * pmn_dim2) * pmn_dim1] = 0.f;
+		pmn[i__ + (j + k * pmn_dim2) * pmn_dim1] = 0.;
 	    }
 	}
     }
@@ -381,8 +381,8 @@
     for (np1 = 1; np1 <= i__1; ++np1) {
 	i__2 = *late;
 	for (i__ = 1; i__ <= i__2; ++i__) {
-	    p0n[np1 + i__ * p0n_dim1] = 0.f;
-	    p1n[np1 + i__ * p1n_dim1] = 0.f;
+	    p0n[np1 + i__ * p0n_dim1] = 0.;
+	    p1n[np1 + i__ * p1n_dim1] = 0.;
 /* L101: */
 	}
     }

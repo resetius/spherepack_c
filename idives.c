@@ -429,7 +429,7 @@
     i__1 = *nlat;
     for (n = 2; n <= i__1; ++n) {
 	fn = (doublereal) (n - 1);
-	sqnn[n] = sqrt(fn * (fn + 1.f));
+	sqnn[n] = sqrt(fn * (fn + 1.));
 /* L1: */
     }
 
@@ -440,7 +440,7 @@
 
 /*     set divergence field perturbation adjustment */
 
-	pertrb[k] = a[(k * a_dim2 + 1) * a_dim1 + 1] / (sqrt(2.f) * 2.f);
+	pertrb[k] = a[(k * a_dim2 + 1) * a_dim1 + 1] / (sqrt(2.) * 2.);
 
 /*     preset br,bi to 0.0 */
 
@@ -448,8 +448,8 @@
 	for (n = 1; n <= i__2; ++n) {
 	    i__3 = *mmax;
 	    for (m = 1; m <= i__3; ++m) {
-		br[m + (n + k * br_dim2) * br_dim1] = 0.f;
-		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.f;
+		br[m + (n + k * br_dim2) * br_dim1] = 0.;
+		bi[m + (n + k * bi_dim2) * bi_dim1] = 0.;
 /* L4: */
 	    }
 /* L3: */

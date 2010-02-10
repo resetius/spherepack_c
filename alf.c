@@ -14,7 +14,7 @@
 
 /* Table of constant values */
 
-static doublereal c_b10 = 2.f;
+static doublereal c_b10 = 2.;
 static integer c__0 = 0;
 static integer c__1 = 1;
 
@@ -141,7 +141,7 @@ static integer c__1 = 1;
     --cp;
 
     /* Function Body */
-    cp[1] = 0.f;
+    cp[1] = 0.;
     ma = abs(*m);
     if (ma > *n) {
 	return 0;
@@ -154,16 +154,16 @@ static integer c__1 = 1;
 	goto L5;
     }
 L2:
-    cp[1] = sqrt(2.f);
+    cp[1] = sqrt(2.);
     return 0;
 L3:
     if (ma != 0) {
 	goto L4;
     }
-    cp[1] = sqrt(1.5f);
+    cp[1] = sqrt(1.5);
     return 0;
 L4:
-    cp[1] = sqrt(.75f);
+    cp[1] = sqrt(.75);
     if (*m == -1) {
 	cp[1] = -cp[1];
     }
@@ -175,29 +175,29 @@ L5:
     nmms2 = (*n - ma) / 2;
     fnum = (doublereal) (*n + ma + 1);
     fnmh = (doublereal) (*n - ma + 1);
-    pm1 = 1.f;
+    pm1 = 1.;
     goto L15;
 L10:
     nmms2 = (*n - ma - 1) / 2;
     fnum = (doublereal) (*n + ma + 2);
     fnmh = (doublereal) (*n - ma + 2);
-    pm1 = -1.f;
+    pm1 = -1.;
 L15:
-    t1 = 9.5367431640625e-7f;
+    t1 = 9.5367431640625e-7;
     nex = 20;
-    fden = 2.f;
+    fden = 2.;
     if (nmms2 < 1) {
 	goto L20;
     }
     i__1 = nmms2;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	t1 = fnum * t1 / fden;
-	if (t1 > 1048576.f) {
-	    t1 /= 1099511627776.f;
+	if (t1 > 1048576.) {
+	    t1 /= 1099511627776.;
 	    nex += 40;
 	}
-	fnum += 2.f;
-	fden += 2.f;
+	fnum += 2.;
+	fden += 2.;
 /* L18: */
     }
 L20:
@@ -206,20 +206,20 @@ L20:
     if (ma / 2 % 2 != 0) {
 	t1 = -t1;
     }
-    t2 = 1.f;
+    t2 = 1.;
     if (ma == 0) {
 	goto L26;
     }
     i__1 = ma;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	t2 = fnmh * t2 / (fnmh + pm1);
-	fnmh += 2.f;
+	fnmh += 2.;
 /* L25: */
     }
 L26:
-    cp2 = t1 * sqrt((*n + .5f) * t2);
+    cp2 = t1 * sqrt((*n + .5) * t2);
     fnnp1 = (doublereal) (*n * (*n + 1));
-    fnmsq = fnnp1 - ma * 2.f * ma;
+    fnmsq = fnnp1 - ma * 2. * ma;
     l = (*n + 1) / 2;
     if (*n % 2 == 0 && ma % 2 == 0) {
 	++l;
@@ -236,18 +236,18 @@ L29:
 	return 0;
     }
     fk = (doublereal) (*n);
-    a1 = (fk - 2.f) * (fk - 1.f) - fnnp1;
-    b1 = (fk * fk - fnmsq) * 2.f;
+    a1 = (fk - 2.) * (fk - 1.) - fnnp1;
+    b1 = (fk * fk - fnmsq) * 2.;
     cp[l - 1] = b1 * cp[l] / a1;
 L30:
     --l;
     if (l <= 1) {
 	return 0;
     }
-    fk += -2.f;
-    a1 = (fk - 2.f) * (fk - 1.f) - fnnp1;
-    b1 = (fk * fk - fnmsq) * -2.f;
-    c1 = (fk + 1.f) * (fk + 2.f) - fnnp1;
+    fk += -2.;
+    a1 = (fk - 2.) * (fk - 1.) - fnnp1;
+    b1 = (fk * fk - fnmsq) * -2.;
+    c1 = (fk + 1.) * (fk + 2.) - fnnp1;
     cp[l - 1] = -(b1 * cp[l] + c1 * cp[l + 1]) / a1;
     goto L30;
 } /* alfk_ */
@@ -416,7 +416,7 @@ L30:
     if (*init != 0) {
 	goto L5;
     }
-    ssqrt2 = 1.f / sqrt(2.f);
+    ssqrt2 = 1. / sqrt(2.);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	phz[i__ + phz_dim1] = ssqrt2;
@@ -469,8 +469,8 @@ L30:
     }
     return 0;
 L35:
-    sq5s6 = sqrt(.83333333333333337f);
-    sq1s6 = sqrt(.16666666666666666f);
+    sq5s6 = sqrt(.83333333333333337);
+    sq1s6 = sqrt(.16666666666666666);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	p3[i__ + p3_dim1] = phz[i__ + phz_dim1 * 3];
@@ -490,7 +490,7 @@ L60:
     np1 = *n + 1;
     fn = (doublereal) (*n);
     tn = fn + fn;
-    cn = (tn + 1.f) / (tn - 3.f);
+    cn = (tn + 1.) / (tn - 3.);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	p3[i__ + p3_dim1] = phz[i__ + np1 * phz_dim1];
@@ -506,10 +506,10 @@ L60:
 	fm = (doublereal) m;
 	fnpm = fn + fm;
 	fnmm = fn - fm;
-	temp = fnpm * (fnpm - 1.f);
-	cc = sqrt(cn * (fnpm - 3.f) * (fnpm - 2.f) / temp);
-	dd = sqrt(cn * fnmm * (fnmm - 1.f) / temp);
-	ee = sqrt((fnmm + 1.f) * (fnmm + 2.f) / temp);
+	temp = fnpm * (fnpm - 1.);
+	cc = sqrt(cn * (fnpm - 3.) * (fnpm - 2.) / temp);
+	dd = sqrt(cn * fnmm * (fnmm - 1.) / temp);
+	ee = sqrt((fnmm + 1.) * (fnmm + 2.) / temp);
 	i__2 = *l;
 	for (i__ = 1; i__ <= i__2; ++i__) {
 	    p3[i__ + mp1 * p3_dim1] = cc * p1[i__ + (mp1 - 2) * p1_dim1] + dd 
@@ -519,10 +519,10 @@ L60:
 	}
     }
 L71:
-    fnpm = fn + fn - 1.f;
-    temp = fnpm * (fnpm - 1.f);
-    cc = sqrt(cn * (fnpm - 3.f) * (fnpm - 2.f) / temp);
-    ee = sqrt(6.f / temp);
+    fnpm = fn + fn - 1.;
+    temp = fnpm * (fnpm - 1.);
+    cc = sqrt(cn * (fnpm - 3.) * (fnpm - 2.) / temp);
+    ee = sqrt(6. / temp);
     i__2 = *l;
     for (i__ = 1; i__ <= i__2; ++i__) {
 	p3[i__ + *n * p3_dim1] = cc * p1[i__ + (*n - 2) * p1_dim1] - ee * p3[
@@ -530,9 +530,9 @@ L71:
 /* L75: */
     }
     fnpm = fn + fn;
-    temp = fnpm * (fnpm - 1.f);
-    cc = sqrt(cn * (fnpm - 3.f) * (fnpm - 2.f) / temp);
-    ee = sqrt(2.f / temp);
+    temp = fnpm * (fnpm - 1.);
+    cc = sqrt(cn * (fnpm - 3.) * (fnpm - 2.) / temp);
+    ee = sqrt(2. / temp);
     i__2 = *l;
     for (i__ = 1; i__ <= i__2; ++i__) {
 	p3[i__ + (*n + 1) * p3_dim1] = cc * p1[i__ + (*n - 1) * p1_dim1] - ee 
@@ -714,7 +714,7 @@ L71:
     if (*init != 0) {
 	goto L5;
     }
-    ssqrt2 = 1.f / sqrt(2.f);
+    ssqrt2 = 1. / sqrt(2.);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	phz[i__ + phz_dim1] = ssqrt2;
@@ -774,9 +774,9 @@ L30:
     }
     return 0;
 L35:
-    temp = tm * (tm - 1.f);
-    cc = sqrt((tm + 1.f) * (tm - 2.f) / temp);
-    ee = sqrt(2.f / temp);
+    temp = tm * (tm - 1.);
+    cc = sqrt((tm + 1.) * (tm - 2.) / temp);
+    ee = sqrt(2. / temp);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	p3[i__ + (*m + 1) * p3_dim1] = cc * p1[i__ + (*m - 1) * p1_dim1] - ee 
@@ -786,9 +786,9 @@ L35:
     if (*m == *nm) {
 	return 0;
     }
-    temp = tm * (tm + 1.f);
-    cc = sqrt((tm + 3.f) * (tm - 2.f) / temp);
-    ee = sqrt(6.f / temp);
+    temp = tm * (tm + 1.);
+    cc = sqrt((tm + 3.) * (tm - 2.) / temp);
+    ee = sqrt(6. / temp);
     i__1 = *l;
     for (i__ = 1; i__ <= i__1; ++i__) {
 	p3[i__ + (*m + 2) * p3_dim1] = cc * p1[i__ + *m * p1_dim1] - ee * p1[
@@ -804,13 +804,13 @@ L35:
 	n = np1 - 1;
 	fn = (doublereal) n;
 	tn = fn + fn;
-	cn = (tn + 1.f) / (tn - 3.f);
+	cn = (tn + 1.) / (tn - 3.);
 	fnpm = fn + fm;
 	fnmm = fn - fm;
-	temp = fnpm * (fnpm - 1.f);
-	cc = sqrt(cn * (fnpm - 3.f) * (fnpm - 2.f) / temp);
-	dd = sqrt(cn * fnmm * (fnmm - 1.f) / temp);
-	ee = sqrt((fnmm + 1.f) * (fnmm + 2.f) / temp);
+	temp = fnpm * (fnpm - 1.);
+	cc = sqrt(cn * (fnpm - 3.) * (fnpm - 2.) / temp);
+	dd = sqrt(cn * fnmm * (fnmm - 1.) / temp);
+	ee = sqrt((fnmm + 1.) * (fnmm + 2.) / temp);
 	i__2 = *l;
 	for (i__ = 1; i__ <= i__2; ++i__) {
 	    p3[i__ + np1 * p3_dim1] = cc * p1[i__ + (np1 - 2) * p1_dim1] + dd 
@@ -923,7 +923,7 @@ L80:
     --cp;
 
     /* Function Body */
-    *pb = 0.f;
+    *pb = 0.;
     ma = abs(*m);
     if (ma > *n) {
 	return 0;
@@ -940,7 +940,7 @@ L10:
 	goto L30;
     }
 L20:
-    *pb = sqrt(.5f);
+    *pb = sqrt(.5);
     goto L140;
 L30:
     np1 = *n + 1;
@@ -961,9 +961,9 @@ L50:
     kdo = *n / 2 + 1;
     cdt = cos(*theta + *theta);
     sdt = sin(*theta + *theta);
-    ct = 1.f;
-    st = 0.f;
-    sum = cp[1] * .5f;
+    ct = 1.;
+    st = 0.;
+    sum = cp[1] * .5;
     i__1 = kdo;
     for (kp1 = 2; kp1 <= i__1; ++kp1) {
 	cth = cdt * ct - sdt * st;
@@ -978,9 +978,9 @@ L70:
     kdo = *n / 2;
     cdt = cos(*theta + *theta);
     sdt = sin(*theta + *theta);
-    ct = 1.f;
-    st = 0.f;
-    sum = 0.f;
+    ct = 1.;
+    st = 0.;
+    sum = 0.;
     i__1 = kdo;
     for (k = 1; k <= i__1; ++k) {
 	cth = cdt * ct - sdt * st;
@@ -1003,7 +1003,7 @@ L100:
     sdt = sin(*theta + *theta);
     ct = cos(*theta);
     st = -sin(*theta);
-    sum = 0.f;
+    sum = 0.;
     i__1 = kdo;
     for (k = 1; k <= i__1; ++k) {
 	cth = cdt * ct - sdt * st;
@@ -1019,7 +1019,7 @@ L120:
     sdt = sin(*theta + *theta);
     ct = cos(*theta);
     st = -sin(*theta);
-    sum = 0.f;
+    sum = 0.;
     i__1 = kdo;
     for (k = 1; k <= i__1; ++k) {
 	cth = cdt * ct - sdt * st;

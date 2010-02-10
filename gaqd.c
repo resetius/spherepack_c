@@ -191,7 +191,7 @@ L10:
 
     tpdp_(nlat, &zero, &cz, &theta[ns2 + 1], &wts[ns2 + 1], &pb, &dpb);
     dcor = pb / dpb;
-    sgnd = 1.f;
+    sgnd = 1.;
     if (dcor != 0.) {
 	sgnd = dcor / abs(dcor);
     }
@@ -216,7 +216,7 @@ L10:
 	goto L30;
     }
     if (nix == nhalf - 1) {
-	zero = zero * 3.f - pi;
+	zero = zero * 3. - pi;
     }
     if (nix < nhalf - 1) {
 	zero = zero + zero - zprev;
