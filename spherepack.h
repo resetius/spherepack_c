@@ -2,6 +2,14 @@
 #ifndef SPHEREPACK_H
 #define SPHEREPACK_H
 
+#ifdef max
+#undef max
+#endif
+
+#ifdef min
+#undef min
+#endif
+
 #include "f2c.h"
 
 #ifdef __cplusplus
@@ -1604,6 +1612,15 @@ extern "C" {
 	wts, doublereal *dwork, integer *ierror);
 
 
+#undef abs
+#undef dabs
+#undef min
+#undef max
+#undef dmin
+#undef dmax
+#undef bit_test
+#undef bit_clear
+#undef bit_set
 
 #ifdef __cplusplus
 }
