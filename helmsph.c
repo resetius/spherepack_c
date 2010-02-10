@@ -87,7 +87,7 @@ static integer c__0 = 0;
 
     /* System generated locals */
     integer i__1, i__2;
-    doublereal r__1, r__2, r__3;
+    doublereal d__1, d__2, d__3;
 
     /* Builtin functions */
     double atan(doublereal), sin(doublereal), cos(doublereal), exp(doublereal)
@@ -95,7 +95,8 @@ static integer c__0 = 0;
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */
-    static doublereal a[361]	/* was [19][19] */, b[361]	/* was [19][19] */;
+    static doublereal a[361]	/* was [19][19] */, b[361]	/* was [19][
+	    19] */;
     static integer i__, j;
     static doublereal r__[684]	/* was [19][36] */, u[684]	/* was [19][
 	    36] */, x, y, z__, pi, ue, ez;
@@ -110,24 +111,24 @@ static integer c__0 = 0;
     static integer isym;
     static doublereal work[3249];
     extern /* Subroutine */ int shaec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
-    static doublereal theta;
-    static doublereal dwork[20];
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
+    static doublereal theta, dwork[20];
     static integer lwork;
-    extern /* Subroutine */ int shaeci_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, integer *, integer *);
+    extern /* Subroutine */ int shaeci_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *);
     static integer lshaec;
     static doublereal xlmbda, wshaec[1451];
-    extern /* Subroutine */ int shseci_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, integer *, integer *);
+    extern /* Subroutine */ int shseci_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *);
     static integer lshsec;
     static doublereal wshsec[1451], pertrb;
     static integer ierror, ldwork;
     extern /* Subroutine */ int islapec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
-	    , integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, doublereal *, integer *);
 
     /* Fortran I/O blocks */
     static cilist io___26 = { 0, 6, 0, fmt_200, 0 };
@@ -196,8 +197,8 @@ static integer c__0 = 0;
 	    x = cost[i__ - 1] * cosp[j - 1];
 	    y = cost[i__ - 1] * sinp[j - 1];
 	    z__ = sint[i__ - 1];
-	    r__[i__ + j * 19 - 20] = -(x * y * (z__ * z__ + (z__ + 1.) * 6.)
-		     + z__ * (z__ + 2.)) * exp(z__);
+	    r__[i__ + j * 19 - 20] = -(x * y * (z__ * z__ + (z__ + 1.) * 6.) 
+		    + z__ * (z__ + 2.)) * exp(z__);
 	}
     }
 
@@ -265,9 +266,8 @@ static integer c__0 = 0;
 	    ez = exp(z__);
 	    ue = (x * y + 1.) * ez;
 /* Computing MAX */
-	    r__2 = errm, r__3 = (r__1 = u[i__ + j * 19 - 20] - ue, dabs(r__1))
-		    ;
-	    errm = dmax(r__2,r__3);
+	    d__2 = errm, d__3 = (d__1 = u[i__ + j * 19 - 20] - ue, abs(d__1));
+	    errm = max(d__2,d__3);
 	}
     }
     s_wsfe(&io___42);

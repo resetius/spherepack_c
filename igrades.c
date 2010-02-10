@@ -231,9 +231,9 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int igrades_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *sf, integer *isf, integer *jsf, doublereal *br, doublereal *bi,
-	 integer *mdb, integer *ndb, doublereal *wshses, integer *lshses, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *sf, integer *isf, integer *jsf, doublereal *
+	br, doublereal *bi, integer *mdb, integer *ndb, doublereal *wshses, 
+	integer *lshses, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer sf_dim1, sf_dim2, sf_offset, br_dim1, br_dim2, br_offset, bi_dim1,
@@ -243,9 +243,10 @@
     static integer ia, ib, mn, is, ls, mab, nln, iwk, imid, mmax, liwk, lpimn,
 	     lwkmin;
     extern /* Subroutine */ int igrdes1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, integer *,
-	     doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, integer *, doublereal *,
+	     integer *, integer *);
 
 
 /*     check input parameters */
@@ -350,10 +351,10 @@
 } /* igrades_ */
 
 /* Subroutine */ int igrdes1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *sf, integer *isf, integer *jsf, doublereal *a, doublereal *b, 
-	integer *mab, doublereal *sqnn, integer *mdb, integer *ndb, doublereal *br, doublereal *
-	bi, doublereal *wshses, integer *lshses, doublereal *wk, integer *lwk, integer *
-	ierror)
+	integer *nt, doublereal *sf, integer *isf, integer *jsf, doublereal *
+	a, doublereal *b, integer *mab, doublereal *sqnn, integer *mdb, 
+	integer *ndb, doublereal *br, doublereal *bi, doublereal *wshses, 
+	integer *lshses, doublereal *wk, integer *lwk, integer *ierror)
 {
     /* System generated locals */
     integer sf_dim1, sf_dim2, sf_offset, br_dim1, br_dim2, br_offset, bi_dim1,
@@ -368,8 +369,9 @@
     static doublereal fn;
     static integer mmax;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     preset coefficient multiplyers in vector */

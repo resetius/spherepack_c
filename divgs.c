@@ -221,9 +221,10 @@
 
 
 /* Subroutine */ int divgs_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *divg, integer *idiv, integer *jdiv, doublereal *br, doublereal 
-	*bi, integer *mdb, integer *ndb, doublereal *wshsgs, integer *lshsgs, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *divg, integer *idiv, integer *jdiv, 
+	doublereal *br, doublereal *bi, integer *mdb, integer *ndb, 
+	doublereal *wshsgs, integer *lshsgs, doublereal *work, integer *lwork,
+	 integer *ierror)
 {
     /* System generated locals */
     integer divg_dim1, divg_dim2, divg_offset, br_dim1, br_dim2, br_offset, 
@@ -233,9 +234,10 @@
     static integer l1, l2, ia, ib, mn, lp, is, ls, mab, nln, iwk, lwk, imid, 
 	    mmax, lpimn;
     extern /* Subroutine */ int divgs1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, integer *,
-	     doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *);
 
 
 /*     check input parameters */
@@ -343,10 +345,11 @@
 } /* divgs_ */
 
 /* Subroutine */ int divgs1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *divg, integer *idiv, integer *jdiv, doublereal *br, doublereal 
-	*bi, integer *mdb, integer *ndb, doublereal *a, doublereal *b, integer *mab, doublereal 
-	*sqnn, doublereal *wshsgs, integer *lshsgs, doublereal *wk, integer *lwk, integer 
-	*ierror)
+	integer *nt, doublereal *divg, integer *idiv, integer *jdiv, 
+	doublereal *br, doublereal *bi, integer *mdb, integer *ndb, 
+	doublereal *a, doublereal *b, integer *mab, doublereal *sqnn, 
+	doublereal *wshsgs, integer *lshsgs, doublereal *wk, integer *lwk, 
+	integer *ierror)
 {
     /* System generated locals */
     integer divg_dim1, divg_dim2, divg_offset, br_dim1, br_dim2, br_offset, 
@@ -361,8 +364,9 @@
     static doublereal fn;
     static integer mmax;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */

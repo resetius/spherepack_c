@@ -373,7 +373,7 @@
 
 /* ... work */
 
-/*     a doublereal work array that does not have to be preserved */
+/*     a real work array that does not have to be preserved */
 
 /* ... lwork */
 
@@ -473,10 +473,10 @@
 /* ***************************************************** */
 
 /* Subroutine */ int trssph_(integer *intl, integer *igrida, integer *nlona, 
-	integer *nlata, doublereal *da, integer *igridb, integer *nlonb, integer *
-	nlatb, doublereal *db, doublereal *wsave, integer *lsave, integer *lsvmin, doublereal *
-	work, integer *lwork, integer *lwkmin, doublereal *dwork, integer *
-	ldwork, integer *ier)
+	integer *nlata, doublereal *da, integer *igridb, integer *nlonb, 
+	integer *nlatb, doublereal *db, doublereal *wsave, integer *lsave, 
+	integer *lsvmin, doublereal *work, integer *lwork, integer *lwkmin, 
+	doublereal *dwork, integer *ldwork, integer *ier)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -484,29 +484,32 @@
     /* Local variables */
     static integer jb, ig, iw, nt, lw, la1, la2, lb1, lb2, iaa, iab, iba, ibb,
 	     lwa, lwb, lwk3, lwk4;
-    extern /* Subroutine */ int trab_(integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *);
+    extern /* Subroutine */ int trab_(integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *);
     static integer nlat, isym;
     extern /* Subroutine */ int shaec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *), 
-	    shagc_(integer *, integer *, integer *, integer *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, integer *, integer *, doublereal *
-	    , integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *), shagc_(integer *, integer *, 
+	    integer *, integer *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *);
     static integer igrda, igrdb;
     extern /* Subroutine */ int shsec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *), 
-	    shsgc_(integer *, integer *, integer *, integer *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, integer *, integer *, doublereal *
-	    , integer *, doublereal *, integer *, integer *), shaeci_(integer *, 
-	    integer *, doublereal *, integer *, doublereal *, integer *, integer *),
-	     shagci_(integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *), shseci_(integer *, integer *, doublereal *, 
-	    integer *, doublereal *, integer *, integer *), shsgci_(integer *,
-	     integer *, doublereal *, integer *, doublereal *, integer *, integer *)
-	    , convlat_(integer *, integer *, doublereal *), trsplat_(integer *, 
-	    integer *, doublereal *, doublereal *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *), shsgc_(integer *, integer *, 
+	    integer *, integer *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *), shaeci_(integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *), shagci_(integer *, integer *, doublereal *, integer *,
+	     doublereal *, integer *, integer *), shseci_(integer *, integer *
+	    , doublereal *, integer *, doublereal *, integer *, integer *), 
+	    shsgci_(integer *, integer *, doublereal *, integer *, doublereal 
+	    *, integer *, integer *), convlat_(integer *, integer *, 
+	    doublereal *), trsplat_(integer *, integer *, doublereal *, 
+	    doublereal *);
 
 
 /*     include a save statement to ensure local variables in trssph, set during */
@@ -761,8 +764,9 @@
     return 0;
 } /* trssph_ */
 
-/* Subroutine */ int trab_(integer *ma, integer *na, doublereal *aa, doublereal *ba, 
-	integer *mb, integer *nb, doublereal *ab, doublereal *bb)
+/* Subroutine */ int trab_(integer *ma, integer *na, doublereal *aa, 
+	doublereal *ba, integer *mb, integer *nb, doublereal *ab, doublereal *
+	bb)
 {
     /* System generated locals */
     integer aa_dim1, aa_offset, ba_dim1, ba_offset, ab_dim1, ab_offset, 
@@ -821,7 +825,8 @@
     return 0;
 } /* trab_ */
 
-/* Subroutine */ int trsplat_(integer *n, integer *m, doublereal *data, doublereal *work)
+/* Subroutine */ int trsplat_(integer *n, integer *m, doublereal *data, 
+	doublereal *work)
 {
     /* System generated locals */
     integer i__1, i__2;

@@ -67,9 +67,9 @@ struct {
 
 /*     subroutine hrfftf(m,n,r,mdimr,wsave,work) */
 
-/*     subroutine hrfftf computes the fourier coefficients of m doublereal */
+/*     subroutine hrfftf computes the fourier coefficients of m real */
 /*     perodic sequences (fourier analysis); i.e. hrfftf computes the */
-/*     doublereal fft of m sequences each with length n. the transform is */
+/*     real fft of m sequences each with length n. the transform is */
 /*     defined below at output parameter r. */
 
 /*     input parameters */
@@ -80,7 +80,7 @@ struct {
 /*             efficient when n is a product of small primes. n may */
 /*             change as long as different work arrays are provided */
 
-/*     r       r(m,n) is a two dimensional doublereal array that contains m */
+/*     r       r(m,n) is a two dimensional real array that contains m */
 /*             sequences each with length n. */
 
 /*     mdimr   the first dimension of the r array as it appears */
@@ -97,7 +97,7 @@ struct {
 /*             transforms can be obtained faster than the first. */
 /*             the same wsave array can be used by hrfftf and hrfftb. */
 
-/*     work    a doublereal work array with m*n locations. */
+/*     work    a real work array with m*n locations. */
 
 
 /*     output parameters */
@@ -132,14 +132,14 @@ struct {
 /*     wsave   contains results which must not be destroyed between */
 /*             calls of hrfftf or hrfftb. */
 
-/*     work    a doublereal work array with m*n locations that does */
+/*     work    a real work array with m*n locations that does */
 /*             not have to be saved. */
 
 /* ********************************************************************** */
 
 /*     subroutine hrfftb(m,n,r,mdimr,wsave,work) */
 
-/*     subroutine hrfftb computes the doublereal perodic sequence of m */
+/*     subroutine hrfftb computes the real perodic sequence of m */
 /*     sequences from their fourier coefficients (fourier synthesis). */
 /*     the transform is defined below at output parameter r. */
 
@@ -151,7 +151,7 @@ struct {
 /*             efficient when n is a product of small primes. n may */
 /*             change as long as different work arrays are provided */
 
-/*     r       r(m,n) is a two dimensional doublereal array that contains */
+/*     r       r(m,n) is a two dimensional real array that contains */
 /*             the fourier coefficients of m sequences each with */
 /*             length n. */
 
@@ -168,7 +168,7 @@ struct {
 /*             transforms can be obtained faster than the first. */
 /*             the same wsave array can be used by hrfftf and hrfftb. */
 
-/*     work    a doublereal work array with m*n locations. */
+/*     work    a real work array with m*n locations. */
 
 
 /*     output parameters */
@@ -201,7 +201,7 @@ struct {
 /*     wsave   contains results which must not be destroyed between */
 /*             calls of hrfftb or hrfftf. */
 
-/*     work    a doublereal work array with m*n locations that does not */
+/*     work    a real work array with m*n locations that does not */
 /*             have to be saved */
 
 /* ********************************************************************** */
@@ -210,7 +210,8 @@ struct {
 
 /* Subroutine */ int hrffti_(integer *n, doublereal *wsave)
 {
-    extern /* Subroutine */ int hrfti1_(integer *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfti1_(integer *, doublereal *, doublereal *)
+	    ;
 
     /* Parameter adjustments */
     --wsave;
@@ -312,7 +313,7 @@ L107:
     }
     i__1 = nfm1;
     for (k1 = 1; k1 <= i__1; ++k1) {
-	ip = fac[k1 + 2];
+	ip = (integer) fac[k1 + 2];
 	ld = 0;
 	l2 = l1 * ip;
 	ido = *n / l2;
@@ -341,15 +342,15 @@ L107:
     return 0;
 } /* hrfti1_ */
 
-/* Subroutine */ int hrfftf_(integer *m, integer *n, doublereal *r__, integer *
-	mdimr, doublereal *whrfft, doublereal *work)
+/* Subroutine */ int hrfftf_(integer *m, integer *n, doublereal *r__, integer 
+	*mdimr, doublereal *whrfft, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset;
 
     /* Local variables */
-    extern /* Subroutine */ int hrftf1_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrftf1_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -372,8 +373,8 @@ L107:
     return 0;
 } /* hrfftf_ */
 
-/* Subroutine */ int hrftf1_(integer *m, integer *n, doublereal *c__, integer *
-	mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
+/* Subroutine */ int hrftf1_(integer *m, integer *n, doublereal *c__, integer 
+	*mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
 {
     /* System generated locals */
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
@@ -381,15 +382,17 @@ L107:
     /* Local variables */
     static integer i__, j, k1, l1, l2, na, kh, nf, ip, iw, ix2, ix3, ix4, ido,
 	     idl1;
-    extern /* Subroutine */ int hradf2_(integer *, integer *, integer *, doublereal 
-	    *, integer *, doublereal *, integer *, doublereal *), hradf3_(integer *, 
-	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
-	    , doublereal *), hradf4_(integer *, integer *, integer *, doublereal *, 
-	    integer *, doublereal *, integer *, doublereal *, doublereal *, doublereal *), hradf5_(
-	    integer *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *), hradfg_(integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, doublereal *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *);
+    extern /* Subroutine */ int hradf2_(integer *, integer *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *, doublereal *), 
+	    hradf3_(integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, doublereal *), hradf4_(
+	    integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, doublereal *, doublereal *)
+	    , hradf5_(integer *, integer *, integer *, doublereal *, integer *
+	    , doublereal *, integer *, doublereal *, doublereal *, doublereal 
+	    *, doublereal *), hradfg_(integer *, integer *, integer *, 
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -405,14 +408,14 @@ L107:
     --fac;
 
     /* Function Body */
-    nf = fac[2];
+    nf = (integer) fac[2];
     na = 1;
     l2 = *n;
     iw = *n;
     i__1 = nf;
     for (k1 = 1; k1 <= i__1; ++k1) {
 	kh = nf - k1;
-	ip = fac[kh + 3];
+	ip = (integer) fac[kh + 3];
 	l1 = l2 / ip;
 	ido = *n / l2;
 	idl1 = ido * l1;
@@ -514,9 +517,9 @@ L110:
     return 0;
 } /* hrftf1_ */
 
-/* Subroutine */ int hradf4_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
-	doublereal *wa3)
+/* Subroutine */ int hradf4_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2, doublereal *wa3)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_dim3, cc_offset, ch_dim1, ch_dim2, ch_offset,
@@ -714,8 +717,9 @@ L107:
     return 0;
 } /* hradf4_ */
 
-/* Subroutine */ int hradf2_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1)
+/* Subroutine */ int hradf2_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_offset, cc_dim1, cc_dim2, cc_dim3, cc_offset,
@@ -816,8 +820,9 @@ L107:
     return 0;
 } /* hradf2_ */
 
-/* Subroutine */ int hradf3_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2)
+/* Subroutine */ int hradf3_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_offset, cc_dim1, cc_dim2, cc_dim3, cc_offset,
@@ -964,9 +969,9 @@ L107:
     return 0;
 } /* hradf3_ */
 
-/* Subroutine */ int hradf5_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
-	doublereal *wa3, doublereal *wa4)
+/* Subroutine */ int hradf5_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2, doublereal *wa3, doublereal *wa4)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_dim3, cc_offset, ch_dim1, ch_dim2, ch_offset,
@@ -1298,8 +1303,9 @@ L107:
 } /* hradf5_ */
 
 /* Subroutine */ int hradfg_(integer *mp, integer *ido, integer *ip, integer *
-	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, integer *mdimcc, 
-	doublereal *ch, doublereal *ch2, integer *mdimch, doublereal *wa)
+	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, 
+	integer *mdimcc, doublereal *ch, doublereal *ch2, integer *mdimch, 
+	doublereal *wa)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_dim3, ch_offset, cc_dim1, cc_dim2, cc_dim3, 
@@ -1753,15 +1759,15 @@ doublereal pimach_(void)
     return ret_val;
 } /* pimach_ */
 
-/* Subroutine */ int hrfftb_(integer *m, integer *n, doublereal *r__, integer *
-	mdimr, doublereal *whrfft, doublereal *work)
+/* Subroutine */ int hrfftb_(integer *m, integer *n, doublereal *r__, integer 
+	*mdimr, doublereal *whrfft, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset;
 
     /* Local variables */
-    extern /* Subroutine */ int hrftb1_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrftb1_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -1784,8 +1790,8 @@ doublereal pimach_(void)
     return 0;
 } /* hrfftb_ */
 
-/* Subroutine */ int hrftb1_(integer *m, integer *n, doublereal *c__, integer *
-	mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
+/* Subroutine */ int hrftb1_(integer *m, integer *n, doublereal *c__, integer 
+	*mdimc, doublereal *ch, doublereal *wa, doublereal *fac)
 {
     /* System generated locals */
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
@@ -1793,15 +1799,17 @@ doublereal pimach_(void)
     /* Local variables */
     static integer i__, j, k1, l1, l2, na, nf, ip, iw, ix2, ix3, ix4, ido, 
 	    idl1;
-    extern /* Subroutine */ int hradb2_(integer *, integer *, integer *, doublereal 
-	    *, integer *, doublereal *, integer *, doublereal *), hradb3_(integer *, 
-	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, doublereal *
-	    , doublereal *), hradb4_(integer *, integer *, integer *, doublereal *, 
-	    integer *, doublereal *, integer *, doublereal *, doublereal *, doublereal *), hradb5_(
-	    integer *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *), hradbg_(integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, doublereal *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *);
+    extern /* Subroutine */ int hradb2_(integer *, integer *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *, doublereal *), 
+	    hradb3_(integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, doublereal *), hradb4_(
+	    integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, doublereal *, doublereal *)
+	    , hradb5_(integer *, integer *, integer *, doublereal *, integer *
+	    , doublereal *, integer *, doublereal *, doublereal *, doublereal 
+	    *, doublereal *), hradbg_(integer *, integer *, integer *, 
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *);
 
 
 /*     a multiple fft package for spherepack */
@@ -1817,13 +1825,13 @@ doublereal pimach_(void)
     --fac;
 
     /* Function Body */
-    nf = fac[2];
+    nf = (integer) fac[2];
     na = 0;
     l1 = 1;
     iw = 1;
     i__1 = nf;
     for (k1 = 1; k1 <= i__1; ++k1) {
-	ip = fac[k1 + 2];
+	ip = (integer) fac[k1 + 2];
 	l2 = ip * l1;
 	ido = *n / l2;
 	idl1 = ido * l1;
@@ -1932,8 +1940,9 @@ L115:
 } /* hrftb1_ */
 
 /* Subroutine */ int hradbg_(integer *mp, integer *ido, integer *ip, integer *
-	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, integer *mdimcc, 
-	doublereal *ch, doublereal *ch2, integer *mdimch, doublereal *wa)
+	l1, integer *idl1, doublereal *cc, doublereal *c1, doublereal *c2, 
+	integer *mdimcc, doublereal *ch, doublereal *ch2, integer *mdimch, 
+	doublereal *wa)
 {
     /* System generated locals */
     integer ch_dim1, ch_dim2, ch_dim3, ch_offset, cc_dim1, cc_dim2, cc_dim3, 
@@ -2370,9 +2379,9 @@ L143:
     return 0;
 } /* hradbg_ */
 
-/* Subroutine */ int hradb4_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
-	doublereal *wa3)
+/* Subroutine */ int hradb4_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2, doublereal *wa3)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2562,8 +2571,9 @@ L107:
     return 0;
 } /* hradb4_ */
 
-/* Subroutine */ int hradb2_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1)
+/* Subroutine */ int hradb2_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2664,8 +2674,9 @@ L107:
     return 0;
 } /* hradb2_ */
 
-/* Subroutine */ int hradb3_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2)
+/* Subroutine */ int hradb3_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2709,9 +2720,9 @@ L107:
 		    + 1) * cc_dim2 + 1) * cc_dim1] + cc[m + (*ido + (k * 3 + 
 		    2) * cc_dim2) * cc_dim1] * 2.;
 	    ch[m + ((k + (ch_dim3 << 1)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2. * cc[m 
-		    + (*ido + (k * 3 + 2) * cc_dim2) * cc_dim1] - taui * 2. *
-		     cc[m + ((k * 3 + 3) * cc_dim2 + 1) * cc_dim1];
+		    k * 3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2. * cc[m + 
+		    (*ido + (k * 3 + 2) * cc_dim2) * cc_dim1] - taui * 2. * 
+		    cc[m + ((k * 3 + 3) * cc_dim2 + 1) * cc_dim1];
 	    ch[m + ((k + ch_dim3 * 3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
 		     3 + 1) * cc_dim2 + 1) * cc_dim1] + taur * 2. * cc[m + (*
 		    ido + (k * 3 + 2) * cc_dim2) * cc_dim1] + taui * 2. * cc[
@@ -2800,9 +2811,9 @@ L107:
     return 0;
 } /* hradb3_ */
 
-/* Subroutine */ int hradb5_(integer *mp, integer *ido, integer *l1, doublereal *cc,
-	 integer *mdimcc, doublereal *ch, integer *mdimch, doublereal *wa1, doublereal *wa2, 
-	doublereal *wa3, doublereal *wa4)
+/* Subroutine */ int hradb5_(integer *mp, integer *ido, integer *l1, 
+	doublereal *cc, integer *mdimcc, doublereal *ch, integer *mdimch, 
+	doublereal *wa1, doublereal *wa2, doublereal *wa3, doublereal *wa4)
 {
     /* System generated locals */
     integer cc_dim1, cc_dim2, cc_offset, ch_dim1, ch_dim2, ch_dim3, ch_offset,
@@ -2847,36 +2858,34 @@ L107:
 	for (m = 1; m <= i__2; ++m) {
 	    ch[m + ((k + ch_dim3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k * 5 
 		    + 1) * cc_dim2 + 1) * cc_dim1] + cc[m + (*ido + (k * 5 + 
-		    2) * cc_dim2) * cc_dim1] * 2. + cc[m + (*ido + (k * 5 + 
-		    4) * cc_dim2) * cc_dim1] * 2.;
+		    2) * cc_dim2) * cc_dim1] * 2. + cc[m + (*ido + (k * 5 + 4)
+		     * cc_dim2) * cc_dim1] * 2.;
 	    ch[m + ((k + (ch_dim3 << 1)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2. * cc[m 
-		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2. *
-		     cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] - (ti11 
-		    * 2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
-		    ti12 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
-		    );
+		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2. * cc[m + 
+		    (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2. * 
+		    cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] - (ti11 *
+		     2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
+		    ti12 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1])
+		    ;
 	    ch[m + ((k + ch_dim3 * 3) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
 		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2. * cc[m + (*
 		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2. * cc[
 		    m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] - (ti12 * 
-		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
-		    ti11 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
-		    );
+		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - ti11 
+		    * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]);
 	    ch[m + ((k + (ch_dim3 << 2)) * ch_dim2 + 1) * ch_dim1] = cc[m + ((
-		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2. * cc[m 
-		    + (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2. *
-		     cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] + (ti12 
-		    * 2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
-		    ti11 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
-		    );
+		    k * 5 + 1) * cc_dim2 + 1) * cc_dim1] + tr12 * 2. * cc[m + 
+		    (*ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr11 * 2. * 
+		    cc[m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] + (ti12 *
+		     2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] - 
+		    ti11 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1])
+		    ;
 	    ch[m + ((k + ch_dim3 * 5) * ch_dim2 + 1) * ch_dim1] = cc[m + ((k *
 		     5 + 1) * cc_dim2 + 1) * cc_dim1] + tr11 * 2. * cc[m + (*
 		    ido + (k * 5 + 2) * cc_dim2) * cc_dim1] + tr12 * 2. * cc[
 		    m + (*ido + (k * 5 + 4) * cc_dim2) * cc_dim1] + (ti11 * 
-		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + 
-		    ti12 * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]
-		    );
+		    2. * cc[m + ((k * 5 + 3) * cc_dim2 + 1) * cc_dim1] + ti12 
+		    * 2. * cc[m + ((k * 5 + 5) * cc_dim2 + 1) * cc_dim1]);
 /* L1001: */
 	}
 /* L101: */

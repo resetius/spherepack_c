@@ -39,9 +39,10 @@ static doublereal c_b71 = 1.;
 
 /*     contains documentation and code for subroutine visgau */
 
-/* Subroutine */ int visequ_(integer *nlat, integer *nlon, doublereal *h__, integer 
-	*len, doublereal *eyer, doublereal *eyelat, doublereal *eyelon, doublereal *wk, integer *lwk, 
-	integer *iwk, integer *liwk, integer *ierror)
+/* Subroutine */ int visequ_(integer *nlat, integer *nlon, doublereal *h__, 
+	integer *len, doublereal *eyer, doublereal *eyelat, doublereal *
+	eyelon, doublereal *wk, integer *lwk, integer *iwk, integer *liwk, 
+	integer *ierror)
 {
     /* System generated locals */
     integer h_dim1, h_offset, i__1, i__2;
@@ -56,25 +57,29 @@ static doublereal c_b71 = 1.;
 	    nx3, ny3, nz3;
     static doublereal dtr;
     static integer nxp, nyp;
-    extern /* Subroutine */ int diag_(integer *, integer *, doublereal *, doublereal *, 
-	    integer *);
+    extern /* Subroutine */ int diag_(integer *, integer *, doublereal *, 
+	    doublereal *, integer *);
     static integer itri;
-    extern /* Subroutine */ int sptc_(doublereal *, integer *, integer *, integer *,
-	     doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int sptc_(doublereal *, integer *, integer *, 
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	     doublereal *);
     static doublereal xeye, yeye;
     static integer ntri;
     static doublereal zeye;
     static integer nwrk, nmst, nmfac, nclat, nslat;
-    extern /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, integer *, doublereal *, integer *);
+    extern /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
+	    *, integer *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, integer *);
     static integer niflag;
-    extern /* Subroutine */ int triang_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, integer *, integer *, integer *), 
-	    stride_(integer *, integer *, integer *, integer *), interp_(doublereal 
-	    *, integer *, integer *, integer *, doublereal *, doublereal *, integer *), 
-	    projct_(integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, 
+    extern /* Subroutine */ int triang_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, integer *, integer *, 
+	    integer *), stride_(integer *, integer *, integer *, integer *), 
+	    interp_(doublereal *, integer *, integer *, integer *, doublereal 
+	    *, doublereal *, integer *), projct_(integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
     static integer nitype;
 
@@ -130,7 +135,7 @@ static doublereal c_b71 = 1.;
 
 /*     eyelon the longitudinal  coordinate of the eye (in degrees). */
 
-/*     wk     a doublereal work array */
+/*     wk     a real work array */
 
 /*     lwk    the dimension of the array wk as it appears in the */
 /*            program that calls visequ. lwk must be at least */
@@ -179,7 +184,7 @@ static doublereal c_b71 = 1.;
 	}
     }
     *ierror = 0;
-    pi = atan(1.f) * 4.;
+    pi = atan(1.) * 4.;
     dtr = pi / 180.;
 
 /*     ****     set up pointers to sub work arrays in wk and iwk */
@@ -238,20 +243,19 @@ static doublereal c_b71 = 1.;
     return 0;
 } /* visequ_ */
 
-/* Subroutine */ int interp_(doublereal *h__, integer *len, integer *m, integer *n, 
-	doublereal *w1, doublereal *w2, integer *iflag)
+/* Subroutine */ int interp_(doublereal *h__, integer *len, integer *m, 
+	integer *n, doublereal *w1, doublereal *w2, integer *iflag)
 {
     /* Initialized data */
 
-    static doublereal sten[16]	/* was [4][4] */ = { .015625,-.078125f,
-	    -.078125f,.015625f,-.078125f,.390625f,.390625f,-.078125f,
-	    -.078125f,.390625f,.390625f,-.078125f,.015625f,-.078125f,
-	    -.078125f,.015625f };
+    static doublereal sten[16]	/* was [4][4] */ = { .015625,-.078125,
+	    -.078125,.015625,-.078125,.390625,.390625,-.078125,-.078125,
+	    .390625,.390625,-.078125,.015625,-.078125,-.078125,.015625 };
 
     /* System generated locals */
     integer h_dim1, h_offset, w1_dim1, w1_offset, w2_dim1, w2_offset, 
 	    iflag_dim1, iflag_offset, i__1, i__2;
-    doublereal r__1, r__2, r__3;
+    doublereal d__1, d__2, d__3;
 
     /* Local variables */
     static integer i__, j, k, l, n1, n2, mm1;
@@ -325,19 +329,20 @@ static doublereal c_b71 = 1.;
     for (i__ = 1; i__ <= i__2; ++i__) {
 	i__1 = n2;
 	for (j = n1; j <= i__1; ++j) {
-	    r__3 = (r__1 = (w2[j + (i__ + 1) * w2_dim1] + w2[j + 1 + (i__ + 2)
-		     * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], dabs(r__1)) - 
-		    (r__2 = (w2[j + (i__ + 2) * w2_dim1] + w2[j + 1 + (i__ + 
-		    1) * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], dabs(r__2));
-	    iflag[j + i__ * iflag_dim1] = icvmg_(&c__16, &c__0, &r__3);
+	    d__3 = (d__1 = (w2[j + (i__ + 1) * w2_dim1] + w2[j + 1 + (i__ + 2)
+		     * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], abs(d__1)) - (
+		    d__2 = (w2[j + (i__ + 2) * w2_dim1] + w2[j + 1 + (i__ + 1)
+		     * w2_dim1]) * .5 - w1[j + i__ * w1_dim1], abs(d__2));
+	    iflag[j + i__ * iflag_dim1] = icvmg_(&c__16, &c__0, &d__3);
 /* L9: */
 	}
     }
     return 0;
 } /* interp_ */
 
-/* Subroutine */ int sptc_(doublereal *r__, integer *len, integer *m, integer *n, 
-	doublereal *clat, doublereal *slat, doublereal *x, doublereal *y, doublereal *z__)
+/* Subroutine */ int sptc_(doublereal *r__, integer *len, integer *m, integer 
+	*n, doublereal *clat, doublereal *slat, doublereal *x, doublereal *y, 
+	doublereal *z__)
 {
     /* System generated locals */
     integer r_dim1, r_offset, x_dim1, x_offset, y_dim1, y_offset, z_dim1, 
@@ -368,7 +373,7 @@ static doublereal c_b71 = 1.;
     --clat;
 
     /* Function Body */
-    pi = atan(1.f) * 4.;
+    pi = atan(1.) * 4.;
     dt = pi / (*n - 1);
     dp = (pi + pi) / (*m - 1);
     i__1 = *n;
@@ -400,8 +405,8 @@ static doublereal c_b71 = 1.;
     return 0;
 } /* sptc_ */
 
-/* Subroutine */ int diag_(integer *m, integer *n, doublereal *xp, doublereal *yp, 
-	integer *iflag)
+/* Subroutine */ int diag_(integer *m, integer *n, doublereal *xp, doublereal 
+	*yp, integer *iflag)
 {
     /* System generated locals */
     integer xp_dim1, xp_offset, yp_dim1, yp_offset, iflag_dim1, iflag_offset, 
@@ -539,7 +544,7 @@ L100:
 
     /* System generated locals */
     integer i__1;
-    doublereal r__1, r__2;
+    doublereal d__1, d__2;
 
     /* Builtin functions */
     double atan(doublereal), sin(doublereal);
@@ -604,7 +609,7 @@ L106:
     ns2 = *n / 2;
     mf1 = mfac[nf];
     mst[1] = (*m - 1) / mf1;
-    pi = atan(1.f) * 4.;
+    pi = atan(1.) * 4.;
     dt = pi / (doublereal) (*n - 1);
     jf = nf - 1;
     i__1 = ns2;
@@ -613,8 +618,8 @@ L106:
 	theta = (j - 1) * dt;
 	st = sin(theta);
 	mf2 = mf1 * mfac[jf];
-	if ((r__1 = st / mf1 - tphi, dabs(r__1)) > (r__2 = st / mf2 - tphi, 
-		dabs(r__2))) {
+	if ((d__1 = st / mf1 - tphi, abs(d__1)) > (d__2 = st / mf2 - tphi, 
+		abs(d__2))) {
 	    goto L115;
 	}
 	mst[j] = mst[j - 1];
@@ -646,10 +651,11 @@ L120:
     return 0;
 } /* stride_ */
 
-/* Subroutine */ int triang_(integer *m, integer *n, doublereal *x, doublereal *y, doublereal *
-	z__, integer *itri, doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, 
-	doublereal *z2, doublereal *x3, doublereal *y3, doublereal *z3, integer *ityp, integer *iflag,
-	 integer *mst)
+/* Subroutine */ int triang_(integer *m, integer *n, doublereal *x, 
+	doublereal *y, doublereal *z__, integer *itri, doublereal *x1, 
+	doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, 
+	doublereal *z2, doublereal *x3, doublereal *y3, doublereal *z3, 
+	integer *ityp, integer *iflag, integer *mst)
 {
     /* Initialized data */
 
@@ -874,15 +880,20 @@ L200:
     return 0;
 } /* triang_ */
 
-/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
-	 doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3,
-	 doublereal *y3, doublereal *z3, integer *itype, doublereal *work, integer *iwork)
+/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
+	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
+	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
+	doublereal *y3, doublereal *z3, integer *itype, doublereal *work, 
+	integer *iwork)
 {
-    extern /* Subroutine */ int vsurf1_(doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    integer *, integer *, integer *, integer *);
+    extern /* Subroutine */ int vsurf1_(doublereal *, doublereal *, 
+	    doublereal *, integer *, doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, integer *, integer *);
 
 
 /*    subroutine vsurf is like subroutine hidel except the triangles */
@@ -903,7 +914,7 @@ L200:
 /*    any combination is possible by specifying itype to be one */
 /*    of the following values: 0,1,2,3,12,13,23,123. */
 
-/*    the length of doublereal    array  work must be at least 14*ntri */
+/*    the length of real    array  work must be at least 14*ntri */
 
 /*    the length of integer array iwork must be at least  6*ntri */
 
@@ -939,16 +950,19 @@ L200:
     return 0;
 } /* vsurf_ */
 
-/* Subroutine */ int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *
-	ntri, doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, 
-	doublereal *x3, doublereal *y3, doublereal *z3, integer *itype, doublereal *px1, doublereal *py1, 
-	doublereal *px2, doublereal *py2, doublereal *px3, doublereal *py3, doublereal *vx1, doublereal *vy1, 
-	doublereal *vx2, doublereal *vy2, doublereal *vx3, doublereal *vy3, doublereal *tl, doublereal *tr, 
-	integer *kh, integer *next, integer *istart, integer *ifinal)
+/* Subroutine */ int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *
+	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
+	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
+	doublereal *y3, doublereal *z3, integer *itype, doublereal *px1, 
+	doublereal *py1, doublereal *px2, doublereal *py2, doublereal *px3, 
+	doublereal *py3, doublereal *vx1, doublereal *vy1, doublereal *vx2, 
+	doublereal *vy2, doublereal *vx3, doublereal *vy3, doublereal *tl, 
+	doublereal *tr, integer *kh, integer *next, integer *istart, integer *
+	ifinal)
 {
     /* System generated locals */
     integer i__1, i__2, i__3, i__4, i__5, i__6;
-    doublereal r__1, r__2;
+    doublereal d__1, d__2;
 
     /* Builtin functions */
     double log(doublereal);
@@ -971,8 +985,7 @@ L200:
     static integer ks, ls, ns;
     static doublereal x54, y54, yb;
     static integer id1, id2, i1f, j1f, id3;
-    static doublereal l2e;
-    static doublereal le2;
+    static doublereal l2e, le2;
     static integer i2m, j2m, ip2[11], ir1, ir2, i1s, j1s;
     static doublereal tl1, tl2, px4, py4, px5, py5;
     static integer kdf, ijd;
@@ -984,18 +997,20 @@ L200:
     static integer ncv[11];
     static doublereal hdx, dmx, dmy;
     static integer ifx;
-    extern /* Subroutine */ int set_(doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, integer *), box_(integer *, integer *, 
-	    integer *, integer *, integer *);
+    extern /* Subroutine */ int set_(doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, integer *), box_(integer *, integer *, integer *, 
+	    integer *, integer *);
     static integer kcv, ltp[3];
     static doublereal dxt;
     static integer ist, ixh, isx, ixs, ixf, kds, ldo, ith;
-    static doublereal xpl, ypl, zpl, xpr, ypr, zpr, cpl, dpl, til, tir, tim, tlh, 
-	    trh, dum1, dum2;
+    static doublereal xpl, ypl, zpl, xpr, ypr, zpr, cpl, dpl, til, tir, tim, 
+	    tlh, trh, dum1, dum2;
     static integer irp1;
-    static doublereal px1h, py1h, vx1t, vy1t, vz1t, vx2t, vy2t, vz2t, vx3t, vy3t, 
-	    vz3t;
-    extern /* Subroutine */ int line_(doublereal *, doublereal *, doublereal *, doublereal *);
+    static doublereal px1h, py1h, vx1t, vy1t, vz1t, vx2t, vy2t, vz2t, vx3t, 
+	    vy3t, vz3t;
+    extern /* Subroutine */ int line_(doublereal *, doublereal *, doublereal *
+	    , doublereal *);
     static integer nseg, irdp;
     static doublereal xmid, ymid;
     static integer last[11];
@@ -1010,8 +1025,9 @@ L200:
     static integer nsegp, irmax;
     static doublereal fntri;
     static integer isize;
-    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *);
     static doublereal x1hold, y1hold, z1hold;
 
 
@@ -1053,7 +1069,7 @@ L200:
     le2 = .6931471805599453094172321;
     l2e = 1. / le2;
     fntri = (doublereal) (*ntri);
-    irmax = l2e * .5 * log(fntri);
+    irmax = (integer) (l2e * .5 * log(fntri));
     irmax = min(irmax,10);
     irmp1 = irmax + 1;
     for (icv = 1; icv <= 11; ++icv) {
@@ -1156,52 +1172,52 @@ L70:
     i__1 = *ntri;
     for (k = 1; k <= i__1; ++k) {
 /* Computing MIN */
-	r__1 = pmin, r__2 = px1[k], r__1 = min(r__1,r__2), r__2 = py1[k], 
-		r__1 = min(r__1,r__2), r__2 = px2[k], r__1 = min(r__1,r__2), 
-		r__2 = py2[k], r__1 = min(r__1,r__2), r__2 = px3[k], r__1 = 
-		min(r__1,r__2), r__2 = py3[k];
-	pmin = dmin(r__1,r__2);
+	d__1 = pmin, d__2 = px1[k], d__1 = min(d__1,d__2), d__2 = py1[k], 
+		d__1 = min(d__1,d__2), d__2 = px2[k], d__1 = min(d__1,d__2), 
+		d__2 = py2[k], d__1 = min(d__1,d__2), d__2 = px3[k], d__1 = 
+		min(d__1,d__2), d__2 = py3[k];
+	pmin = min(d__1,d__2);
 /* Computing MAX */
-	r__1 = pmax, r__2 = px1[k], r__1 = max(r__1,r__2), r__2 = py1[k], 
-		r__1 = max(r__1,r__2), r__2 = px2[k], r__1 = max(r__1,r__2), 
-		r__2 = py2[k], r__1 = max(r__1,r__2), r__2 = px3[k], r__1 = 
-		max(r__1,r__2), r__2 = py3[k];
-	pmax = dmax(r__1,r__2);
+	d__1 = pmax, d__2 = px1[k], d__1 = max(d__1,d__2), d__2 = py1[k], 
+		d__1 = max(d__1,d__2), d__2 = px2[k], d__1 = max(d__1,d__2), 
+		d__2 = py2[k], d__1 = max(d__1,d__2), d__2 = px3[k], d__1 = 
+		max(d__1,d__2), d__2 = py3[k];
+	pmax = max(d__1,d__2);
 /* L87: */
     }
     pmin *= 1.1;
     pmax *= 1.1;
     set_(&c_b70, &c_b71, &c_b70, &c_b71, &pmin, &pmax, &pmin, &pmax, &c__1);
 /* Computing MIN */
-    r__1 = min(px1[1],px2[1]);
-    xmin = dmin(r__1,px3[1]);
+    d__1 = min(px1[1],px2[1]);
+    xmin = min(d__1,px3[1]);
 /* Computing MAX */
-    r__1 = max(px1[1],px2[1]);
-    xmax = dmax(r__1,px3[1]);
+    d__1 = max(px1[1],px2[1]);
+    xmax = max(d__1,px3[1]);
 /* Computing MIN */
-    r__1 = min(py1[1],py2[1]);
-    ymin = dmin(r__1,py3[1]);
+    d__1 = min(py1[1],py2[1]);
+    ymin = min(d__1,py3[1]);
 /* Computing MAX */
-    r__1 = max(py1[1],py2[1]);
-    ymax = dmax(r__1,py3[1]);
+    d__1 = max(py1[1],py2[1]);
+    ymax = max(d__1,py3[1]);
     i__1 = *ntri;
     for (i__ = 2; i__ <= i__1; ++i__) {
 /* Computing MIN */
-	r__1 = xmin, r__2 = px1[i__], r__1 = min(r__1,r__2), r__2 = px2[i__], 
-		r__1 = min(r__1,r__2), r__2 = px3[i__];
-	xmin = dmin(r__1,r__2);
+	d__1 = xmin, d__2 = px1[i__], d__1 = min(d__1,d__2), d__2 = px2[i__], 
+		d__1 = min(d__1,d__2), d__2 = px3[i__];
+	xmin = min(d__1,d__2);
 /* Computing MAX */
-	r__1 = xmax, r__2 = px1[i__], r__1 = max(r__1,r__2), r__2 = px2[i__], 
-		r__1 = max(r__1,r__2), r__2 = px3[i__];
-	xmax = dmax(r__1,r__2);
+	d__1 = xmax, d__2 = px1[i__], d__1 = max(d__1,d__2), d__2 = px2[i__], 
+		d__1 = max(d__1,d__2), d__2 = px3[i__];
+	xmax = max(d__1,d__2);
 /* Computing MIN */
-	r__1 = ymin, r__2 = py1[i__], r__1 = min(r__1,r__2), r__2 = py2[i__], 
-		r__1 = min(r__1,r__2), r__2 = py3[i__];
-	ymin = dmin(r__1,r__2);
+	d__1 = ymin, d__2 = py1[i__], d__1 = min(d__1,d__2), d__2 = py2[i__], 
+		d__1 = min(d__1,d__2), d__2 = py3[i__];
+	ymin = min(d__1,d__2);
 /* Computing MAX */
-	r__1 = ymax, r__2 = py1[i__], r__1 = max(r__1,r__2), r__2 = py2[i__], 
-		r__1 = max(r__1,r__2), r__2 = py3[i__];
-	ymax = dmax(r__1,r__2);
+	d__1 = ymax, d__2 = py1[i__], d__1 = max(d__1,d__2), d__2 = py2[i__], 
+		d__1 = max(d__1,d__2), d__2 = py3[i__];
+	ymax = max(d__1,d__2);
 /* L1: */
     }
     dmx = xmax - xmin;
@@ -1231,40 +1247,40 @@ L3:
     i__1 = *ntri;
     for (i__ = 1; i__ <= i__1; ++i__) {
 /* Computing MIN */
-	r__1 = px1[i__], r__2 = px2[i__], r__1 = min(r__1,r__2), r__2 = px3[
+	d__1 = px1[i__], d__2 = px2[i__], d__1 = min(d__1,d__2), d__2 = px3[
 		i__];
-	xmin = dmin(r__1,r__2);
+	xmin = min(d__1,d__2);
 /* Computing MAX */
-	r__1 = px1[i__], r__2 = px2[i__], r__1 = max(r__1,r__2), r__2 = px3[
+	d__1 = px1[i__], d__2 = px2[i__], d__1 = max(d__1,d__2), d__2 = px3[
 		i__];
-	xmax = dmax(r__1,r__2);
+	xmax = max(d__1,d__2);
 /* Computing MIN */
-	r__1 = py1[i__], r__2 = py2[i__], r__1 = min(r__1,r__2), r__2 = py3[
+	d__1 = py1[i__], d__2 = py2[i__], d__1 = min(d__1,d__2), d__2 = py3[
 		i__];
-	ymin = dmin(r__1,r__2);
+	ymin = min(d__1,d__2);
 /* Computing MAX */
-	r__1 = py1[i__], r__2 = py2[i__], r__1 = max(r__1,r__2), r__2 = py3[
+	d__1 = py1[i__], d__2 = py2[i__], d__1 = max(d__1,d__2), d__2 = py3[
 		i__];
-	ymax = dmax(r__1,r__2);
+	ymax = max(d__1,d__2);
 /* Computing MAX */
-	r__1 = xmax - xmin, r__2 = ymax - ymin;
-	dxt = dmax(r__1,r__2);
+	d__1 = xmax - xmin, d__2 = ymax - ymin;
+	dxt = max(d__1,d__2);
 	if (dxt > 0.) {
 	    goto L10;
 	}
 	ir = irmax;
 	goto L20;
 L10:
-	ir = l2e * log(hgr / dxt);
+	ir = (integer) (l2e * log(hgr / dxt));
 	ir = min(ir,irmax);
 L20:
 	irp1 = ir + 1;
 	++nct[irp1 - 1];
 	hr = hgr / ip2[irp1 - 1];
 	xmid = (xmin + xmax) * .5;
-	id = (xmid - a) / hr + 1.5;
+	id = (integer) ((xmid - a) / hr + 1.5);
 	ymid = (ymin + ymax) * .5;
-	jd = (ymid - c__) / hr + 1.5;
+	jd = (integer) ((ymid - c__) / hr + 1.5);
 	ijd = ip2[irp1 - 1] + 1;
 	isx = id + (jd - 1) * ijd + ird[irp1 - 1];
 	ifx = ifinal[isx];
@@ -1528,8 +1544,8 @@ L105:
 			    }
 L151:
 /* Computing MIN */
-			    r__1 = c14 / c17;
-			    tmax = dmin(r__1,tmax);
+			    d__1 = c14 / c17;
+			    tmax = min(d__1,tmax);
 			    goto L154;
 L152:
 			    if (c14 >= 0.) {
@@ -1539,8 +1555,8 @@ L152:
 			    }
 L153:
 /* Computing MAX */
-			    r__1 = c14 / c17;
-			    tmin = dmax(r__1,tmin);
+			    d__1 = c14 / c17;
+			    tmin = max(d__1,tmin);
 L154:
 			    if (c27 < 0.) {
 				goto L155;
@@ -1551,8 +1567,8 @@ L154:
 			    }
 L155:
 /* Computing MIN */
-			    r__1 = c25 / c27;
-			    tmax = dmin(r__1,tmax);
+			    d__1 = c25 / c27;
+			    tmax = min(d__1,tmax);
 			    goto L158;
 L156:
 			    if (c25 >= 0.) {
@@ -1562,8 +1578,8 @@ L156:
 			    }
 L157:
 /* Computing MAX */
-			    r__1 = c25 / c27;
-			    tmin = dmax(r__1,tmin);
+			    d__1 = c25 / c27;
+			    tmin = max(d__1,tmin);
 L158:
 			    if (c37 < 0.) {
 				goto L159;
@@ -1574,8 +1590,8 @@ L158:
 			    }
 L159:
 /* Computing MIN */
-			    r__1 = c36 / c37;
-			    tmax = dmin(r__1,tmax);
+			    d__1 = c36 / c37;
+			    tmax = min(d__1,tmax);
 			    goto L162;
 L160:
 			    if (c36 >= 0.) {
@@ -1585,10 +1601,10 @@ L160:
 			    }
 L161:
 /* Computing MAX */
-			    r__1 = c36 / c37;
-			    tmin = dmax(r__1,tmin);
+			    d__1 = c36 / c37;
+			    tmin = max(d__1,tmin);
 L162:
-			    if (tmax - tmin < 1e-5f) {
+			    if (tmax - tmin < 1e-5) {
 				goto L440;
 			    }
 			    xpl = x4 + tmin * (x5 - x4);
@@ -1711,8 +1727,8 @@ L174:
 			    goto L175;
 			}
 /* Computing MAX */
-			r__1 = tr[k1], r__2 = tr[k2];
-			tr[k1] = dmax(r__1,r__2);
+			d__1 = tr[k1], d__2 = tr[k2];
+			tr[k1] = max(d__1,d__2);
 			goto L174;
 L175:
 			++k1;
@@ -1737,7 +1753,7 @@ L180:
 			nsegp = nseg + 1;
 			i__6 = nsegp;
 			for (k = 1; k <= i__6; ++k) {
-			    if ((r__1 = tr[k] - tl[k], dabs(r__1)) < 1e-6f) {
+			    if ((d__1 = tr[k] - tl[k], abs(d__1)) < 1e-6) {
 				goto L450;
 			    }
 			    xa = px4 + tl[k] * (px5 - px4);
@@ -1772,18 +1788,19 @@ L500:
     return 0;
 } /* vsurf1_ */
 
-/* Subroutine */ int prjct_(integer *init, doublereal *xeye, doublereal *yeye, doublereal *zeye,
-	 doublereal *x, doublereal *y, doublereal *z__, doublereal *px, doublereal *py)
+/* Subroutine */ int prjct_(integer *init, doublereal *xeye, doublereal *yeye,
+	 doublereal *zeye, doublereal *x, doublereal *y, doublereal *z__, 
+	doublereal *px, doublereal *py)
 {
     /* System generated locals */
-    doublereal r__1, r__2;
+    doublereal d__1, d__2;
 
     /* Builtin functions */
     double sqrt(doublereal);
 
     /* Local variables */
-    static doublereal d1, d2, x1, y1, z1, cx1, cy1, cx2, cy2, cz2, cx3, cy3, cz3, 
-	    rads1, rads2, ratio;
+    static doublereal d1, d2, x1, y1, z1, cx1, cy1, cx2, cy2, cz2, cx3, cy3, 
+	    cz3, rads1, rads2, ratio;
 
 
 /*     subroutine prjct projects the point x,y,z onto a plane through */
@@ -1797,13 +1814,13 @@ L500:
 	goto L1;
     }
 /* Computing 2nd power */
-    r__1 = *xeye;
+    d__1 = *xeye;
 /* Computing 2nd power */
-    r__2 = *yeye;
-    rads1 = r__1 * r__1 + r__2 * r__2;
+    d__2 = *yeye;
+    rads1 = d__1 * d__1 + d__2 * d__2;
 /* Computing 2nd power */
-    r__1 = *zeye;
-    rads2 = rads1 + r__1 * r__1;
+    d__1 = *zeye;
+    rads2 = rads1 + d__1 * d__1;
     d1 = sqrt(rads1);
     d2 = sqrt(rads2);
     cx1 = -(*yeye) / d1;
@@ -1882,8 +1899,9 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
     return ret_val;
 } /* icvmg_ */
 
-/* Subroutine */ int projct_(integer *m, integer *n, doublereal *xeye, doublereal *yeye, 
-	doublereal *zeye, doublereal *x, doublereal *y, doublereal *z__, doublereal *px, doublereal *py)
+/* Subroutine */ int projct_(integer *m, integer *n, doublereal *xeye, 
+	doublereal *yeye, doublereal *zeye, doublereal *x, doublereal *y, 
+	doublereal *z__, doublereal *px, doublereal *py)
 {
     /* System generated locals */
     integer x_dim1, x_offset, y_dim1, y_offset, z_dim1, z_offset, px_dim1, 
@@ -1892,8 +1910,9 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
     /* Local variables */
     static integer i__, j;
     static doublereal rdum1, rdum2, rdum3, rdum4, rdum5;
-    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *);
 
 /*     ****     projects point (x,y,z) onto plane thru origin and perp */
 /*     ****     to line joining origin and eye */

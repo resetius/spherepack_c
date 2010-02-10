@@ -123,8 +123,9 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shigc1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, integer *);
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *);
 
 /*     this subroutine must be called before calling shsgc/shagc with */
 /*     fixed nlat,nlon. it precomputes quantites such as the gaussian */
@@ -187,9 +188,10 @@
 } /* shigc_ */
 
 /* Subroutine */ int shigc1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
-	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
-	doublereal *work, integer *ier)
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, 
+	doublereal *abel, doublereal *bbel, doublereal *cbel, doublereal *
+	wfft, doublereal *dtheta, doublereal *dwts, doublereal *work, integer 
+	*ier)
 {
     /* System generated locals */
     integer p0n_dim1, p0n_offset, p1n_dim1, p1n_offset, i__1, i__2;
@@ -307,12 +309,14 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
-		    + m - 1) * (n + m)));
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m 
+		    + n - 3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (
+		    m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n 
+		    - m)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + 
+		    n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (
+		    doublereal) ((n + m - 1) * (n + m)));
 /* L107: */
 	}
     }

@@ -326,9 +326,10 @@ static integer c__0 = 0;
 
 
 /* Subroutine */ int vhaes_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
-	wvhaes, integer *lvhaes, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdab, integer *ndab, doublereal *wvhaes, integer *lvhaes, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -339,10 +340,11 @@ static integer c__0 = 0;
     static integer iw1, iw2, iw3, iw4, jw1, jw2, idv, lnl, idz, ist, imid, 
 	    mmax, lzimn;
     extern /* Subroutine */ int vhaes1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, doublereal *,
-	     doublereal *);
+	    integer *, integer *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, integer *, doublereal *
+	    , doublereal *, doublereal *);
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -444,10 +446,12 @@ static integer c__0 = 0;
 } /* vhaes_ */
 
 /* Subroutine */ int vhaes1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *v, 
-	doublereal *w, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
-	doublereal *ci, integer *idv, doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, doublereal *
-	work, integer *idz, doublereal *zv, doublereal *zw, doublereal *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *
+	v, doublereal *w, integer *mdab, integer *ndab, doublereal *br, 
+	doublereal *bi, doublereal *cr, doublereal *ci, integer *idv, 
+	doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, 
+	doublereal *work, integer *idz, doublereal *zv, doublereal *zw, 
+	doublereal *wrfft)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -461,8 +465,8 @@ static integer c__0 = 0;
     static integer i__, j, k, m, mb, mp1, np1, mp2;
     static doublereal fsn, tsn;
     static integer ndo1, ndo2, imm1, nlp1, mlat, mmax, mlon, itypp;
-    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -1597,17 +1601,18 @@ L820:
 
 /*     dwork must be of length at least 2*(nlat+1) */
 
-/* Subroutine */ int vhaesi_(integer *nlat, integer *nlon, doublereal *wvhaes, 
-	integer *lvhaes, doublereal *work, integer *lwork, doublereal *dwork, 
-	integer *ldwork, integer *ierror)
+/* Subroutine */ int vhaesi_(integer *nlat, integer *nlon, doublereal *wvhaes,
+	 integer *lvhaes, doublereal *work, integer *lwork, doublereal *dwork,
+	 integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, idz;
-    extern /* Subroutine */ int vea1_(integer *, integer *, integer *, doublereal *,
-	     doublereal *, integer *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int vea1_(integer *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *);
     static integer labc, imid, mmax, lzimn;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
@@ -1654,8 +1659,9 @@ L820:
     return 0;
 } /* vhaesi_ */
 
-/* Subroutine */ int vea1_(integer *nlat, integer *nlon, integer *imid, doublereal *
-	zv, doublereal *zw, integer *idz, doublereal *zin, doublereal *wzvin, doublereal *dwork)
+/* Subroutine */ int vea1_(integer *nlat, integer *nlon, integer *imid, 
+	doublereal *zv, doublereal *zw, integer *idz, doublereal *zin, 
+	doublereal *wzvin, doublereal *dwork)
 {
     /* System generated locals */
     integer zv_dim1, zv_offset, zw_dim1, zw_offset, zin_dim1, zin_dim2, 
@@ -1664,10 +1670,11 @@ L820:
     /* Local variables */
     static integer i__, m, i3, mn, mp1, np1, mmax;
     extern /* Subroutine */ int zvin_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, doublereal *), zwin_(integer *, integer *,
-	     integer *, integer *, doublereal *, integer *, doublereal *), zvinit_(
-	    integer *, integer *, doublereal *, doublereal *), zwinit_(integer *, 
-	    integer *, doublereal *, doublereal *);
+	    integer *, doublereal *, integer *, doublereal *), zwin_(integer *
+	    , integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *), zvinit_(integer *, integer *, doublereal *, 
+	    doublereal *), zwinit_(integer *, integer *, doublereal *, 
+	    doublereal *);
 
     /* Parameter adjustments */
     zin_dim1 = *imid;

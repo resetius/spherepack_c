@@ -278,9 +278,9 @@ static integer c__1 = 1;
 
 /* **************************************************************** */
 /* Subroutine */ int shsec_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a, doublereal *b, 
-	integer *mdab, integer *ndab, doublereal *wshsec, integer *lshsec, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a,
+	 doublereal *b, integer *mdab, integer *ndab, doublereal *wshsec, 
+	integer *lshsec, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer g_dim1, g_dim2, g_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -288,10 +288,11 @@ static integer c__1 = 1;
 
     /* Local variables */
     static integer ls, iw1, nln, ist, lzz1, labc, imid, mmax;
-    extern /* Subroutine */ int shsec1_(integer *, integer *, integer *, doublereal 
-	    *, integer *, integer *, doublereal *, doublereal *, integer *, integer *, 
-	    integer *, integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *);
+    extern /* Subroutine */ int shsec1_(integer *, integer *, integer *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, integer *, integer *, integer *, integer *, doublereal 
+	    *, doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
 
     /* Parameter adjustments */
     g_dim1 = *idg;
@@ -375,10 +376,11 @@ static integer c__1 = 1;
     return 0;
 } /* shsec_ */
 
-/* Subroutine */ int shsec1_(integer *nlat, integer *isym, integer *nt, doublereal *
-	g, integer *idgs, integer *jdgs, doublereal *a, doublereal *b, integer *mdab, 
-	integer *ndab, integer *imid, integer *idg, integer *jdg, doublereal *ge, 
-	doublereal *go, doublereal *work, doublereal *pb, doublereal *walin, doublereal *whrfft)
+/* Subroutine */ int shsec1_(integer *nlat, integer *isym, integer *nt, 
+	doublereal *g, integer *idgs, integer *jdgs, doublereal *a, 
+	doublereal *b, integer *mdab, integer *ndab, integer *imid, integer *
+	idg, integer *jdg, doublereal *ge, doublereal *go, doublereal *work, 
+	doublereal *pb, doublereal *walin, doublereal *whrfft)
 {
     /* System generated locals */
     integer g_dim1, g_dim2, g_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -390,8 +392,8 @@ static integer c__1 = 1;
     extern /* Subroutine */ int alin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *);
     static integer modl, mmax, nlon;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
 
 /*     whrfft must have at least nlon+15 locations */
@@ -695,8 +697,8 @@ L180:
 
 
 /* **************************************************************** */
-/* Subroutine */ int shseci_(integer *nlat, integer *nlon, doublereal *wshsec, 
-	integer *lshsec, doublereal *dwork, integer *ldwork, integer *ierror)
+/* Subroutine */ int shseci_(integer *nlat, integer *nlon, doublereal *wshsec,
+	 integer *lshsec, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1, i__2;

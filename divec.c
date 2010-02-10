@@ -221,9 +221,9 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int divec_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *br, doublereal *bi,
-	 integer *mdb, integer *ndb, doublereal *wshsec, integer *lshsec, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *
+	br, doublereal *bi, integer *mdb, integer *ndb, doublereal *wshsec, 
+	integer *lshsec, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer dv_dim1, dv_dim2, dv_offset, br_dim1, br_dim2, br_offset, bi_dim1,
@@ -233,9 +233,10 @@
     static integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, lzz1, labc,
 	     imid, mmax, lwmin;
     extern /* Subroutine */ int divec1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, integer *,
-	     doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *);
     static integer lwkmin;
 
 
@@ -360,10 +361,10 @@
 } /* divec_ */
 
 /* Subroutine */ int divec1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *br, doublereal *bi,
-	 integer *mdb, integer *ndb, doublereal *a, doublereal *b, integer *mab, doublereal *
-	sqnn, doublereal *wshsec, integer *lshsec, doublereal *wk, integer *lwk, integer *
-	ierror)
+	integer *nt, doublereal *dv, integer *idv, integer *jdv, doublereal *
+	br, doublereal *bi, integer *mdb, integer *ndb, doublereal *a, 
+	doublereal *b, integer *mab, doublereal *sqnn, doublereal *wshsec, 
+	integer *lshsec, doublereal *wk, integer *lwk, integer *ierror)
 {
     /* System generated locals */
     integer dv_dim1, dv_dim2, dv_offset, br_dim1, br_dim2, br_offset, bi_dim1,
@@ -378,8 +379,9 @@
     static doublereal fn;
     static integer mmax;
     extern /* Subroutine */ int shsec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */

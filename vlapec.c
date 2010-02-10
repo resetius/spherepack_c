@@ -312,10 +312,10 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int vlapec_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, integer *jdvw, 
-	doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, integer *mdbc, integer *ndbc, 
-	doublereal *wvhsec, integer *lvhsec, doublereal *work, integer *lwork, integer *
-	ierror)
+	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, 
+	integer *jdvw, doublereal *br, doublereal *bi, doublereal *cr, 
+	doublereal *ci, integer *mdbc, integer *ndbc, doublereal *wvhsec, 
+	integer *lvhsec, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer vlap_dim1, vlap_dim2, vlap_offset, wlap_dim1, wlap_dim2, 
@@ -327,10 +327,11 @@
     static integer l1, l2, mn, ibi, ici, ibr, icr, ifn, idz, iwk, imid, mmax, 
 	    liwk, lwmin, lzimn, lwkmin;
     extern /* Subroutine */ int vlapec1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, doublereal *, integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, integer *, 
-	    integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, integer *, doublereal *,
+	     integer *, integer *);
 
     /* Parameter adjustments */
     wlap_dim1 = *idvw;
@@ -485,11 +486,12 @@
 } /* vlapec_ */
 
 /* Subroutine */ int vlapec1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, integer *jdvw, 
-	doublereal *brlap, doublereal *bilap, doublereal *crlap, doublereal *cilap, integer *mmax, 
-	doublereal *fnn, integer *mdb, integer *ndb, doublereal *br, doublereal *bi, doublereal *cr, 
-	doublereal *ci, doublereal *wsave, integer *lwsav, doublereal *wk, integer *lwk, 
-	integer *ierror)
+	integer *nt, doublereal *vlap, doublereal *wlap, integer *idvw, 
+	integer *jdvw, doublereal *brlap, doublereal *bilap, doublereal *
+	crlap, doublereal *cilap, integer *mmax, doublereal *fnn, integer *
+	mdb, integer *ndb, doublereal *br, doublereal *bi, doublereal *cr, 
+	doublereal *ci, doublereal *wsave, integer *lwsav, doublereal *wk, 
+	integer *lwk, integer *ierror)
 {
     /* System generated locals */
     integer vlap_dim1, vlap_dim2, vlap_offset, wlap_dim1, wlap_dim2, 
@@ -503,9 +505,10 @@
     static integer k, m, n;
     static doublereal fn;
     extern /* Subroutine */ int vhsec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *);
 
 
 /*     preset coefficient multiplyers */

@@ -177,7 +177,7 @@
 
 /* ... wsav */
 
-/*     a doublereal saved work space array that must be initialized by calling */
+/*     a real saved work space array that must be initialized by calling */
 /*     subroutine vshifti(ioff,nlon,nlat,wsav,ier) before calling vshifte. */
 /*     wsav can then be used repeatedly by vshifte as long as ioff, nlon, */
 /*     and nlat do not change.  this bypasses redundant computations and */
@@ -191,7 +191,7 @@
 
 /* ... work */
 
-/*     a doublereal unsaved work space */
+/*     a real unsaved work space */
 
 /* ... lwork */
 
@@ -245,8 +245,9 @@
 /* *** end of vshifti documentation */
 
 /* Subroutine */ int vshifte_(integer *ioff, integer *nlon, integer *nlat, 
-	doublereal *uoff, doublereal *voff, doublereal *ureg, doublereal *vreg, doublereal *wsav, integer *
-	lsav, doublereal *wrk, integer *lwrk, integer *ier)
+	doublereal *uoff, doublereal *voff, doublereal *ureg, doublereal *
+	vreg, doublereal *wsav, integer *lsav, doublereal *wrk, integer *lwrk,
+	 integer *ier)
 {
     /* System generated locals */
     integer uoff_dim1, uoff_offset, voff_dim1, voff_offset, ureg_dim1, 
@@ -254,10 +255,12 @@
 
     /* Local variables */
     static integer i1, i2, i3, n2, nr, nlat2, nlatp1;
-    extern /* Subroutine */ int vhftoff_(integer *, integer *, doublereal *, doublereal *,
-	     doublereal *, integer *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *), vhftreg_(integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    integer *, integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int vhftoff_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *), vhftreg_(
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    integer *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *);
 
 
 /*     check input parameters */
@@ -341,9 +344,10 @@
     return 0;
 } /* vshifte_ */
 
-/* Subroutine */ int vhftoff_(integer *nlon, integer *nlat, doublereal *uoff, doublereal *
-	ureg, doublereal *wsav, integer *nr, integer *nlat2, integer *nlatp1, doublereal *
-	rlatu, doublereal *rlonu, doublereal *rlou, doublereal *wrk)
+/* Subroutine */ int vhftoff_(integer *nlon, integer *nlat, doublereal *uoff, 
+	doublereal *ureg, doublereal *wsav, integer *nr, integer *nlat2, 
+	integer *nlatp1, doublereal *rlatu, doublereal *rlonu, doublereal *
+	rlou, doublereal *wrk)
 {
     /* System generated locals */
     integer uoff_dim1, uoff_offset, ureg_dim1, ureg_offset, rlatu_dim1, 
@@ -352,8 +356,8 @@
 
     /* Local variables */
     static integer i__, j, n2, js, isav;
-    extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
 
 
 /*     generate ureg from uoff (a vector component!) */
@@ -492,9 +496,10 @@
     return 0;
 } /* vhftoff_ */
 
-/* Subroutine */ int vhftreg_(integer *nlon, integer *nlat, doublereal *uoff, doublereal *
-	ureg, doublereal *wsav, integer *nr, integer *nlat2, integer *nlatp1, doublereal *
-	rlatu, doublereal *rlonu, doublereal *rlou, doublereal *wrk)
+/* Subroutine */ int vhftreg_(integer *nlon, integer *nlat, doublereal *uoff, 
+	doublereal *ureg, doublereal *wsav, integer *nr, integer *nlat2, 
+	integer *nlatp1, doublereal *rlatu, doublereal *rlonu, doublereal *
+	rlou, doublereal *wrk)
 {
     /* System generated locals */
     integer uoff_dim1, uoff_offset, ureg_dim1, ureg_offset, rlatu_dim1, 
@@ -503,8 +508,8 @@
 
     /* Local variables */
     static integer i__, j, n2, js, isav;
-    extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
 
 
 /*     generate uoff vector component from ureg */
@@ -658,7 +663,8 @@
     /* Local variables */
     static doublereal dp, pi, dlat, dlon;
     static integer isav, nlat2;
-    extern /* Subroutine */ int vhifthi_(integer *, doublereal *, doublereal *);
+    extern /* Subroutine */ int vhifthi_(integer *, doublereal *, doublereal *
+	    );
 
 
 /*     initialize wsav for vshifte */
@@ -713,8 +719,8 @@
     return 0;
 } /* vshifti_ */
 
-/* Subroutine */ int vhifth_(integer *m, integer *n, doublereal *r__, doublereal *wsav, 
-	doublereal *work)
+/* Subroutine */ int vhifth_(integer *m, integer *n, doublereal *r__, 
+	doublereal *wsav, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset, i__1, i__2;
@@ -722,9 +728,9 @@
     /* Local variables */
     static integer k, l, n2;
     static doublereal r2km1, r2km2;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *), hrfftf_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *), hrfftf_(integer *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     r_dim1 = *m;

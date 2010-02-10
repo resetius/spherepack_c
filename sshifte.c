@@ -148,7 +148,7 @@
 
 /* ... wsav */
 
-/*     a doublereal saved work space array that must be initialized by calling */
+/*     a real saved work space array that must be initialized by calling */
 /*     subroutine sshifti(ioff,nlon,nlat,wsav,ier) before calling sshifte. */
 /*     wsav can then be used repeatedly by sshifte as long as ioff, nlon, */
 /*     and nlat do not change.  this bypasses redundant computations and */
@@ -162,7 +162,7 @@
 
 /* ... work */
 
-/*     a doublereal unsaved work space */
+/*     a real unsaved work space */
 
 /* ... lwork */
 
@@ -211,18 +211,19 @@
 /* *** end of sshifti documentation */
 
 /* Subroutine */ int sshifte_(integer *ioff, integer *nlon, integer *nlat, 
-	doublereal *goff, doublereal *greg, doublereal *wsav, integer *lsav, doublereal *wrk, integer 
-	*lwrk, integer *ier)
+	doublereal *goff, doublereal *greg, doublereal *wsav, integer *lsav, 
+	doublereal *wrk, integer *lwrk, integer *ier)
 {
     /* System generated locals */
     integer goff_dim1, goff_offset, greg_dim1, greg_offset;
 
     /* Local variables */
     static integer i1, i2, n2, nr, nlat2, nlatp1;
-    extern /* Subroutine */ int shftoff_(integer *, integer *, doublereal *, doublereal *,
-	     doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *), shftreg_(
-	    integer *, integer *, doublereal *, doublereal *, doublereal *, integer *, integer *
-	    , integer *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int shftoff_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *), shftreg_(integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, integer *, integer *, 
+	    integer *, doublereal *, doublereal *, doublereal *);
 
 
 /*     check input parameters */
@@ -283,9 +284,9 @@
     return 0;
 } /* sshifte_ */
 
-/* Subroutine */ int shftoff_(integer *nlon, integer *nlat, doublereal *goff, doublereal *
-	greg, doublereal *wsav, integer *nr, integer *nlat2, doublereal *rlat, doublereal *rlon,
-	 doublereal *wrk)
+/* Subroutine */ int shftoff_(integer *nlon, integer *nlat, doublereal *goff, 
+	doublereal *greg, doublereal *wsav, integer *nr, integer *nlat2, 
+	doublereal *rlat, doublereal *rlon, doublereal *wrk)
 {
     /* System generated locals */
     integer goff_dim1, goff_offset, greg_dim1, greg_offset, rlat_dim1, 
@@ -293,8 +294,8 @@
 
     /* Local variables */
     static integer i__, j, n2, js, isav;
-    extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
     static doublereal gnorth, gsouth;
 
 
@@ -449,9 +450,9 @@
     return 0;
 } /* shftoff_ */
 
-/* Subroutine */ int shftreg_(integer *nlon, integer *nlat, doublereal *goff, doublereal *
-	greg, doublereal *wsav, integer *nr, integer *nlat2, integer *nlatp1, doublereal *
-	rlat, doublereal *rlon, doublereal *wrk)
+/* Subroutine */ int shftreg_(integer *nlon, integer *nlat, doublereal *goff, 
+	doublereal *greg, doublereal *wsav, integer *nr, integer *nlat2, 
+	integer *nlatp1, doublereal *rlat, doublereal *rlon, doublereal *wrk)
 {
     /* System generated locals */
     integer goff_dim1, goff_offset, greg_dim1, greg_offset, rlat_dim1, 
@@ -459,8 +460,8 @@
 
     /* Local variables */
     static integer i__, j, n2, js, isav;
-    extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
 
 
 /*     shift regular grid to offset grid, i.e., */
@@ -614,7 +615,8 @@
     /* Local variables */
     static doublereal dp, pi, dlat, dlon;
     static integer isav, nlat2;
-    extern /* Subroutine */ int shifthi_(integer *, doublereal *, doublereal *);
+    extern /* Subroutine */ int shifthi_(integer *, doublereal *, doublereal *
+	    );
 
     /* Parameter adjustments */
     --wsav;
@@ -666,8 +668,8 @@
     return 0;
 } /* sshifti_ */
 
-/* Subroutine */ int shifth_(integer *m, integer *n, doublereal *r__, doublereal *wsav, 
-	doublereal *work)
+/* Subroutine */ int shifth_(integer *m, integer *n, doublereal *r__, 
+	doublereal *wsav, doublereal *work)
 {
     /* System generated locals */
     integer r_dim1, r_offset, i__1, i__2;
@@ -675,9 +677,9 @@
     /* Local variables */
     static integer k, l, n2;
     static doublereal r2km1, r2km2;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *), hrfftf_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *), hrfftf_(integer *, 
+	    integer *, doublereal *, integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     r_dim1 = *m;

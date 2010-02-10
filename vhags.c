@@ -331,9 +331,10 @@ static integer c__1 = 1;
 /*            = 4  error in the specification of ldwork */
 
 /* Subroutine */ int vhags_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
-	wvhags, integer *lvhags, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdab, integer *ndab, doublereal *wvhags, integer *lvhags, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -344,10 +345,11 @@ static integer c__1 = 1;
     static integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, idv, lnl, idz, lmn, ist,
 	     imid, mmax, lzimn;
     extern /* Subroutine */ int vhags1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, doublereal *,
-	     doublereal *);
+	    integer *, integer *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, integer *, doublereal *
+	    , doublereal *, doublereal *);
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -457,10 +459,12 @@ static integer c__1 = 1;
 } /* vhags_ */
 
 /* Subroutine */ int vhags1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *v, 
-	doublereal *w, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
-	doublereal *ci, integer *idv, doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, doublereal *
-	work, integer *idz, doublereal *vb, doublereal *wb, doublereal *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *
+	v, doublereal *w, integer *mdab, integer *ndab, doublereal *br, 
+	doublereal *bi, doublereal *cr, doublereal *ci, integer *idv, 
+	doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, 
+	doublereal *work, integer *idz, doublereal *vb, doublereal *wb, 
+	doublereal *wrfft)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -474,8 +478,8 @@ static integer c__1 = 1;
     static integer i__, j, k, m, mb, mp1, np1, mp2;
     static doublereal fsn, tsn;
     static integer ndo1, ndo2, imm1, nlp1, mlat, mmax, mlon, itypp;
-    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     wb_dim1 = *imid;
@@ -1607,13 +1611,13 @@ L820:
     return 0;
 } /* vhags1_ */
 
-/* Subroutine */ int vhagsi_(integer *nlat, integer *nlon, doublereal *wvhags, 
-	integer *lvhags, doublereal *dwork, integer *ldwork, integer *ierror)
+/* Subroutine */ int vhagsi_(integer *nlat, integer *nlon, doublereal *wvhags,
+	 integer *lvhags, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     static integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, lmn, imid;
-    extern /* Subroutine */ int vhgai1_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *), hrffti_(
-	    integer *, doublereal *);
+    extern /* Subroutine */ int vhgai1_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *), hrffti_(integer *, doublereal *);
 
     /* Parameter adjustments */
     --wvhags;
@@ -1656,9 +1660,9 @@ L820:
     return 0;
 } /* vhagsi_ */
 
-/* Subroutine */ int vhgai1_(integer *nlat, integer *imid, doublereal *vb, doublereal *wb,
-	 doublereal *dthet, doublereal *dwts, doublereal *dpbar, doublereal *
-	work)
+/* Subroutine */ int vhgai1_(integer *nlat, integer *imid, doublereal *vb, 
+	doublereal *wb, doublereal *dthet, doublereal *dwts, doublereal *
+	dpbar, doublereal *work)
 {
     /* System generated locals */
     integer vb_dim1, vb_offset, wb_dim1, wb_offset, dpbar_dim1, dpbar_dim2, 
@@ -1753,14 +1757,13 @@ L820:
 	}
 	i__2 = n;
 	for (m = 2; m <= i__2; ++m) {
-	    abel = sqrt((doublereal) ((doublereal) (((n << 1) + 1) * (m + n - 2) * (
-		    m + n - 3))) / (doublereal) ((doublereal) (((n << 1) - 3) * (m 
-		    + n - 1) * (m + n))));
-	    bbel = sqrt((doublereal) ((doublereal) (((n << 1) + 1) * (n - m - 1) * (
-		    n - m))) / (doublereal) ((doublereal) (((n << 1) - 3) * (m + n 
-		    - 1) * (m + n))));
-	    cbel = sqrt((doublereal) ((doublereal) ((n - m + 1) * (n - m + 2))) / (
-		    doublereal) ((doublereal) ((m + n - 1) * (m + n))));
+	    abel = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
+		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)
+		    ));
+	    bbel = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) 
+		    / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
+	    cbel = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (
+		    doublereal) ((m + n - 1) * (m + n)));
 	    id = indx_(&m, &n, nlat);
 	    if (m >= n - 1) {
 		goto L102;
@@ -1798,20 +1801,19 @@ L108:
 	    vb[i__ + ix * vb_dim1] = -dpbar[i__ + (np * dpbar_dim2 + 2) * 
 		    dpbar_dim1] * dwts[i__];
 	    vb[i__ + iy * vb_dim1] = dpbar[i__ + (n + np * dpbar_dim2) * 
-		    dpbar_dim1] / sqrt((doublereal) ((doublereal) (n + 1 << 1))) * 
-		    dwts[i__];
+		    dpbar_dim1] / sqrt((doublereal) (n + 1 << 1)) * dwts[i__];
 /* L125: */
 	}
 
 	if (n == 1) {
 	    goto L131;
 	}
-	dcf = sqrt((doublereal) ((doublereal) ((n << 2) * (n + 1))));
+	dcf = sqrt((doublereal) ((n << 2) * (n + 1)));
 	i__2 = n - 1;
 	for (m = 1; m <= i__2; ++m) {
 	    ix = indx_(&m, &n, nlat);
-	    abel = sqrt((doublereal) ((doublereal) ((n + m) * (n - m + 1)))) / dcf;
-	    bbel = sqrt((doublereal) ((doublereal) ((n - m) * (n + m + 1)))) / dcf;
+	    abel = sqrt((doublereal) ((n + m) * (n - m + 1))) / dcf;
+	    bbel = sqrt((doublereal) ((n - m) * (n + m + 1))) / dcf;
 	    i__3 = *imid;
 	    for (i__ = 1; i__ <= i__3; ++i__) {
 		vb[i__ + ix * vb_dim1] = (abel * dpbar[i__ + (m + np * 
@@ -1835,13 +1837,13 @@ L131:
 
 /*     compute wb for m=1,n */
 
-	dcf = sqrt((doublereal) ((doublereal) (n + n + 1)) / (doublereal) ((doublereal) ((
-		n << 2) * (n + 1) * (n + n - 1))));
+	dcf = sqrt((doublereal) (n + n + 1) / (doublereal) ((n << 2) * (n + 1)
+		 * (n + n - 1)));
 	i__3 = n;
 	for (m = 1; m <= i__3; ++m) {
 	    ix = indx_(&m, &n, nlat);
-	    abel = dcf * sqrt((doublereal) ((doublereal) ((n + m) * (n + m - 1))));
-	    bbel = dcf * sqrt((doublereal) ((doublereal) ((n - m) * (n - m - 1))));
+	    abel = dcf * sqrt((doublereal) ((n + m) * (n + m - 1)));
+	    bbel = dcf * sqrt((doublereal) ((n - m) * (n - m - 1)));
 	    if (m >= n - 1) {
 		goto L231;
 	    }

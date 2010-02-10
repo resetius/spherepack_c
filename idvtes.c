@@ -264,10 +264,11 @@
 
 
 /* Subroutine */ int idvtes_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *ad,
-	 doublereal *bd, doublereal *av, doublereal *bv, integer *mdab, integer *ndab, doublereal *
-	wvhses, integer *lvhses, doublereal *work, integer *lwork, doublereal *pertbd, 
-	doublereal *pertbv, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *ad, doublereal *bd, doublereal *av, doublereal *bv, 
+	integer *mdab, integer *ndab, doublereal *wvhses, integer *lvhses, 
+	doublereal *work, integer *lwork, doublereal *pertbd, doublereal *
+	pertbv, integer *ierror)
 {
     /* System generated locals */
     integer w_dim1, w_dim2, w_offset, v_dim1, v_dim2, v_offset, ad_dim1, 
@@ -278,10 +279,11 @@
     static integer mn, is, ibi, ici, ibr, icr, idz, iwk, imid, mmax, liwk, 
 	    lzimn;
     extern /* Subroutine */ int idvtes1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, doublereal *, integer *, integer *, doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, integer *, 
-	    doublereal *, doublereal *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, integer *, doublereal *,
+	     integer *, doublereal *, doublereal *, integer *);
 
 
 /*     check input parameters */
@@ -398,11 +400,12 @@
 } /* idvtes_ */
 
 /* Subroutine */ int idvtes1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mmax, doublereal *sqnn, integer *
-	mdab, integer *ndab, doublereal *ad, doublereal *bd, doublereal *av, doublereal *bv, doublereal *
-	widvtes, integer *lidvtes, doublereal *wk, integer *lwk, doublereal *pertbd, doublereal 
-	*pertbv, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mmax, doublereal *sqnn, integer *mdab, integer *ndab, 
+	doublereal *ad, doublereal *bd, doublereal *av, doublereal *bv, 
+	doublereal *widvtes, integer *lidvtes, doublereal *wk, integer *lwk, 
+	doublereal *pertbd, doublereal *pertbv, integer *ierror)
 {
     /* System generated locals */
     integer w_dim1, w_dim2, w_offset, v_dim1, v_dim2, v_offset, br_dim1, 
@@ -419,9 +422,10 @@
     static doublereal fn;
     static integer ityp;
     extern /* Subroutine */ int vhses_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *);
 
 
 /*     preset coefficient multiplyers in vector */

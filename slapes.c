@@ -242,9 +242,9 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int slapes_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *slap, integer *ids, integer *jds, doublereal *a, doublereal *b,
-	 integer *mdab, integer *ndab, doublereal *wshses, integer *lshses, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *slap, integer *ids, integer *jds, doublereal 
+	*a, doublereal *b, integer *mdab, integer *ndab, doublereal *wshses, 
+	integer *lshses, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer slap_dim1, slap_dim2, slap_offset, a_dim1, a_dim2, a_offset, 
@@ -254,9 +254,10 @@
     static integer l1, l2, ia, ib, mn, ls, ifn, nln, iwk, lwk, imid, mmax, 
 	    lpimn, lwkmin;
     extern /* Subroutine */ int slapes1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, integer *,
-	     doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *);
 
 
 /*     check input parameters */
@@ -360,10 +361,10 @@
 } /* slapes_ */
 
 /* Subroutine */ int slapes1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *slap, integer *ids, integer *jds, doublereal *a, doublereal *b,
-	 integer *mdab, integer *ndab, doublereal *alap, doublereal *blap, integer *mmax, 
-	doublereal *fnn, doublereal *wsave, integer *lsave, doublereal *wk, integer *lwk, 
-	integer *ierror)
+	integer *nt, doublereal *slap, integer *ids, integer *jds, doublereal 
+	*a, doublereal *b, integer *mdab, integer *ndab, doublereal *alap, 
+	doublereal *blap, integer *mmax, doublereal *fnn, doublereal *wsave, 
+	integer *lsave, doublereal *wk, integer *lwk, integer *ierror)
 {
     /* System generated locals */
     integer slap_dim1, slap_dim2, slap_offset, a_dim1, a_dim2, a_offset, 
@@ -374,8 +375,9 @@
     static integer k, m, n;
     static doublereal fn;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */

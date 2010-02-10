@@ -39,7 +39,7 @@ static integer c__1 = 1;
 
 /* subroutine alfk (n,m,cp) */
 
-/* dimension of           doublereal cp(n/2 + 1) */
+/* dimension of           real cp(n/2 + 1) */
 /* arguments */
 
 /* purpose                routine alfk computes single precision fourier */
@@ -344,13 +344,14 @@ L30:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
-	 integer *nm, doublereal *pb, integer *id, doublereal *wlfim)
+/* Subroutine */ int lfim_(integer *init, doublereal *theta, integer *l, 
+	integer *n, integer *nm, doublereal *pb, integer *id, doublereal *
+	wlfim)
 {
     static integer iw1, iw2, iw3, lnx;
-    extern /* Subroutine */ int lfim1_(integer *, doublereal *, integer *, integer *
-	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int lfim1_(integer *, doublereal *, integer *, 
+	    integer *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *);
 
 
 /*     total length of wlfim is 4*l*(nm+1) */
@@ -369,9 +370,9 @@ L30:
     return 0;
 } /* lfim_ */
 
-/* Subroutine */ int lfim1_(integer *init, doublereal *theta, integer *l, integer *
-	n, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
-	 doublereal *p2, doublereal *cp)
+/* Subroutine */ int lfim1_(integer *init, doublereal *theta, integer *l, 
+	integer *n, integer *nm, integer *id, doublereal *p3, doublereal *phz,
+	 doublereal *ph1, doublereal *p1, doublereal *p2, doublereal *cp)
 {
     /* System generated locals */
     integer p1_dim1, p1_offset, p2_dim1, p2_offset, p3_dim1, p3_offset, 
@@ -388,8 +389,8 @@ L30:
     static integer nm1, mp1, np1, nmp1;
     extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
     static doublereal fnmm, fnpm;
-    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
     static doublereal temp, sq1s6, sq5s6, ssqrt2;
 
     /* Parameter adjustments */
@@ -642,13 +643,14 @@ L71:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ int lfin_(integer *init, doublereal *theta, integer *l, integer *m,
-	 integer *nm, doublereal *pb, integer *id, doublereal *wlfin)
+/* Subroutine */ int lfin_(integer *init, doublereal *theta, integer *l, 
+	integer *m, integer *nm, doublereal *pb, integer *id, doublereal *
+	wlfin)
 {
     static integer iw1, iw2, iw3, lnx;
-    extern /* Subroutine */ int lfin1_(integer *, doublereal *, integer *, integer *
-	    , integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int lfin1_(integer *, doublereal *, integer *, 
+	    integer *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *);
 
 
 /*     total length of wlfin is 4*l*(nm+1) */
@@ -667,9 +669,9 @@ L71:
     return 0;
 } /* lfin_ */
 
-/* Subroutine */ int lfin1_(integer *init, doublereal *theta, integer *l, integer *
-	m, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
-	 doublereal *p2, doublereal *cp)
+/* Subroutine */ int lfin1_(integer *init, doublereal *theta, integer *l, 
+	integer *m, integer *nm, integer *id, doublereal *p3, doublereal *phz,
+	 doublereal *ph1, doublereal *p1, doublereal *p2, doublereal *cp)
 {
     /* System generated locals */
     integer p1_dim1, p1_offset, p2_dim1, p2_offset, p3_dim1, p3_offset, 
@@ -686,8 +688,8 @@ L71:
     static integer mp1, np1, mp3, nmp1;
     extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
     static doublereal fnmm, fnpm;
-    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *);
+    extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *);
     static doublereal temp, ssqrt2;
 
     /* Parameter adjustments */
@@ -900,8 +902,8 @@ L80:
 /* timing                 time per call to routine lfpt is dependent on */
 /*                        the input parameter n. */
 
-/* Subroutine */ int lfpt_(integer *n, integer *m, doublereal *theta, doublereal *cp, 
-	doublereal *pb)
+/* Subroutine */ int lfpt_(integer *n, integer *m, doublereal *theta, 
+	doublereal *cp, doublereal *pb)
 {
     /* System generated locals */
     integer i__1;

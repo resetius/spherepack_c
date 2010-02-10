@@ -132,7 +132,8 @@
     /* Local variables */
     static integer i__, ma, iw1, iw2;
     extern /* Subroutine */ int lfp1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *);
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	     doublereal *);
 
 
     /* Parameter adjustments */
@@ -157,7 +158,8 @@
 } /* lfp_ */
 
 /* Subroutine */ int lfp1_(integer *init, integer *n, integer *m, integer *l, 
-	doublereal *cp, doublereal *p, doublereal *wsave1, doublereal *wsave2, doublereal *wsave3)
+	doublereal *cp, doublereal *p, doublereal *wsave1, doublereal *wsave2,
+	 doublereal *wsave3)
 {
     /* System generated locals */
     integer i__1;
@@ -169,10 +171,11 @@
     static integer i__, lc;
     static doublereal dt, pi;
     static integer lq, ls, lm1, np1, ls2, kdp, lmi, mmod, nmod;
-    extern /* Subroutine */ int cost_(integer *, doublereal *, doublereal *), sint_(
-	    integer *, doublereal *, doublereal *), cosqb_(integer *, doublereal *, doublereal *), 
-	    sinqb_(integer *, doublereal *, doublereal *), cosqi_(integer *, doublereal *), 
-	    costi_(integer *, doublereal *), sinti_(integer *, doublereal *);
+    extern /* Subroutine */ int cost_(integer *, doublereal *, doublereal *), 
+	    sint_(integer *, doublereal *, doublereal *), cosqb_(integer *, 
+	    doublereal *, doublereal *), sinqb_(integer *, doublereal *, 
+	    doublereal *), cosqi_(integer *, doublereal *), costi_(integer *, 
+	    doublereal *), sinti_(integer *, doublereal *);
     static doublereal ssqrt2;
 
     /* Parameter adjustments */

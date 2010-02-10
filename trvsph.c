@@ -514,11 +514,11 @@
 /* ***************************************************** */
 
 /* Subroutine */ int trvsph_(integer *intl, integer *igrida, integer *nlona, 
-	integer *nlata, integer *iveca, doublereal *ua, doublereal *va, integer *igridb, 
-	integer *nlonb, integer *nlatb, integer *ivecb, doublereal *ub, doublereal *vb, 
-	doublereal *wsave, integer *lsave, integer *lsvmin, doublereal *work, integer *
-	lwork, integer *lwkmin, doublereal *dwork, integer *ldwork, integer *
-	ier)
+	integer *nlata, integer *iveca, doublereal *ua, doublereal *va, 
+	integer *igridb, integer *nlonb, integer *nlatb, integer *ivecb, 
+	doublereal *ub, doublereal *vb, doublereal *wsave, integer *lsave, 
+	integer *lsvmin, doublereal *work, integer *lwork, integer *lwkmin, 
+	doublereal *dwork, integer *ldwork, integer *ier)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -529,26 +529,31 @@
     extern /* Subroutine */ int negv_(integer *, integer *, doublereal *);
     static integer ityp, igrda, igrdb;
     extern /* Subroutine */ int vhagc_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *), vhaec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *), vhsec_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *), vhsgc_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *), trvab_(integer *, integer *, doublereal *, doublereal *
-	    , doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *), vhaeci_(integer *, integer *, doublereal *, integer *, 
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *), vhaec_(integer *, integer *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *, integer *), 
+	    vhsec_(integer *, integer *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    integer *, doublereal *, integer *, integer *), vhsgc_(integer *, 
+	    integer *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, integer *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *), trvab_(integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, doublereal *, doublereal *, doublereal *
+	    ), vhaeci_(integer *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *), vhagci_(integer *, integer *,
-	     doublereal *, integer *, doublereal *, integer *, integer *), vhseci_(
-	    integer *, integer *, doublereal *, integer *, doublereal *, integer *, 
-	    integer *), vhsgci_(integer *, integer *, doublereal *, integer *, 
-	    doublereal *, integer *, integer *), covlat_(integer *, integer *,
-	     doublereal *), trvplat_(integer *, integer *, doublereal *, doublereal *);
+	     doublereal *, integer *, doublereal *, integer *, integer *), 
+	    vhseci_(integer *, integer *, doublereal *, integer *, doublereal 
+	    *, integer *, integer *), vhsgci_(integer *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *, integer *), 
+	    covlat_(integer *, integer *, doublereal *), trvplat_(integer *, 
+	    integer *, doublereal *, doublereal *);
 
 
 /*     include a save statement to ensure local variables in trvsph, set during */
@@ -841,9 +846,10 @@
     return 0;
 } /* negv_ */
 
-/* Subroutine */ int trvab_(integer *ma, integer *na, doublereal *abr, doublereal *abi, 
-	doublereal *acr, doublereal *aci, integer *mb, integer *nb, doublereal *bbr, doublereal *bbi, 
-	doublereal *bcr, doublereal *bci)
+/* Subroutine */ int trvab_(integer *ma, integer *na, doublereal *abr, 
+	doublereal *abi, doublereal *acr, doublereal *aci, integer *mb, 
+	integer *nb, doublereal *bbr, doublereal *bbi, doublereal *bcr, 
+	doublereal *bci)
 {
     /* System generated locals */
     integer abr_dim1, abr_offset, abi_dim1, abi_offset, acr_dim1, acr_offset, 
@@ -921,7 +927,8 @@
     return 0;
 } /* trvab_ */
 
-/* Subroutine */ int trvplat_(integer *n, integer *m, doublereal *data, doublereal *work)
+/* Subroutine */ int trvplat_(integer *n, integer *m, doublereal *data, 
+	doublereal *work)
 {
     /* System generated locals */
     integer i__1, i__2;

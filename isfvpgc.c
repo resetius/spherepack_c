@@ -218,9 +218,10 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int isfvpgc_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv, doublereal *as, 
-	doublereal *bs, doublereal *av, doublereal *bv, integer *mdb, integer *ndb, doublereal *
-	wvhsgc, integer *lvhsgc, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv,
+	 doublereal *as, doublereal *bs, doublereal *av, doublereal *bv, 
+	integer *mdb, integer *ndb, doublereal *wvhsgc, integer *lvhsgc, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, as_dim1, 
@@ -229,10 +230,11 @@
 
     /* Local variables */
     extern /* Subroutine */ int isfvpgc1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, integer *, doublereal *, doublereal *, integer *, doublereal *, integer *, 
-	    integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, doublereal *, doublereal *, doublereal *
+	    , integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *);
     static integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lwmin;
 
 
@@ -351,10 +353,12 @@
 } /* isfvpgc_ */
 
 /* Subroutine */ int isfvpgc1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv, doublereal *as, 
-	doublereal *bs, doublereal *av, doublereal *bv, integer *mdb, integer *ndb, doublereal *br, 
-	doublereal *bi, doublereal *cr, doublereal *ci, integer *mab, doublereal *fnn, doublereal *wvhsgc, 
-	integer *lvhsgc, doublereal *wk, integer *lwk, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idv, integer *jdv,
+	 doublereal *as, doublereal *bs, doublereal *av, doublereal *bv, 
+	integer *mdb, integer *ndb, doublereal *br, doublereal *bi, 
+	doublereal *cr, doublereal *ci, integer *mab, doublereal *fnn, 
+	doublereal *wvhsgc, integer *lvhsgc, doublereal *wk, integer *lwk, 
+	integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, as_dim1, 
@@ -369,9 +373,10 @@
     /* Local variables */
     static integer k, m, n, mmax, ityp;
     extern /* Subroutine */ int vhsgc_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *);
 
 
 /*     set coefficient multiplyers */

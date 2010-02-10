@@ -27,15 +27,20 @@
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
 
 
-/* Subroutine */ static int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
-	 doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3,
-	 doublereal *y3, doublereal *z3, integer *itype, doublereal *work, integer *iwork)
+/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
+	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
+	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
+	doublereal *y3, doublereal *z3, integer *itype, doublereal *work, 
+	integer *iwork)
 {
-    extern /* Subroutine */ int vsurf1_(doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    integer *, integer *, integer *, integer *);
+    extern /* Subroutine */ int vsurf1_(doublereal *, doublereal *, 
+	    doublereal *, integer *, doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, integer *, integer *);
 
 
 /*    subroutine vsurf is like subroutine hidel except the triangles */
@@ -56,7 +61,7 @@
 /*    any combination is possible by specifying itype to be one */
 /*    of the following values: 0,1,2,3,12,13,23,123. */
 
-/*    the length of doublereal    array  work must be at least 19*ntri */
+/*    the length of real    array  work must be at least 19*ntri */
 
 /*    the length of integer array iwork must be at least 19*ntri */
 

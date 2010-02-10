@@ -284,9 +284,9 @@
 
 /* **************************************************************** */
 /* Subroutine */ int shsgc_(integer *nlat, integer *nlon, integer *mode, 
-	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a, doublereal *b, 
-	integer *mdab, integer *ndab, doublereal *wshsgc, integer *lshsgc, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a,
+	 doublereal *b, integer *mdab, integer *ndab, doublereal *wshsgc, 
+	integer *lshsgc, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer g_dim1, g_dim2, g_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -295,9 +295,9 @@
     /* Local variables */
     static integer l, l1, l2, lat, late, ifft, ipmn;
     extern /* Subroutine */ int shsgc1_(integer *, integer *, integer *, 
-	    integer *, integer *, doublereal *, integer *, integer *, integer *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *);
+	    integer *, integer *, doublereal *, integer *, integer *, integer 
+	    *, doublereal *, doublereal *, integer *, integer *, doublereal *,
+	     doublereal *, integer *, doublereal *, doublereal *);
 
 /*     subroutine shsgc performs the spherical harmonic synthesis on */
 /*     a gaussian grid using the coefficients in array(s) a,b and returns */
@@ -402,9 +402,10 @@
 } /* shsgc_ */
 
 /* Subroutine */ int shsgc1_(integer *nlat, integer *nlon, integer *l, 
-	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *jdg, 
-	integer *nt, doublereal *a, doublereal *b, integer *mdab, integer *ndab, doublereal *w, 
-	doublereal *wfft, integer *late, doublereal *pmn, doublereal *g)
+	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *
+	jdg, integer *nt, doublereal *a, doublereal *b, integer *mdab, 
+	integer *ndab, doublereal *w, doublereal *wfft, integer *late, 
+	doublereal *pmn, doublereal *g)
 {
     /* System generated locals */
     integer gs_dim1, gs_dim2, gs_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -416,8 +417,9 @@
     static doublereal t1, t2, t3, t4;
     static integer km, is, ms, ns, lm1, nl2, lp1, mp1, np1, mp2, meo;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *), hrfftb_(integer *, integer 
-	    *, doublereal *, integer *, doublereal *, doublereal *);
+	    integer *, doublereal *, doublereal *, integer *), hrfftb_(
+	    integer *, integer *, doublereal *, integer *, doublereal *, 
+	    doublereal *);
 
 /*     reconstruct fourier coefficients in g on gaussian grid */
 /*     using coefficients in a,b */
@@ -578,8 +580,8 @@
 		    i__1 = *late;
 		    for (i__ = 1; i__ <= i__1; ++i__) {
 			g[i__ + (*nlon + k * g_dim2) * g_dim1] += a[*l + (np1 
-				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L131: */
 		    }
 		}
@@ -591,8 +593,8 @@
 		    for (i__ = 1; i__ <= i__2; ++i__) {
 			is = *nlat - i__ + 1;
 			g[is + (*nlon + k * g_dim2) * g_dim1] += a[*l + (np1 
-				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L132: */
 		    }
 		}
@@ -672,8 +674,8 @@
 		    i__3 = *nlat;
 		    for (np1 = ns; np1 <= i__3; np1 += 2) {
 			g[i__ + (*nlon + k * g_dim2) * g_dim1] += a[*l + (np1 
-				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * a_dim2) * a_dim1] * 2. * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L116: */
 		    }
 		}
@@ -703,8 +705,8 @@
     return 0;
 } /* shsgc1_ */
 
-/* Subroutine */ int shsgci_(integer *nlat, integer *nlon, doublereal *wshsgc, 
-	integer *lshsgc, doublereal *dwork, integer *ldwork, integer *ierror)
+/* Subroutine */ int shsgci_(integer *nlat, integer *nlon, doublereal *wshsgc,
+	 integer *lshsgc, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1;
@@ -713,8 +715,9 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shsgci1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, integer *);
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *);
 
 /*     this subroutine must be called before calling shsgc with */
 /*     fixed nlat,nlon. it precomputes quantites such as the gaussian */
@@ -774,9 +777,10 @@
 } /* shsgci_ */
 
 /* Subroutine */ int shsgci1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
-	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
-	doublereal *work, integer *ier)
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, 
+	doublereal *abel, doublereal *bbel, doublereal *cbel, doublereal *
+	wfft, doublereal *dtheta, doublereal *dwts, doublereal *work, integer 
+	*ier)
 {
     /* System generated locals */
     integer p0n_dim1, p0n_offset, p1n_dim1, p1n_offset, i__1, i__2;
@@ -894,12 +898,14 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
-		    + m - 1) * (n + m)));
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m 
+		    + n - 3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (
+		    m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n 
+		    - m)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + 
+		    n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (
+		    doublereal) ((n + m - 1) * (n + m)));
 /* L107: */
 	}
     }

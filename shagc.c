@@ -301,9 +301,9 @@
 
 /* **************************************************************** */
 /* Subroutine */ int shagc_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a, doublereal *b, 
-	integer *mdab, integer *ndab, doublereal *wshagc, integer *lshagc, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *g, integer *idg, integer *jdg, doublereal *a,
+	 doublereal *b, integer *mdab, integer *ndab, doublereal *wshagc, 
+	integer *lshagc, doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer g_dim1, g_dim2, g_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -312,9 +312,10 @@
     /* Local variables */
     static integer l, l1, l2, lat, late, ifft, ipmn, iwts;
     extern /* Subroutine */ int shagc1_(integer *, integer *, integer *, 
-	    integer *, integer *, doublereal *, integer *, integer *, integer *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    integer *, doublereal *, doublereal *);
+	    integer *, integer *, doublereal *, integer *, integer *, integer 
+	    *, doublereal *, doublereal *, integer *, integer *, doublereal *,
+	     doublereal *, doublereal *, integer *, doublereal *, doublereal *
+	    );
 
 /*     subroutine shagc performs the spherical harmonic analysis on */
 /*     a gaussian grid on the array(s) in g and returns the coefficients */
@@ -420,9 +421,10 @@
 } /* shagc_ */
 
 /* Subroutine */ int shagc1_(integer *nlat, integer *nlon, integer *l, 
-	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *jdg, 
-	integer *nt, doublereal *a, doublereal *b, integer *mdab, integer *ndab, doublereal *w, 
-	doublereal *wts, doublereal *wfft, integer *late, doublereal *pmn, doublereal *g)
+	integer *lat, integer *mode, doublereal *gs, integer *idg, integer *
+	jdg, integer *nt, doublereal *a, doublereal *b, integer *mdab, 
+	integer *ndab, doublereal *w, doublereal *wts, doublereal *wfft, 
+	integer *late, doublereal *pmn, doublereal *g)
 {
     /* System generated locals */
     integer gs_dim1, gs_dim2, gs_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -435,8 +437,9 @@
     static integer km, is, ms, ns, lm1, nl2, lp1, mp1, np1, mp2;
     static doublereal sfn;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *), hrfftf_(integer *, integer 
-	    *, doublereal *, integer *, doublereal *, doublereal *);
+	    integer *, doublereal *, doublereal *, integer *), hrfftf_(
+	    integer *, integer *, doublereal *, integer *, doublereal *, 
+	    doublereal *);
 
 /*     set gs array internally in shagc1 */
     /* Parameter adjustments */
@@ -633,8 +636,8 @@
 		    i__1 = *nlat;
 		    for (np1 = *l; np1 <= i__1; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[i__ + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L124: */
 		    }
 		    lp1 = *l + 1;
@@ -642,8 +645,8 @@
 		    i__1 = *nlat;
 		    for (np1 = lp1; np1 <= i__1; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[is + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L125: */
 		    }
 /* L114: */
@@ -736,8 +739,8 @@
 		    i__3 = *nlat;
 		    for (np1 = ns; np1 <= i__3; np1 += 2) {
 			a[*l + (np1 + k * a_dim2) * a_dim1] += g[i__ + (*nlon 
-				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (
-				i__ + km * pmn_dim2) * pmn_dim1];
+				+ k * g_dim2) * g_dim1] * .5 * pmn[np1 + (i__ 
+				+ km * pmn_dim2) * pmn_dim1];
 /* L120: */
 		    }
 		}
@@ -747,8 +750,8 @@
     return 0;
 } /* shagc1_ */
 
-/* Subroutine */ int shagci_(integer *nlat, integer *nlon, doublereal *wshagc, 
-	integer *lshagc, doublereal *dwork, integer *ldwork, integer *ierror)
+/* Subroutine */ int shagci_(integer *nlat, integer *nlon, doublereal *wshagc,
+	 integer *lshagc, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1;
@@ -757,8 +760,9 @@
     static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
 	    idwts;
     extern /* Subroutine */ int shagci1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *,
-	     doublereal *, doublereal *, doublereal *, integer *);
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *);
 
 /*     this subroutine must be called before calling shagc with */
 /*     fixed nlat,nlon. it precomputes quantites such as the gaussian */
@@ -818,9 +822,10 @@
 } /* shagci_ */
 
 /* Subroutine */ int shagci1_(integer *nlat, integer *nlon, integer *l, 
-	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, doublereal *abel, doublereal *
-	bbel, doublereal *cbel, doublereal *wfft, doublereal *dtheta, doublereal *dwts, 
-	doublereal *work, integer *ier)
+	integer *late, doublereal *wts, doublereal *p0n, doublereal *p1n, 
+	doublereal *abel, doublereal *bbel, doublereal *cbel, doublereal *
+	wfft, doublereal *dtheta, doublereal *dwts, doublereal *work, integer 
+	*ier)
 {
     /* System generated locals */
     integer p0n_dim1, p0n_offset, p1n_dim1, p1n_offset, i__1, i__2;
@@ -938,12 +943,14 @@
 	    if (n >= *l) {
 		imn = *l * (*l - 1) / 2 + (n - *l - 1) * (*l - 1) + m - 1;
 	    }
-	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m + n - 
-		    3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n - m)) /
-		     (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + n)));
-	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (doublereal) ((n 
-		    + m - 1) * (n + m)));
+	    abel[imn] = sqrt((doublereal) (((n << 1) + 1) * (m + n - 2) * (m 
+		    + n - 3)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (
+		    m + n)));
+	    bbel[imn] = sqrt((doublereal) (((n << 1) + 1) * (n - m - 1) * (n 
+		    - m)) / (doublereal) (((n << 1) - 3) * (m + n - 1) * (m + 
+		    n)));
+	    cbel[imn] = sqrt((doublereal) ((n - m + 1) * (n - m + 2)) / (
+		    doublereal) ((n + m - 1) * (n + m)));
 /* L107: */
 	}
     }

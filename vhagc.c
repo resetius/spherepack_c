@@ -323,9 +323,10 @@ static integer c__2 = 2;
 /*            = 4  error in the specification of lwork */
 
 /* Subroutine */ int vhagc_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
-	wvhagc, integer *lvhagc, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdab, integer *ndab, doublereal *wvhagc, integer *lvhagc, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -336,10 +337,11 @@ static integer c__2 = 2;
     static integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, jw3, idv, lnl, ist, 
 	    lzz1, labc, imid, mmax;
     extern /* Subroutine */ int vhagc1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *);
+	    integer *, integer *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *);
     static integer lwzvin;
 
     /* Parameter adjustments */
@@ -450,10 +452,12 @@ static integer c__2 = 2;
 } /* vhagc_ */
 
 /* Subroutine */ int vhagc1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *v, 
-	doublereal *w, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
-	doublereal *ci, integer *idv, doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, doublereal *
-	vb, doublereal *wb, doublereal *wts, doublereal *wvbin, doublereal *wwbin, doublereal *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *
+	v, doublereal *w, integer *mdab, integer *ndab, doublereal *br, 
+	doublereal *bi, doublereal *cr, doublereal *ci, integer *idv, 
+	doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, 
+	doublereal *vb, doublereal *wb, doublereal *wts, doublereal *wvbin, 
+	doublereal *wwbin, doublereal *wrfft)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -472,11 +476,12 @@ static integer c__2 = 2;
     static doublereal tve1, tve2, twe1, twe2, tvo1, tvo2, two1, two2;
     static integer mlat;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *, integer *,
-	     integer *, integer *, doublereal *, integer *, doublereal *);
+	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *
+	    , integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *);
     static integer mmax, mlon, itypp;
-    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     wb_dim1 = *imid;
@@ -1778,8 +1783,8 @@ L820:
     return 0;
 } /* vhagc1_ */
 
-/* Subroutine */ int vhagci_(integer *nlat, integer *nlon, doublereal *wvhagc, 
-	integer *lvhagc, doublereal *dwork, integer *ldwork, integer *ierror)
+/* Subroutine */ int vhagci_(integer *nlat, integer *nlon, doublereal *wvhagc,
+	 integer *lvhagc, doublereal *dwork, integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1, i__2;
@@ -1789,11 +1794,13 @@ L820:
     extern /* Subroutine */ int gaqd_(integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
     static integer imid, mmax, iwrk;
-    extern /* Subroutine */ int hrffti_(integer *, doublereal *), vbgint_(integer *,
-	     integer *, doublereal *, doublereal *, doublereal *), wbgint_(integer *
-	    , integer *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrffti_(integer *, doublereal *), vbgint_(
+	    integer *, integer *, doublereal *, doublereal *, doublereal *), 
+	    wbgint_(integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *);
     static integer lwvbin;
-    extern /* Subroutine */ int setwts_(integer *, doublereal *, doublereal *);
+    extern /* Subroutine */ int setwts_(integer *, doublereal *, doublereal *)
+	    ;
 
     /* Parameter adjustments */
     --dwork;

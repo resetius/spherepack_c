@@ -248,9 +248,10 @@
 
 
 /* Subroutine */ int islapgs_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *xlmbda, doublereal *sf, integer *ids, integer *jds, doublereal 
-	*a, doublereal *b, integer *mdab, integer *ndab, doublereal *wshsgs, integer *
-	lshsgs, doublereal *work, integer *lwork, doublereal *pertrb, integer *ierror)
+	integer *nt, doublereal *xlmbda, doublereal *sf, integer *ids, 
+	integer *jds, doublereal *a, doublereal *b, integer *mdab, integer *
+	ndab, doublereal *wshsgs, integer *lshsgs, doublereal *work, integer *
+	lwork, doublereal *pertrb, integer *ierror)
 {
     /* System generated locals */
     integer sf_dim1, sf_dim2, sf_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -260,9 +261,10 @@
     static integer k, l1, l2, ia, ib, mn, lp, ls, ifn, nln, iwk, lwk, imid, 
 	    mmax, lwkmin;
     extern /* Subroutine */ int islpgs1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, 
-	    integer *, doublereal *, integer *, doublereal *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, doublereal *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *);
 
 
 /*     check input parameters */
@@ -386,10 +388,11 @@
 } /* islapgs_ */
 
 /* Subroutine */ int islpgs1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *xlmbda, doublereal *sf, integer *ids, integer *jds, doublereal 
-	*a, doublereal *b, integer *mdab, integer *ndab, doublereal *as, doublereal *bs, 
-	integer *mmax, doublereal *fnn, doublereal *wsav, integer *lsav, doublereal *wk, 
-	integer *lwk, doublereal *pertrb, integer *ierror)
+	integer *nt, doublereal *xlmbda, doublereal *sf, integer *ids, 
+	integer *jds, doublereal *a, doublereal *b, integer *mdab, integer *
+	ndab, doublereal *as, doublereal *bs, integer *mmax, doublereal *fnn, 
+	doublereal *wsav, integer *lsav, doublereal *wk, integer *lwk, 
+	doublereal *pertrb, integer *ierror)
 {
     /* System generated locals */
     integer sf_dim1, sf_dim2, sf_offset, a_dim1, a_dim2, a_offset, b_dim1, 
@@ -400,8 +403,9 @@
     static integer k, m, n;
     static doublereal fn;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set multipliers and preset synthesis coefficients to zero */

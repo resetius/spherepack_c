@@ -296,21 +296,21 @@ static integer c__0 = 0;
 
 /*    then for i=1,...,nlat and  j=1,...,nlon */
 
-/*        the expansion for doublereal h(i,j) takes the form */
+/*        the expansion for real h(i,j) takes the form */
 
-/*     h(i,j) = the sum from n=1 to n=nlat-1 of the doublereal part of */
+/*     h(i,j) = the sum from n=1 to n=nlat-1 of the real part of */
 
 /*         .5*(b(0,n)*bbar(0,n,theta(i))+c(0,n)*cbar(0,n,theta(i))) */
 
 /*     plus the sum from m=1 to m=mmax-1 of the sum from n=m to */
-/*     n=nlat-1 of the doublereal part of */
+/*     n=nlat-1 of the real part of */
 
 /*              b(m,n)*bbar(m,n,theta(i))*exp(i*m*phi(j)) */
 /*             +c(m,n)*cbar(m,n,theta(i))*exp(i*m*phi(j)) */
 
 /*   ************************************************************* */
 
-/*   in terms of doublereal variables this expansion takes the form */
+/*   in terms of real variables this expansion takes the form */
 
 /*             for i=1,...,nlat and  j=1,...,nlon */
 
@@ -319,7 +319,7 @@ static integer c__0 = 0;
 /*               .5*br(1,n+1)*vbar(0,n,theta(i)) */
 
 /*     plus the sum from m=1 to m=mmax-1 of the sum from n=m to */
-/*     n=nlat-1 of the doublereal part of */
+/*     n=nlat-1 of the real part of */
 
 /*       (br(m+1,n+1)*vbar(m,n,theta(i))-ci(m+1,n+1)*wbar(m,n,theta(i))) */
 /*                                          *cos(m*phi(j)) */
@@ -333,7 +333,7 @@ static integer c__0 = 0;
 /*              -.5*cr(1,n+1)*vbar(0,n,theta(i)) */
 
 /*     plus the sum from m=1 to m=mmax-1 of the sum from n=m to */
-/*     n=nlat-1 of the doublereal part of */
+/*     n=nlat-1 of the real part of */
 
 /*      -(cr(m+1,n+1)*vbar(m,n,theta(i))+bi(m+1,n+1)*wbar(m,n,theta(i))) */
 /*                                          *cos(m*phi(j)) */
@@ -433,9 +433,10 @@ static integer c__0 = 0;
 
 /* ***************************************** */
 /* Subroutine */ int vhses_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdab, integer *ndab, doublereal *
-	wvhses, integer *lvhses, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdab, integer *ndab, doublereal *wvhses, integer *lvhses, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -446,10 +447,11 @@ static integer c__0 = 0;
     static integer iw1, iw2, iw3, iw4, jw1, jw2, idv, lnl, idz, ist, imid, 
 	    mmax, lzimn;
     extern /* Subroutine */ int vhses1_(integer *, integer *, integer *, 
-	    integer *, integer *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, integer *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, doublereal *, integer *, doublereal *, doublereal *,
-	     doublereal *);
+	    integer *, integer *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *, doublereal *, doublereal *, integer *, doublereal *
+	    , doublereal *, doublereal *);
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -551,10 +553,12 @@ static integer c__0 = 0;
 } /* vhses_ */
 
 /* Subroutine */ int vhses1_(integer *nlat, integer *nlon, integer *ityp, 
-	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *v, 
-	doublereal *w, integer *mdab, integer *ndab, doublereal *br, doublereal *bi, doublereal *cr, 
-	doublereal *ci, integer *idv, doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, doublereal *
-	work, integer *idz, doublereal *vb, doublereal *wb, doublereal *wrfft)
+	integer *nt, integer *imid, integer *idvw, integer *jdvw, doublereal *
+	v, doublereal *w, integer *mdab, integer *ndab, doublereal *br, 
+	doublereal *bi, doublereal *cr, doublereal *ci, integer *idv, 
+	doublereal *ve, doublereal *vo, doublereal *we, doublereal *wo, 
+	doublereal *work, integer *idz, doublereal *vb, doublereal *wb, 
+	doublereal *wrfft)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -567,8 +571,8 @@ static integer c__0 = 0;
     /* Local variables */
     static integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, 
 	    nlp1, mlat, mmax, mlon, itypp;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, integer 
-	    *, doublereal *, doublereal *);
+    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
+	    integer *, doublereal *, doublereal *);
 
     /* Parameter adjustments */
     wb_dim1 = *imid;
@@ -1665,17 +1669,18 @@ L13:
     return 0;
 } /* vhses1_ */
 
-/* Subroutine */ int vhsesi_(integer *nlat, integer *nlon, doublereal *wvhses, 
-	integer *lvhses, doublereal *work, integer *lwork, doublereal *dwork, 
-	integer *ldwork, integer *ierror)
+/* Subroutine */ int vhsesi_(integer *nlat, integer *nlon, doublereal *wvhses,
+	 integer *lvhses, doublereal *work, integer *lwork, doublereal *dwork,
+	 integer *ldwork, integer *ierror)
 {
     /* System generated locals */
     integer i__1, i__2;
 
     /* Local variables */
     static integer iw1, idz;
-    extern /* Subroutine */ int ves1_(integer *, integer *, integer *, doublereal *,
-	     doublereal *, integer *, doublereal *, doublereal *, doublereal *);
+    extern /* Subroutine */ int ves1_(integer *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
+	     doublereal *);
     static integer labc, imid, mmax, lzimn;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
@@ -1722,8 +1727,9 @@ L13:
     return 0;
 } /* vhsesi_ */
 
-/* Subroutine */ int ves1_(integer *nlat, integer *nlon, integer *imid, doublereal *
-	vb, doublereal *wb, integer *idz, doublereal *vin, doublereal *wzvin, doublereal *dwork)
+/* Subroutine */ int ves1_(integer *nlat, integer *nlon, integer *imid, 
+	doublereal *vb, doublereal *wb, integer *idz, doublereal *vin, 
+	doublereal *wzvin, doublereal *dwork)
 {
     /* System generated locals */
     integer vb_dim1, vb_offset, wb_dim1, wb_offset, vin_dim1, vin_dim2, 
@@ -1732,12 +1738,13 @@ L13:
     /* Local variables */
     static integer i__, m, i3, mn, mp1, np1;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *, integer *,
-	     integer *, integer *, doublereal *, integer *, doublereal *);
+	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *
+	    , integer *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *);
     static integer mmax;
     extern /* Subroutine */ int vbinit_(integer *, integer *, doublereal *, 
-	    doublereal *), wbinit_(integer *, integer *, doublereal *, doublereal *)
-	    ;
+	    doublereal *), wbinit_(integer *, integer *, doublereal *, 
+	    doublereal *);
 
     /* Parameter adjustments */
     vin_dim1 = *imid;

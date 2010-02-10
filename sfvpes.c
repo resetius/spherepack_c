@@ -226,9 +226,10 @@
 /* ********************************************************************** */
 
 /* Subroutine */ int sfvpes_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *sf, doublereal *vp, integer *idv, integer *jdv, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdb, integer *ndb, doublereal *
-	wshses, integer *lshses, doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *sf, doublereal *vp, integer *idv, integer *
+	jdv, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdb, integer *ndb, doublereal *wshses, integer *lshses, 
+	doublereal *work, integer *lwork, integer *ierror)
 {
     /* System generated locals */
     integer sf_dim1, sf_dim2, sf_offset, vp_dim1, vp_dim2, vp_offset, br_dim1,
@@ -238,9 +239,10 @@
     /* Local variables */
     static integer ia, ib, mn, is, ls, mab, iwk, lwk, imid, mmax, lpimn;
     extern /* Subroutine */ int sfvpes1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *, 
-	    doublereal *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    doublereal *, integer *, doublereal *, integer *, integer *);
 
 
 /*     check input parameters */
@@ -356,9 +358,10 @@
 } /* sfvpes_ */
 
 /* Subroutine */ int sfvpes1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *sf, doublereal *vp, integer *idv, integer *jdv, doublereal *br,
-	 doublereal *bi, doublereal *cr, doublereal *ci, integer *mdb, integer *ndb, doublereal *a, 
-	doublereal *b, integer *mab, doublereal *fnn, doublereal *wshses, integer *lshses, doublereal 
+	integer *nt, doublereal *sf, doublereal *vp, integer *idv, integer *
+	jdv, doublereal *br, doublereal *bi, doublereal *cr, doublereal *ci, 
+	integer *mdb, integer *ndb, doublereal *a, doublereal *b, integer *
+	mab, doublereal *fnn, doublereal *wshses, integer *lshses, doublereal 
 	*wk, integer *lwk, integer *ierror)
 {
     /* System generated locals */
@@ -373,8 +376,9 @@
     /* Local variables */
     static integer k, m, n, mmax;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */

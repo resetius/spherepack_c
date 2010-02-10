@@ -216,9 +216,10 @@
 
 
 /* Subroutine */ int vrtgc_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *vort, integer *ivrt, integer *jvrt, doublereal *cr, doublereal 
-	*ci, integer *mdc, integer *ndc, doublereal *wshsgc, integer *lshsgc, doublereal *
-	work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *vort, integer *ivrt, integer *jvrt, 
+	doublereal *cr, doublereal *ci, integer *mdc, integer *ndc, 
+	doublereal *wshsgc, integer *lshsgc, doublereal *work, integer *lwork,
+	 integer *ierror)
 {
     /* System generated locals */
     integer vort_dim1, vort_dim2, vort_offset, cr_dim1, cr_dim2, cr_offset, 
@@ -228,9 +229,10 @@
     static integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, imid, mmax,
 	     lpimn, lwmin;
     extern /* Subroutine */ int vrtgc1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, doublereal *, integer *, doublereal *, doublereal *, integer *,
-	     doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
+	    integer *, doublereal *, doublereal *, integer *, doublereal *, 
+	    integer *, integer *);
     static integer lwkmin;
 
 
@@ -354,10 +356,11 @@
 } /* vrtgc_ */
 
 /* Subroutine */ int vrtgc1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *vort, integer *ivrt, integer *jvrt, doublereal *cr, doublereal 
-	*ci, integer *mdc, integer *ndc, doublereal *a, doublereal *b, integer *mab, doublereal 
-	*sqnn, doublereal *wsav, integer *lwsav, doublereal *wk, integer *lwk, integer *
-	ierror)
+	integer *nt, doublereal *vort, integer *ivrt, integer *jvrt, 
+	doublereal *cr, doublereal *ci, integer *mdc, integer *ndc, 
+	doublereal *a, doublereal *b, integer *mab, doublereal *sqnn, 
+	doublereal *wsav, integer *lwsav, doublereal *wk, integer *lwk, 
+	integer *ierror)
 {
     /* System generated locals */
     integer vort_dim1, vort_dim2, vort_offset, cr_dim1, cr_dim2, cr_offset, 
@@ -372,8 +375,9 @@
     static doublereal fn;
     static integer mmax;
     extern /* Subroutine */ int shsgc_(integer *, integer *, integer *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, integer *
-	    , integer *, doublereal *, integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, integer *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     set coefficient multiplyers */

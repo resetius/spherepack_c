@@ -221,9 +221,10 @@
 
 
 /* Subroutine */ int gradgs_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *a, 
-	doublereal *b, integer *mdab, integer *ndab, doublereal *wvhsgs, integer *lvhsgs, 
-	doublereal *work, integer *lwork, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *a, doublereal *b, integer *mdab, integer *ndab, 
+	doublereal *wvhsgs, integer *lvhsgs, doublereal *work, integer *lwork,
+	 integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, a_dim1, 
@@ -233,9 +234,10 @@
     static integer mn, is, ibi, ibr, idv, lnl, idz, iwk, imid, mmax, liwk, 
 	    lzimn, lgdmin, lwkmin;
     extern /* Subroutine */ int gradgs1_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    integer *, doublereal *, integer *, integer *, doublereal *, doublereal *, doublereal *, 
-	    integer *, doublereal *, integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *, doublereal *, doublereal *, doublereal *, integer *, 
+	    doublereal *, integer *, integer *);
 
 
 /*     check input parameters */
@@ -339,10 +341,11 @@
 } /* gradgs_ */
 
 /* Subroutine */ int gradgs1_(integer *nlat, integer *nlon, integer *isym, 
-	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *jdvw, doublereal *br,
-	 doublereal *bi, integer *mmax, doublereal *sqnn, integer *mdab, integer *ndab, 
-	doublereal *a, doublereal *b, doublereal *wvhsgs, integer *lvhsgs, doublereal *wk, integer *
-	lwk, integer *ierror)
+	integer *nt, doublereal *v, doublereal *w, integer *idvw, integer *
+	jdvw, doublereal *br, doublereal *bi, integer *mmax, doublereal *sqnn,
+	 integer *mdab, integer *ndab, doublereal *a, doublereal *b, 
+	doublereal *wvhsgs, integer *lvhsgs, doublereal *wk, integer *lwk, 
+	integer *ierror)
 {
     /* System generated locals */
     integer v_dim1, v_dim2, v_offset, w_dim1, w_dim2, w_offset, br_dim1, 
@@ -357,9 +360,10 @@
     static doublereal ci, fn, cr;
     static integer ityp;
     extern /* Subroutine */ int vhsgs_(integer *, integer *, integer *, 
-	    integer *, doublereal *, doublereal *, integer *, integer *, doublereal *, doublereal *, 
-	    doublereal *, doublereal *, integer *, integer *, doublereal *, integer *, doublereal *, 
-	    integer *, integer *);
+	    integer *, doublereal *, doublereal *, integer *, integer *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
+	     integer *, doublereal *, integer *, doublereal *, integer *, 
+	    integer *);
 
 
 /*     preset coefficient multiplyers in vector */
