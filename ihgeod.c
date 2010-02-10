@@ -206,7 +206,7 @@ static doublereal c_b8 = 0.f;
     return 0;
 } /* ihgeod_ */
 
-/* Subroutine */ static int ctos_(doublereal *x, doublereal *y, doublereal *z__, doublereal *r__, doublereal *
+/* Subroutine */ int ctos_(doublereal *x, doublereal *y, doublereal *z__, doublereal *r__, doublereal *
 	theta, doublereal *phi)
 {
     /* Builtin functions */
@@ -233,7 +233,7 @@ L10:
     return 0;
 } /* ctos_ */
 
-/* Subroutine */ static int stoc_(doublereal *r__, doublereal *theta, doublereal *phi, doublereal *x, doublereal *
+/* Subroutine */ int stoc_(doublereal *r__, doublereal *theta, doublereal *phi, doublereal *x, doublereal *
 	y, doublereal *z__)
 {
     /* Builtin functions */

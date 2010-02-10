@@ -344,7 +344,7 @@ L30:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ static int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
+/* Subroutine */ int lfim_(integer *init, doublereal *theta, integer *l, integer *n,
 	 integer *nm, doublereal *pb, integer *id, doublereal *wlfim)
 {
     static integer iw1, iw2, iw3, lnx;
@@ -369,7 +369,7 @@ L30:
     return 0;
 } /* lfim_ */
 
-/* Subroutine */ static int lfim1_(integer *init, doublereal *theta, integer *l, integer *
+/* Subroutine */ int lfim1_(integer *init, doublereal *theta, integer *l, integer *
 	n, integer *nm, integer *id, doublereal *p3, doublereal *phz, doublereal *ph1, doublereal *p1,
 	 doublereal *p2, doublereal *cp)
 {
@@ -642,7 +642,7 @@ L71:
 /*                        a four term recurrence relation. (unpublished */
 /*                        notes by paul n. swarztrauber) */
 
-/* Subroutine */ static int lfin_(integer *init, doublereal *theta, integer *l, integer *m,
+/* Subroutine */ int lfin_(integer *init, doublereal *theta, integer *l, integer *m,
 	 integer *nm, doublereal *pb, integer *id, doublereal *wlfin)
 {
     static integer iw1, iw2, iw3, lnx;
@@ -900,7 +900,7 @@ L80:
 /* timing                 time per call to routine lfpt is dependent on */
 /*                        the input parameter n. */
 
-/* Subroutine */ static int lfpt_(integer *n, integer *m, doublereal *theta, doublereal *cp, 
+/* Subroutine */ int lfpt_(integer *n, integer *m, doublereal *theta, doublereal *cp, 
 	doublereal *pb)
 {
     /* System generated locals */

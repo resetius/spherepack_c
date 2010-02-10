@@ -400,7 +400,7 @@ static doublereal c_b71 = 1.f;
     return 0;
 } /* sptc_ */
 
-/* Subroutine */ static int diag_(integer *m, integer *n, doublereal *xp, doublereal *yp, 
+/* Subroutine */ int diag_(integer *m, integer *n, doublereal *xp, doublereal *yp, 
 	integer *iflag)
 {
     /* System generated locals */
@@ -530,7 +530,7 @@ L100:
     return 0;
 } /* diag_ */
 
-/* Subroutine */ static int stride_(integer *m, integer *n, integer *mst, integer *
+/* Subroutine */ int stride_(integer *m, integer *n, integer *mst, integer *
 	mfac)
 {
     /* Initialized data */
@@ -939,7 +939,7 @@ L200:
     return 0;
 } /* vsurf_ */
 
-/* Subroutine */ static int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *
+/* Subroutine */ int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *
 	ntri, doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, 
 	doublereal *x3, doublereal *y3, doublereal *z3, integer *itype, doublereal *px1, doublereal *py1, 
 	doublereal *px2, doublereal *py2, doublereal *px3, doublereal *py3, doublereal *vx1, doublereal *vy1, 
@@ -1772,7 +1772,7 @@ L500:
     return 0;
 } /* vsurf1_ */
 
-/* Subroutine */ static int prjct_(integer *init, doublereal *xeye, doublereal *yeye, doublereal *zeye,
+/* Subroutine */ int prjct_(integer *init, doublereal *xeye, doublereal *yeye, doublereal *zeye,
 	 doublereal *x, doublereal *y, doublereal *z__, doublereal *px, doublereal *py)
 {
     /* System generated locals */
@@ -1825,7 +1825,7 @@ L1:
     return 0;
 } /* prjct_ */
 
-/* Subroutine */ static int box_(integer *isd, integer *istart, integer *next, 
+/* Subroutine */ int box_(integer *isd, integer *istart, integer *next, 
 	integer *l, integer *list)
 {
     /* System generated locals */
@@ -1867,7 +1867,7 @@ L10:
     return 0;
 } /* box_ */
 
-static integer icvmg_(integer *i1, integer *i2, doublereal *r__)
+integer icvmg_(integer *i1, integer *i2, doublereal *r__)
 {
     /* System generated locals */
     integer ret_val;
@@ -1882,7 +1882,7 @@ static integer icvmg_(integer *i1, integer *i2, doublereal *r__)
     return ret_val;
 } /* icvmg_ */
 
-/* Subroutine */ static int projct_(integer *m, integer *n, doublereal *xeye, doublereal *yeye, 
+/* Subroutine */ int projct_(integer *m, integer *n, doublereal *xeye, doublereal *yeye, 
 	doublereal *zeye, doublereal *x, doublereal *y, doublereal *z__, doublereal *px, doublereal *py)
 {
     /* System generated locals */

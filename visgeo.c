@@ -360,7 +360,7 @@ L10:
     return 0;
 } /* visgeo1_ */
 
-/* Subroutine */ static int ctos_(doublereal *x, doublereal *y, doublereal *z__, doublereal *r__, doublereal *
+/* Subroutine */ int ctos_(doublereal *x, doublereal *y, doublereal *z__, doublereal *r__, doublereal *
 	theta, doublereal *phi)
 {
     /* Builtin functions */
@@ -387,7 +387,7 @@ L10:
     return 0;
 } /* ctos_ */
 
-/* Subroutine */ static int stoc_(doublereal *r__, doublereal *theta, doublereal *phi, doublereal *x, doublereal *
+/* Subroutine */ int stoc_(doublereal *r__, doublereal *theta, doublereal *phi, doublereal *x, doublereal *
 	y, doublereal *z__)
 {
     /* Builtin functions */
@@ -403,7 +403,7 @@ L10:
     return 0;
 } /* stoc_ */
 
-/* Subroutine */ static int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
+/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *ntri,
 	 doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3,
 	 doublereal *y3, doublereal *z3, integer *itype, doublereal *work, integer *iwork)
 {
@@ -468,7 +468,7 @@ L10:
     return 0;
 } /* vsurf_ */
 
-/* Subroutine */ static int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *
+/* Subroutine */ int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *zeye, integer *
 	ntri, doublereal *x1, doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, doublereal *z2, 
 	doublereal *x3, doublereal *y3, doublereal *z3, integer *itype, doublereal *px1, doublereal *py1, 
 	doublereal *px2, doublereal *py2, doublereal *px3, doublereal *py3, doublereal *vx1, doublereal *vy1, 
@@ -1301,7 +1301,7 @@ L500:
     return 0;
 } /* vsurf1_ */
 
-/* Subroutine */ static int prjct_(integer *init, doublereal *xeye, doublereal *yeye, doublereal *zeye,
+/* Subroutine */ int prjct_(integer *init, doublereal *xeye, doublereal *yeye, doublereal *zeye,
 	 doublereal *x, doublereal *y, doublereal *z__, doublereal *px, doublereal *py)
 {
     /* System generated locals */
@@ -1367,7 +1367,7 @@ L1:
     return 0;
 } /* prjct_ */
 
-/* Subroutine */ static int box_(integer *isd, integer *istart, integer *next, 
+/* Subroutine */ int box_(integer *isd, integer *istart, integer *next, 
 	integer *l, integer *list)
 {
     /* System generated locals */

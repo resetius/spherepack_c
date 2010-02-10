@@ -376,13 +376,14 @@
     *ierror = 0;
 
 /*     check sign of xlmbda */
-
+#if 1
     i__1 = *nt;
     for (k = 1; k <= i__1; ++k) {
 	if (xlmbda[k] < 0.f) {
 	    *ierror = -1;
 	}
     }
+#endif
 
 /*     set work space pointers */
 
