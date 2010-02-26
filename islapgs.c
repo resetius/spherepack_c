@@ -258,8 +258,8 @@
 	    b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer k, l1, l2, ia, ib, mn, lp, ls, ifn, nln, iwk, lwk, imid, 
-	    mmax, lwkmin;
+    integer k, l1, l2, ia, ib, mn, lp, ls, ifn, nln, iwk, lwk, imid, mmax, 
+	    lwkmin;
     extern /* Subroutine */ int islpgs1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
@@ -400,8 +400,8 @@
 	    bs_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
+    integer k, m, n;
+    doublereal fn;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

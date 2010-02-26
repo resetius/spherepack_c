@@ -238,16 +238,16 @@ struct {
     double atan(doublereal), cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, j, k1, l1, l2, ib;
-    static doublereal fi;
-    static integer ld, ii, nf, ip, nl, is, nq, nr;
-    static doublereal arg;
-    static integer ido, ipm;
-    static doublereal tpi;
-    static integer nfm1;
-    static doublereal argh;
-    static integer ntry;
-    static doublereal argld;
+    integer i__, j, k1, l1, l2, ib;
+    doublereal fi;
+    integer ld, ii, nf, ip, nl, is, nq, nr;
+    doublereal arg;
+    integer ido, ipm;
+    doublereal tpi;
+    integer nfm1;
+    doublereal argh;
+    integer ntry;
+    doublereal argld;
 
 
 /*     a multiple fft package for spherepack */
@@ -380,8 +380,7 @@ L107:
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, k1, l1, l2, na, kh, nf, ip, iw, ix2, ix3, ix4, ido,
-	     idl1;
+    integer i__, j, k1, l1, l2, na, kh, nf, ip, iw, ix2, ix3, ix4, ido, idl1;
     extern /* Subroutine */ int hradf2_(integer *, integer *, integer *, 
 	    doublereal *, integer *, doublereal *, integer *, doublereal *), 
 	    hradf3_(integer *, integer *, integer *, doublereal *, integer *, 
@@ -529,8 +528,8 @@ L110:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic, idp2;
-    static doublereal hsqt2;
+    integer i__, k, m, ic, idp2;
+    doublereal hsqt2;
 
 
 /*     a multiple fft package for spherepack */
@@ -726,7 +725,7 @@ L107:
 	     i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, k, m, ic, idp2;
+    integer i__, k, m, ic, idp2;
 
 
 /*     a multiple fft package for spherepack */
@@ -832,10 +831,10 @@ L107:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic;
-    static doublereal arg;
-    static integer idp2;
-    static doublereal taui, taur;
+    integer i__, k, m, ic;
+    doublereal arg;
+    integer idp2;
+    doublereal taui, taur;
     extern doublereal pimach_(void);
 
 
@@ -981,9 +980,9 @@ L107:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic;
-    static doublereal arg, ti11, ti12, tr11, tr12;
-    static integer idp2;
+    integer i__, k, m, ic;
+    doublereal arg, ti11, ti12, tr11, tr12;
+    integer idp2;
     extern doublereal pimach_(void);
 
 
@@ -1317,11 +1316,11 @@ L107:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
-    static doublereal dc2, ai1, ai2, ar1, ar2, ds2;
-    static integer nbd;
-    static doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
-    static integer idp2, ipp2, idij, ipph;
+    integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
+    doublereal dc2, ai1, ai2, ar1, ar2, ds2;
+    integer nbd;
+    doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
+    integer idp2, ipp2, idij, ipph;
     extern doublereal pimach_(void);
 
 
@@ -1797,8 +1796,7 @@ doublereal pimach_(void)
     integer ch_dim1, ch_offset, c_dim1, c_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, k1, l1, l2, na, nf, ip, iw, ix2, ix3, ix4, ido, 
-	    idl1;
+    integer i__, j, k1, l1, l2, na, nf, ip, iw, ix2, ix3, ix4, ido, idl1;
     extern /* Subroutine */ int hradb2_(integer *, integer *, integer *, 
 	    doublereal *, integer *, doublereal *, integer *, doublereal *), 
 	    hradb3_(integer *, integer *, integer *, doublereal *, integer *, 
@@ -1954,11 +1952,11 @@ L115:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
-    static doublereal dc2, ai1, ai2, ar1, ar2, ds2;
-    static integer nbd;
-    static doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
-    static integer idp2, ipp2, idij, ipph;
+    integer i__, j, k, l, m, j2, ic, jc, lc, ik, is;
+    doublereal dc2, ai1, ai2, ar1, ar2, ds2;
+    integer nbd;
+    doublereal dcp, arg, dsp, tpi, ar1h, ar2h;
+    integer idp2, ipp2, idij, ipph;
     extern doublereal pimach_(void);
 
 
@@ -2391,8 +2389,8 @@ L143:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic, idp2;
-    static doublereal sqrt2;
+    integer i__, k, m, ic, idp2;
+    doublereal sqrt2;
 
 
 /*     a multiple fft package for spherepack */
@@ -2580,7 +2578,7 @@ L107:
 	     i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, k, m, ic, idp2;
+    integer i__, k, m, ic, idp2;
 
 
 /*     a multiple fft package for spherepack */
@@ -2686,10 +2684,10 @@ L107:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic;
-    static doublereal arg;
-    static integer idp2;
-    static doublereal taui, taur;
+    integer i__, k, m, ic;
+    doublereal arg;
+    integer idp2;
+    doublereal taui, taur;
     extern doublereal pimach_(void);
 
 
@@ -2823,9 +2821,9 @@ L107:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, k, m, ic;
-    static doublereal arg, ti11, ti12, tr11, tr12;
-    static integer idp2;
+    integer i__, k, m, ic;
+    doublereal arg, ti11, ti12, tr11, tr12;
+    integer idp2;
     extern doublereal pimach_(void);
 
 

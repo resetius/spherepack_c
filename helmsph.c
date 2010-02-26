@@ -95,36 +95,35 @@ static integer c__0 = 0;
     integer s_wsfe(cilist *), do_fio(integer *, char *, ftnlen), e_wsfe(void);
 
     /* Local variables */
-    static doublereal a[361]	/* was [19][19] */, b[361]	/* was [19][
-	    19] */;
-    static integer i__, j;
-    static doublereal r__[684]	/* was [19][36] */, u[684]	/* was [19][
-	    36] */, x, y, z__, pi, ue, ez;
-    static integer nt;
-    static doublereal phi, dlat, dlon;
-    static integer nlat;
-    static doublereal cosp[36], errm;
-    static integer nlon;
-    static doublereal cost[19], sinp[36];
+    doublereal a[361]	/* was [19][19] */, b[361]	/* was [19][19] */;
+    integer i__, j;
+    doublereal r__[684]	/* was [19][36] */, u[684]	/* was [19][36] */, x,
+	     y, z__, pi, ue, ez;
+    integer nt;
+    doublereal phi, dlat, dlon;
+    integer nlat;
+    doublereal cosp[36], errm;
+    integer nlon;
+    doublereal cost[19], sinp[36];
     extern /* Subroutine */ int exit_(integer *);
-    static doublereal sint[19];
-    static integer isym;
-    static doublereal work[3249];
+    doublereal sint[19];
+    integer isym;
+    doublereal work[3249];
     extern /* Subroutine */ int shaec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *);
-    static doublereal theta, dwork[20];
-    static integer lwork;
+    doublereal theta, dwork[20];
+    integer lwork;
     extern /* Subroutine */ int shaeci_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, integer *, integer *);
-    static integer lshaec;
-    static doublereal xlmbda, wshaec[1451];
+    integer lshaec;
+    doublereal xlmbda, wshaec[1451];
     extern /* Subroutine */ int shseci_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, integer *, integer *);
-    static integer lshsec;
-    static doublereal wshsec[1451], pertrb;
-    static integer ierror, ldwork;
+    integer lshsec;
+    doublereal wshsec[1451], pertrb;
+    integer ierror, ldwork;
     extern /* Subroutine */ int islapec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, integer *, doublereal *, 

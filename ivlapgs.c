@@ -313,8 +313,8 @@
 	     doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, integer *, doublereal *,
 	     integer *, integer *);
-    static integer l1, l2, mn, ibi, ici, ibr, icr, ifn, idz, iwk, imid, mmax, 
-	    liwk, lzimn, lwkmin, lsavmin;
+    integer l1, l2, mn, ibi, ici, ibr, icr, ifn, idz, iwk, imid, mmax, liwk, 
+	    lzimn, lwkmin, lsavmin;
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -460,8 +460,8 @@
 	    ci_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
+    integer k, m, n;
+    doublereal fn;
     extern /* Subroutine */ int vhsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

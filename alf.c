@@ -127,14 +127,14 @@ static integer c__1 = 1;
     double sqrt(doublereal), pow_di(doublereal *, integer *);
 
     /* Local variables */
-    static integer i__, l;
-    static doublereal a1, b1, c1, t1, t2;
-    static integer ma;
-    static doublereal fk, cp2, pm1;
-    static integer nex;
-    static doublereal fden, fnmh, fnum, fnnp1;
-    static integer nmms2;
-    static doublereal fnmsq;
+    integer i__, l;
+    doublereal a1, b1, c1, t1, t2;
+    integer ma;
+    doublereal fk, cp2, pm1;
+    integer nex;
+    doublereal fden, fnmh, fnum, fnnp1;
+    integer nmms2;
+    doublereal fnmsq;
 
 
     /* Parameter adjustments */
@@ -348,7 +348,7 @@ L30:
 	integer *n, integer *nm, doublereal *pb, integer *id, doublereal *
 	wlfim)
 {
-    static integer iw1, iw2, iw3, lnx;
+    integer iw1, iw2, iw3, lnx;
     extern /* Subroutine */ int lfim1_(integer *, doublereal *, integer *, 
 	    integer *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
@@ -382,16 +382,16 @@ L30:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, m;
-    static doublereal cc, dd, ee, cn, fn, fm;
-    static integer nh;
-    static doublereal tn;
-    static integer nm1, mp1, np1, nmp1;
+    integer i__, m;
+    doublereal cc, dd, ee, cn, fn, fm;
+    integer nh;
+    doublereal tn;
+    integer nm1, mp1, np1, nmp1;
     extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
-    static doublereal fnmm, fnpm;
+    doublereal fnmm, fnpm;
     extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
-    static doublereal temp, sq1s6, sq5s6, ssqrt2;
+    doublereal temp, sq1s6, sq5s6, ssqrt2;
 
     /* Parameter adjustments */
     --theta;
@@ -647,7 +647,7 @@ L71:
 	integer *m, integer *nm, doublereal *pb, integer *id, doublereal *
 	wlfin)
 {
-    static integer iw1, iw2, iw3, lnx;
+    integer iw1, iw2, iw3, lnx;
     extern /* Subroutine */ int lfin1_(integer *, doublereal *, integer *, 
 	    integer *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
@@ -681,16 +681,16 @@ L71:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, n;
-    static doublereal cc, dd, ee, cn, fm, fn;
-    static integer nh;
-    static doublereal tm, tn;
-    static integer mp1, np1, mp3, nmp1;
+    integer i__, n;
+    doublereal cc, dd, ee, cn, fm, fn;
+    integer nh;
+    doublereal tm, tn;
+    integer mp1, np1, mp3, nmp1;
     extern /* Subroutine */ int alfk_(integer *, integer *, doublereal *);
-    static doublereal fnmm, fnpm;
+    doublereal fnmm, fnpm;
     extern /* Subroutine */ int lfpt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
-    static doublereal temp, ssqrt2;
+    doublereal temp, ssqrt2;
 
     /* Parameter adjustments */
     --theta;
@@ -912,13 +912,13 @@ L80:
     double sqrt(doublereal), cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k, ma;
-    static doublereal ct, st;
-    static integer kp1, np1;
-    static doublereal cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sum;
-    static integer mmod, nmod;
+    integer k, ma;
+    doublereal ct, st;
+    integer kp1, np1;
+    doublereal cdt;
+    integer kdo;
+    doublereal cth, sdt, sum;
+    integer mmod, nmod;
 
 
     /* Parameter adjustments */

@@ -358,8 +358,8 @@ static integer c__0 = 0;
 	    cr_dim2, cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, jw1, jw2, idv, lnl, idz, ist, imid, 
-	    mmax, lzimn;
+    integer iw1, iw2, iw3, iw4, jw1, jw2, idv, lnl, idz, ist, imid, mmax, 
+	    lzimn;
     extern /* Subroutine */ int vtses1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
@@ -483,8 +483,8 @@ static integer c__0 = 0;
 	    vb_offset, wb_dim1, wb_offset, i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, 
-	    nlp1, mlat, mmax, mlon, itypp;
+    integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, nlp1, mlat,
+	     mmax, mlon, itypp;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -1591,11 +1591,11 @@ L13:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, idz;
+    integer iw1, idz;
     extern /* Subroutine */ int vet1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
 	     doublereal *);
-    static integer labc, imid, mmax, lzimn;
+    integer labc, imid, mmax, lzimn;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
 
@@ -1651,12 +1651,12 @@ L13:
 	    vin_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, m, i3, mn, mp1, np1;
+    integer i__, m, i3, mn, mp1, np1;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *
 	    , integer *, integer *, integer *, doublereal *, integer *, 
 	    doublereal *);
-    static integer mmax;
+    integer mmax;
     extern /* Subroutine */ int vtinit_(integer *, integer *, doublereal *, 
 	    doublereal *), wtinit_(integer *, integer *, doublereal *, 
 	    doublereal *);

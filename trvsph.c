@@ -825,7 +825,7 @@
     integer v_dim1, v_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j;
+    integer i__, j;
 
 
 /*     negate (co)latitudinal vector componenet */
@@ -857,7 +857,7 @@
 	    bcr_dim1, bcr_offset, bci_dim1, bci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, m, n;
+    integer i__, j, m, n;
 
 
 /*     set coefficients for b grid from coefficients for a grid */
@@ -934,7 +934,7 @@
     integer i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ij, ji;
+    integer i__, j, ij, ji;
 
 
 /*     transpose the n by m array data to a m by n array data */
@@ -971,9 +971,9 @@
     integer data_dim1, data_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ib;
-    static doublereal temp;
-    static integer nlat2;
+    integer i__, j, ib;
+    doublereal temp;
+    integer nlat2;
 
 
 /*     reverse order of latitude (colatitude) grids */

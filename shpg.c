@@ -127,9 +127,9 @@ static doublereal c_b71 = 1.;
     double log(doublereal);
 
     /* Local variables */
-    static integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, kw1, kw2, kw3,
-	     kw4, kw5, kw6, kw7, kw8, kw9, kw10, kw11, nte, mmax, mlwk, ktot, 
-	    nloc1, nloc2, log2n;
+    integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, kw1, kw2, kw3, kw4, 
+	    kw5, kw6, kw7, kw8, kw9, kw10, kw11, nte, mmax, mlwk, ktot, nloc1,
+	     nloc2, log2n;
     extern /* Subroutine */ int shpgi1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, integer *, integer *, 
@@ -241,30 +241,30 @@ static doublereal c_b71 = 1.;
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, j, k, m, n;
-    static doublereal a1, b1, c1;
-    static integer ip;
+    integer i__, j, k, m, n;
+    doublereal a1, b1, c1;
+    integer ip;
     extern /* Subroutine */ int gs_(integer *, doublereal *, doublereal *, 
 	    doublereal *);
-    static integer it, js, mp1, ms2, ns2, nec;
-    static doublereal dfn;
-    static integer nem, noc, nte;
-    static doublereal toe;
-    static integer nom, nto, nmx;
-    static doublereal sum, sum1;
+    integer it, js, mp1, ms2, ns2, nec;
+    doublereal dfn;
+    integer nem, noc, nte;
+    doublereal toe;
+    integer nom, nto, nmx;
+    doublereal sum, sum1;
     extern doublereal rand_(integer *);
-    static integer lock;
-    static doublereal dmax__;
-    static integer nshe[2], modn, ierr, nsho[2];
-    static doublereal work, tusl;
-    static integer mxtr;
-    static doublereal zort[8192]	/* was [64][64][2] */;
+    integer lock;
+    doublereal dmax__;
+    integer nshe[2], modn, ierr, nsho[2];
+    doublereal work, tusl;
+    integer mxtr;
+    doublereal zort[8192]	/* was [64][64][2] */;
     extern /* Subroutine */ int dlfkg_(integer *, integer *, doublereal *), 
 	    gaqdp_(integer *, doublereal *, doublereal *, doublereal *, 
 	    integer *, integer *), dlftg_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), trunc_(integer *, integer *, integer 
 	    *, doublereal *, integer *, integer *);
-    static integer lwork;
+    integer lwork;
     extern /* Subroutine */ int normal_(integer *, doublereal *, integer *, 
 	    doublereal *);
 
@@ -906,10 +906,10 @@ L300:
     double log(doublereal);
 
     /* Local variables */
-    static integer i__, j;
-    static doublereal sn;
-    static integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, nte, mmax, 
-	    mwrk, nloc1, nloc2, log2n;
+    integer i__, j;
+    doublereal sn;
+    integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, nte, mmax, mwrk, 
+	    nloc1, nloc2, log2n;
     extern /* Subroutine */ int shpg1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
@@ -1026,8 +1026,8 @@ L300:
 	    ye_offset, yo_dim1, yo_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, j, m, ip, js, mp1, ms2, ns2, lag, nec, nem, noc, nte, 
-	    mpm, nom, nto, nmx, nshe[2], modn, nsho[2], mxtr;
+    integer i__, j, m, ip, js, mp1, ms2, ns2, lag, nec, nem, noc, nte, mpm, 
+	    nom, nto, nmx, nshe[2], modn, nsho[2], mxtr;
     extern /* Subroutine */ int tmxmx_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, integer *);
@@ -1256,7 +1256,7 @@ L100:
 	    i__3;
 
     /* Local variables */
-    static integer i__, j, k;
+    integer i__, j, k;
 
     /* Parameter adjustments */
     a_dim1 = *ld;
@@ -1294,7 +1294,7 @@ L100:
 	    i__3;
 
     /* Local variables */
-    static integer i__, j, k;
+    integer i__, j, k;
 
     /* Parameter adjustments */
     a_dim1 = *ld;
@@ -1332,8 +1332,8 @@ L100:
 	    y_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, k;
-    static doublereal sum1, sum2;
+    integer i__, j, k;
+    doublereal sum1, sum2;
 
     /* Parameter adjustments */
     y_dim1 = *ld;
@@ -1386,8 +1386,8 @@ L100:
 	    y_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, k;
-    static doublereal sum1, sum2;
+    integer i__, j, k;
+    doublereal sum1, sum2;
 
     /* Parameter adjustments */
     y_dim1 = *ld;
@@ -1440,8 +1440,8 @@ L100:
 	    y_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, k, kmx;
-    static doublereal sum1, sum2;
+    integer i__, j, k, kmx;
+    doublereal sum1, sum2;
 
 
     /* Parameter adjustments */
@@ -1527,7 +1527,7 @@ L100:
     doublereal d__1;
 
     /* Local variables */
-    static integer i__, j;
+    integer i__, j;
 
 
 /*     irc = 0 for columns , or irc = 1 for rows */
@@ -1578,8 +1578,8 @@ L50:
     integer i__1;
 
     /* Local variables */
-    static integer i__;
-    static doublereal sum;
+    integer i__;
+    doublereal sum;
 
 
 /*     accumulate innerproducts of x with respect to y. */
@@ -1616,8 +1616,8 @@ L50:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__;
-    static doublereal sqs;
+    integer i__;
+    doublereal sqs;
 
     /* Fortran I/O blocks */
     static cilist io___132 = { 0, 6, 0, fmt_3, 0 };
@@ -1665,7 +1665,7 @@ L4:
     doublereal d__1, d__2, d__3;
 
     /* Local variables */
-    static integer i__, nh;
+    integer i__, nh;
 
     /* Parameter adjustments */
     --x;
@@ -1765,14 +1765,14 @@ L1:
     double sqrt(doublereal), pow_di(doublereal *, integer *);
 
     /* Local variables */
-    static integer i__, l;
-    static doublereal a1, b1, c1, t1, t2;
-    static integer ma;
-    static doublereal fk, cp2, pm1;
-    static integer nex;
-    static doublereal fden, fnmh, fnum, fnnp1;
-    static integer nmms2;
-    static doublereal fnmsq;
+    integer i__, l;
+    doublereal a1, b1, c1, t1, t2;
+    integer ma;
+    doublereal fk, cp2, pm1;
+    integer nex;
+    doublereal fden, fnmh, fnum, fnnp1;
+    integer nmms2;
+    doublereal fnmsq;
 
 
 
@@ -1901,11 +1901,11 @@ L30:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt;
+    integer kdo;
+    doublereal cth, sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cp;
@@ -2022,21 +2022,21 @@ L14:
 	    doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__;
-    static doublereal x, pb, pi, cz;
-    static integer it, ns2;
-    static doublereal dpb;
-    static integer idx;
-    static doublereal eps;
-    static integer nix;
-    static doublereal sum, pis2, dcor, cmax, sgnd, zero;
+    integer i__;
+    doublereal x, pb, pi, cz;
+    integer it, ns2;
+    doublereal dpb;
+    integer idx;
+    doublereal eps;
+    integer nix;
+    doublereal sum, pis2, dcor, cmax, sgnd, zero;
     extern /* Subroutine */ int cpdp1_(integer *, doublereal *, doublereal *, 
 	    doublereal *), tpdp1_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
-    static integer nhalf, mnlat;
-    static doublereal zhold;
+    integer nhalf, mnlat;
+    doublereal zhold;
     extern doublereal dzepp_(doublereal *);
-    static doublereal zlast, zprev, dthalf, dtheta;
+    doublereal zlast, zprev, dthalf, dtheta;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -2216,9 +2216,9 @@ L30:
     integer i__1;
 
     /* Local variables */
-    static integer j;
-    static doublereal t1, t2, t3, t4;
-    static integer ncp;
+    integer j;
+    doublereal t1, t2, t3, t4;
+    integer ncp;
 
 
 /*     computes the fourier coefficients of the legendre */
@@ -2284,10 +2284,10 @@ L30:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal fn, chh, cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sth;
+    integer k;
+    doublereal fn, chh, cdt;
+    integer kdo;
+    doublereal cth, sdt, sth;
 
 
 /*     computes pn(theta) and its derivative dpb(theta) with */
@@ -2354,7 +2354,7 @@ doublereal dzepp_(doublereal *x)
     doublereal ret_val, d__1;
 
     /* Local variables */
-    static doublereal a, b, c__, eps;
+    doublereal a, b, c__, eps;
 
 
 /*     estimate unit roundoff in quantities of size x. */

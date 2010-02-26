@@ -130,7 +130,7 @@
     integer i__1;
 
     /* Local variables */
-    static integer i__, ma, iw1, iw2;
+    integer i__, ma, iw1, iw2;
     extern /* Subroutine */ int lfp1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *);
@@ -168,15 +168,17 @@
     double sqrt(doublereal), atan(doublereal);
 
     /* Local variables */
-    static integer i__, lc;
-    static doublereal dt, pi;
-    static integer lq, ls, lm1, np1, ls2, kdp, lmi, mmod, nmod;
+    integer i__;
+    static integer lc;
+    doublereal dt, pi;
+    static integer lq, ls;
+    integer lm1, np1, ls2, kdp, lmi, mmod, nmod;
     extern /* Subroutine */ int cost_(integer *, doublereal *, doublereal *), 
 	    sint_(integer *, doublereal *, doublereal *), cosqb_(integer *, 
 	    doublereal *, doublereal *), sinqb_(integer *, doublereal *, 
 	    doublereal *), cosqi_(integer *, doublereal *), costi_(integer *, 
 	    doublereal *), sinti_(integer *, doublereal *);
-    static doublereal ssqrt2;
+    doublereal ssqrt2;
 
     /* Parameter adjustments */
     --wsave3;

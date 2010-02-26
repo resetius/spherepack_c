@@ -234,7 +234,7 @@
 	     integer *, doublereal *, doublereal *, doublereal *, doublereal *
 	    , integer *, doublereal *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *);
-    static integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lwmin;
+    integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lwmin;
 
 
 /*     check input parameters */
@@ -361,7 +361,7 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n, mmax, ityp;
+    integer k, m, n, mmax, ityp;
     extern /* Subroutine */ int vhsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

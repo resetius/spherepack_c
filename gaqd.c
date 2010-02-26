@@ -57,24 +57,24 @@ static doublereal c_b2 = 1.;
 	    doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__;
-    static doublereal x, pb, pi, cz;
-    static integer it, ns2;
-    static doublereal dpb;
-    static integer idx;
-    static doublereal eps;
-    static integer nix;
-    static doublereal sum, pis2;
+    integer i__;
+    doublereal x, pb, pi, cz;
+    integer it, ns2;
+    doublereal dpb;
+    integer idx;
+    doublereal eps;
+    integer nix;
+    doublereal sum, pis2;
     extern /* Subroutine */ int cpdp_(integer *, doublereal *, doublereal *, 
 	    doublereal *);
-    static doublereal dcor, cmax, sgnd;
+    doublereal dcor, cmax, sgnd;
     extern /* Subroutine */ int tpdp_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
-    static doublereal zero;
-    static integer nhalf, mnlat;
-    static doublereal zhold;
+    doublereal zero;
+    integer nhalf, mnlat;
+    doublereal zhold;
     extern doublereal dzeps_(doublereal *);
-    static doublereal zlast, zprev, dthalf, dtheta;
+    doublereal zlast, zprev, dthalf, dtheta;
 
 
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
@@ -255,9 +255,9 @@ L30:
     integer i__1;
 
     /* Local variables */
-    static integer j;
-    static doublereal t1, t2, t3, t4;
-    static integer ncp;
+    integer j;
+    doublereal t1, t2, t3, t4;
+    integer ncp;
 
 
 /*     computes the fourier coefficients of the legendre */
@@ -323,10 +323,10 @@ L30:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal fn, chh, cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sth;
+    integer k;
+    doublereal fn, chh, cdt;
+    integer kdo;
+    doublereal cth, sdt, sth;
 
 
 /*     computes pn(theta) and its derivative dpb(theta) with */
@@ -393,7 +393,7 @@ doublereal dzeps_(doublereal *x)
     doublereal ret_val, d__1;
 
     /* Local variables */
-    static doublereal a, b, c__, eps;
+    doublereal a, b, c__, eps;
 
 
 /*     estimate unit roundoff in quantities of size x. */

@@ -254,8 +254,8 @@
 	    b_dim1, b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, ls, ifn, nln, iwk, lwk, imid, mmax, 
-	    lwmin, lwkmin;
+    integer l1, l2, ia, ib, mn, ls, ifn, nln, iwk, lwk, imid, mmax, lwmin, 
+	    lwkmin;
     extern /* Subroutine */ int slapec1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
@@ -389,8 +389,8 @@
 	    blap_dim1, blap_dim2, blap_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
+    integer k, m, n;
+    doublereal fn;
     extern /* Subroutine */ int shsec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

@@ -321,7 +321,7 @@
 	    b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer ls, idz, nln, ist, imid, mmax, lzimn;
+    integer ls, idz, nln, ist, imid, mmax, lzimn;
     extern /* Subroutine */ int shaes1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    integer *, integer *, doublereal *, integer *, integer *, integer 
@@ -418,9 +418,9 @@
 	    go_dim1, go_dim2, go_offset, i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, mb, ls, mp1, np1, mp2, mdo, ndo;
-    static doublereal fsn, tsn;
-    static integer imm1, nlp1, imid, modl, mmax, nlon;
+    integer i__, j, k, m, mb, ls, mp1, np1, mp2, mdo, ndo;
+    doublereal fsn, tsn;
+    integer imm1, nlp1, imid, modl, mmax, nlon;
     extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -676,11 +676,11 @@ L145:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, idz;
+    integer iw1, idz;
     extern /* Subroutine */ int sea1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, doublereal *, doublereal *, doublereal *)
 	    ;
-    static integer labc, imid, mmax, lzimn;
+    integer labc, imid, mmax, lzimn;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
 

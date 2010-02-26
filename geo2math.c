@@ -231,7 +231,7 @@
     integer sg_dim1, sg_offset, sm_dim1, sm_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ij;
+    integer i__, j, ij;
 
 
 /*     transpose sg into sm and reverse colatitude subscript order */
@@ -284,7 +284,7 @@
     integer sm_dim1, sm_offset, sg_dim1, sg_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ij;
+    integer i__, j, ij;
 
 
 /*     transpose sm into sg and reverse colatitude subscript order */
@@ -339,7 +339,7 @@
 	    wm_dim1, wm_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ij;
+    integer i__, j, ij;
 
 
 /*     convert vg to vm, ug to wm */
@@ -439,7 +439,7 @@
 	    vg_dim1, vg_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, ij;
+    integer i__, j, ij;
 
 
 /*     convert vm to vg, wm to ug */

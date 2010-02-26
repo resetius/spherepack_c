@@ -230,14 +230,14 @@
 	     bi_dim2, bi_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, lzz1, labc,
-	     imid, mmax, lwmin;
+    integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, lzz1, labc, imid, 
+	    mmax, lwmin;
     extern /* Subroutine */ int divec1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    integer *, doublereal *, doublereal *, integer *, doublereal *, 
 	    integer *, integer *);
-    static integer lwkmin;
+    integer lwkmin;
 
 
 /*     check input parameters */
@@ -375,9 +375,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
-    static integer mmax;
+    integer k, m, n;
+    doublereal fn;
+    integer mmax;
     extern /* Subroutine */ int shsec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

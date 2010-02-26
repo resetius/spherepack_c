@@ -225,8 +225,8 @@
 	    cr_dim2, cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, lzz1, labc,
-	     imid, mmax, lwmin;
+    integer l1, l2, ia, ib, mn, is, ls, mab, nln, iwk, lwk, lzz1, labc, imid, 
+	    mmax, lwmin;
     extern /* Subroutine */ int sfvpgc1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
@@ -375,7 +375,7 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n, mmax;
+    integer k, m, n, mmax;
     extern /* Subroutine */ int shsgc_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

@@ -231,8 +231,8 @@
 	    a_dim2, a_offset, b_dim1, b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer mn, is, ibi, ibr, idv, lnl, idz, iwk, imid, mmax, liwk, 
-	    lzimn, lgdmin, lwkmin;
+    integer mn, is, ibi, ibr, idv, lnl, idz, iwk, imid, mmax, liwk, lzimn, 
+	    lgdmin, lwkmin;
     extern /* Subroutine */ int gradgs1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *, 
@@ -356,9 +356,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal ci, fn, cr;
-    static integer ityp;
+    integer k, m, n;
+    doublereal ci, fn, cr;
+    integer ityp;
     extern /* Subroutine */ int vhsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

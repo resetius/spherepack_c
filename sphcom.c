@@ -47,14 +47,14 @@ static integer c__0 = 0;
     double sqrt(doublereal), pow_di(doublereal *, integer *);
 
     /* Local variables */
-    static integer i__, l;
-    static doublereal a1, b1, c1, t1, t2;
-    static integer ma;
-    static doublereal fk, cp2, pm1;
-    static integer nex;
-    static doublereal fden, fnmh, fnum, fnnp1;
-    static integer nmms2;
-    static doublereal fnmsq;
+    integer i__, l;
+    doublereal a1, b1, c1, t1, t2;
+    integer ma;
+    doublereal fk, cp2, pm1;
+    integer nex;
+    doublereal fden, fnmh, fnum, fnnp1;
+    integer nmms2;
+    doublereal fnmsq;
 
 
 /*     cp requires n/2+1 double precision locations */
@@ -188,11 +188,11 @@ L30:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt;
+    integer kdo;
+    doublereal cth, sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cp;
@@ -306,11 +306,11 @@ L14:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt;
-    static integer kdo;
-    static doublereal cth, sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt;
+    integer kdo;
+    doublereal cth, sdt, sth;
+    integer mmod, nmod;
 
 
 /*     computes the derivative of pmn(theta) with respect to theta */
@@ -420,7 +420,7 @@ L14:
 /* Subroutine */ int legin_(integer *mode, integer *l, integer *nlat, integer 
 	*m, doublereal *w, doublereal *pmn, integer *km)
 {
-    static integer i1, i2, i3, i4, i5, late;
+    integer i1, i2, i3, i4, i5, late;
     extern /* Subroutine */ int legin1_(integer *, integer *, integer *, 
 	    integer *, integer *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, integer *);
@@ -466,7 +466,7 @@ L14:
 	    pmn_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, n, ms, np1, imn, kmt, ninc;
+    integer i__, n, ms, np1, imn, kmt, ninc;
 
     /* Parameter adjustments */
     pmn_dim1 = *nlat;
@@ -560,7 +560,7 @@ L14:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int zfin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -597,7 +597,9 @@ L14:
 	    i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     z1_dim1 = *imid;
@@ -710,7 +712,7 @@ L80:
 /* Subroutine */ int zfinit_(integer *nlat, integer *nlon, doublereal *wzfin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int zfini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -740,9 +742,9 @@ L80:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, th, zh;
-    static integer mp1, np1;
+    integer i__, m, n;
+    doublereal dt, pi, th, zh;
+    integer mp1, np1;
     extern /* Subroutine */ int rabcp_(integer *, integer *, doublereal *), 
 	    dnzfk_(integer *, integer *, integer *, doublereal *, doublereal *
 	    ), dnzft_(integer *, integer *, integer *, doublereal *, 
@@ -793,13 +795,13 @@ L80:
     integer i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, k;
-    static doublereal t1, t2;
-    static integer lc;
-    static doublereal sc1;
-    static integer kp1, kdo, idx;
-    static doublereal sum;
-    static integer mmod, nmod;
+    integer i__, k;
+    doublereal t1, t2;
+    integer lc;
+    doublereal sc1;
+    integer kp1, kdo, idx;
+    doublereal sum;
+    integer mmod, nmod;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
 
@@ -954,9 +956,9 @@ L14:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k, lc, lq, ls;
-    static doublereal chh, cdt, cth, sdt, sth;
-    static integer lmod, mmod, nmod;
+    integer k, lc, lq, ls;
+    doublereal chh, cdt, cth, sdt, sth;
+    integer lmod, mmod, nmod;
 
     /* Parameter adjustments */
     --cz;
@@ -1154,7 +1156,7 @@ L110:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int alin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -1191,7 +1193,9 @@ L110:
 	    i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     p1_dim1 = *imid;
@@ -1302,7 +1306,7 @@ L80:
 /* Subroutine */ int alinit_(integer *nlat, integer *nlon, doublereal *walin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int alini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *);
 
@@ -1331,9 +1335,9 @@ L80:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, ph, th;
-    static integer mp1, np1;
+    integer i__, m, n;
+    doublereal dt, pi, ph, th;
+    integer mp1, np1;
     extern /* Subroutine */ int rabcp_(integer *, integer *, doublereal *), 
 	    dnlfk_(integer *, integer *, doublereal *), dnlft_(integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *);
@@ -1374,7 +1378,7 @@ L80:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, labc, mmax;
+    integer iw1, iw2, labc, mmax;
     extern /* Subroutine */ int rabcp1_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -1407,14 +1411,14 @@ L80:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer m, n;
-    static doublereal cn, fm, fn;
-    static integer ns;
-    static doublereal tm, tn;
-    static integer mp1, np1, mp3;
-    static doublereal fnmm, fnpm;
-    static integer mmax;
-    static doublereal temp;
+    integer m, n;
+    doublereal cn, fm, fn;
+    integer ns;
+    doublereal tm, tn;
+    integer mp1, np1, mp3;
+    doublereal fnmm, fnpm;
+    integer mmax;
+    doublereal temp;
 
 
 /*     coefficients a, b, and c for computing pbar(m,n,theta) are */
@@ -1479,7 +1483,7 @@ L215:
 	    i__3;
 
     /* Local variables */
-    static integer i__, m, i3, mn, mp1, np1, mmax;
+    integer i__, m, i3, mn, mp1, np1, mmax;
     extern /* Subroutine */ int zfin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *), zfinit_(
 	    integer *, integer *, doublereal *, doublereal *);
@@ -1526,10 +1530,10 @@ L215:
 	    i__3;
 
     /* Local variables */
-    static integer i__, m, i3, mn, mp1, np1;
+    integer i__, m, i3, mn, mp1, np1;
     extern /* Subroutine */ int alin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *);
-    static integer mmax;
+    integer mmax;
     extern /* Subroutine */ int alinit_(integer *, integer *, doublereal *, 
 	    doublereal *);
 
@@ -1570,7 +1574,7 @@ L215:
 /* Subroutine */ int zvinit_(integer *nlat, integer *nlon, doublereal *wzvin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int zvini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -1601,10 +1605,10 @@ L215:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, th;
-    static integer mp1, np1, mdo;
-    static doublereal zvh;
+    integer i__, m, n;
+    doublereal dt, pi, th;
+    integer mp1, np1, mdo;
+    doublereal zvh;
     extern /* Subroutine */ int dzvk_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *), dzvt_(integer *, integer *, integer *
 	    , doublereal *, doublereal *, doublereal *), rabcv_(integer *, 
@@ -1655,7 +1659,7 @@ L215:
 /* Subroutine */ int zwinit_(integer *nlat, integer *nlon, doublereal *wzwin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int zwini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -1685,10 +1689,10 @@ L215:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, th;
-    static integer mp1, np1, mdo;
-    static doublereal zwh;
+    integer i__, m, n;
+    doublereal dt, pi, th;
+    integer mp1, np1, mdo;
+    doublereal zwh;
     extern /* Subroutine */ int dzwk_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *), dzwt_(integer *, integer *, integer *
 	    , doublereal *, doublereal *, doublereal *), rabcw_(integer *, 
@@ -1746,7 +1750,7 @@ L215:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int zvin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -1785,7 +1789,9 @@ L215:
 	    zv1_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     zv1_dim1 = *imid;
@@ -1902,7 +1908,7 @@ L80:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int zwin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -1941,7 +1947,9 @@ L80:
 	    zw2_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     zw2_dim1 = *imid;
@@ -2054,7 +2062,7 @@ L80:
 /* Subroutine */ int vbinit_(integer *nlat, integer *nlon, doublereal *wvbin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int vbini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -2084,11 +2092,11 @@ L80:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal pi, dt, th;
-    static integer mp1, np1;
-    static doublereal vbh;
-    static integer mdo;
+    integer i__, m, n;
+    doublereal pi, dt, th;
+    integer mp1, np1;
+    doublereal vbh;
+    integer mdo;
     extern /* Subroutine */ int dvbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvbt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcv_(integer *, integer *, 
@@ -2138,7 +2146,7 @@ L80:
 /* Subroutine */ int wbinit_(integer *nlat, integer *nlon, doublereal *wwbin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int wbini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -2168,10 +2176,10 @@ L80:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, th;
-    static integer mp1, np1, mdo;
-    static doublereal wbh;
+    integer i__, m, n;
+    doublereal dt, pi, th;
+    integer mp1, np1, mdo;
+    doublereal wbh;
     extern /* Subroutine */ int dwbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwbt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcw_(integer *, integer *, 
@@ -2228,7 +2236,7 @@ L80:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int vbin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -2267,7 +2275,9 @@ L80:
 	    vb1_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     vb1_dim1 = *imid;
@@ -2384,7 +2394,7 @@ L80:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, lim, labc, imid, mmax;
     extern /* Subroutine */ int wbin1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
@@ -2423,7 +2433,9 @@ L80:
 	    wb2_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, i1, i2, ns, np1, nstp, ihold, nstrt;
+    integer i__;
+    static integer i1, i2;
+    integer ns, np1, nstp, ihold, nstrt;
 
     /* Parameter adjustments */
     wb2_dim1 = *imid;
@@ -2540,15 +2552,15 @@ L80:
     integer i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, k;
-    static doublereal t1, t2;
-    static integer id, lc;
-    static doublereal sc1;
-    static integer kdo;
-    static doublereal sum;
+    integer i__, k;
+    doublereal t1, t2;
+    integer id, lc;
+    doublereal sc1;
+    integer kdo;
+    doublereal sum;
     extern /* Subroutine */ int dvbk_(integer *, integer *, doublereal *, 
 	    doublereal *);
-    static integer mmod, nmod;
+    integer mmod, nmod;
 
 
 /*     subroutine dzvk computes the coefficients in the trigonometric */
@@ -2697,9 +2709,9 @@ L3:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k, lc, lq, ls;
-    static doublereal chh, cdt, cth, sdt, sth;
-    static integer lmod, mmod, nmod;
+    integer k, lc, lq, ls;
+    doublereal chh, cdt, cth, sdt, sth;
+    integer lmod, mmod, nmod;
 
 
 /*     subroutine dzvt tabulates the function zvbar(n,m,theta) */
@@ -2879,15 +2891,15 @@ L53:
     integer i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, k;
-    static doublereal t1, t2;
-    static integer id, lc;
-    static doublereal sc1;
-    static integer kp1, kdo;
-    static doublereal sum;
+    integer i__, k;
+    doublereal t1, t2;
+    integer id, lc;
+    doublereal sc1;
+    integer kp1, kdo;
+    doublereal sum;
     extern /* Subroutine */ int dwbk_(integer *, integer *, doublereal *, 
 	    doublereal *);
-    static integer mmod, nmod;
+    integer mmod, nmod;
 
 
 /*     subroutine dzwk computes the coefficients in the trigonometric */
@@ -3041,9 +3053,9 @@ L29:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k, lc, lq, ls;
-    static doublereal chh, cdt, cth, sdt, sth;
-    static integer lmod, mmod, nmod;
+    integer k, lc, lq, ls;
+    doublereal chh, cdt, cth, sdt, sth;
+    integer lmod, mmod, nmod;
 
 
 /*     subroutine dzwt tabulates the function zwbar(n,m,theta) */
@@ -3227,10 +3239,10 @@ L53:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer l;
-    static doublereal cf, fk, fn;
-    static integer ncv, modm, modn;
-    static doublereal srnp1;
+    integer l;
+    doublereal cf, fk, fn;
+    integer ncv, modm, modn;
+    doublereal srnp1;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
     /* Parameter adjustments */
@@ -3316,10 +3328,10 @@ L80:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer l;
-    static doublereal cf, fn;
-    static integer modm, modn;
-    static doublereal srnp1;
+    integer l;
+    doublereal cf, fn;
+    integer modm, modn;
+    doublereal srnp1;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
     /* Parameter adjustments */
@@ -3419,11 +3431,11 @@ L50:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt, cth;
-    static integer ncv;
-    static doublereal sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt, cth;
+    integer ncv;
+    doublereal sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cv;
@@ -3517,11 +3529,11 @@ L3:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt, cth;
-    static integer ncw;
-    static doublereal sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt, cth;
+    integer ncw;
+    doublereal sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cw;
@@ -3615,7 +3627,7 @@ L3:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, labc, mmax;
+    integer iw1, iw2, labc, mmax;
     extern /* Subroutine */ int rabcv1_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -3650,14 +3662,14 @@ L3:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer m, n;
-    static doublereal cn, fm, fn;
-    static integer ns;
-    static doublereal tm, tn;
-    static integer mp1, np1, mp3;
-    static doublereal tpn, fnmm, fnpm;
-    static integer mmax;
-    static doublereal temp;
+    integer m, n;
+    doublereal cn, fm, fn;
+    integer ns;
+    doublereal tm, tn;
+    integer mp1, np1, mp3;
+    doublereal tpn, fnmm, fnpm;
+    integer mmax;
+    doublereal temp;
 
 
 /*     coefficients a, b, and c for computing vbar(m,n,theta) are */
@@ -3725,7 +3737,7 @@ L215:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, labc, mmax;
+    integer iw1, iw2, labc, mmax;
     extern /* Subroutine */ int rabcw1_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -3760,14 +3772,14 @@ L215:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer m, n;
-    static doublereal cn, fm, fn;
-    static integer ns;
-    static doublereal tm, tn;
-    static integer mp1, np1, mp3;
-    static doublereal tph, tpn, fnmm, fnpm;
-    static integer mmax;
-    static doublereal temp;
+    integer m, n;
+    doublereal cn, fm, fn;
+    integer ns;
+    doublereal tm, tn;
+    integer mp1, np1, mp3;
+    doublereal tph, tpn, fnmm, fnpm;
+    integer mmax;
+    doublereal temp;
 
 
 /*     coefficients a, b, and c for computing wbar(m,n,theta) are */
@@ -3835,7 +3847,7 @@ L215:
 /* Subroutine */ int vtinit_(integer *nlat, integer *nlon, doublereal *wvbin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int vtini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -3865,11 +3877,11 @@ L215:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal pi, dt, th;
-    static integer mp1, np1;
-    static doublereal vbh;
-    static integer mdo;
+    integer i__, m, n;
+    doublereal pi, dt, th;
+    integer mp1, np1;
+    doublereal vbh;
+    integer mdo;
     extern /* Subroutine */ int dvtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvtt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcv_(integer *, integer *, 
@@ -3919,7 +3931,7 @@ L215:
 /* Subroutine */ int wtinit_(integer *nlat, integer *nlon, doublereal *wwbin, 
 	doublereal *dwork)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int wtini1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
 
@@ -3949,10 +3961,10 @@ L215:
     double atan(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal dt, pi, th;
-    static integer mp1, np1, mdo;
-    static doublereal wbh;
+    integer i__, m, n;
+    doublereal dt, pi, th;
+    integer mp1, np1, mdo;
+    doublereal wbh;
     extern /* Subroutine */ int dwtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwtt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcw_(integer *, integer *, 
@@ -4005,7 +4017,7 @@ L215:
 /* Subroutine */ int vtgint_(integer *nlat, integer *nlon, doublereal *theta, 
 	doublereal *wvbin, doublereal *work)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int vtgit1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
@@ -4037,9 +4049,9 @@ L215:
     integer vb_dim1, vb_dim2, vb_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, m, n, mp1, np1;
-    static doublereal vbh;
-    static integer mdo;
+    integer i__, m, n, mp1, np1;
+    doublereal vbh;
+    integer mdo;
     extern /* Subroutine */ int dvtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvtt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcv_(integer *, integer *, 
@@ -4087,7 +4099,7 @@ L215:
 /* Subroutine */ int wtgint_(integer *nlat, integer *nlon, doublereal *theta, 
 	doublereal *wwbin, doublereal *work)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int wtgit1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
@@ -4119,8 +4131,8 @@ L215:
     integer wb_dim1, wb_dim2, wb_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, m, n, mp1, np1, mdo;
-    static doublereal wbh;
+    integer i__, m, n, mp1, np1, mdo;
+    doublereal wbh;
     extern /* Subroutine */ int dwtk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwtt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcw_(integer *, integer *, 
@@ -4177,10 +4189,10 @@ L215:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer l;
-    static doublereal cf, fk, fn;
-    static integer ncv, modm, modn;
-    static doublereal srnp1;
+    integer l;
+    doublereal cf, fk, fn;
+    integer ncv, modm, modn;
+    doublereal srnp1;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
     /* Parameter adjustments */
@@ -4266,10 +4278,10 @@ L80:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer l;
-    static doublereal cf, fn;
-    static integer modm, modn;
-    static doublereal srnp1;
+    integer l;
+    doublereal cf, fn;
+    integer modm, modn;
+    doublereal srnp1;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *);
 
     /* Parameter adjustments */
@@ -4391,11 +4403,11 @@ L50:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt, cth;
-    static integer ncv;
-    static doublereal sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt, cth;
+    integer ncv;
+    doublereal sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cv;
@@ -4489,11 +4501,11 @@ L3:
     double cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer k;
-    static doublereal chh, cdt, cth;
-    static integer ncw;
-    static doublereal sdt, sth;
-    static integer mmod, nmod;
+    integer k;
+    doublereal chh, cdt, cth;
+    integer ncw;
+    doublereal sdt, sth;
+    integer mmod, nmod;
 
     /* Parameter adjustments */
     --cw;
@@ -4584,7 +4596,7 @@ L3:
 /* Subroutine */ int vbgint_(integer *nlat, integer *nlon, doublereal *theta, 
 	doublereal *wvbin, doublereal *work)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int vbgit1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
@@ -4616,9 +4628,9 @@ L3:
     integer vb_dim1, vb_dim2, vb_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, m, n, mp1, np1;
-    static doublereal vbh;
-    static integer mdo;
+    integer i__, m, n, mp1, np1;
+    doublereal vbh;
+    integer mdo;
     extern /* Subroutine */ int dvbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dvbt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcv_(integer *, integer *, 
@@ -4666,7 +4678,7 @@ L3:
 /* Subroutine */ int wbgint_(integer *nlat, integer *nlon, doublereal *theta, 
 	doublereal *wwbin, doublereal *work)
 {
-    static integer iw1, imid;
+    integer iw1, imid;
     extern /* Subroutine */ int wbgit1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
@@ -4698,8 +4710,8 @@ L3:
     integer wb_dim1, wb_dim2, wb_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer i__, m, n, mp1, np1, mdo;
-    static doublereal wbh;
+    integer i__, m, n, mp1, np1, mdo;
+    doublereal wbh;
     extern /* Subroutine */ int dwbk_(integer *, integer *, doublereal *, 
 	    doublereal *), dwbt_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), rabcw_(integer *, integer *, 

@@ -255,8 +255,8 @@
 	    a_dim2, a_offset, b_dim1, b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, mn, is, ici, icr, iwk, lzz1, labc, imid, mmax, 
-	    liwk, lwmin;
+    integer l1, l2, mn, is, ici, icr, iwk, lzz1, labc, imid, mmax, liwk, 
+	    lwmin;
     extern /* Subroutine */ int ivtes1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *, 
@@ -385,9 +385,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal bi, fn, br;
-    static integer ityp;
+    integer k, m, n;
+    doublereal bi, fn, br;
+    integer ityp;
     extern /* Subroutine */ int vhses_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

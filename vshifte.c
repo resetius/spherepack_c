@@ -254,7 +254,7 @@
 	    ureg_offset, vreg_dim1, vreg_offset;
 
     /* Local variables */
-    static integer i1, i2, i3, n2, nr, nlat2, nlatp1;
+    integer i1, i2, i3, n2, nr, nlat2, nlatp1;
     extern /* Subroutine */ int vhftoff_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *), vhftreg_(
@@ -355,7 +355,7 @@
 	    i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, n2, js, isav;
+    integer i__, j, n2, js, isav;
     extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -507,7 +507,7 @@
 	    i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, n2, js, isav;
+    integer i__, j, n2, js, isav;
     extern /* Subroutine */ int vhifth_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -661,8 +661,8 @@
     double atan(doublereal);
 
     /* Local variables */
-    static doublereal dp, pi, dlat, dlon;
-    static integer isav, nlat2;
+    doublereal dp, pi, dlat, dlon;
+    integer isav, nlat2;
     extern /* Subroutine */ int vhifthi_(integer *, doublereal *, doublereal *
 	    );
 
@@ -726,8 +726,8 @@
     integer r_dim1, r_offset, i__1, i__2;
 
     /* Local variables */
-    static integer k, l, n2;
-    static doublereal r2km1, r2km2;
+    integer k, l, n2;
+    doublereal r2km1, r2km2;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *), hrfftf_(integer *, 
 	    integer *, doublereal *, integer *, doublereal *, doublereal *);
@@ -780,7 +780,7 @@
     double sin(doublereal), cos(doublereal);
 
     /* Local variables */
-    static integer k, n2;
+    integer k, n2;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
 

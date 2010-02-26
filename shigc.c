@@ -120,8 +120,7 @@
     integer i__1;
 
     /* Local variables */
-    static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
-	    idwts;
+    integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, idwts;
     extern /* Subroutine */ int shigc1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
@@ -200,12 +199,12 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal pb;
-    static integer lw, np1, imn;
+    integer i__, m, n;
+    doublereal pb;
+    integer lw, np1, imn;
     extern /* Subroutine */ int gaqd_(integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
-    static integer mlim;
+    integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *), hrffti_(integer *, doublereal *);

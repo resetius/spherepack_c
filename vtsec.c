@@ -349,15 +349,15 @@ static integer c__2 = 2;
 	    cr_dim2, cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, idv, lnl, ist, lzz1, 
-	    labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, idv, lnl, ist, lzz1, labc, 
+	    imid, mmax;
     extern /* Subroutine */ int vtsec1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
-    static integer lwzvin;
+    integer lwzvin;
 
 
     /* Parameter adjustments */
@@ -493,13 +493,12 @@ static integer c__2 = 2;
 	     i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, iv, iw, mp1, np1, mp2, ndo1, ndo2, imm1, 
-	    nlp1, mlat;
+    integer i__, j, k, m, iv, iw, mp1, np1, mp2, ndo1, ndo2, imm1, nlp1, mlat;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *
 	    , integer *, integer *, integer *, doublereal *, integer *, 
 	    doublereal *);
-    static integer mmax, mlon, itypp;
+    integer mmax, mlon, itypp;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -1637,9 +1636,9 @@ L13:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, lzz1, labc, imid, mmax;
+    integer iw1, iw2, lzz1, labc, imid, mmax;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
-    static integer lwvbin;
+    integer lwvbin;
     extern /* Subroutine */ int vtinit_(integer *, integer *, doublereal *, 
 	    doublereal *), wtinit_(integer *, integer *, doublereal *, 
 	    doublereal *);

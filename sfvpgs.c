@@ -225,8 +225,7 @@
 	    cr_dim2, cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, is, lp, ls, mab, lat, iwk, lwk, imid, 
-	    late;
+    integer l1, l2, ia, ib, mn, is, lp, ls, mab, lat, iwk, lwk, imid, late;
     extern /* Subroutine */ int stvpgs1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
@@ -371,7 +370,7 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n, mmax;
+    integer k, m, n, mmax;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

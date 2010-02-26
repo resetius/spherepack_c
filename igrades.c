@@ -240,8 +240,8 @@
 	     bi_dim2, bi_offset, i__1, i__2;
 
     /* Local variables */
-    static integer ia, ib, mn, is, ls, mab, nln, iwk, imid, mmax, liwk, lpimn,
-	     lwkmin;
+    integer ia, ib, mn, is, ls, mab, nln, iwk, imid, mmax, liwk, lpimn, 
+	    lwkmin;
     extern /* Subroutine */ int igrdes1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, doublereal *, integer *, integer *, 
@@ -365,9 +365,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
-    static integer mmax;
+    integer k, m, n;
+    doublereal fn;
+    integer mmax;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

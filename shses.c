@@ -299,7 +299,7 @@
 	    b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer ls, nln, ist, imid, mmax, lpimn;
+    integer ls, nln, ist, imid, mmax, lpimn;
     extern /* Subroutine */ int shses1_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    integer *, integer *, doublereal *, integer *, integer *, integer 
@@ -395,8 +395,8 @@
 	    go_dim1, go_dim2, go_offset, i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, mb, mn, ls, mp1, np1, mp2, mdo, ndo, imm1, 
-	    nlp1, modl, mmax, nlon;
+    integer i__, j, k, m, mb, mn, ls, mp1, np1, mp2, mdo, ndo, imm1, nlp1, 
+	    modl, mmax, nlon;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -643,10 +643,10 @@ L180:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1;
+    integer iw1;
     extern /* Subroutine */ int ses1_(integer *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
-    static integer labc, imid, mmax, lpimn;
+    integer labc, imid, mmax, lpimn;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
     /* Parameter adjustments */

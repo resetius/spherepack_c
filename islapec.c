@@ -265,8 +265,8 @@
 	    b_dim2, b_offset, i__1, i__2;
 
     /* Local variables */
-    static integer k, l1, l2, ia, ib, mn, ls, ifn, nln, iwk, lwk, imid, mmax, 
-	    lwmin, lwkmin;
+    integer k, l1, l2, ia, ib, mn, ls, ifn, nln, iwk, lwk, imid, mmax, lwmin, 
+	    lwkmin;
     extern /* Subroutine */ int islpec1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
@@ -413,8 +413,8 @@
 	    bs_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
+    integer k, m, n;
+    doublereal fn;
     extern /* Subroutine */ int shsec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

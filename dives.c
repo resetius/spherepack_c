@@ -232,7 +232,7 @@
 	     bi_dim2, bi_offset, i__1, i__2;
 
     /* Local variables */
-    static integer ia, ib, mn, is, ls, mab, nln, iwk, lwk, imid, mmax, lpimn;
+    integer ia, ib, mn, is, ls, mab, nln, iwk, lwk, imid, mmax, lpimn;
     extern /* Subroutine */ int dives1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
@@ -355,9 +355,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
-    static integer mmax;
+    integer k, m, n;
+    doublereal fn;
+    integer mmax;
     extern /* Subroutine */ int shses_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

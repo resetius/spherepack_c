@@ -44,15 +44,15 @@ static doublereal c_b8 = 0.;
     double atan(doublereal), cos(doublereal), acos(doublereal);
 
     /* Local variables */
-    static integer i__, j, k;
-    static doublereal x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, 
-	    z5, x6, y6, z6, pi, xs, ys, zs, rad, phi, dxi, dyi, dzi, dxj, dyj,
-	     dzj, beta, dphi;
+    integer i__, j, k;
+    doublereal x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, x6,
+	     y6, z6, pi, xs, ys, zs, rad, phi, dxi, dyi, dzi, dxj, dyj, dzj, 
+	    beta, dphi;
     extern /* Subroutine */ int stoc_(doublereal *, doublereal *, doublereal *
 	    , doublereal *, doublereal *, doublereal *), ctos_(doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
-    static doublereal hdphi, theta, tdphi, theta1, theta2;
+    doublereal hdphi, theta, tdphi, theta1, theta2;
 
 
 /*     m         is the number of points on the edge of a */
@@ -215,7 +215,7 @@ static doublereal c_b8 = 0.;
     double atan(doublereal), sqrt(doublereal), atan2(doublereal, doublereal);
 
     /* Local variables */
-    static doublereal r1;
+    doublereal r1;
 
     r1 = *x * *x + *y * *y;
     if (r1 != 0.) {
@@ -242,7 +242,7 @@ L10:
     double sin(doublereal), cos(doublereal);
 
     /* Local variables */
-    static doublereal st;
+    doublereal st;
 
     st = sin(*theta);
     *x = *r__ * st * cos(*phi);

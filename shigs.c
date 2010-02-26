@@ -131,7 +131,7 @@
     integer i__1;
 
     /* Local variables */
-    static integer l, l1, l2, lp, late, ipmnf;
+    integer l, l1, l2, lp, late, ipmnf;
     extern /* Subroutine */ int shigsp_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, integer *, integer *), shigss1_(integer *
 	    , integer *, integer *, doublereal *, doublereal *, doublereal *);
@@ -203,7 +203,7 @@
 	    i__2, i__3;
 
     /* Local variables */
-    static integer i__, j, k, m, km, mn, mp1, np1, mml1, mode;
+    integer i__, j, k, m, km, mn, mp1, np1, mml1, mode;
     extern /* Subroutine */ int legin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *);
 
@@ -260,8 +260,7 @@
     integer i__1;
 
     /* Local variables */
-    static integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, 
-	    idwts;
+    integer l, i1, i2, i3, l1, l2, i4, i5, i6, i7, iw, late, idth, idwts;
     extern /* Subroutine */ int shigsp1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
@@ -336,12 +335,12 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, m, n;
-    static doublereal pb;
-    static integer lw, np1, imn;
+    integer i__, m, n;
+    doublereal pb;
+    integer lw, np1, imn;
     extern /* Subroutine */ int gaqd_(integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
-    static integer mlim;
+    integer mlim;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *), hrffti_(integer *, doublereal *);

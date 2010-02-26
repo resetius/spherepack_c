@@ -51,27 +51,27 @@ static doublereal c_b71 = 1.;
     double atan(doublereal), sin(doublereal), cos(doublereal);
 
     /* Local variables */
-    static integer i__, j, m, n;
-    static doublereal pi;
-    static integer mn, nx, ny, nz, nw1, nw2, nx1, ny1, nz1, nx2, ny2, nz2, 
-	    nx3, ny3, nz3;
-    static doublereal dtr;
-    static integer nxp, nyp;
+    integer i__, j, m, n;
+    doublereal pi;
+    integer mn, nx, ny, nz, nw1, nw2, nx1, ny1, nz1, nx2, ny2, nz2, nx3, ny3, 
+	    nz3;
+    doublereal dtr;
+    integer nxp, nyp;
     extern /* Subroutine */ int diag_(integer *, integer *, doublereal *, 
 	    doublereal *, integer *);
-    static integer itri;
+    integer itri;
     extern /* Subroutine */ int sptc_(doublereal *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *);
-    static doublereal xeye, yeye;
-    static integer ntri;
-    static doublereal zeye;
-    static integer nwrk, nmst, nmfac, nclat, nslat;
+    doublereal xeye, yeye;
+    integer ntri;
+    doublereal zeye;
+    integer nwrk, nmst, nmfac, nclat, nslat;
     extern /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
 	    *, integer *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *);
-    static integer niflag;
+    integer niflag;
     extern /* Subroutine */ int triang_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
@@ -81,7 +81,7 @@ static doublereal c_b71 = 1.;
 	    *, doublereal *, integer *), projct_(integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
-    static integer nitype;
+    integer nitype;
 
 
 /*     subroutine visequ will display a function on the sphere */
@@ -258,7 +258,7 @@ static doublereal c_b71 = 1.;
     doublereal d__1, d__2, d__3;
 
     /* Local variables */
-    static integer i__, j, k, l, n1, n2, mm1;
+    integer i__, j, k, l, n1, n2, mm1;
     extern integer icvmg_(integer *, integer *, doublereal *);
 
 /*     ****     interpolates to mid points of grid cells using second */
@@ -352,8 +352,8 @@ static doublereal c_b71 = 1.;
     double atan(doublereal), cos(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer i__, j;
-    static doublereal dp, dt, pi, clon, slon;
+    integer i__, j;
+    doublereal dp, dt, pi, clon, slon;
 
 /*     ****     transforms from spherical to cartesian coordinates */
     /* Parameter adjustments */
@@ -413,7 +413,7 @@ static doublereal c_b71 = 1.;
 	    i__1, i__2, i__3, i__4, i__5, i__6;
 
     /* Local variables */
-    static integer i__, j;
+    integer i__, j;
 
 
 /*     ****     label visibility of cell sides */
@@ -550,16 +550,16 @@ L100:
     double atan(doublereal), sin(doublereal);
 
     /* Local variables */
-    static integer j, jf, nf;
-    static doublereal dt;
-    static integer ml;
-    static doublereal pi;
-    static integer mq, mr;
-    static doublereal st;
-    static integer mf1, mf2, ns2, jdo;
-    static doublereal tphi;
-    static integer mtry;
-    static doublereal theta;
+    integer j, jf, nf;
+    doublereal dt;
+    integer ml;
+    doublereal pi;
+    integer mq, mr;
+    doublereal st;
+    integer mf1, mf2, ns2, jdo;
+    doublereal tphi;
+    integer mtry;
+    doublereal theta;
 
     /* Parameter adjustments */
     --mst;
@@ -666,7 +666,7 @@ L120:
 	    iflag_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, n1, n2, ityph;
+    integer i__, j, n1, n2, ityph;
 
 /*     ****     performs triangulation */
     /* Parameter adjustments */
@@ -969,66 +969,66 @@ L200:
     integer pow_ii(integer *, integer *);
 
     /* Local variables */
-    static doublereal a, b, c__, d__;
-    static integer i__, k, l;
-    static doublereal x, y, z__;
-    static integer i2, j2, j1, k1, k2;
-    static doublereal x4, y4, z4, x5, y5, z5, c14, c25, c17, c27;
-    static integer id, jd, if__, jf, kd, lf;
-    static doublereal c37;
-    static integer il;
-    static doublereal c36;
-    static integer kb;
-    static doublereal xa, hr;
-    static integer ir;
-    static doublereal ya, xb;
-    static integer ks, ls, ns;
-    static doublereal x54, y54, yb;
-    static integer id1, id2, i1f, j1f, id3;
-    static doublereal l2e, le2;
-    static integer i2m, j2m, ip2[11], ir1, ir2, i1s, j1s;
-    static doublereal tl1, tl2, px4, py4, px5, py5;
-    static integer kdf, ijd;
-    static doublereal den, apl, bpl;
-    static integer ird[11], isd;
-    static doublereal hgr;
-    static integer icv, nct[11];
-    static doublereal hdy;
-    static integer ncv[11];
-    static doublereal hdx, dmx, dmy;
-    static integer ifx;
+    doublereal a, b, c__, d__;
+    integer i__, k, l;
+    doublereal x, y, z__;
+    integer i2, j2, j1, k1, k2;
+    doublereal x4, y4, z4, x5, y5, z5, c14, c25, c17, c27;
+    integer id, jd, if__, jf, kd, lf;
+    doublereal c37;
+    integer il;
+    doublereal c36;
+    integer kb;
+    doublereal xa, hr;
+    integer ir;
+    doublereal ya, xb;
+    integer ks, ls, ns;
+    doublereal x54, y54, yb;
+    integer id1, id2, i1f, j1f, id3;
+    doublereal l2e, le2;
+    integer i2m, j2m, ip2[11], ir1, ir2, i1s, j1s;
+    doublereal tl1, tl2, px4, py4, px5, py5;
+    integer kdf, ijd;
+    doublereal den, apl, bpl;
+    integer ird[11], isd;
+    doublereal hgr;
+    integer icv, nct[11];
+    doublereal hdy;
+    integer ncv[11];
+    doublereal hdx, dmx, dmy;
+    integer ifx;
     extern /* Subroutine */ int set_(doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, integer *), box_(integer *, integer *, integer *, 
 	    integer *, integer *);
-    static integer kcv, ltp[3];
-    static doublereal dxt;
-    static integer ist, ixh, isx, ixs, ixf, kds, ldo, ith;
-    static doublereal xpl, ypl, zpl, xpr, ypr, zpr, cpl, dpl, til, tir, tim, 
-	    tlh, trh, dum1, dum2;
-    static integer irp1;
-    static doublereal px1h, py1h, vx1t, vy1t, vz1t, vx2t, vy2t, vz2t, vx3t, 
-	    vy3t, vz3t;
+    integer kcv, ltp[3];
+    doublereal dxt;
+    integer ist, ixh, isx, ixs, ixf, kds, ldo, ith;
+    doublereal xpl, ypl, zpl, xpr, ypr, zpr, cpl, dpl, til, tir, tim, tlh, 
+	    trh, dum1, dum2;
+    integer irp1;
+    doublereal px1h, py1h, vx1t, vy1t, vz1t, vx2t, vy2t, vz2t, vx3t, vy3t, 
+	    vz3t;
     extern /* Subroutine */ int line_(doublereal *, doublereal *, doublereal *
 	    , doublereal *);
-    static integer nseg, irdp;
-    static doublereal xmid, ymid;
-    static integer last[11];
-    static doublereal pmin, pmax, tmin;
-    static integer maxs;
-    static doublereal tmax, xmin;
-    static integer isxm;
-    static doublereal xmax, ymin, ymax;
-    static integer ityp, irmp1;
+    integer nseg, irdp;
+    doublereal xmid, ymid;
+    integer last[11];
+    doublereal pmin, pmax, tmin;
+    integer maxs;
+    doublereal tmax, xmin;
+    integer isxm;
+    doublereal xmax, ymin, ymax;
+    integer ityp, irmp1;
     extern /* Subroutine */ int frame_(void);
-    static doublereal cprod, thold;
-    static integer nsegp, irmax;
-    static doublereal fntri;
-    static integer isize;
+    doublereal cprod, thold;
+    integer nsegp, irmax;
+    doublereal fntri;
+    integer isize;
     extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *);
-    static doublereal x1hold, y1hold, z1hold;
+    doublereal x1hold, y1hold, z1hold;
 
 
 
@@ -1849,7 +1849,7 @@ L1:
     integer istart_dim1, istart_offset, i__1, i__2;
 
     /* Local variables */
-    static integer id, jd, idx;
+    integer id, jd, idx;
 
     /* Parameter adjustments */
     istart_dim1 = *isd;
@@ -1908,8 +1908,8 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
 	    px_offset, py_dim1, py_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j;
-    static doublereal rdum1, rdum2, rdum3, rdum4, rdum5;
+    integer i__, j;
+    doublereal rdum1, rdum2, rdum3, rdum4, rdum5;
     extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *);

@@ -218,7 +218,7 @@
     integer goff_dim1, goff_offset, greg_dim1, greg_offset;
 
     /* Local variables */
-    static integer i1, i2, n2, nr, nlat2, nlatp1;
+    integer i1, i2, n2, nr, nlat2, nlatp1;
     extern /* Subroutine */ int shftoff_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *), shftreg_(integer *, integer *, 
@@ -293,10 +293,10 @@
 	    rlat_offset, rlon_dim1, rlon_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, n2, js, isav;
+    integer i__, j, n2, js, isav;
     extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
-    static doublereal gnorth, gsouth;
+    doublereal gnorth, gsouth;
 
 
 /*     shift offset grid to regular grid, i.e., */
@@ -459,7 +459,7 @@
 	    rlat_offset, rlon_dim1, rlon_offset, i__1, i__2;
 
     /* Local variables */
-    static integer i__, j, n2, js, isav;
+    integer i__, j, n2, js, isav;
     extern /* Subroutine */ int shifth_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
 
@@ -613,8 +613,8 @@
     double atan(doublereal);
 
     /* Local variables */
-    static doublereal dp, pi, dlat, dlon;
-    static integer isav, nlat2;
+    doublereal dp, pi, dlat, dlon;
+    integer isav, nlat2;
     extern /* Subroutine */ int shifthi_(integer *, doublereal *, doublereal *
 	    );
 
@@ -675,8 +675,8 @@
     integer r_dim1, r_offset, i__1, i__2;
 
     /* Local variables */
-    static integer k, l, n2;
-    static doublereal r2km1, r2km2;
+    integer k, l, n2;
+    doublereal r2km1, r2km2;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *), hrfftf_(integer *, 
 	    integer *, doublereal *, integer *, doublereal *, doublereal *);
@@ -729,7 +729,7 @@
     double sin(doublereal), cos(doublereal);
 
     /* Local variables */
-    static integer k, n2;
+    integer k, n2;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *);
 
 

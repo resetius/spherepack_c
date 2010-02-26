@@ -243,8 +243,8 @@
 	     av_offset, bv_dim1, bv_dim2, bv_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lzz1, labc, 
-	    mmax, lwmin;
+    integer l1, l2, mn, is, ibi, ici, ibr, icr, iwk, lwk, lzz1, labc, mmax, 
+	    lwmin;
     extern /* Subroutine */ int isfvpec1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
@@ -389,7 +389,7 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n, mmax, ityp;
+    integer k, m, n, mmax, ityp;
     extern /* Subroutine */ int vhsec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

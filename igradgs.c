@@ -233,8 +233,8 @@
 	     bi_dim2, bi_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, lp, is, ls, mab, nln, iwk, imid, mmax, 
-	    liwk, lwkmin;
+    integer l1, l2, ia, ib, mn, lp, is, ls, mab, nln, iwk, imid, mmax, liwk, 
+	    lwkmin;
     extern /* Subroutine */ int igrdgs1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, doublereal *, integer *, integer *, 
@@ -362,9 +362,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
-    static integer mmax;
+    integer k, m, n;
+    doublereal fn;
+    integer mmax;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

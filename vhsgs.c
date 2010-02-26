@@ -436,8 +436,8 @@ static integer c__1 = 1;
 	     cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, idv, lnl, idz, lmn, ist,
-	     imid, mmax, lzimn;
+    integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, idv, lnl, idz, lmn, ist, imid, 
+	    mmax, lzimn;
     extern /* Subroutine */ int vhsgs1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
@@ -569,8 +569,8 @@ static integer c__1 = 1;
 	    wb_dim1, wb_offset, i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, 
-	    nlp1, mlat, mmax, mlon, itypp;
+    integer i__, j, k, m, mb, mn, mp1, np1, mp2, ndo1, ndo2, imm1, nlp1, mlat,
+	     mmax, mlon, itypp;
     extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -1681,7 +1681,7 @@ L13:
 /* Subroutine */ int vhsgsi_(integer *nlat, integer *nlon, doublereal *wvhsgs,
 	 integer *lvhsgs, doublereal *dwork, integer *ldwork, integer *ierror)
 {
-    static integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, lmn, imid;
+    integer iw1, jw1, jw2, jw3, iw2, iw3, iw4, lmn, imid;
     extern /* Subroutine */ int vhgsi1_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *), hrffti_(integer *, doublereal *);
@@ -1759,18 +1759,18 @@ L13:
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer i__, m, n, id, nm, mn, np, ix, iy, nz;
-    static doublereal dcf;
-    static integer lwk;
-    static doublereal abel, bbel, cbel;
+    integer i__, m, n, id, nm, mn, np, ix, iy, nz;
+    doublereal dcf;
+    integer lwk;
+    doublereal abel, bbel, cbel;
     extern /* Subroutine */ int gaqd_(integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
     extern integer indx_(integer *, integer *, integer *);
-    static doublereal ssqr2;
+    doublereal ssqr2;
     extern /* Subroutine */ int dnlfk_(integer *, integer *, doublereal *), 
 	    dnlft_(integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *);
-    static integer ierror;
+    integer ierror;
 
 
 /*     compute gauss points and weights */

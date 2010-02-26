@@ -225,8 +225,8 @@
 	    ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer l1, l2, ia, ib, mn, lp, is, ls, mab, nln, iwk, lwk, imid, 
-	    mmax, lpimn;
+    integer l1, l2, ia, ib, mn, lp, is, ls, mab, nln, iwk, lwk, imid, mmax, 
+	    lpimn;
     extern /* Subroutine */ int vrtgs1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
@@ -353,9 +353,9 @@
     double sqrt(doublereal);
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
-    static integer mmax;
+    integer k, m, n;
+    doublereal fn;
+    integer mmax;
     extern /* Subroutine */ int shsgs_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, integer *, 

@@ -314,8 +314,8 @@
 	     cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer mn, ibi, ici, ibr, icr, ifn, idz, iwk, lzz1, labc, imid, 
-	    mmax, liwk, lzimn, lwkmin;
+    integer mn, ibi, ici, ibr, icr, ifn, idz, iwk, lzz1, labc, imid, mmax, 
+	    liwk, lzimn, lwkmin;
     extern /* Subroutine */ int ivlapec1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,
@@ -493,8 +493,8 @@
 	    ci_offset, i__1, i__2, i__3;
 
     /* Local variables */
-    static integer k, m, n;
-    static doublereal fn;
+    integer k, m, n;
+    doublereal fn;
     extern /* Subroutine */ int vhsec_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, integer *,

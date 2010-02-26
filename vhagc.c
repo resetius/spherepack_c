@@ -334,15 +334,15 @@ static integer c__2 = 2;
 	     cr_offset, ci_dim1, ci_dim2, ci_offset, i__1, i__2;
 
     /* Local variables */
-    static integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, jw3, idv, lnl, ist, 
-	    lzz1, labc, imid, mmax;
+    integer iw1, iw2, iw3, iw4, iw5, jw1, jw2, jw3, idv, lnl, ist, lzz1, labc,
+	     imid, mmax;
     extern /* Subroutine */ int vhagc1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *);
-    static integer lwzvin;
+    integer lwzvin;
 
     /* Parameter adjustments */
     w_dim1 = *idvw;
@@ -468,18 +468,18 @@ static integer c__2 = 2;
 	    vb_offset, wb_dim1, wb_dim2, wb_offset, i__1, i__2, i__3, i__4;
 
     /* Local variables */
-    static integer i__, j, k, m, iv, iw;
-    static doublereal tv, tw;
-    static integer mp1, np1, mp2;
-    static doublereal fsn, tsn;
-    static integer ndo1, ndo2, imm1, nlp1;
-    static doublereal tve1, tve2, twe1, twe2, tvo1, tvo2, two1, two2;
-    static integer mlat;
+    integer i__, j, k, m, iv, iw;
+    doublereal tv, tw;
+    integer mp1, np1, mp2;
+    doublereal fsn, tsn;
+    integer ndo1, ndo2, imm1, nlp1;
+    doublereal tve1, tve2, twe1, twe2, tvo1, tvo2, two1, two2;
+    integer mlat;
     extern /* Subroutine */ int vbin_(integer *, integer *, integer *, 
 	    integer *, doublereal *, integer *, doublereal *), wbin_(integer *
 	    , integer *, integer *, integer *, doublereal *, integer *, 
 	    doublereal *);
-    static integer mmax, mlon, itypp;
+    integer mmax, mlon, itypp;
     extern /* Subroutine */ int hrfftf_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *);
 
@@ -1790,15 +1790,15 @@ L820:
     integer i__1, i__2;
 
     /* Local variables */
-    static integer iw1, jw1, jw2, jw3, iw2, iw3, lwk, lzz1, labc;
+    integer iw1, jw1, jw2, jw3, iw2, iw3, lwk, lzz1, labc;
     extern /* Subroutine */ int gaqd_(integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
-    static integer imid, mmax, iwrk;
+    integer imid, mmax, iwrk;
     extern /* Subroutine */ int hrffti_(integer *, doublereal *), vbgint_(
 	    integer *, integer *, doublereal *, doublereal *, doublereal *), 
 	    wbgint_(integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *);
-    static integer lwvbin;
+    integer lwvbin;
     extern /* Subroutine */ int setwts_(integer *, doublereal *, doublereal *)
 	    ;
 
@@ -1871,7 +1871,7 @@ L820:
     integer i__1;
 
     /* Local variables */
-    static integer i__;
+    integer i__;
 
 
 /*     set first imid =(nlat+1)/2 of double precision weights in dwts */
