@@ -1,5 +1,7 @@
 project(spherepack C)
 
+set(SPHEREPACK_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR} PARENT_SCOPE)
+
 add_library(spherepack
 	alf.c                divgc.c     hrfft.c   idvtgs.c   isfvpgc.c  ivlapgc.c  lfp.c     shaes.c  shses.c   sshifte.c  vhses.c   vlapgc.c   vtsec.c
 	       divgs.c     idivec.c  igradec.c  isfvpgs.c  ivlapgs.c  shagc.c  shsgc.c   trssph.c   vhsgc.c   vlapgs.c   vtses.c
