@@ -14,6 +14,8 @@ add_library(spherepack
        )
 
 
+set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
+
 #add_executable(helmsph helmsph.c)
 #target_link_libraries(helmsph spherepack m f2c)
 
