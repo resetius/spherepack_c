@@ -110,7 +110,7 @@ if (MSVC)
   if (MSVC_VERSION GREATER 1400)
     # TODO: add COMPILE_FLAGS_<CONFIGURATION> support in cmake
     set_source_files_properties(${source_o1} PROPERTIES
-      COMPILE_FLAGS "/O1")
+      COMPILE_FLAGS "/Od")
     set_source_files_properties(${source_o0} PROPERTIES
       COMPILE_FLAGS "/Od")
   endif()
