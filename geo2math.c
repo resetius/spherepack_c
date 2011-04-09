@@ -224,309 +224,365 @@
 /* *** END OF DOCUMENTATION ... CODE FOLLOWS: */
 
 
-/* Subroutine */ int geo2maths_(integer *ig, integer *nlon, integer *nlat, 
-	doublereal *sg, doublereal *sm, doublereal *work)
+/* Subroutine */ int geo2maths_ (integer *ig, integer *nlon, integer *nlat,
+                                 doublereal *sg, doublereal *sm, doublereal *work)
 {
-    /* System generated locals */
-    integer sg_dim1, sg_offset, sm_dim1, sm_offset, i__1, i__2;
+	/* System generated locals */
+	integer sg_dim1, sg_offset, sm_dim1, sm_offset, i__1, i__2;
 
-    /* Local variables */
-    integer i__, j, ij;
+	/* Local variables */
+	integer i__, j, ij;
 
 
-/*     transpose sg into sm and reverse colatitude subscript order */
-/*     if necessary */
+	/*     transpose sg into sm and reverse colatitude subscript order */
+	/*     if necessary */
 
-    /* Parameter adjustments */
-    sm_dim1 = *nlat;
-    sm_offset = 1 + sm_dim1;
-    sm -= sm_offset;
-    sg_dim1 = *nlon;
-    sg_offset = 1 + sg_dim1;
-    sg -= sg_offset;
-    --work;
+	/* Parameter adjustments */
+	sm_dim1 = *nlat;
+	sm_offset = 1 + sm_dim1;
+	sm -= sm_offset;
+	sg_dim1 = *nlon;
+	sg_offset = 1 + sg_dim1;
+	sg -= sg_offset;
+	--work;
 
-    /* Function Body */
-    i__1 = *nlat;
-    for (i__ = 1; i__ <= i__1; ++i__) {
-	i__2 = *nlon;
-	for (j = 1; j <= i__2; ++j) {
-	    ij = (j - 1) * *nlat + i__;
-	    work[ij] = sg[j + i__ * sg_dim1];
-	}
-    }
-    if (*ig == 0) {
+	/* Function Body */
 	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		sm[*nlat - i__ + 1 + j * sm_dim1] = work[ij];
-	    }
+	for (i__ = 1; i__ <= i__1; ++i__)
+	{
+		i__2 = *nlon;
+		for (j = 1; j <= i__2; ++j)
+		{
+			ij = (j - 1) * *nlat + i__;
+			work[ij] = sg[j + i__ * sg_dim1];
+		}
 	}
-    } else {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		sm[i__ + j * sm_dim1] = work[ij];
-	    }
+	if (*ig == 0)
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				sm[*nlat - i__ + 1 + j * sm_dim1] = work[ij];
+			}
+		}
 	}
-    }
-    return 0;
+	else
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				sm[i__ + j * sm_dim1] = work[ij];
+			}
+		}
+	}
+	return 0;
 } /* geo2maths_ */
 
-/* Subroutine */ int math2geos_(integer *ig, integer *nlat, integer *nlon, 
-	doublereal *sm, doublereal *sg, doublereal *work)
+/* Subroutine */ int math2geos_ (integer *ig, integer *nlat, integer *nlon,
+                                 doublereal *sm, doublereal *sg, doublereal *work)
 {
-    /* System generated locals */
-    integer sm_dim1, sm_offset, sg_dim1, sg_offset, i__1, i__2;
+	/* System generated locals */
+	integer sm_dim1, sm_offset, sg_dim1, sg_offset, i__1, i__2;
 
-    /* Local variables */
-    integer i__, j, ij;
+	/* Local variables */
+	integer i__, j, ij;
 
 
-/*     transpose sm into sg and reverse colatitude subscript order */
-/*     if necessary */
+	/*     transpose sm into sg and reverse colatitude subscript order */
+	/*     if necessary */
 
-    /* Parameter adjustments */
-    sg_dim1 = *nlon;
-    sg_offset = 1 + sg_dim1;
-    sg -= sg_offset;
-    sm_dim1 = *nlat;
-    sm_offset = 1 + sm_dim1;
-    sm -= sm_offset;
-    --work;
+	/* Parameter adjustments */
+	sg_dim1 = *nlon;
+	sg_offset = 1 + sg_dim1;
+	sg -= sg_offset;
+	sm_dim1 = *nlat;
+	sm_offset = 1 + sm_dim1;
+	sm -= sm_offset;
+	--work;
 
-    /* Function Body */
-    i__1 = *nlat;
-    for (i__ = 1; i__ <= i__1; ++i__) {
-	i__2 = *nlon;
-	for (j = 1; j <= i__2; ++j) {
-	    ij = (j - 1) * *nlat + i__;
-	    work[ij] = sm[i__ + j * sm_dim1];
-	}
-    }
-    if (*ig == 0) {
+	/* Function Body */
 	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		sg[j + (*nlat - i__ + 1) * sg_dim1] = work[ij];
-	    }
+	for (i__ = 1; i__ <= i__1; ++i__)
+	{
+		i__2 = *nlon;
+		for (j = 1; j <= i__2; ++j)
+		{
+			ij = (j - 1) * *nlat + i__;
+			work[ij] = sm[i__ + j * sm_dim1];
+		}
 	}
-    } else {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		sg[j + i__ * sg_dim1] = work[ij];
-	    }
+	if (*ig == 0)
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				sg[j + (*nlat - i__ + 1) * sg_dim1] = work[ij];
+			}
+		}
 	}
-    }
-    return 0;
+	else
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				sg[j + i__ * sg_dim1] = work[ij];
+			}
+		}
+	}
+	return 0;
 } /* math2geos_ */
 
-/* Subroutine */ int geo2mathv_(integer *ig, integer *nlon, integer *nlat, 
-	doublereal *ug, doublereal *vg, doublereal *vm, doublereal *wm, 
-	doublereal *work)
+/* Subroutine */ int geo2mathv_ (integer *ig, integer *nlon, integer *nlat,
+                                 doublereal *ug, doublereal *vg, doublereal *vm, doublereal *wm,
+                                 doublereal *work)
 {
-    /* System generated locals */
-    integer ug_dim1, ug_offset, vg_dim1, vg_offset, vm_dim1, vm_offset, 
-	    wm_dim1, wm_offset, i__1, i__2;
+	/* System generated locals */
+	integer ug_dim1, ug_offset, vg_dim1, vg_offset, vm_dim1, vm_offset,
+	        wm_dim1, wm_offset, i__1, i__2;
 
-    /* Local variables */
-    integer i__, j, ij;
+	/* Local variables */
+	integer i__, j, ij;
 
 
-/*     convert vg to vm, ug to wm */
+	/*     convert vg to vm, ug to wm */
 
-    /* Parameter adjustments */
-    wm_dim1 = *nlat;
-    wm_offset = 1 + wm_dim1;
-    wm -= wm_offset;
-    vm_dim1 = *nlat;
-    vm_offset = 1 + vm_dim1;
-    vm -= vm_offset;
-    vg_dim1 = *nlon;
-    vg_offset = 1 + vg_dim1;
-    vg -= vg_offset;
-    ug_dim1 = *nlon;
-    ug_offset = 1 + ug_dim1;
-    ug -= ug_offset;
-    --work;
+	/* Parameter adjustments */
+	wm_dim1 = *nlat;
+	wm_offset = 1 + wm_dim1;
+	wm -= wm_offset;
+	vm_dim1 = *nlat;
+	vm_offset = 1 + vm_dim1;
+	vm -= vm_offset;
+	vg_dim1 = *nlon;
+	vg_offset = 1 + vg_dim1;
+	vg -= vg_offset;
+	ug_dim1 = *nlon;
+	ug_offset = 1 + ug_dim1;
+	ug -= ug_offset;
+	--work;
 
-    /* Function Body */
-    if (*ig == 0) {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = vg[j + i__ * vg_dim1];
-	    }
+	/* Function Body */
+	if (*ig == 0)
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = vg[j + i__ * vg_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				vm[*nlat - i__ + 1 + j * vm_dim1] = -work[ij];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = ug[j + i__ * ug_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				wm[*nlat - i__ + 1 + j * wm_dim1] = work[ij];
+			}
+		}
 	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		vm[*nlat - i__ + 1 + j * vm_dim1] = -work[ij];
-	    }
+	else
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = vg[j + i__ * vg_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				vm[i__ + j * vm_dim1] = -work[ij];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = ug[j + i__ * ug_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				wm[i__ + j * wm_dim1] = work[ij];
+			}
+		}
 	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = ug[j + i__ * ug_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		wm[*nlat - i__ + 1 + j * wm_dim1] = work[ij];
-	    }
-	}
-    } else {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = vg[j + i__ * vg_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		vm[i__ + j * vm_dim1] = -work[ij];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = ug[j + i__ * ug_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		wm[i__ + j * wm_dim1] = work[ij];
-	    }
-	}
-    }
-    return 0;
+	return 0;
 } /* geo2mathv_ */
 
-/* Subroutine */ int math2geov_(integer *ig, integer *nlat, integer *nlon, 
-	doublereal *vm, doublereal *wm, doublereal *ug, doublereal *vg, 
-	doublereal *work)
+/* Subroutine */ int math2geov_ (integer *ig, integer *nlat, integer *nlon,
+                                 doublereal *vm, doublereal *wm, doublereal *ug, doublereal *vg,
+                                 doublereal *work)
 {
-    /* System generated locals */
-    integer vm_dim1, vm_offset, wm_dim1, wm_offset, ug_dim1, ug_offset, 
-	    vg_dim1, vg_offset, i__1, i__2;
+	/* System generated locals */
+	integer vm_dim1, vm_offset, wm_dim1, wm_offset, ug_dim1, ug_offset,
+	        vg_dim1, vg_offset, i__1, i__2;
 
-    /* Local variables */
-    integer i__, j, ij;
+	/* Local variables */
+	integer i__, j, ij;
 
 
-/*     convert vm to vg, wm to ug */
+	/*     convert vm to vg, wm to ug */
 
-    /* Parameter adjustments */
-    vg_dim1 = *nlon;
-    vg_offset = 1 + vg_dim1;
-    vg -= vg_offset;
-    ug_dim1 = *nlon;
-    ug_offset = 1 + ug_dim1;
-    ug -= ug_offset;
-    wm_dim1 = *nlat;
-    wm_offset = 1 + wm_dim1;
-    wm -= wm_offset;
-    vm_dim1 = *nlat;
-    vm_offset = 1 + vm_dim1;
-    vm -= vm_offset;
-    --work;
+	/* Parameter adjustments */
+	vg_dim1 = *nlon;
+	vg_offset = 1 + vg_dim1;
+	vg -= vg_offset;
+	ug_dim1 = *nlon;
+	ug_offset = 1 + ug_dim1;
+	ug -= ug_offset;
+	wm_dim1 = *nlat;
+	wm_offset = 1 + wm_dim1;
+	wm -= wm_offset;
+	vm_dim1 = *nlat;
+	vm_offset = 1 + vm_dim1;
+	vm -= vm_offset;
+	--work;
 
-    /* Function Body */
-    if (*ig == 0) {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = vm[i__ + j * vm_dim1];
-	    }
+	/* Function Body */
+	if (*ig == 0)
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = vm[i__ + j * vm_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				vg[j + (*nlat - i__ + 1) * vg_dim1] = -work[ij];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = wm[i__ + j * wm_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				ug[j + (*nlat - i__ + 1) * ug_dim1] = work[ij];
+			}
+		}
 	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		vg[j + (*nlat - i__ + 1) * vg_dim1] = -work[ij];
-	    }
+	else
+	{
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = vm[i__ + j * vm_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				vg[j + i__ * vg_dim1] = -work[ij];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				work[ij] = wm[i__ + j * wm_dim1];
+			}
+		}
+		i__1 = *nlat;
+		for (i__ = 1; i__ <= i__1; ++i__)
+		{
+			i__2 = *nlon;
+			for (j = 1; j <= i__2; ++j)
+			{
+				ij = (j - 1) * *nlat + i__;
+				ug[j + i__ * ug_dim1] = work[ij];
+			}
+		}
 	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = wm[i__ + j * wm_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		ug[j + (*nlat - i__ + 1) * ug_dim1] = work[ij];
-	    }
-	}
-    } else {
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = vm[i__ + j * vm_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		vg[j + i__ * vg_dim1] = -work[ij];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		work[ij] = wm[i__ + j * wm_dim1];
-	    }
-	}
-	i__1 = *nlat;
-	for (i__ = 1; i__ <= i__1; ++i__) {
-	    i__2 = *nlon;
-	    for (j = 1; j <= i__2; ++j) {
-		ij = (j - 1) * *nlat + i__;
-		ug[j + i__ * ug_dim1] = work[ij];
-	    }
-	}
-    }
-    return 0;
+	return 0;
 } /* math2geov_ */
 
