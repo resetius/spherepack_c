@@ -83,6 +83,7 @@ set(source
   islapgs.c
   islapes.c
   islapec.c
+  islapec3l.c
   isfvpgs.c
   isfvpes.c
   isfvpec.c

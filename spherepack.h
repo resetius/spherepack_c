@@ -399,6 +399,20 @@ extern "C" {
 	integer *mmax, doublereal *fnn, doublereal *wshsec, integer *lshsec, doublereal *wk, 
 	integer *lwk, doublereal *pertrb, integer *ierror);
 
+/* Subroutine */ int islapec_l3_(integer *nlat, integer *nlon, integer *isym, 
+	integer *nt, doublereal *mu2, doublereal *mu, 
+	doublereal *xlmbda, doublereal *sf, integer *ids, 
+	integer *jds, doublereal *a, doublereal *b, integer *mdab, integer *
+	ndab, doublereal *wshsec, integer *lshsec, doublereal *work, integer *
+	lwork, doublereal *pertrb, integer *ierror);
+
+/* Subroutine */ int islpec1_l3_(integer *, integer *, integer *, 
+	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
+	    integer *, integer *, 
+	    doublereal *, doublereal *, integer *, integer *, doublereal *, 
+	    doublereal *, integer *, doublereal *, doublereal *, integer *, 
+	    doublereal *, integer *, doublereal *, integer *);
+
 /* Subroutine */ int islapes_(integer *nlat, integer *nlon, integer *isym, 
 	integer *nt, doublereal *xlmbda, doublereal *sf, integer *ids, integer *jds, doublereal 
 	*a, doublereal *b, integer *mdab, integer *ndab, doublereal *wshses, integer *
