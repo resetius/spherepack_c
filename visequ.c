@@ -57,22 +57,22 @@ static doublereal c_b71 = 1.;
 	    nz3;
     doublereal dtr;
     integer nxp, nyp;
-    extern /* Subroutine */ int diag_(integer *, integer *, doublereal *, 
+    static /* Subroutine */ int diag_(integer *, integer *, doublereal *, 
 	    doublereal *, integer *);
     integer itri;
-    extern /* Subroutine */ int sptc_(doublereal *, integer *, integer *, 
+    static /* Subroutine */ int sptc_(doublereal *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     doublereal *);
     doublereal xeye, yeye;
     integer ntri;
     doublereal zeye;
     integer nwrk, nmst, nmfac, nclat, nslat;
-    extern /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
+    static /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
 	    *, integer *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *);
     integer niflag;
-    extern /* Subroutine */ int triang_(integer *, integer *, doublereal *, 
+    static /* Subroutine */ int triang_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, integer *, integer *, 
@@ -243,7 +243,7 @@ static doublereal c_b71 = 1.;
     return 0;
 } /* visequ_ */
 
-/* Subroutine */ int interp_(doublereal *h__, integer *len, integer *m, 
+/* Subroutine */ static int interp_(doublereal *h__, integer *len, integer *m, 
 	integer *n, doublereal *w1, doublereal *w2, integer *iflag)
 {
     /* Initialized data */
@@ -259,7 +259,7 @@ static doublereal c_b71 = 1.;
 
     /* Local variables */
     integer i__, j, k, l, n1, n2, mm1;
-    extern integer icvmg_(integer *, integer *, doublereal *);
+    static integer icvmg_(integer *, integer *, doublereal *);
 
 /*     ****     interpolates to mid points of grid cells using second */
 /*     ****     order formula */
@@ -340,7 +340,7 @@ static doublereal c_b71 = 1.;
     return 0;
 } /* interp_ */
 
-/* Subroutine */ int sptc_(doublereal *r__, integer *len, integer *m, integer 
+/* Subroutine */ static int sptc_(doublereal *r__, integer *len, integer *m, integer 
 	*n, doublereal *clat, doublereal *slat, doublereal *x, doublereal *y, 
 	doublereal *z__)
 {
@@ -405,7 +405,7 @@ static doublereal c_b71 = 1.;
     return 0;
 } /* sptc_ */
 
-/* Subroutine */ int diag_(integer *m, integer *n, doublereal *xp, doublereal 
+/* Subroutine */ static int diag_(integer *m, integer *n, doublereal *xp, doublereal 
 	*yp, integer *iflag)
 {
     /* System generated locals */
@@ -535,7 +535,7 @@ L100:
     return 0;
 } /* diag_ */
 
-/* Subroutine */ int stride_(integer *m, integer *n, integer *mst, integer *
+/* Subroutine */ static int stride_(integer *m, integer *n, integer *mst, integer *
 	mfac)
 {
     /* Initialized data */
@@ -651,7 +651,7 @@ L120:
     return 0;
 } /* stride_ */
 
-/* Subroutine */ int triang_(integer *m, integer *n, doublereal *x, 
+/* Subroutine */ static int triang_(integer *m, integer *n, doublereal *x, 
 	doublereal *y, doublereal *z__, integer *itri, doublereal *x1, 
 	doublereal *y1, doublereal *z1, doublereal *x2, doublereal *y2, 
 	doublereal *z2, doublereal *x3, doublereal *y3, doublereal *z3, 
@@ -880,13 +880,13 @@ L200:
     return 0;
 } /* triang_ */
 
-/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
+/* Subroutine */ static int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
 	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
 	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
 	doublereal *y3, doublereal *z3, integer *itype, doublereal *work, 
 	integer *iwork)
 {
-    extern /* Subroutine */ int vsurf1_(doublereal *, doublereal *, 
+    static /* Subroutine */ int vsurf1_(doublereal *, doublereal *, 
 	    doublereal *, integer *, doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, doublereal *,
@@ -950,7 +950,7 @@ L200:
     return 0;
 } /* vsurf_ */
 
-/* Subroutine */ int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *
+/* Subroutine */ static int vsurf1_(doublereal *xeye, doublereal *yeye, doublereal *
 	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
 	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
 	doublereal *y3, doublereal *z3, integer *itype, doublereal *px1, 
@@ -997,7 +997,7 @@ L200:
     integer ncv[11];
     doublereal hdx, dmx, dmy;
     integer ifx;
-    extern /* Subroutine */ int set_(doublereal *, doublereal *, doublereal *,
+    static /* Subroutine */ int set_(doublereal *, doublereal *, doublereal *,
 	     doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, integer *), box_(integer *, integer *, integer *, 
 	    integer *, integer *);
@@ -1009,7 +1009,7 @@ L200:
     integer irp1;
     doublereal px1h, py1h, vx1t, vy1t, vz1t, vx2t, vy2t, vz2t, vx3t, vy3t, 
 	    vz3t;
-    extern /* Subroutine */ int line_(doublereal *, doublereal *, doublereal *
+    static /* Subroutine */ int line_(doublereal *, doublereal *, doublereal *
 	    , doublereal *);
     integer nseg, irdp;
     doublereal xmid, ymid;
@@ -1020,12 +1020,12 @@ L200:
     integer isxm;
     doublereal xmax, ymin, ymax;
     integer ityp, irmp1;
-    extern /* Subroutine */ int frame_(void);
+    static /* Subroutine */ int frame_(void);
     doublereal cprod, thold;
     integer nsegp, irmax;
     doublereal fntri;
     integer isize;
-    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
+    static /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *);
     doublereal x1hold, y1hold, z1hold;
@@ -1788,7 +1788,7 @@ L500:
     return 0;
 } /* vsurf1_ */
 
-/* Subroutine */ int prjct_(integer *init, doublereal *xeye, doublereal *yeye,
+/* Subroutine */ static int prjct_(integer *init, doublereal *xeye, doublereal *yeye,
 	 doublereal *zeye, doublereal *x, doublereal *y, doublereal *z__, 
 	doublereal *px, doublereal *py)
 {
@@ -1842,7 +1842,7 @@ L1:
     return 0;
 } /* prjct_ */
 
-/* Subroutine */ int box_(integer *isd, integer *istart, integer *next, 
+/* Subroutine */ static int box_(integer *isd, integer *istart, integer *next, 
 	integer *l, integer *list)
 {
     /* System generated locals */
@@ -1884,7 +1884,7 @@ L10:
     return 0;
 } /* box_ */
 
-integer icvmg_(integer *i1, integer *i2, doublereal *r__)
+static integer icvmg_(integer *i1, integer *i2, doublereal *r__)
 {
     /* System generated locals */
     integer ret_val;
@@ -1899,7 +1899,7 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
     return ret_val;
 } /* icvmg_ */
 
-/* Subroutine */ int projct_(integer *m, integer *n, doublereal *xeye, 
+/* Subroutine */ static int projct_(integer *m, integer *n, doublereal *xeye, 
 	doublereal *yeye, doublereal *zeye, doublereal *x, doublereal *y, 
 	doublereal *z__, doublereal *px, doublereal *py)
 {
@@ -1910,7 +1910,7 @@ integer icvmg_(integer *i1, integer *i2, doublereal *r__)
     /* Local variables */
     integer i__, j;
     doublereal rdum1, rdum2, rdum3, rdum4, rdum5;
-    extern /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
+    static /* Subroutine */ int prjct_(integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *);
 

@@ -27,17 +27,22 @@ set(source_o1
 set(source
   vlapgs.c
   vlapec.c
-  visgau.c
-  visequ.c
+# vis function deps: set_, line_
+#  visgau.c
+#  visgeo.c
+#  vsurf.c
+#  visequ.c
   trvsph.c
   sphcom.c
   shses.c
-  shpg.c
-  shpe.c
+# rand_ function dep
+#  shpg.c
+#  shpe.c
   shigc.c
   shaes.c
   sfvpgc.c
-  lfp.c
+# fftpack dep
+#  lfp.c
   ivrtec.c
   ivlapes.c
   islapgc.c
@@ -48,7 +53,6 @@ set(source
   grades.c
   divgs.c
   alf.c
-  vsurf.c
   vshifte.c
   vrtgs.c
   vrtgc.c
@@ -56,7 +60,6 @@ set(source
   vrtec.c
   vlapgc.c
   vlapes.c
-  visgeo.c
   trssph.c
   sshifte.c
   slapgs.c
@@ -108,7 +111,7 @@ set(source
   divec.c
   )
 
-add_library(spherepack ${source_o0} ${source_o1} ${source})
+add_library(spherepack SHARED ${source_o0} ${source_o1} ${source})
 
 if (MSVC)
   if (MSVC_VERSION GREATER 1400)
@@ -122,6 +125,8 @@ endif ()
 
 
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
+
+target_link_libraries(spherepack f2c)
 
 #add_executable(helmsph helmsph.c)
 #target_link_libraries(helmsph spherepack m f2c)

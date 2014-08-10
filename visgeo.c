@@ -244,14 +244,14 @@ L10:
     /* Local variables */
     integer i__, j, k;
     doublereal pi, rad, dtr;
-    extern /* Subroutine */ int ctos_(doublereal *, doublereal *, doublereal *
+    static /* Subroutine */ int ctos_(doublereal *, doublereal *, doublereal *
 	    , doublereal *, doublereal *, doublereal *), stoc_(doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *);
     doublereal xeye, yeye;
     integer ntri;
     doublereal zeye, theta;
-    extern /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
+    static /* Subroutine */ int vsurf_(doublereal *, doublereal *, doublereal 
 	    *, integer *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, doublereal *, integer *);
@@ -369,7 +369,7 @@ L10:
     return 0;
 } /* visgeo1_ */
 
-/* Subroutine */ int ctos_(doublereal *x, doublereal *y, doublereal *z__, 
+/* Subroutine */ static int ctos_(doublereal *x, doublereal *y, doublereal *z__, 
 	doublereal *r__, doublereal *theta, doublereal *phi)
 {
     /* Builtin functions */
@@ -396,7 +396,7 @@ L10:
     return 0;
 } /* ctos_ */
 
-/* Subroutine */ int stoc_(doublereal *r__, doublereal *theta, doublereal *
+/* Subroutine */ static int stoc_(doublereal *r__, doublereal *theta, doublereal *
 	phi, doublereal *x, doublereal *y, doublereal *z__)
 {
     /* Builtin functions */
@@ -412,7 +412,7 @@ L10:
     return 0;
 } /* stoc_ */
 
-/* Subroutine */ int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
+/* Subroutine */ static int vsurf_(doublereal *xeye, doublereal *yeye, doublereal *
 	zeye, integer *ntri, doublereal *x1, doublereal *y1, doublereal *z1, 
 	doublereal *x2, doublereal *y2, doublereal *z2, doublereal *x3, 
 	doublereal *y3, doublereal *z3, integer *itype, doublereal *work, 

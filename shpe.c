@@ -132,7 +132,7 @@ static doublereal c_b191 = 1.;
     integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, kw1, kw2, kw3, kw4, 
 	    kw5, kw6, kw7, kw8, kw9, kw10, kw11, kw12, nte, kw13, mmax, mlwk, 
 	    nloc1, nloc2, log2n;
-    extern /* Subroutine */ int shpei1_(integer *, integer *, integer *, 
+    static /* Subroutine */ int shpei1_(integer *, integer *, integer *, 
 	    integer *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, doublereal *, integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
@@ -221,7 +221,7 @@ static doublereal c_b191 = 1.;
     return 0;
 } /* shpei_ */
 
-/* Subroutine */ int shpei1_(integer *nlat, integer *nlon, integer *isym, 
+/* Subroutine */ static int shpei1_(integer *nlat, integer *nlon, integer *isym, 
 	integer *mtrunc, integer *idp, integer *ierror, doublereal *pe, 
 	doublereal *po, doublereal *ze, doublereal *zo, integer *ipse, 
 	integer *jzse, integer *ipso, integer *jzso, doublereal *cp, 
@@ -245,7 +245,7 @@ static doublereal c_b191 = 1.;
     integer i__, j, k, m, n;
     doublereal v, a1, b1, c1, pi;
     integer ip;
-    extern /* Subroutine */ int gs_(integer *, doublereal *, doublereal *, 
+    static /* Subroutine */ int gs_(integer *, doublereal *, doublereal *, 
 	    doublereal *);
     integer it, js, mp1, ms2, ns2;
     doublereal dfn;
@@ -257,16 +257,16 @@ static doublereal c_b191 = 1.;
     integer lock, info, nshe[2], modn, nsho[2];
     doublereal tusl;
     integer mxtr;
-    extern /* Subroutine */ int dlfkp_(integer *, integer *, doublereal *), 
+    static /* Subroutine */ int dlfkp_(integer *, integer *, doublereal *), 
 	    dsvdc_(doublereal *, integer *, integer *, integer *, doublereal *
 	    , doublereal *, doublereal *, integer *, doublereal *, integer *, 
 	    doublereal *, integer *, integer *);
     doublereal dthet;
     integer mrank;
-    extern /* Subroutine */ int dlftp_(integer *, integer *, doublereal *, 
+    static /* Subroutine */ int dlftp_(integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *);
     integer nrank;
-    extern /* Subroutine */ int trunc_(integer *, integer *, integer *, 
+    static /* Subroutine */ int trunc_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *), normal_(integer *, 
 	    doublereal *, integer *, doublereal *);
 
@@ -992,13 +992,13 @@ L300:
     doublereal sn;
     integer iw1, iw2, iw3, lw1, iw4, jw1, jw2, jw3, jw4, nte, mmax, mwrk, 
 	    nloc1, nloc2;
-    extern /* Subroutine */ int shpe1_(integer *, integer *, integer *, 
+    static /* Subroutine */ int shpe1_(integer *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, integer *, integer *, 
 	    integer *, doublereal *, doublereal *, doublereal *, doublereal *,
 	     integer *, integer *, integer *, integer *, doublereal *, 
 	    doublereal *, doublereal *, doublereal *);
     integer log2n;
-    extern /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
+    static /* Subroutine */ int hrfftb_(integer *, integer *, doublereal *, 
 	    integer *, doublereal *, doublereal *), hrfftf_(integer *, 
 	    integer *, doublereal *, integer *, doublereal *, doublereal *);
 
@@ -1093,7 +1093,7 @@ L300:
     return 0;
 } /* shpe_ */
 
-/* Subroutine */ int shpe1_(integer *nlat, integer *nlon, integer *isym, 
+/* Subroutine */ static int shpe1_(integer *nlat, integer *nlon, integer *isym, 
 	integer *mtrunc, doublereal *sx, doublereal *sy, integer *idxy, 
 	integer *ierror, integer *idp, doublereal *pe, doublereal *po, 
 	doublereal *ze, doublereal *zo, integer *ipse, integer *jzse, integer 
@@ -1111,7 +1111,7 @@ L300:
     /* Local variables */
     integer i__, j, m, ip, js, mp1, ms2, ns2, nec, nem, noc, nte, mpm, nom, 
 	    nto, nshe[2], modn, nsho[2], mxtr, mrank, nrank;
-    extern /* Subroutine */ int tmxmx_(integer *, integer *, integer *, 
+    static /* Subroutine */ int tmxmx_(integer *, integer *, integer *, 
 	    doublereal *, integer *, integer *, doublereal *, doublereal *, 
 	    doublereal *, integer *, integer *);
 
@@ -1312,7 +1312,7 @@ L100:
     return 0;
 } /* shpe1_ */
 
-/* Subroutine */ int mxm_(integer *lr, integer *lc, integer *ld, doublereal *
+/* Subroutine */ static int mxm_(integer *lr, integer *lc, integer *ld, doublereal *
 	a, integer *mc, integer *md, doublereal *b, integer *nd, doublereal *
 	c__)
 {
@@ -1350,7 +1350,7 @@ L100:
     return 0;
 } /* mxm_ */
 
-/* Subroutine */ int smxm_(integer *lr, integer *lc, integer *ld, doublereal *
+/* Subroutine */ static int smxm_(integer *lr, integer *lc, integer *ld, doublereal *
 	a, integer *mc, integer *md, doublereal *b, integer *nd, doublereal *
 	c__)
 {
@@ -1388,7 +1388,7 @@ L100:
     return 0;
 } /* smxm_ */
 
-/* Subroutine */ int mxmx_(integer *lr, integer *lc, integer *ld, doublereal *
+/* Subroutine */ static int mxmx_(integer *lr, integer *lc, integer *ld, doublereal *
 	a, integer *mc, integer *md, doublereal *b, doublereal *x, doublereal 
 	*y)
 {
@@ -1442,7 +1442,7 @@ L100:
     return 0;
 } /* mxmx_ */
 
-/* Subroutine */ int dmxmx_(integer *lr, integer *lc, integer *ld, doublereal 
+/* Subroutine */ static int dmxmx_(integer *lr, integer *lc, integer *ld, doublereal 
 	*a, integer *mc, integer *md, doublereal *b, doublereal *x, 
 	doublereal *y)
 {
@@ -1496,7 +1496,7 @@ L100:
     return 0;
 } /* dmxmx_ */
 
-/* Subroutine */ int tmxmx_(integer *lr, integer *lc, integer *ld, doublereal 
+/* Subroutine */ static int tmxmx_(integer *lr, integer *lc, integer *ld, doublereal 
 	*a, integer *mc, integer *md, doublereal *b, doublereal *x, 
 	doublereal *y, integer *is, integer *js)
 {
@@ -1556,7 +1556,7 @@ L100:
     return 0;
 } /* tmxmx_ */
 
-/* Subroutine */ int trunc_(integer *irc, integer *n, integer *idp, 
+/* Subroutine */ static int trunc_(integer *irc, integer *n, integer *idp, 
 	doublereal *a, integer *nrc, integer *ijs)
 {
     /* System generated locals */
@@ -1608,7 +1608,7 @@ L50:
     return 0;
 } /* trunc_ */
 
-/* Subroutine */ int gs_(integer *n, doublereal *x, doublereal *y, doublereal 
+/* Subroutine */ static int gs_(integer *n, doublereal *x, doublereal *y, doublereal 
 	*z__)
 {
     /* System generated locals */
@@ -1639,7 +1639,7 @@ L50:
     return 0;
 } /* gs_ */
 
-/* Subroutine */ int normal_(integer *n, doublereal *x, integer *id, 
+/* Subroutine */ static int normal_(integer *n, doublereal *x, integer *id, 
 	doublereal *q)
 {
     /* System generated locals */
@@ -1681,7 +1681,7 @@ L50:
     return 0;
 } /* normal_ */
 
-/* Subroutine */ int coe_(integer *moe, integer *n, doublereal *x, doublereal 
+/* Subroutine */ static int coe_(integer *moe, integer *n, doublereal *x, doublereal 
 	*dmax__)
 {
     /* System generated locals */
@@ -1780,7 +1780,7 @@ L1:
 
 
 /* **************************************************************** */
-/* Subroutine */ int dlfkp_(integer *m, integer *n, doublereal *cp)
+/* Subroutine */ static int dlfkp_(integer *m, integer *n, doublereal *cp)
 {
     /* System generated locals */
     integer i__1;
@@ -1918,7 +1918,7 @@ L30:
     goto L30;
 } /* dlfkp_ */
 
-/* Subroutine */ int dlftp_(integer *m, integer *n, doublereal *theta, 
+/* Subroutine */ static int dlftp_(integer *m, integer *n, doublereal *theta, 
 	doublereal *cp, doublereal *pb)
 {
     /* System generated locals */
@@ -2037,7 +2037,7 @@ L14:
 } /* dlftp_ */
 
 
-/* Subroutine */ int dsvdc_(doublereal *x, integer *ldx, integer *n, integer *
+/* Subroutine */ static int dsvdc_(doublereal *x, integer *ldx, integer *n, integer *
 	p, doublereal *s, doublereal *e, doublereal *u, integer *ldu, 
 	doublereal *v, integer *ldv, doublereal *work, integer *job, integer *
 	info)
@@ -2066,19 +2066,19 @@ L14:
     extern doublereal ddot_(integer *, doublereal *, integer *, doublereal *, 
 	    integer *);
     integer jobu, iter;
-    extern /* Subroutine */ int drot_(integer *, doublereal *, integer *, 
+    static /* Subroutine */ int drot_(integer *, doublereal *, integer *, 
 	    doublereal *, integer *, doublereal *, doublereal *);
     doublereal test;
     extern doublereal dnrm2_(integer *, doublereal *, integer *);
     integer nctp1, nrtp1;
-    extern /* Subroutine */ int dscal_(integer *, doublereal *, doublereal *, 
+    static /* Subroutine */ int dscal_(integer *, doublereal *, doublereal *, 
 	    integer *);
     doublereal scale, shift;
-    extern /* Subroutine */ int dswap_(integer *, doublereal *, integer *, 
+    static /* Subroutine */ int dswap_(integer *, doublereal *, integer *, 
 	    doublereal *, integer *), drotg_(doublereal *, doublereal *, 
 	    doublereal *, doublereal *);
     integer maxit;
-    extern /* Subroutine */ int daxpy_(integer *, doublereal *, doublereal *, 
+    static /* Subroutine */ int daxpy_(integer *, doublereal *, doublereal *, 
 	    integer *, doublereal *, integer *);
     logical wantu, wantv;
     doublereal ztest;
@@ -2773,7 +2773,7 @@ L620:
     return 0;
 } /* dsvdc_ */
 
-/* Subroutine */ int daxpy_(integer *n, doublereal *da, doublereal *dx, 
+/* Subroutine */ static int daxpy_(integer *n, doublereal *da, doublereal *dx, 
 	integer *incx, doublereal *dy, integer *incy)
 {
     /* System generated locals */
@@ -3017,7 +3017,7 @@ doublereal dnrm2_(integer *n, doublereal *x, integer *incx)
 
 } /* dnrm2_ */
 
-/* Subroutine */ int drot_(integer *n, doublereal *dx, integer *incx, 
+/* Subroutine */ static int drot_(integer *n, doublereal *dx, integer *incx, 
 	doublereal *dy, integer *incy, doublereal *c__, doublereal *s)
 {
     /* System generated locals */
@@ -3080,7 +3080,7 @@ L20:
     return 0;
 } /* drot_ */
 
-/* Subroutine */ int drotg_(doublereal *da, doublereal *db, doublereal *c__, 
+/* Subroutine */ static int drotg_(doublereal *da, doublereal *db, doublereal *c__, 
 	doublereal *s)
 {
     /* System generated locals */
@@ -3132,7 +3132,7 @@ L20:
     return 0;
 } /* drotg_ */
 
-/* Subroutine */ int dscal_(integer *n, doublereal *da, doublereal *dx, 
+/* Subroutine */ static int dscal_(integer *n, doublereal *da, doublereal *dx, 
 	integer *incx)
 {
     /* System generated locals */
@@ -3203,7 +3203,7 @@ L40:
     return 0;
 } /* dscal_ */
 
-/* Subroutine */ int dswap_(integer *n, doublereal *dx, integer *incx, 
+/* Subroutine */ static int dswap_(integer *n, doublereal *dx, integer *incx, 
 	doublereal *dy, integer *incy)
 {
     /* System generated locals */
