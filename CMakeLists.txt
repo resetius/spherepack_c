@@ -111,7 +111,7 @@ set(source
   divec.c
   )
 
-add_library(spherepack SHARED ${source_o0} ${source_o1} ${source})
+add_library(spherepack SHARED ${source_o0} ${source_o1} ${source} spherepack.def)
 
 if (MSVC)
   if (MSVC_VERSION GREATER 1400)
@@ -124,9 +124,13 @@ if (MSVC)
 endif ()
 
 
-set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
+set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
-target_link_libraries(spherepack f2c)
+if (WIN32)
+	target_link_libraries(spherepack f2c)
+else ()
+	target_link_libraries(spherepack m f2c)
+endif ()
 
 #add_executable(helmsph helmsph.c)
 #target_link_libraries(helmsph spherepack m f2c)
