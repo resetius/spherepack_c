@@ -31,6 +31,12 @@ static doublereal c_b8 = 0.;
 /*  .                                                             . */
 /*  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . */
 
+    static /* Subroutine */ int stoc_(doublereal *, doublereal *, doublereal *
+	    , doublereal *, doublereal *, doublereal *); 
+	static int ctos_(doublereal *, 
+	    doublereal *, doublereal *, doublereal *, doublereal *, 
+	    doublereal *);
+
 
 /* Subroutine */ int ihgeod_(integer *m, integer *idp, integer *jdp, 
 	doublereal *x, doublereal *y, doublereal *z__)
@@ -48,10 +54,6 @@ static doublereal c_b8 = 0.;
     doublereal x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, x6,
 	     y6, z6, pi, xs, ys, zs, rad, phi, dxi, dyi, dzi, dxj, dyj, dzj, 
 	    beta, dphi;
-    static /* Subroutine */ int stoc_(doublereal *, doublereal *, doublereal *
-	    , doublereal *, doublereal *, doublereal *), ctos_(doublereal *, 
-	    doublereal *, doublereal *, doublereal *, doublereal *, 
-	    doublereal *);
     doublereal hdphi, theta, tdphi, theta1, theta2;
 
 

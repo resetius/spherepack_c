@@ -123,9 +123,9 @@ endif ()
 set(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
 if (WIN32)
-	target_link_libraries(spherepack f2c)
+	target_link_libraries(spherepack f2cembedded)
 else ()
-	target_link_libraries(spherepack m f2c)
+	target_link_libraries(spherepack m f2cembedded)
 endif ()
 
 #add_executable(helmsph helmsph.c)
