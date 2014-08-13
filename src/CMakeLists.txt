@@ -72,7 +72,6 @@ set(source
   sfvpgs.c
   sfvpes.c
   sfvpec.c
-  pow_di.c
   ivrtgs.c
   ivrtgc.c
   ivrtes.c
