@@ -20,7 +20,8 @@ function initspherepack()
         "divec",
         "gradec",
         "igradec"
-        ])        
+        ])
+        spherepack_initialized = 1
     end
 endfunction
 
